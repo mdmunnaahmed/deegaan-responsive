@@ -221,3 +221,50 @@ div.index {
   }
 }
 // Waiter Login Responsive End
+
+// Dashboard Responsive Start
+@include breakpoint(max-xl) {
+  .main-wrap {
+    width: 100%;
+    padding-left: 0;
+  }
+  #sidebar {
+    display: none;
+  }
+  #middlebar {
+    width: 100%;
+    .topBar {
+      display: flex;
+      align-items: center;
+      #sidebarToggler {
+        margin-left: 2%;
+      }
+    }
+    div.bars.middle {
+      display: grid;
+      gap: 10px;
+      > div {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+@include breakpoint(max-xl) {
+  #dashboard {
+    div.bars-top {
+      display: grid;
+      height: auto;
+      min-height: 125px;
+      grid-template-columns: repeat(4, 1fr);
+      @include breakpoint(max-md) {
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100px;
+        gap: 4px;
+        > div {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+// Dashboard Responsive End

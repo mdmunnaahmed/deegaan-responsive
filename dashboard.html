@@ -1,465 +1,477 @@
-
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Dashboard | DEEGAAN V5.0.0</title>
-<link rel="shortcut icon" href="./assets/images/system/icon.png" />
-<link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
-<link rel="stylesheet" href="./assets/css/responsive.css" type="text/css" />
-<link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
-<link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css">
-<link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<script src="./assets/js/jquery-3.5.1.min.js"></script>
-<script src="./assets/js/basicFuncs.js"></script>
-<script src="assets/js/jquery.knob.min.js"></script>
-<script src="assets/js/dashboard-chart-data.js"> </script>
-<script src="./assets/js/chart.min.js"></script>
-<script src="./assets/js/moment.min.js"></script>
-<script src="./assets/js/pikaday.js"></script>
-<!--[if lt IE 9]>
+  <meta charset="utf-8">
+  <title>Dashboard | DEEGAAN V5.0.0</title>
+  <link rel="shortcut icon" href="./assets/images/system/icon.png" />
+  <link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css">
+  <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <script src="./assets/js/basicFuncs.js"></script>
+  <script src="assets/js/jquery.knob.min.js"></script>
+  <script src="assets/js/dashboard-chart-data.js"> </script>
+  <script src="./assets/js/chart.min.js"></script>
+  <script src="./assets/js/moment.min.js"></script>
+  <script src="./assets/js/pikaday.js"></script>
+  <!--[if lt IE 9]>
 	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
+
 <body>
-<div class="main-wrap">
-  	<div id="dashboard">
-    	<div id="sidebar" tabindex="0">
-        	<div class="smartphone-menu-trigger"></div>
-            <div id="logoWrap">
-              <!--   <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
-              <label class="comp_name">My Hotel and Restaurant</label>
-            </div>
-        	<ul id="menus">
-	<li id="active"><a href="./dashboard.php">
-    	<i class="fa fa-tachometer"></i><span>Dashboard</span></a>
-    </li>
-        <li class="has-sub" >
-    	<a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
-    	<ul>
-                <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
-		        <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
-               <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
-                <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
-                </ul>
-    </li>
-            <li class="has-sub" >
-    	<a><i class="fa fa-institution"></i><span>Property Management</span></a>
-    	<ul>
-                <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
-                <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
-                <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
-                </ul>
-    </li>
-       
-            <li class="has-sub" >
+  <div class="main-wrap">
+    <div id="dashboard">
+      <div id="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div id="logoWrap">
+          <!--   <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
+          <label class="comp_name">My Hotel and Restaurant</label>
+        </div>
+        <ul id="menus">
+          <li id="active"><a href="./dashboard.php">
+              <i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+          </li>
+          <li class="has-sub">
+            <a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
+              <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
+              <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a><i class="fa fa-institution"></i><span>Property Management</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
             <a><i class="fa fa-user"></i><span>Human resource Mgt</span></a>
             <ul>
-                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
-                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
-                         <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
-                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
-                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
-    		           
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
+
             </ul>
-    </li>
-            <li > 
-        <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
-    </li>
-        <!-- <li class="has-sub"> -->
-        <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
-        <ul>
-                <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
+          </li>
+          <li>
+            <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
+          </li>
+          <!-- <li class="has-sub"> -->
+          <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
+          <ul>
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
         <li><a href="./workplace.php?role=admin&task=supply&subtask=measures"><span>Measurements</span></a></li> -->
-                <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
-        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
-                 <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
-                </ul>
-    </li>
-              <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
-                    <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
-             <li class="has-sub" >
-    	<a><i class="fa fa-dollar"></i><span>Finance</span></a>
-        <ul>
-                        <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
-                        <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
-                        <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
-                        <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
-                    </ul>
-    </li>
-            <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
-    
-</ul>
-        </div> <!-- sidebar -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
+          </ul>
+          </li>
+          <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
+          <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
+          <li class="has-sub">
+            <a><i class="fa fa-dollar"></i><span>Finance</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
+            </ul>
+          </li>
+          <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
 
-        <div id="middlebar">
-            <div class="topBar">
-                <div id="programName"><!-- <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span> --></div>
-                <div id="topIcons">
-                	<div class="icon profile">
-                    <img src="./assets/images/users/small40/user40-8151609924889.jpg" />
-                    </div>
-                    <div class="dropDown">
-                        <div class="row bar">My Account</div>
-                        <div class="row">
-                        	<div id="photo">
-                            	<img src="./assets/images/users/middle320/user320-8151609924889.jpg" />
-                                <a href="./workplace.php?role=admin&task=profile">
-                                <div class="overlay">
-                                    <span><i class="fa fa-camera"></i>change</span>
-                                </div>
-                                </a>
-                            </div>
-                            <div id="links">
-                            	<p id="name">ManagersName</p>
-                                <p id="user">themanager</p>
-                            </div>
-                        </div>
-                        <div class="row button">
-                        	<a href="./workplace.php?role=admin&task=profile&subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
-                            <a class="logout" href="./includes/logout.php?from=user">Logout</a>
-                        </div>
-                    </div> <!-- dropDown -->
-                </div> <!-- topIcons -->
+        </ul>
+      </div> <!-- sidebar -->
+
+      <div id="middlebar">
+        <div class="topBar">
+          <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+          <div id="programName">
+            <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span>
+          </div>
+          <div id="topIcons">
+            <div class="icon profile">
+              <img src="./assets/images/users/small40/user40-8151609924889.jpg">
             </div>
-            <div id="clearMbar"></div>
-            <div class="bars-top"  style="margin-top:3px;">
-	<div class="box-one">
-		<div class="money">$0</div>
-		<div class="title">accomodation</div>
-	</div>
-	<div class="box-two rest">
-		<div class="money">$0</div>
-		<div class="title">Restaurant</div>
-	</div>
-	<div class="box-three">
-		<div class="money">$0</div>
-		<div class="title">Service</div>
-	</div>
-	<div class="box-four">
-		<div class="money">$0</div>
-		<div class="title">Total income</div>
-	</div>
-</div>
-<div class="bars middle" style="margin-top:5px;">
-    <div class="box projects">
-        <article>
-            <h3>
-            	<i class="fa fa-bar-chart"></i> HOTEL INCOME DECEMBER 2023            		<label class="service">Service</label>
-            		<label class="restaurant">Restaurant</label>
-            		<label>Reservation</label>
+            <div class="dropDown" style="display: none;">
+              <div class="row bar">My Account</div>
+              <div class="row">
+                <div id="photo">
+                  <img src="./assets/images/users/middle320/user320-8151609924889.jpg">
+                  <a href="./workplace.php?role=admin&amp;task=profile">
+                    <div class="overlay">
+                      <span><i class="fa fa-camera"></i>change</span>
+                    </div>
+                  </a>
+                </div>
+                <div id="links">
+                  <p id="name">ManagersName</p>
+                  <p id="user">themanager</p>
+                </div>
+              </div>
+              <div class="row button">
+                <a href="./workplace.php?role=admin&amp;task=profile&amp;subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
+                <a class="logout" href="./includes/logout.php?from=user">Logout</a>
+              </div>
+            </div> <!-- dropDown -->
+          </div> <!-- topIcons -->
+        </div>
+        <div id="clearMbar"></div>
+        <div class="bars-top" style="margin-top:3px;">
+          <div class="box-one">
+            <div class="money">$0</div>
+            <div class="title">accomodation</div>
+          </div>
+          <div class="box-two rest">
+            <div class="money">$0</div>
+            <div class="title">Restaurant</div>
+          </div>
+          <div class="box-three">
+            <div class="money">$0</div>
+            <div class="title">Service</div>
+          </div>
+          <div class="box-four">
+            <div class="money">$0</div>
+            <div class="title">Total income</div>
+          </div>
+        </div>
+        <div class="bars middle" style="margin-top:5px;">
+          <div class="box projects">
+            <article>
+              <h3>
+                <i class="fa fa-bar-chart"></i> HOTEL INCOME DECEMBER 2023 <label class="service">Service</label>
+                <label class="restaurant">Restaurant</label>
+                <label>Reservation</label>
+              </h3>
+              <canvas id="barChart" style="height: 238px; width: 968px;" height="238" width="968"></canvas>
+            </article>
+          </div>
+
+          <div class="box right">
+            <h3>INCOME AND EXPENSES
+              <label class="expense">Expense</label>
+              <label class="income">Income</label>
             </h3>
-        	<canvas id="barChart" style="height:230px"></canvas>
-        </article>
+            <canvas id="pieChart" style="height: 172px; width: 491px;" height="172" width="491"></canvas>
+          </div>
+        </div>
+
+        <div class="bars middle" style="margin-top:5px;">
+          <div class="box circle">
+            <h3>INCOME BY HALLS AND ROOMS</h3>
+            <span class="knob-rooms">
+              <div style="display:inline;width:160px;height:160px;"><canvas width="160" height="160"></canvas><input type="text" class="knob" value="0" data-skin="tron" data-thickness="0.2" data-width="160" data-height="160" data-fgcolor="#00a65a"
+                  readonly="readonly"
+                  style="width: 84px; height: 53px; position: absolute; vertical-align: middle; margin-top: 53px; margin-left: -122px; border: 0px; background: none; font: bold 32px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px; appearance: none;">
+              </div>
+            </span>
+            <div style="display:inline;width:160px;height:160px;"><canvas width="160" height="160"></canvas><input type="text" class="knob" value="0" data-skin="tron" data-thickness="0.2" data-width="160" data-height="160" data-fgcolor="#01b3de"
+                readonly="readonly"
+                style="width: 84px; height: 53px; position: absolute; vertical-align: middle; margin-top: 53px; margin-left: -122px; border: 0px; background: none; font: bold 32px Arial; text-align: center; color: rgb(1, 179, 222); padding: 0px; appearance: none;">
+            </div>
+            <div>
+              <label class="halls">Halls</label>
+              <label class="rooms">Rooms</label>
+            </div>
+          </div>
+          <div class="box right property">
+            <canvas id="lineChart" style="height: 220px; width: 837px;" height="220" width="837"></canvas>
+          </div>
+        </div>
+
+
+
+
+      </div>
     </div>
-
-    <div class="box right">
-        <h3>INCOME AND EXPENSES
-            <label class="expense">Expense</label>
-            <label class="income">Income</label>
-        </h3>
-        <canvas id="pieChart" style="height:20px"></canvas>
-    </div>
-</div>
-
-<div class="bars middle" style="margin-top:5px;">
-    <div class="box circle">
-        <h3>INCOME BY HALLS AND ROOMS</h3>
-        <span class="knob-rooms">
-    	<input type="text" class="knob" value="0" data-skin="tron" data-thickness="0.2" data-width="160" data-height="160" data-fgColor="#00a65a" readonly></span>
-        <input type="text" class="knob" value="0" data-skin="tron" data-thickness="0.2" data-width="160" data-height="160" data-fgColor="#01b3de" readonly>
-        <div>
-	        <label class="halls">Halls</label>
-	        <label class="rooms">Rooms</label>
-		</div>
-	</div>
-    <div class="box right property">
-        <canvas id="lineChart" style="height:20px"></canvas>
-	</div>
-</div>
-
-
-
-
-        </div> <!-- middlebar -->
-	</div>
   </div>
-   <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
-<script src="./assets/js/jquery.timeago.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	$("time.timeago").timeago();
-	simplfyTopBar();
-});
+  <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+  <script src="./assets/js/jquery.timeago.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("time.timeago").timeago();
+      simplfyTopBar();
+    });
 
-var reser1To5         = '0';
-var reser6To10        = '0';
-var reser11To15       = '0';
-var reser16To20       = '0';
-var reser21To25       = '0';
-var reserLst          = '0';
+    var reser1To5 = '0';
+    var reser6To10 = '0';
+    var reser11To15 = '0';
+    var reser16To20 = '0';
+    var reser21To25 = '0';
+    var reserLst = '0';
 
-var rest1To5         = '16';
-var rest6To10        = '';
-var rest11To15       = '';
-var rest16To20       = '';
-var rest21To25       = '';
-var restLst          = '';
+    var rest1To5 = '16';
+    var rest6To10 = '';
+    var rest11To15 = '';
+    var rest16To20 = '';
+    var rest21To25 = '';
+    var restLst = '';
 
-var serv1To5         = '0';
-var serv6To10        = '0';
-var serv11To15       = '0';
-var serv16To20       = '0';
-var serv21To25       = '0';
-var servLst          = '0';
+    var serv1To5 = '0';
+    var serv6To10 = '0';
+    var serv11To15 = '0';
+    var serv16To20 = '0';
+    var serv21To25 = '0';
+    var servLst = '0';
 
-var paidAmount       = '';
-var recvAmnt         = '0';
+    var paidAmount = '';
+    var recvAmnt = '0';
 
-var rcpt1To5         = '';
-var rcpt6To10        = '';
-var rcpt11To15       = '';
-var rcpt16To20       = '';
-var rcpt21To25       = '';
-var rcptLst          = '';
+    var rcpt1To5 = '';
+    var rcpt6To10 = '';
+    var rcpt11To15 = '';
+    var rcpt16To20 = '';
+    var rcpt21To25 = '';
+    var rcptLst = '';
 
-$(function () {
-    //- LINE CHART -
-    //--------------
-    var lineChartData = {
+    $(function () {
+      //- LINE CHART -
+      //--------------
+      var lineChartData = {
         labels: ["1 - 5", "6 - 10", "11 - 15", "16 - 20", "21 - 25", "26 - lastday"],
         datasets: [
+          {
+            label: "Registered Members",
+            fillColor: "rgba(60,141,188,0.9)",
+            strokeColor: "rgba(60,120,188,0.8)",
+            pointColor: "rgba(60,120,188,0.8)",
+            pointStrokeColor: "rgba(60,141,188,1)",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(60,141,188,1)",
+            data: [rcpt1To5, rcpt6To10, rcpt11To15, rcpt16To20, rcpt21To25, rcptLst]
+          },
+        ]
+      };
+      var areaChartOptions = {
+        //Boolean - If we should show the scale at all
+        showScale: true,
+        //Boolean - Whether grid lines are shown across the chart
+        scaleShowGridLines: true,
+        //String - Colour of the grid lines
+        scaleGridLineColor: "rgba(0,0,0,0)",
+        //Number - Width of the grid lines
+        scaleGridLineWidth: 0.7,
+        //Boolean - Whether to show horizontal lines (except X axis)
+        scaleShowHorizontalLines: true,
+        //Boolean - Whether to show vertical lines (except Y axis)
+        scaleShowVerticalLines: true,
+        //Boolean - Whether the line is curved between points
+        bezierCurve: true,
+        //Number - Tension of the bezier curve between points
+        bezierCurveTension: 0.3,
+        //Boolean - Whether to show a dot for each point
+        pointDot: false,
+        //Number - Radius of each point dot in pixels
+        pointDotRadius: 4,
+        //Number - Pixel width of point dot stroke
+        pointDotStrokeWidth: 1,
+        //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+        pointHitDetectionRadius: 20,
+        //Boolean - Whether to show a stroke for datasets
+        datasetStroke: true,
+        //Number - Pixel width of dataset stroke
+        datasetStrokeWidth: 2.3,
+        //Boolean - Whether to fill the dataset with a color
+        datasetFill: true,
+        //String - A legend template
+        legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+        //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+        maintainAspectRatio: true,
+        //Boolean - whether to make the chart responsive to window resizing
+        responsive: true
+      };
+      var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
+      var lineChart = new Chart(lineChartCanvas);
+      var lineChartOptions = areaChartOptions;
+      lineChartOptions.datasetFill = false;
+      lineChart.Line(lineChartData, lineChartOptions);
+      //-------------
+      //- PIE CHART -
+      //-------------
+      // Get context with jQuery - using jQuery's .get() method.
+      var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+      var pieChart = new Chart(pieChartCanvas);
+      var PieData = [
         {
-          label: "Registered Members",
-          fillColor: "rgba(60,141,188,0.9)",
-          strokeColor: "rgba(60,120,188,0.8)",
-          pointColor: "rgba(60,120,188,0.8)",
-          pointStrokeColor: "rgba(60,141,188,1)",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(60,141,188,1)",
-          data: [rcpt1To5, rcpt6To10, rcpt11To15, rcpt16To20, rcpt21To25, rcptLst]
+          value: recvAmnt,
+          color: "#f56954",
+          highlight: "#f56954",
+          label: "Income"
         },
-      ]
-    };
-    var areaChartOptions = {
-      //Boolean - If we should show the scale at all
-      showScale: true,
-      //Boolean - Whether grid lines are shown across the chart
-      scaleShowGridLines: true,
-      //String - Colour of the grid lines
-      scaleGridLineColor: "rgba(0,0,0,0)",
-      //Number - Width of the grid lines
-      scaleGridLineWidth: 0.7,
-      //Boolean - Whether to show horizontal lines (except X axis)
-      scaleShowHorizontalLines: true,
-      //Boolean - Whether to show vertical lines (except Y axis)
-      scaleShowVerticalLines: true,
-      //Boolean - Whether the line is curved between points
-      bezierCurve: true,
-      //Number - Tension of the bezier curve between points
-      bezierCurveTension: 0.3,
-      //Boolean - Whether to show a dot for each point
-      pointDot: false,
-      //Number - Radius of each point dot in pixels
-      pointDotRadius: 4,
-      //Number - Pixel width of point dot stroke
-      pointDotStrokeWidth: 1,
-      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-      pointHitDetectionRadius: 20,
-      //Boolean - Whether to show a stroke for datasets
-      datasetStroke: true,
-      //Number - Pixel width of dataset stroke
-      datasetStrokeWidth: 2.3,
-      //Boolean - Whether to fill the dataset with a color
-      datasetFill: true,
-      //String - A legend template
-      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
-      //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio: true,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive: true
-    };
-    var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
-    var lineChart = new Chart(lineChartCanvas);
-    var lineChartOptions = areaChartOptions;
-    lineChartOptions.datasetFill = false;
-    lineChart.Line(lineChartData, lineChartOptions);
-    //-------------
-    //- PIE CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
-    var pieChart = new Chart(pieChartCanvas);
-    var PieData = [
-      {
-        value: recvAmnt,
-        color: "#f56954",
-        highlight: "#f56954",
-        label: "Income"
-      },
-      {
-        value: paidAmount,
-        color: "#00c0ef",
-        highlight: "#00c0ef",
-        label: "Expense"
-      },
+        {
+          value: paidAmount,
+          color: "#00c0ef",
+          highlight: "#00c0ef",
+          label: "Expense"
+        },
 
-    ];
-    var pieOptions = {
-      //Boolean - Whether we should show a stroke on each segment
-      segmentShowStroke: false,
-      //String - The colour of each segment stroke
-      segmentStrokeColor: "#fff",
-      //Number - The width of each segment stroke
-      segmentStrokeWidth: 0,
-      //Number - The percentage of the chart that we cut out of the middle
-      percentageInnerCutout: 0, // This is 0 for Pie charts
-      //Number - Amount of animation steps
-      animationSteps: 100,
-      //String - Animation easing effect
-      animationEasing: "easeOutBounce",
-      //Boolean - Whether we animate the rotation of the Doughnut
-      animateRotate: true,
-      //Boolean - Whether we animate scaling the Doughnut from the centre
-      animateScale: false,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive: true,
-      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio: true,
-      //String - A legend template
-      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-    };
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    pieChart.Doughnut(PieData, pieOptions);
+      ];
+      var pieOptions = {
+        //Boolean - Whether we should show a stroke on each segment
+        segmentShowStroke: false,
+        //String - The colour of each segment stroke
+        segmentStrokeColor: "#fff",
+        //Number - The width of each segment stroke
+        segmentStrokeWidth: 0,
+        //Number - The percentage of the chart that we cut out of the middle
+        percentageInnerCutout: 0, // This is 0 for Pie charts
+        //Number - Amount of animation steps
+        animationSteps: 100,
+        //String - Animation easing effect
+        animationEasing: "easeOutBounce",
+        //Boolean - Whether we animate the rotation of the Doughnut
+        animateRotate: true,
+        //Boolean - Whether we animate scaling the Doughnut from the centre
+        animateScale: false,
+        //Boolean - whether to make the chart responsive to window resizing
+        responsive: true,
+        // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+        maintainAspectRatio: true,
+        //String - A legend template
+        legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+      };
+      //Create pie or douhnut chart
+      // You can switch between pie and douhnut using the method below.
+      pieChart.Doughnut(PieData, pieOptions);
 
-   /* for (var i = 0; i < pieChart.segments.length; i++) {
-      ctx.fillstyle = "white";
-      var textsize = canvas.width/10;
-    };*/
+      /* for (var i = 0; i < pieChart.segments.length; i++) {
+         ctx.fillstyle = "white";
+         var textsize = canvas.width/10;
+       };*/
 
-    //-------------
-    //- BAR CHART -
-    //-------------
-    var barChartCanvas = $("#barChart").get(0).getContext("2d");
-    var barChart = new Chart(barChartCanvas);
-    var barChartData = {
+      //-------------
+      //- BAR CHART -
+      //-------------
+      var barChartCanvas = $("#barChart").get(0).getContext("2d");
+      var barChart = new Chart(barChartCanvas);
+      var barChartData = {
         labels: ['1 - 5', '6 - 10', '11 - 15', '16 - 20', '21 - 25', '26 - lastday'],
         datasets: [
-            {
-                label: "Accommodation",
-                fillColor: "rgba(1,179,222,0.9)",
-                strokeColor: "rgba(210, 214, 222, 1)",
-                pointColor: "rgba(210, 214, 222, 1)",
-                pointStrokeColor: "#c1c7d1",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [reser1To5, reser6To10, reser11To15, reser16To20, reser21To25, reserLst]
-            },
-            {
-                label: "Restaurant",
-                fillColor: "rgba(243,156,18,0.9)",
-                strokeColor: "rgba(210, 214, 222, 1)",
-                pointColor: "rgba(210, 214, 222, 1)",
-                pointStrokeColor: "#c1c7d1",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [rest1To5, rest6To10, rest11To15, rest16To20, rest21To25, restLst ]
-            },
-            {
-                label: "Extra Service",
-                fillColor: "rgba(12, 169, 147,0.9)",
-                strokeColor: "rgba(236, 156, 9, 1)",
-                pointColor: "rgba(210, 214, 222, 1)",
-                pointStrokeColor: "#c1c7d1",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [serv1To5, serv6To10, serv11To15, serv16To20, serv21To25, servLst]
-            },
+          {
+            label: "Accommodation",
+            fillColor: "rgba(1,179,222,0.9)",
+            strokeColor: "rgba(210, 214, 222, 1)",
+            pointColor: "rgba(210, 214, 222, 1)",
+            pointStrokeColor: "#c1c7d1",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [reser1To5, reser6To10, reser11To15, reser16To20, reser21To25, reserLst]
+          },
+          {
+            label: "Restaurant",
+            fillColor: "rgba(243,156,18,0.9)",
+            strokeColor: "rgba(210, 214, 222, 1)",
+            pointColor: "rgba(210, 214, 222, 1)",
+            pointStrokeColor: "#c1c7d1",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [rest1To5, rest6To10, rest11To15, rest16To20, rest21To25, restLst]
+          },
+          {
+            label: "Extra Service",
+            fillColor: "rgba(12, 169, 147,0.9)",
+            strokeColor: "rgba(236, 156, 9, 1)",
+            pointColor: "rgba(210, 214, 222, 1)",
+            pointStrokeColor: "#c1c7d1",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [serv1To5, serv6To10, serv11To15, serv16To20, serv21To25, servLst]
+          },
 
         ]
-    };
-    var barChartOptions = {
-      //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-      scaleBeginAtZero: true,
-      //Boolean - Whether grid lines are shown across the chart
-      scaleShowGridLines: true,
-      //String - Colour of the grid lines
-      //Number - Width of the grid lines
-      scaleGridLineWidth: 0,
-      //Boolean - Whether to show horizontal lines (except X axis)
-      scaleShowHorizontalLines: true,
-      //Boolean - Whether to show vertical lines (except Y axis)
-      scaleShowVerticalLines: false,
-      //Boolean - If there is a stroke on each bar
-      barShowStroke: false,
-      //Number - Pixel width of the bar stroke
-      barStrokeWidth: 0,
-      //Number - Spacing between each of the X value sets
-      barValueSpacing: 11,
-      //Number - Spacing between data sets within X values
-      barDatasetSpacing: 1,
-      //String - A legend template
-      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
-      //Boolean - whether to make the chart responsive
-      responsive: true,
-      maintainAspectRatio: true
-    };
+      };
+      var barChartOptions = {
+        //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+        scaleBeginAtZero: true,
+        //Boolean - Whether grid lines are shown across the chart
+        scaleShowGridLines: true,
+        //String - Colour of the grid lines
+        //Number - Width of the grid lines
+        scaleGridLineWidth: 0,
+        //Boolean - Whether to show horizontal lines (except X axis)
+        scaleShowHorizontalLines: true,
+        //Boolean - Whether to show vertical lines (except Y axis)
+        scaleShowVerticalLines: false,
+        //Boolean - If there is a stroke on each bar
+        barShowStroke: false,
+        //Number - Pixel width of the bar stroke
+        barStrokeWidth: 0,
+        //Number - Spacing between each of the X value sets
+        barValueSpacing: 11,
+        //Number - Spacing between data sets within X values
+        barDatasetSpacing: 1,
+        //String - A legend template
+        legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+        //Boolean - whether to make the chart responsive
+        responsive: true,
+        maintainAspectRatio: true
+      };
 
-    barChartOptions.datasetFill = false;
-    barChart.Bar(barChartData, barChartOptions);
+      barChartOptions.datasetFill = false;
+      barChart.Bar(barChartData, barChartOptions);
 
-    /*//-------------
-    //- PIE CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
-    var pieChart = new Chart(pieChartCanvas);
-    var PieData = [
-      {
-        value: 56,
-        color: "#f56954",
-        highlight: "#f56954",
-        label: "Male"
-      },
-      {
-        value: 44,
-        color: "#3c8dbc",
-        highlight: "#3c8dbc",
-        label: "Female"
-      },
-
-    ];
-    var pieOptions = {
-      //Boolean - Whether we should show a stroke on each segment
-      segmentShowStroke: false,
-      //String - The colour of each segment stroke
-      segmentStrokeColor: "#f56954",
-      //Number - The width of each segment stroke
-      segmentStrokeWidth: 0,
-      //Number - The percentage of the chart that we cut out of the middle
-      percentageInnerCutout: 0, // This is 0 for Pie charts
-      //Number - Amount of animation steps
-      animationSteps: 100,
-      //String - Animation easing effect
-      animationEasing: "easeOutBounce",
-      //Boolean - Whether we animate the rotation of the Doughnut
-      animateRotate: true,
-      //Boolean - Whether we animate scaling the Doughnut from the centre
-      animateScale: false,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive: true,
-      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio: true,
-      //String - A legend template
-      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-    };
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    pieChart.Doughnut(PieData, pieOptions);*/
-});
-</script>
+      /*//-------------
+      //- PIE CHART -
+      //-------------
+      // Get context with jQuery - using jQuery's .get() method.
+      var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+      var pieChart = new Chart(pieChartCanvas);
+      var PieData = [
+        {
+          value: 56,
+          color: "#f56954",
+          highlight: "#f56954",
+          label: "Male"
+        },
+        {
+          value: 44,
+          color: "#3c8dbc",
+          highlight: "#3c8dbc",
+          label: "Female"
+        },
+  
+      ];
+      var pieOptions = {
+        //Boolean - Whether we should show a stroke on each segment
+        segmentShowStroke: false,
+        //String - The colour of each segment stroke
+        segmentStrokeColor: "#f56954",
+        //Number - The width of each segment stroke
+        segmentStrokeWidth: 0,
+        //Number - The percentage of the chart that we cut out of the middle
+        percentageInnerCutout: 0, // This is 0 for Pie charts
+        //Number - Amount of animation steps
+        animationSteps: 100,
+        //String - Animation easing effect
+        animationEasing: "easeOutBounce",
+        //Boolean - Whether we animate the rotation of the Doughnut
+        animateRotate: true,
+        //Boolean - Whether we animate scaling the Doughnut from the centre
+        animateScale: false,
+        //Boolean - whether to make the chart responsive to window resizing
+        responsive: true,
+        // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+        maintainAspectRatio: true,
+        //String - A legend template
+        legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+      };
+      //Create pie or douhnut chart
+      // You can switch between pie and douhnut using the method below.
+      pieChart.Doughnut(PieData, pieOptions);*/
+    });
+  </script>
 </body>
+
 </html>
