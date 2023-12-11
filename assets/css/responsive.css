@@ -4,9 +4,6 @@
   }
 }
 @media only screen and (max-width: 1366px) {
-  .main-wrap {
-    padding-left: 7%;
-  }
   .main-wrap .sidebar {
     width: 8%;
   }
@@ -229,13 +226,32 @@
     font-size: 1.1em;
   }
 }
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+.overlay.active {
+  background-color: rgba(0, 0, 0, 0.3764705882);
+  z-index: 1111;
+}
+
 @media only screen and (max-width: 1199px) {
   .main-wrap {
     padding-left: 7%;
   }
   .main-wrap .sidebar {
     width: 95px;
-    display: none;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    z-index: 1112;
+  }
+  .main-wrap .sidebar.active {
+    transform: translateX(0);
   }
   .sidebar .logoWrap {
     height: 40px;
@@ -694,11 +710,13 @@ div.orders-workplace #loadPage #command #searchBox.large {
   align-items: center;
   gap: 20px;
 }
-#middlebar .topBar > div > *,
-#middlebar .top-bar > div > *,
-.middlebar .topBar > div > *,
-.middlebar .top-bar > div > * {
-  flex-shrink: 0;
+@media (max-width: 575px) {
+  #middlebar .topBar > div,
+  #middlebar .top-bar > div,
+  .middlebar .topBar > div,
+  .middlebar .top-bar > div {
+    gap: 10px;
+  }
 }
 #middlebar .topBar > div,
 #middlebar .top-bar > div,
@@ -717,6 +735,24 @@ div.orders-workplace #loadPage #command #searchBox.large {
 .middlebar .top-bar .user-name {
   flex-basis: auto;
   margin-right: 10px;
+}
+@media (max-width: 575px) {
+  #middlebar .topBar .restaurant-name,
+  #middlebar .topBar .user-name,
+  #middlebar .top-bar .restaurant-name,
+  #middlebar .top-bar .user-name,
+  .middlebar .topBar .restaurant-name,
+  .middlebar .topBar .user-name,
+  .middlebar .top-bar .restaurant-name,
+  .middlebar .top-bar .user-name {
+    display: none;
+  }
+}
+#middlebar .topBar .user-name,
+#middlebar .top-bar .user-name,
+.middlebar .topBar .user-name,
+.middlebar .top-bar .user-name {
+  flex-shrink: 0;
 }
 #middlebar .topBar #programName,
 #middlebar .top-bar #programName,
@@ -738,8 +774,37 @@ div.orders-workplace #loadPage #command #searchBox.large {
 .middlebar .top-bar #topIcons div.icon {
   top: 0;
 }
+@media (max-width: 575px) {
+  #middlebar .topBar .waiter-amount,
+  #middlebar .top-bar .waiter-amount,
+  .middlebar .topBar .waiter-amount,
+  .middlebar .top-bar .waiter-amount {
+    flex-basis: 30%;
+  }
+}
+#middlebar .topBar .waiter-amount a,
+#middlebar .top-bar .waiter-amount a,
+.middlebar .topBar .waiter-amount a,
+.middlebar .top-bar .waiter-amount a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+#middlebar .topBar .waiter-amount a::before,
+#middlebar .top-bar .waiter-amount a::before,
+.middlebar .topBar .waiter-amount a::before,
+.middlebar .top-bar .waiter-amount a::before {
+  display: none;
+}
+#middlebar .topBar .waiter-amount i,
+#middlebar .top-bar .waiter-amount i,
+.middlebar .topBar .waiter-amount i,
+.middlebar .top-bar .waiter-amount i {
+  font-size: 20px;
+  margin-top: -3px;
+}
 
-@media (max-width: 1399px) {
+@media (max-width: 1199px) {
   .main-wrap {
     width: 100%;
     padding-left: 0;

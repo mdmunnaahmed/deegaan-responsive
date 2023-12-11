@@ -2871,3 +2871,31 @@ function check_finishSplitOrder(ev) {
 	console.log(tables)
 	return true
 }
+
+
+// Menu Click Event
+// let trigger = $('#sidebarToggler');
+// let dropdown = $(".sidebar");
+// if (trigger || dropdown) {
+//   trigger.each(function () {
+//     $(this).on("click", function (e) {
+//       e.stopPropagation();
+//       dropdown.toggleClass("active");
+//       trigger.toggleClass("active");
+//     });
+//   });
+//   dropdown.each(function () {
+//     $(this).on("click", function (e) {
+//       e.stopPropagation();
+//     });
+//   });
+// }
+
+$('#sidebarToggler').on('click', function(e) {
+	$('.sidebar').toggleClass('active')
+	$('.overlay').toggleClass('active')
+})
+$('.overlay').on('click', function(e) {
+	$('.sidebar').removeClass('active')
+	$('.overlay').removeClass('active')
+})
