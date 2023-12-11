@@ -1,0 +1,158 @@
+// Color Mixin
+@mixin text-wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//   transition
+@mixin transition {
+  transition: all ease 0.3s;
+}
+
+@mixin breakpoint($point) {
+  @if $point==xs {
+    @media (min-width: 320px) {
+      @content;
+    }
+  } @else if $point==max-xs {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
+  @if $point==sm {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $point==max-sm {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $point==md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point==max-md {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point==lg {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point==max-lg {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $point==xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point==max-xl {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point==xxl {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  } @else if $point==max-xxl {
+    @media (max-width: 1399px) {
+      @content;
+    }
+  }
+}
+
+//Gadient Color Of Text
+@mixin hover-state {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+// media query mixin
+@mixin min($value) {
+  @media (min-width: $value) {
+    @content;
+  }
+}
+@mixin max($value) {
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+// Main Login Responsive Start
+div.index div.developer .social {
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  float: none;
+  width: 100%;
+  gap: 10px 30px;
+  @include breakpoint(max-xl) {
+    gap: 10px 15px;
+    @include breakpoint(max-sm) {
+      margin-top: 0;
+      gap: 10px;
+    }
+  }
+  .box {
+    float: none;
+    width: auto;
+  }
+}
+
+div.index {
+  @include breakpoint(max-xl) {
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 6%;
+    @include breakpoint(max-sm) {
+      padding-inline: 6%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  main {
+    @include breakpoint(max-xl) {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      float: none;
+      height: auto;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    .developer {
+      @include breakpoint(max-xl) {
+        width: 100%;
+        float: none;
+        padding-top: 0;
+        padding-bottom: 15px;
+        .logoWrap {
+          margin: 0;
+          img {
+            height: 150px;
+            object-fit: contain;
+          } 
+        }
+      }
+    }
+    aside {
+      @include breakpoint(max-xl) {
+        width: 100%;
+        float: none;
+        border: none;
+        padding-inline: 6%;
+        div.record {
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}
+// Main Login Responsive End

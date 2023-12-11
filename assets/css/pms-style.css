@@ -3925,7 +3925,7 @@ div.workplace div.tab-panel div.list div.cave input:focus ,
 div.workplace div.theForm div.list div.cave input:focus {
 	outline: none;
 }
-}
+
 div.workplace div.theForm div.list div.cave input.changeable {
 	width: 90%;
 	padding-left: 6px;
@@ -4858,7 +4858,7 @@ div.workplace .popUpForm div.rightPrt ,
     width: 98%;
 }
 .popup-box .rightPrt.info label{
-	font-size:font-size: 0.75em;
+	font-size: 0.75em;
 }
 div.workplace .popUpForm div.row.text div.lftPart,
 div.workplace .popUpForm div.row.text div.rightPrt ,

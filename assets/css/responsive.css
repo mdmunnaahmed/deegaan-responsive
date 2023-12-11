@@ -1,0 +1,76 @@
+div.index div.developer .social {
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  float: none;
+  width: 100%;
+  gap: 10px 30px;
+}
+@media (max-width: 1199px) {
+  div.index div.developer .social {
+    gap: 10px 15px;
+  }
+}
+@media (max-width: 1199px) and (max-width: 575px) {
+  div.index div.developer .social {
+    margin-top: 0;
+    gap: 10px;
+  }
+}
+div.index div.developer .social .box {
+  float: none;
+  width: auto;
+}
+
+@media (max-width: 1199px) {
+  div.index {
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 6%;
+  }
+}
+@media (max-width: 1199px) and (max-width: 575px) {
+  div.index {
+    padding-inline: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 1199px) {
+  div.index main {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    float: none;
+    height: auto;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+}
+@media (max-width: 1199px) {
+  div.index main .developer {
+    width: 100%;
+    float: none;
+    padding-top: 0;
+    padding-bottom: 15px;
+  }
+  div.index main .developer .logoWrap {
+    margin: 0;
+  }
+  div.index main .developer .logoWrap img {
+    height: 150px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+@media (max-width: 1199px) {
+  div.index main aside {
+    width: 100%;
+    float: none;
+    border: none;
+    padding-inline: 6%;
+  }
+  div.index main aside div.record {
+    width: 100%;
+  }
+}/*# sourceMappingURL=responsive.css.map */
