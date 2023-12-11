@@ -319,7 +319,7 @@
   bottom: 0;
   right: 0;
   z-index: -1;
-  transition: .3s;
+  transition: 0.3s;
   &.active {
     background-color: #00000080;
     z-index: 1111;
@@ -332,7 +332,7 @@
   .main-wrap .sidebar {
     width: 95px;
     transform: translateX(-100%);
-    transition: .3s;
+    transition: 0.3s;
     z-index: 1112;
     &.active {
       transform: translateX(0);
@@ -720,8 +720,10 @@ div.index {
 }
 // Waiter Login Responsive End
 
+
 // Dashboard Responsive Start
-div.orders-workplace #loadPage #command #searchBox input.srchInput {
+div.orders-workplace #loadPage #command #searchBox input.srchInput,
+.orders-workplace div.twoCols div#searchBox input.srchInput {
   padding-left: 35px;
 }
 div.orders-workplace #loadPage #command #searchBox.large {
@@ -788,6 +790,8 @@ div.orders-workplace #loadPage #command #searchBox.large {
 .middlebar {
   .topBar,
   .top-bar {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     #sidebarToggler {
       @include breakpoint(xl) {
@@ -861,7 +865,6 @@ div.orders-workplace #loadPage #command #searchBox.large {
   }
 }
 @include breakpoint(max-xl) {
-  
   #sidebar {
     display: none;
   }
@@ -933,3 +936,16 @@ div.orders-workplace #loadPage #command #searchBox.large {
   }
 }
 // Dashboard Responsive End
+
+// Loyalty Responsive Start
+#loadPage {
+  .twoCols {
+    @include max(900px) {
+      width: 100%;
+      &.one {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+// Loyalty Responsive End

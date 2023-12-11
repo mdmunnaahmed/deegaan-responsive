@@ -626,7 +626,8 @@ div.index div.developer .social .box {
     margin: 0;
   }
 }
-div.orders-workplace #loadPage #command #searchBox input.srchInput {
+div.orders-workplace #loadPage #command #searchBox input.srchInput,
+.orders-workplace div.twoCols div#searchBox input.srchInput {
   padding-left: 35px;
 }
 
@@ -692,6 +693,8 @@ div.orders-workplace #loadPage #command #searchBox.large {
 #middlebar .top-bar,
 .middlebar .topBar,
 .middlebar .top-bar {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 @media (min-width: 1200px) {
@@ -894,5 +897,13 @@ div.orders-workplace #loadPage #command #searchBox.large {
   }
   #dashboard div.bars-top > div {
     margin: 0 !important;
+  }
+}
+@media (max-width: 900px) {
+  #loadPage .twoCols {
+    width: 100%;
+  }
+  #loadPage .twoCols.one {
+    margin-bottom: 8px;
   }
 }/*# sourceMappingURL=responsive.css.map */
