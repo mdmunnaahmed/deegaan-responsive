@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from deegaan.sysdemos.so/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Dec 2023 03:36:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8">
+<title>Login | DEEGAAN V5.0.0</title>
+<link rel="shortcut icon" href="assets/images/system/icon.png" />
+<link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="index">
+        <main>
+            <div class="developer">
+                <div class="logoWrap">
+                    <img src="assets/images/company/logo-pure.png" alt="sostec logo.png">
+                </div>
+                <!-- <p class="info">Shaafi is hospital managment system for managing the hospital functions and events. </p> -->
+               
+                <div class="social">
+                    <div class="box">
+                        <a href="http://www.facebook.com/SOSTECInc" target="_blank">
+                            <span class="fa facebook fa-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="box">
+                        <a href="http://www.twitter.com/SOSTECInc" target="_blank">
+                            <span class="fa twitter fa-twitter"></span>
+                        </a>
+                    </div>
+                    <div class="box">
+                        <a href="http://www.youtube.com/user/somalisoftware" target="_blank">
+                            <span class="fa youtube fa-youtube"></span>
+                        </a>
+                    </div>
+                    <div class="box">
+                        <a href="http://www.linkedin.com/in/SOSTECInc" target="_blank">
+                            <span class="fa linked fa-linkedin"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <h2>Welcome</h2>
+                <p>Fill username and password to Login Dashboard.</p>
+                <form action="https://deegaan.sysdemos.so/index.php" method="POST" onsubmit="return checkLogIn();">
+                    <div class="formWrap">
+                        <div class="record one">
+                            <span class="fa fa-envelope-o" id="icon"></span>
+                            <input class="loginText" type="text" id="txtUsername" placeholder="Username" autocomplete="off" />
+                        </div>
+                        <div class="record two">
+                            <span class="fa fa-key" id="icon"></span>
+                            <input class="loginText password" type="password" id="txtPassword" placeholder="password" autocomplete="off" onKeyPress="return knowCapsOn(event);" />
+                            <span class="fa fa-eye-slash show-password" id="view"></span>
+                            <label class="error" id="error2">error2</label>
+                            <div class="tooltip">Caps lock is on</div>
+                        </div>
+                        <label class="error" id="error1">error</label>
+                        <label class="error" id="error3">error</label>
+
+
+                        <div class="record three borderless">
+                            <input type="checkbox" id="rememberMe" name="rememberMe" />
+                            <div class="switch" id="switchRemember"></div>
+                            <span id="rememberLbl">Remember me</span>
+                            <a id="forgot" href="_forgotPassword.html">Forgot your password?</a>
+                        </div>
+
+                        <div class="record four borderless">
+                            <input type="submit" id="submitBtn" name="submitBtn" value="LOGIN" />
+                        </div>
+
+                         <div class="record five waiter">
+                            <a href="index-waiter.html"><i class="fa fa-cutlery"></i>Login as waiter / cashier</a>
+                        </div>
+
+                        <div class="record five borderless">
+                            <label id="copyRight">Rights &#169; DEEGAAN V5.0.0 2020-2023</label>
+                        </div>
+
+                    </div>
+                </form>
+            </aside>
+
+        </main>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/basicFuncs.js"></script>
+</body>
+
+<!-- Mirrored from deegaan.sysdemos.so/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Dec 2023 03:36:23 GMT -->
+</html>
