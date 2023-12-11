@@ -166,6 +166,25 @@ div.index div.developer .social .box {
     margin: 0;
   }
 }
+@media (max-width: 1399px) {
+  #middlebar div.bars.middle {
+    display: flex;
+    gap: 10px;
+    float: none;
+  }
+  #middlebar div.bars.middle div.box.projects {
+    flex-basis: 55%;
+  }
+  #middlebar div.bars.middle div.box.right {
+    flex-basis: 45%;
+  }
+  #middlebar div.bars.middle div.box.circle {
+    flex-basis: 45%;
+  }
+  #middlebar div.bars.middle div.box.property {
+    flex-basis: 55%;
+  }
+}
 @media (max-width: 1199px) {
   .main-wrap {
     width: 100%;
@@ -176,20 +195,65 @@ div.index div.developer .social .box {
   }
   #middlebar {
     width: 100%;
+    height: auto !important;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    padding-bottom: 25px;
   }
   #middlebar .topBar {
     display: flex;
     align-items: center;
+    float: none !important;
   }
   #middlebar .topBar #sidebarToggler {
     margin-left: 2%;
   }
   #middlebar div.bars.middle {
-    display: grid;
+    display: flex;
     gap: 10px;
+    float: none;
   }
-  #middlebar div.bars.middle > div {
+}
+@media (max-width: 1199px) and (max-width: 767px) {
+  #middlebar div.bars.middle {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1199px) {
+  #middlebar div.bars.middle div.box {
     margin: 0 !important;
+  }
+}
+@media (max-width: 1199px) and (max-width: 767px) {
+  #middlebar div.bars.middle div.box {
+    flex-basis: 100% !important;
+    width: 100% !important;
+  }
+}
+@media (max-width: 1199px) {
+  #middlebar div.bars.middle div.box.projects {
+    flex-basis: 60%;
+  }
+  #middlebar div.bars.middle div.box.right {
+    flex-basis: 40%;
+  }
+  #middlebar div.bars.middle div.box.circle {
+    flex-basis: 40%;
+  }
+}
+@media (max-width: 1199px) and (max-width: 991px) {
+  #middlebar div.bars.middle div.box.circle {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 1199px) {
+  #middlebar div.bars.middle div.box.property {
+    flex-basis: 60%;
+  }
+}
+@media (max-width: 1199px) and (max-width: 991px) {
+  #middlebar div.bars.middle div.box.property {
+    flex-basis: 50%;
   }
 }
 @media (max-width: 1199px) {
@@ -198,6 +262,7 @@ div.index div.developer .social .box {
     height: auto;
     min-height: 125px;
     grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 4px;
   }
 }
 @media (max-width: 1199px) and (max-width: 767px) {

@@ -223,6 +223,29 @@ div.index {
 // Waiter Login Responsive End
 
 // Dashboard Responsive Start
+@include breakpoint(max-xxl) {
+  #middlebar {
+    div.bars.middle {
+      display: flex;
+      gap: 10px;
+      float: none;
+      div.box {
+        &.projects {
+          flex-basis: 55%;
+        }
+        &.right {
+          flex-basis: 45%;
+        }
+        &.circle {
+          flex-basis: 45%;
+        }
+        &.property {
+          flex-basis: 55%;
+        }
+      }
+    }
+  }
+}
 @include breakpoint(max-xl) {
   .main-wrap {
     width: 100%;
@@ -233,18 +256,48 @@ div.index {
   }
   #middlebar {
     width: 100%;
+    height: auto !important;
+    min-height: fit-content;
+    padding-bottom: 25px;
     .topBar {
       display: flex;
       align-items: center;
+      float: none !important;
       #sidebarToggler {
         margin-left: 2%;
       }
     }
     div.bars.middle {
-      display: grid;
+      display: flex;
       gap: 10px;
-      > div {
+      float: none;
+      @include breakpoint(max-md) {
+        flex-direction: column;
+      }
+      div.box {
         margin: 0 !important;
+        @include breakpoint(max-md) {
+          flex-basis: 100% !important;
+          width: 100% !important;
+        }
+        &.projects {
+          flex-basis: 60%;
+        }
+        &.right {
+          flex-basis: 40%;
+        }
+        &.circle {
+          flex-basis: 40%;
+          @include breakpoint(max-lg) {
+            flex-basis: 50%;
+          }
+        }
+        &.property {
+          flex-basis: 60%;
+          @include breakpoint(max-lg) {
+            flex-basis: 50%;
+          }
+        }
       }
     }
   }
@@ -256,6 +309,7 @@ div.index {
       height: auto;
       min-height: 125px;
       grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 4px;
       @include breakpoint(max-md) {
         grid-template-columns: repeat(2, 1fr);
         min-height: 100px;
