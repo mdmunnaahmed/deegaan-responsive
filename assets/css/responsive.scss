@@ -67,6 +67,486 @@
   }
 }
 
+@media only screen and (min-width: 1680px) {
+  .middlebar .order-form .meals .meal-box img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .main-wrap {
+    padding-left: 7%;
+  }
+  .main-wrap .sidebar {
+    width: 8%;
+  }
+  .sidebar .logoWrap {
+    padding-top: 10px;
+    height: 50px;
+  }
+  .sidebar .logoWrap img {
+    width: 42px;
+  }
+  .sidebar ul {
+    margin-top: 26%;
+  }
+  .sidebar > ul > li > a i {
+    margin-bottom: 5px;
+    font-size: 1.4em;
+  }
+  .sidebar > ul > li > a span {
+    font-size: 0.8em;
+  }
+  .sidebar footer {
+    bottom: 40px;
+  }
+  /* --- */
+  .middlebar .top-bar {
+    padding: 0 2% 0 1.5%;
+    height: 50px;
+  }
+  .middlebar .top-bar .restaurant-name {
+    font-size: 1.1em;
+  }
+  .middlebar .top-bar .icon {
+    width: 34px;
+    height: 34px;
+  }
+  .middlebar .top-bar .drop-down {
+    right: 4.5%;
+    width: 26%;
+    top: 54px;
+  }
+  .middlebar .top-bar .drop-down .row {
+    padding: 2% 5%;
+    font-size: 0.85em;
+  }
+  .middlebar .top-bar .drop-down .row.bar {
+    font-size: 0.85em;
+  }
+  .middlebar .top-bar .drop-down .row .photo {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+  }
+  .middlebar .top-bar .drop-down .row .links {
+    -ms-flex-preferred-size: 68%;
+    flex-basis: 68%;
+  }
+  .middlebar .options-bar {
+    padding: 0 1.5%;
+    height: 32px;
+    line-height: 32px;
+    font-size: 0.8em;
+  }
+  /* --- order-form --- */
+  .middlebar .dashboard-content .order-form {
+    margin: 0.7% 1.5%;
+  }
+  .middlebar .order-form .waiters {
+    padding: 15px 25px;
+  }
+  .middlebar .order-form .packages {
+    -ms-flex-preferred-size: 63%;
+    flex-basis: 63%;
+    margin: 0.7% 0;
+    padding: 15px 25px;
+  }
+  .middlebar .order-form .client {
+    -ms-flex-preferred-size: 36.2%;
+    flex-basis: 36.2%;
+    margin: 0.7% 0;
+    padding: 15px 20px;
+  }
+  .middlebar .order-form .meals {
+    -ms-flex-preferred-size: 63%;
+    flex-basis: 63%;
+    height: 446px;
+    padding: 15px 25px;
+  }
+  .middlebar .order-form .price-buttons {
+    -ms-flex-preferred-size: 36.2%;
+    flex-basis: 36.2%;
+  }
+  /* -- */
+  .middlebar .order-form .waiters .waiter-box {
+    padding: 6px 15px;
+    font-size: 0.9em;
+  }
+  /* -- */
+  .middlebar .order-form .packages .radio-box {
+    margin-right: 1.5%;
+  }
+  .middlebar .order-form .packages .radio-box .package-box {
+    height: 112px;
+  }
+  .middlebar .order-form .packages .radio-box .package-box img {
+    max-width: 100px;
+    width: 100px !important;
+  }
+  .middlebar .order-form .packages .radio-box .package-box span {
+    bottom: 6px;
+    width: 91%;
+  }
+  /* -- */
+  .middlebar .order-form .client .radio-box {
+    -ms-flex-preferred-size: 24%;
+    flex-basis: 24%;
+  }
+  .middlebar .order-form .client .client-box {
+    padding: 13px 10px;
+  }
+  .middlebar .order-form .client .radio-box.focused .client-box {
+    outline: 1px solid #c79457;
+  }
+  .middlebar .order-form .client .client-box i {
+    font-size: 1.7em;
+    margin-bottom: 4px;
+  }
+  .middlebar .order-form .client .client-box span {
+    font-size: 0.9em;
+  }
+  .middlebar .order-form .client .selected p {
+    padding: 6px 0;
+    font-size: 0.95em;
+  }
+  /* -- */
+  .middlebar .order-form .meals .radio-box {
+    padding: 8px 15px;
+    -ms-flex-preferred-size: 18.5%;
+    flex-basis: 18.5%;
+    margin-right: 12px;
+  }
+  .middlebar .order-form .meals .radio-box:nth-child(5n + 5) {
+    margin-right: 0;
+  }
+  .middlebar .order-form .meals .radio-box .triangle-white {
+    border: 9.2px solid #fff;
+  }
+  .middlebar .order-form .meals .radio-box .triangle-color {
+    border-top: 18px solid #ad722d;
+    border-right: 18px solid transparent;
+  }
+  .middlebar .order-form .meals .meal-box .meal-name {
+    height: 20px;
+    font-size: 0.9em;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .prices .prices-wrap {
+    height: 220px;
+  }
+  .middlebar .order-form .price-buttons .prices .record {
+    padding: 10px 20px;
+  }
+  .middlebar .order-form .price-buttons .prices .record.titles {
+    width: 96.5%;
+    padding: 13px 20px;
+    font-size: 1em;
+  }
+  .middlebar .order-form .price-buttons .prices .record.values {
+    font-size: 1em;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.delete {
+    -ms-flex-preferred-size: 13%;
+    flex-basis: 13%;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.qty .qty-btn {
+    font-size: 1.3em;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.qty .input {
+    min-width: 40px;
+    max-width: 60px;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.delete a {
+    font-weight: 300;
+  }
+  .middlebar .order-form .price-buttons .prices .totals {
+    padding: 11px 40px;
+  }
+  .middlebar .order-form .price-buttons .prices .totals .label {
+    font-size: 1.1em;
+  }
+  .middlebar .order-form .price-buttons .prices .totals .amount {
+    font-size: 1.7em;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .buttons-wrap {
+    margin-top: 1.6%;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch {
+    padding: 8px 20px;
+  }
+  .middlebar .order-form .switch-wrapper .unchecked {
+    width: 15px;
+    right: 18%;
+    -webkit-transform: translateX(0) translateY(-30%) scale(1);
+    -ms-transform: translateX(0) translateY(-30%) scale(1);
+    transform: translateX(0) translateY(-30%) scale(1);
+  }
+  .middlebar .order-form .switch-wrapper svg {
+    top: 38%;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch span {
+    top: -12px;
+    font-size: 0.9em;
+  }
+  /* --- */
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text {
+    width: 86%;
+    margin: 10px 20px;
+    padding: 10px 15px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-webkit-input-placeholder {
+    color: #aaa;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-webkit-input-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-moz-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text:-ms-input-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-ms-input-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::placeholder {
+    color: #aaa;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .buttons-wrap .btn-submit i {
+    margin-bottom: 10px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .btn-submit span {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .main-wrap {
+    padding-left: 7%;
+  }
+  .main-wrap .sidebar {
+    width: 95px;
+    display: none;
+  }
+  .sidebar .logoWrap {
+    height: 40px;
+  }
+  .sidebar .logoWrap img {
+    width: 40px;
+  }
+  .sidebar ul {
+    margin-top: 45%;
+  }
+  .sidebar ul li {
+    padding: 25% 7%;
+  }
+  .sidebar > ul > li > a i {
+    margin-bottom: 0;
+    font-size: 1.8em;
+  }
+  .sidebar > ul > li > a span {
+    // display: none;
+  }
+  .sidebar footer {
+    bottom: 30px;
+  }
+  /* --- */
+  .middlebar .top-bar {
+    padding: 0 3% 0 2.5%;
+    height: 50px;
+  }
+  .middlebar .top-bar .restaurant-name {
+    font-size: 1em;
+  }
+  .middlebar .top-bar .icon {
+    width: 36px;
+    height: 36px;
+  }
+  .middlebar .top-bar .icon > img {
+    border-width: 0;
+  }
+  .middlebar .top-bar .drop-down {
+    right: 1.5%;
+    width: 35%;
+    top: 56px;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  .middlebar .top-bar .drop-down .row {
+    padding: 2% 5%;
+    font-size: 0.9em;
+  }
+  .middlebar .top-bar .drop-down .row.button {
+    padding: 3% 5%;
+  }
+  .middlebar .top-bar .drop-down .row.button .logout {
+    padding: 2.2% 0;
+  }
+  .middlebar .top-bar .drop-down .row.button .forgot {
+    font-size: 0.95em;
+  }
+  .middlebar .options-bar {
+    padding: 0 2.5%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 0.8em;
+  }
+  /* --- order-form --- */
+  .middlebar .dashboard-content .order-form {
+    margin: 0.9% 1.5%;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .middlebar .order-form .waiters {
+    height: 150px;
+    padding: 10px 20px 30px;
+    -ms-flex-preferred-size: 55%;
+    flex-basis: 55%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: inline;
+  }
+  .middlebar .order-form .packages {
+    -ms-flex-preferred-size: 55%;
+    flex-basis: 55%;
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+    padding: 15px 20px;
+    margin-bottom: 8px;
+  }
+  .middlebar .order-form .client {
+    margin: 0;
+    padding: 10px 15px;
+    -ms-flex-preferred-size: 44%;
+    flex-basis: 44%;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .middlebar .order-form .meals {
+    height: 342px;
+    -ms-flex-preferred-size: 55%;
+    flex-basis: 55%;
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5;
+    margin-top: -336px;
+  }
+  .middlebar .order-form .price-buttons {
+    -ms-flex-preferred-size: 44%;
+    flex-basis: 44%;
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+    margin-top: 8px;
+  }
+  /* -- */
+  .middlebar .order-form .waiters .waiter-box {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 8px 20px;
+  }
+  .middlebar .order-form .waiters input:checked ~ .waiter-box {
+    outline: 1px solid #d0b78f;
+  }
+  /* -- */
+  .middlebar .order-form .client .radio-box {
+    -ms-flex-preferred-size: 31%;
+    flex-basis: 31%;
+  }
+  .middlebar .order-form .client .client-box {
+    padding: 16px 0;
+  }
+  .middlebar .order-form .client .radio-box.focused .client-box {
+    outline: 1px solid #c79457;
+  }
+  .middlebar .order-form .client .client-box i {
+    font-size: 1.9em;
+    margin-bottom: 8px;
+  }
+  .middlebar .order-form .client .client-box span {
+    font-size: 0.95em;
+  }
+  .middlebar .order-form .client .selected p {
+    padding: 8px 0;
+    font-size: 0.9em;
+  }
+  /* -- */
+  .middlebar .order-form .packages .radio-box {
+    margin-right: 10px;
+  }
+  .middlebar .order-form .packages .radio-box .package-box {
+    height: 110px;
+    padding: 7px;
+  }
+  .middlebar .order-form .packages .radio-box .package-box img {
+    max-width: 90px;
+    width: 90px !important;
+  }
+  .middlebar .order-form .packages .radio-box .package-box span {
+    left: 7px;
+    bottom: 12px;
+    width: 86%;
+  }
+  /* -- */
+  .middlebar .order-form .meals .radio-box {
+    margin-bottom: 15px;
+    padding: 8px 20px;
+    -ms-flex-preferred-size: 31%;
+    flex-basis: 31%;
+    margin-right: 12px;
+  }
+  .middlebar .order-form .meals .radio-box:nth-child(5n + 5) {
+    margin-right: 12px;
+  }
+  .middlebar .order-form .meals .radio-box:nth-child(3n + 3) {
+    margin-right: 0;
+  }
+  .middlebar .order-form .meals .meal-box .meal-price {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .middlebar .order-form .meals .meal-box .meal-name {
+    margin-top: 8px;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .prices .prices-wrap {
+    height: 286px;
+  }
+  .middlebar .order-form .price-buttons .prices .record {
+    padding: 13px 18px;
+  }
+  .middlebar .order-form .price-buttons .prices .record.titles {
+    padding: 13px 18px;
+  }
+  .middlebar .order-form .price-buttons .prices .record.values {
+    font-size: 1em;
+  }
+  .middlebar .order-form .price-buttons .prices .totals {
+    padding: 10px 40px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch {
+    padding: 8px 15px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch span {
+    position: absolute;
+    top: 18px;
+    left: 105px;
+  }
+  /* --- */
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text {
+    width: 88%;
+    margin: 10px 15px;
+    padding: 6px 10px;
+  }
+}
+@media (max-width: 991px) {
+  div.orders-workplace #loadPage #dataTable div.cave.short {
+    width: 12%;
+  }
+  div.orders-workplace #loadPage #dataTable div.cave.button {
+    width: 14%;
+  }
+  div.orders-workplace #loadPage #dataTable div.cave.lmiddle {
+    width: 16%;
+  }
+}
+
 // Main Login Responsive Start
 div.index div.developer .social {
   margin-inline: auto;
@@ -223,6 +703,46 @@ div.index {
 // Waiter Login Responsive End
 
 // Dashboard Responsive Start
+div.orders-workplace #loadPage #command #searchBox input.srchInput {
+  padding-left: 35px;
+}
+div.orders-workplace #loadPage #command #searchBox.large {
+  max-width: 450px;
+  width: 100%;
+}
+@include breakpoint(max-md) {
+  div.orders-workplace #loadPage div.buttons.fullpage .btnAddNew {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    @include breakpoint(max-sm) {
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+  }
+}
+#dynamicQnd {
+  .filter-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #filters {
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      * {
+        width: fit-content !important;
+      }
+      select {
+        width: 50px !important;
+      }
+    }
+    > div {
+      width: fit-content !important;
+    }
+  }
+}
 @include breakpoint(max-xxl) {
   #middlebar {
     div.bars.middle {
@@ -246,11 +766,56 @@ div.index {
     }
   }
 }
-@include breakpoint(max-xl) {
+#middlebar,
+.middlebar {
+  .topBar,
+  .top-bar {
+    justify-content: space-between;
+    #sidebarToggler {
+      @include breakpoint(xl) {
+        display: none;
+      }
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      > * {
+        flex-shrink: 0;
+      }
+    }
+    > div {
+      flex-basis: auto;
+      width: auto !important;
+    }
+    .restaurant-name,
+    .user-name {
+      flex-basis: auto;
+      margin-right: 10px;
+    }
+    #programName {
+      gap: 10px;
+      span {
+        left: 0 !important;
+        line-height: 1 !important;
+        top: 2px;
+      }
+    }
+    #topIcons {
+      div.icon {
+        top: 0;
+      }
+    }
+  }
+}
+@include breakpoint(max-xxl) {
   .main-wrap {
     width: 100%;
     padding-left: 0;
   }
+}
+@include breakpoint(max-xl) {
+  
   #sidebar {
     display: none;
   }
