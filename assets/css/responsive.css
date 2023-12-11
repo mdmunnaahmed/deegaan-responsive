@@ -236,7 +236,7 @@
   transition: 0.3s;
 }
 .overlay.active {
-  background-color: rgba(0, 0, 0, 0.3764705882);
+  background-color: rgba(0, 0, 0, 0.5019607843);
   z-index: 1111;
 }
 
