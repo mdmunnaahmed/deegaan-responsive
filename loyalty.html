@@ -62,142 +62,140 @@
       </div> <!-- sidebar -->
 
       <div class="middlebar">
-        <div class="middlebar">
-          <div class="top-bar">
-            <div>
-              <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
-              <h3 class="restaurant-name">My Hotel and Restaurant</h3>
-            </div>
-            <!-- <h3 class="setting-icon">
+        <div class="top-bar">
+          <div>
+            <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+            <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          </div>
+          <!-- <h3 class="setting-icon">
   
                       <a onclick="return chngOrderType();">
                           off                    </a>
                   </h3> -->
-            <!-- <h3 class="order-design">
+          <!-- <h3 class="order-design">
                       <a onclick="return chngOrderDesgn();"> -->
-            <!--  text-and-image -->
-            <!-- Change Design
+          <!--  text-and-image -->
+          <!-- Change Design
                       </a>
                   </h3> -->
-            <h3 class="waiter-amount">
-              <!-- <p>$
+          <h3 class="waiter-amount">
+            <!-- <p>$
                           </p> -->
-              <a href="../dashboard.php"><i class="fa fa-angle-left"></i> <span>Back to home</span></a>
+            <a href="../dashboard.php"><i class="fa fa-angle-left"></i> <span>Back to home</span></a>
 
-            </h3>
-            <div>
-              <h3 class="user-name">Hi, ManagersName</h3>
-              <div class="profile-icon">
-                <div class="user icon">
-                  <img src="assets/images/users/middle320/default320.png" />
-                </div>
-                <div class="drop-down">
-                  <div class="row bar">My Account</div>
-                  <div class="row">
-                    <div class="photo">
-                      <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
-                      <a href="./orders-workplace.php?role=admin&task=profile">
-                        <div class="overlay">
-                          <span><i class="fal fa-camera-alt"></i></span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="links">
-                      <p class="name">ManagersName</p>
-                      <p class="user">themanager</p>
-                    </div>
-                  </div>
-                  <div class="row button">
-                    <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
-                      <i class="far fa-lock-alt"></i><span>Change Password</span>
+          </h3>
+          <div>
+            <h3 class="user-name">Hi, ManagersName</h3>
+            <div class="profile-icon">
+              <div class="user icon">
+                <img src="assets/images/users/middle320/default320.png" />
+              </div>
+              <div class="drop-down">
+                <div class="row bar">My Account</div>
+                <div class="row">
+                  <div class="photo">
+                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                    <a href="./orders-workplace.php?role=admin&task=profile">
+                      <div class="overlay">
+                        <span><i class="fal fa-camera-alt"></i></span>
+                      </div>
                     </a>
-                    <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+                  </div>
+                  <div class="links">
+                    <p class="name">ManagersName</p>
+                    <p class="user">themanager</p>
                   </div>
                 </div>
+                <div class="row button">
+                  <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
+                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                  </a>
+                  <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+                </div>
               </div>
-              <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
             </div>
+            <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
           </div>
+        </div>
 
-          <div class="options-bar dash">
-            Menus | </div>
+        <div class="options-bar dash">
+          Menus | </div>
 
-          <div class="dashboard-content">
-            <aside class="popUpForm">
-              <input type="checkbox" class="state" id="loyaltyPolicy" />
-              <article class="content">
-                <div class="header">
-                  <h3>Loyalty Policy</h3>
-                  <label class="close" for="loyaltyPolicy">&times;</label>
-                </div>
-                <div class="popupBody">
-                  <div class="row">
-                    <div class="lftPart required">Group Name</div>
-                    <div class="rightPrt">
-                      <input type="text" class="inputText w-ten" id="txtGroup" name="txtGroup" autocomplete="off" />
-                      <label class="error" id="lerror1">lerror1</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="lftPart required">Maximum Points</div>
-                    <div class="rightPrt">
-                      <input type="text" class="inputText w-ten" id="maxPoints" name="maxPoints" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
-                      <label class="error" id="lerror2">lerror2</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="lftPart required">Minimum Points</div>
-                    <div class="rightPrt">
-                      <input type="text" class="inputText w-ten" id="minPoints" name="minPoints" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
-                      <label class="error" id="lerror3">lerror3</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="lftPart required">Points Value</div>
-                    <div class="rightPrt">
-                      <input type="text" class="inputText w-ten" id="pointsVal" name="pointsVal" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
-                      <label class="error" id="lerror4">lerror4</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="lftPart required">Redeem Value</div>
-                    <div class="rightPrt">
-                      <input type="text" class="inputText w-ten" id="redeemVal" name="redeemVal" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
-                      <label class="error" id="lerror5">lerror2</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <button type="submit" class="btnAdd" id="btnAdd" onclick="return addLoyaltyGroup();">Save</button>
+        <div class="dashboard-content">
+          <aside class="popUpForm">
+            <input type="checkbox" class="state" id="loyaltyPolicy" />
+            <article class="content">
+              <div class="header">
+                <h3>Loyalty Policy</h3>
+                <label class="close" for="loyaltyPolicy">&times;</label>
+              </div>
+              <div class="popupBody">
+                <div class="row">
+                  <div class="lftPart required">Group Name</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="txtGroup" name="txtGroup" autocomplete="off" />
+                    <label class="error" id="lerror1">lerror1</label>
                   </div>
                 </div>
-              </article>
-              <label class="backdrop" for="loyaltyPolicy"></label>
-            </aside>
-            <div id="loadPage">
-              <div class="twoCols one">
-                <header>Loyalty Policy<span>[1 row]</span>
-                  <label for="loyaltyPolicy"><a id="addnew" title="Add Table"></a></label>
-                </header>
-                <div id="searchBox">
-                  <input type="search" id="srchTbl" class="srchInput" maxlength="200" placeholder="search policy" />
-                  <div class="suggest one"></div>
+                <div class="row">
+                  <div class="lftPart required">Maximum Points</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="maxPoints" name="maxPoints" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
+                    <label class="error" id="lerror2">lerror2</label>
+                  </div>
                 </div>
-                <div class="dynamicData one">
-                  <div id="loading"></div>
+                <div class="row">
+                  <div class="lftPart required">Minimum Points</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="minPoints" name="minPoints" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
+                    <label class="error" id="lerror3">lerror3</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Points Value</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="pointsVal" name="pointsVal" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
+                    <label class="error" id="lerror4">lerror4</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Redeem Value</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="redeemVal" name="redeemVal" autocomplete="off" onkeypress="return isDecimalNum(this, event)" />
+                    <label class="error" id="lerror5">lerror2</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return addLoyaltyGroup();">Save</button>
                 </div>
               </div>
+            </article>
+            <label class="backdrop" for="loyaltyPolicy"></label>
+          </aside>
+          <div id="loadPage">
+            <div class="twoCols one">
+              <header>Loyalty Policy<span>[1 row]</span>
+                <label for="loyaltyPolicy"><a id="addnew" title="Add Table"></a></label>
+              </header>
+              <div id="searchBox">
+                <input type="search" id="srchTbl" class="srchInput" maxlength="200" placeholder="search policy" />
+                <div class="suggest one"></div>
+              </div>
+              <div class="dynamicData one">
+                <div id="loading"></div>
+              </div>
+            </div>
 
-              <div class="twoCols two">
-                <header>Waiters<span>[5 rows]</span>
-                  <a id="addnew" href="./orders-workplace.php?role=admin&task=tableMgt&subtask=addUsrTble" title="Add Waiter"></a>
-                </header>
-                <div id="searchBox">
-                  <input type="search" id="srchBankAcc" class="srchInput" maxlength="200" placeholder="search by username" />
-                  <div class="suggest two"></div>
-                </div>
-                <div class="dynamicData two">
-                  <div id="loading"></div>
-                </div>
+            <div class="twoCols two">
+              <header>Waiters<span>[5 rows]</span>
+                <a id="addnew" href="./orders-workplace.php?role=admin&task=tableMgt&subtask=addUsrTble" title="Add Waiter"></a>
+              </header>
+              <div id="searchBox">
+                <input type="search" id="srchBankAcc" class="srchInput" maxlength="200" placeholder="search by username" />
+                <div class="suggest two"></div>
+              </div>
+              <div class="dynamicData two">
+                <div id="loading"></div>
               </div>
             </div>
           </div>

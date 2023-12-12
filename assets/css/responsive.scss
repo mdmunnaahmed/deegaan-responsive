@@ -720,7 +720,6 @@ div.index {
 }
 // Waiter Login Responsive End
 
-
 // Dashboard Responsive Start
 div.orders-workplace #loadPage #command #searchBox input.srchInput,
 .orders-workplace div.twoCols div#searchBox input.srchInput {
@@ -730,6 +729,13 @@ div.orders-workplace #loadPage #command #searchBox.large {
   max-width: 450px;
   width: 100%;
 }
+div.orders-workplace p#info {
+  width: auto;
+}
+select {
+  padding-right: 20px;
+}
+
 @include breakpoint(max-md) {
   div.orders-workplace #loadPage div.buttons.fullpage .btnAddNew {
     padding-top: 3%;
@@ -838,6 +844,9 @@ div.orders-workplace #loadPage #command #searchBox.large {
       @include breakpoint(max-sm) {
         flex-basis: 30%;
       }
+      @include max(400px) {
+        flex-basis: 40%;
+      }
       a {
         display: flex;
         align-items: center;
@@ -856,6 +865,11 @@ div.orders-workplace #loadPage #command #searchBox.large {
         margin-top: -3px;
       }
     }
+  }
+}
+@include max(1366px) {
+  .main-wrap {
+    padding-left: 8%;
   }
 }
 @include breakpoint(max-xl) {
@@ -944,6 +958,34 @@ div.orders-workplace #loadPage #command #searchBox.large {
       width: 100%;
       &.one {
         margin-bottom: 8px;
+      }
+    }
+  }
+}
+@include max(900px) {
+  div.orders-workplace a#btnCancel {
+    min-width: 80px;
+  }
+  div.orders-workplace div.theForm {
+    div.record {
+      &.one {
+        // margin-bottom: 8px;
+        display: flex;
+        gap: 10px 50px;
+        @include breakpoint(max-md) {
+          flex-direction: column;
+        }
+      }
+      .column {
+        width: 100%;
+        &.right {
+          .rghtPrt {
+            display: flex;
+          }
+        }
+        select {
+          width: 100%;
+        }
       }
     }
   }

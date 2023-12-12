@@ -636,6 +636,14 @@ div.orders-workplace #loadPage #command #searchBox.large {
   width: 100%;
 }
 
+div.orders-workplace p#info {
+  width: auto;
+}
+
+select {
+  padding-right: 20px;
+}
+
 @media (max-width: 767px) {
   div.orders-workplace #loadPage div.buttons.fullpage .btnAddNew {
     padding-top: 3%;
@@ -785,6 +793,14 @@ div.orders-workplace #loadPage #command #searchBox.large {
     flex-basis: 30%;
   }
 }
+@media (max-width: 400px) {
+  #middlebar .topBar .waiter-amount,
+  #middlebar .top-bar .waiter-amount,
+  .middlebar .topBar .waiter-amount,
+  .middlebar .top-bar .waiter-amount {
+    flex-basis: 40%;
+  }
+}
 #middlebar .topBar .waiter-amount a,
 #middlebar .top-bar .waiter-amount a,
 .middlebar .topBar .waiter-amount a,
@@ -807,6 +823,11 @@ div.orders-workplace #loadPage #command #searchBox.large {
   margin-top: -3px;
 }
 
+@media (max-width: 1366px) {
+  .main-wrap {
+    padding-left: 8%;
+  }
+}
 @media (max-width: 1199px) {
   .main-wrap {
     width: 100%;
@@ -905,5 +926,31 @@ div.orders-workplace #loadPage #command #searchBox.large {
   }
   #loadPage .twoCols.one {
     margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  div.orders-workplace a#btnCancel {
+    min-width: 80px;
+  }
+  div.orders-workplace div.theForm div.record.one {
+    display: flex;
+    gap: 10px 50px;
+  }
+}
+@media (max-width: 900px) and (max-width: 767px) {
+  div.orders-workplace div.theForm div.record.one {
+    flex-direction: column;
+  }
+}
+@media (max-width: 900px) {
+  div.orders-workplace div.theForm div.record .column {
+    width: 100%;
+  }
+  div.orders-workplace div.theForm div.record .column.right .rghtPrt {
+    display: flex;
+  }
+  div.orders-workplace div.theForm div.record .column select {
+    width: 100%;
   }
 }/*# sourceMappingURL=responsive.css.map */
