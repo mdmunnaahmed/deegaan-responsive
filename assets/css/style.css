@@ -1378,6 +1378,7 @@ div.orders-workplace #loadPage #command #searchBox input.srchInput {
 	padding-left: 7%;
 	height: 30px;
 	background: url(../../../assets/images/system/bg-search.png) 10px no-repeat;
+	background-color: white;
 	border: 1px solid #cccccc;
 }
 .orders-workplace #loadPage #command #searchBox.medium input.srchInput {

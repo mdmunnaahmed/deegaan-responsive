@@ -1101,6 +1101,40 @@ select {
     width: 100% !important;
   }
 }
+div.orders-workplace #loadPage #dynamicQnd #foundNum {
+  flex-basis: auto !important;
+  width: auto !important;
+}
+
+@media (max-width: 1199px) {
+  div.orders-workplace #loadPage #dynamicQnd #dataTable {
+    overflow-y: auto;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #dataTable .header, div.orders-workplace #loadPage #dynamicQnd #dataTable .load-data {
+    width: 1025px !important;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #dataTable .short.cave {
+    width: 7% !important;
+  }
+  .orders-workplace .popUpForm div.rightPrt input,
+  .orders-workplace .popUpForm div.rightPrt select {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #filters {
+    width: 50%;
+  }
+}
+@media (max-width: 1199px) and (max-width: 991px) {
+  div.orders-workplace #loadPage #dynamicQnd #filters {
+    width: 65%;
+  }
+}
+@media (max-width: 1199px) and (max-width: 767px) {
+  div.orders-workplace #loadPage #dynamicQnd #filters {
+    width: 100%;
+  }
+}
 @media (max-width: 1199px) {
   div.orders-workplace #loadPage #command {
     padding: 0 !important;
@@ -1113,5 +1147,47 @@ select {
   div.orders-workplace #loadPage #command .search {
     flex-basis: 100%;
     width: 100%;
+    flex-wrap: wrap;
+  }
+  div.orders-workplace #loadPage #command .search .buttons {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  div.orders-workplace #loadPage #dynamicQnd #filters label {
+    text-align: left;
+    width: 30%;
+    margin-top: 4px;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #filters select {
+    width: 70%;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #filters > div {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  div.orders-workplace #loadPage #command .search {
+    width: 100%;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  div.orders-workplace #loadPage #command .search #searchBox,
+  div.orders-workplace #loadPage #command .search .search-options {
+    flex-basis: 45% !important;
+    margin: 0 !important;
+    flex-grow: 1;
+  }
+  div.orders-workplace #loadPage #command .search > .buttons {
+    width: 100%;
+    text-align: right;
+    justify-content: flex-end;
+    float: none !important;
+  }
+}
+@media (max-width: 575px) {
+  .orders-workplace .popUpForm div.lftPart {
+    margin-top: 4px;
+    padding-right: 3px;
   }
 }/*# sourceMappingURL=responsive.css.map */

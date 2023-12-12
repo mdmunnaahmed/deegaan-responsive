@@ -1156,7 +1156,38 @@ select {
 // New Order Responsive End
 
 // My Orders Responsive Start
+div.orders-workplace #loadPage #dynamicQnd #foundNum {
+  flex-basis: auto !important;
+  width: auto !important;
+}
 @include breakpoint(max-xl) {
+  div.orders-workplace #loadPage #dynamicQnd {
+    #dataTable {
+      overflow-y: auto;
+      .header, .load-data {
+        width: 1025px !important;
+
+      }
+      .short.cave {
+        width: 7% !important;
+      }
+    }
+  }
+  .orders-workplace .popUpForm div.rightPrt input,
+  .orders-workplace .popUpForm div.rightPrt select {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  div.orders-workplace #loadPage #dynamicQnd #filters {
+    width: 50%;
+    @include breakpoint(max-lg) {
+      width: 65%;
+    }
+    @include breakpoint(max-md) {
+      width: 100%;
+    }
+  }
   div.orders-workplace #loadPage {
     #command {
       padding: 0 !important;
@@ -1168,8 +1199,55 @@ select {
       .search {
         flex-basis: 100%;
         width: 100%;
+        flex-wrap: wrap;
+        .buttons {
+          width: 100%;
+        }
       }
     }
+  }
+}
+@include breakpoint(max-md) {
+  div.orders-workplace #loadPage #dynamicQnd #filters label {
+    text-align: left;
+    width: 30%;
+    margin-top: 4px;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #filters select {
+    width: 70%;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #filters > div {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  div.orders-workplace #loadPage {
+    #command {
+      .search {
+        width: 100%;
+        // flex-wrap: wrap;
+        gap: 6px;
+        justify-content: flex-end;
+        #searchBox,
+        .search-options {
+          flex-basis: 45% !important;
+          margin: 0 !important;
+          flex-grow: 1;
+        }
+        > .buttons {
+          width: 100%;
+          text-align: right;
+          justify-content: flex-end;
+          float: none !important;
+        }
+      }
+    }
+  }
+}
+@include breakpoint(max-sm) {
+  .orders-workplace .popUpForm div.lftPart {
+    margin-top: 4px;
+    padding-right: 3px;
   }
 }
 // My Orders Responsive End
