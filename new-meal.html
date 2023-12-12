@@ -118,8 +118,45 @@
           </div>
         </div>
 
-        <div class="options-bar dash">
-          Menus | New Table </div>
+        <div class="top-bar">
+          <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          <h3 class="waiter-amount">
+            <a href="../dashboard.php">Back to home</a>
+
+          </h3>
+          <h3 class="user-name">Hi, ManagersName</h3>
+          <div class="profile-icon">
+            <div class="user icon">
+              <img src="../assets/images/users/small40/user40-8151609924889.jpg" />
+            </div>
+            <div class="drop-down">
+              <div class="row bar">My Account</div>
+              <div class="row">
+                <div class="photo">
+                  <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                  <a href="./orders-workplace.php?role=admin&task=profile">
+                    <div class="overlay">
+                      <span><i class="fal fa-camera-alt"></i></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="links">
+                  <p class="name">ManagersName</p>
+                  <p class="user">themanager</p>
+                </div>
+              </div>
+              <div class="row button">
+                <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
+                  <i class="far fa-lock-alt"></i><span>Change Password</span>
+                </a>
+                <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+              </div>
+            </div>
+          </div>
+          <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
+        </div>
+
+        <div class="options-bar dash">Menus | New Table </div>
 
         <div class="dashboard-content">
           <div id="loadPage">

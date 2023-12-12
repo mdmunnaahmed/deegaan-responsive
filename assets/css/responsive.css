@@ -679,6 +679,9 @@ select {
 #dynamicQnd .filter-area #filters select {
   width: 50px !important;
 }
+#dynamicQnd .filter-area #filters #slcPerPage {
+  width: 150px !important;
+}
 #dynamicQnd .filter-area > div {
   width: -moz-fit-content !important;
   width: fit-content !important;
@@ -1110,7 +1113,7 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   div.orders-workplace #loadPage #dynamicQnd #dataTable {
     overflow-y: auto;
   }
-  div.orders-workplace #loadPage #dynamicQnd #dataTable .header, div.orders-workplace #loadPage #dynamicQnd #dataTable .load-data {
+  div.orders-workplace #loadPage #dynamicQnd #dataTable .header, div.orders-workplace #loadPage #dynamicQnd #dataTable div.record {
     width: 1025px !important;
   }
   div.orders-workplace #loadPage #dynamicQnd #dataTable .short.cave {
@@ -1196,4 +1199,9 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   .orders-workplace div.twoCols div.record #cinwan {
     width: 52%;
   }
-}/*# sourceMappingURL=responsive.css.map */
+}
+#middlebar #topIcons div.dropDown {
+  left: auto;
+  right: 25px;
+  min-width: 260px;
+}

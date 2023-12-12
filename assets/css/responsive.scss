@@ -767,6 +767,9 @@ select {
       select {
         width: 50px !important;
       }
+      #slcPerPage {
+        width: 150px !important;
+      }
     }
     > div {
       width: fit-content !important;
@@ -1164,7 +1167,7 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   div.orders-workplace #loadPage #dynamicQnd {
     #dataTable {
       overflow-y: auto;
-      .header, .load-data {
+      .header, div.record {
         width: 1025px !important;
 
       }
@@ -1257,3 +1260,11 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   }
 }
 // My Orders Responsive End
+
+// Additionals Start
+#middlebar #topIcons div.dropDown {
+  left: auto;
+  right: 25px;
+  min-width: 260px;
+}
+// Additionals End
