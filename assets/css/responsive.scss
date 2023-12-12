@@ -1053,7 +1053,7 @@ select {
 // Reports Responsive Start
 @include breakpoint(max-xl) {
   div.orders-workplace input.inputText {
-    width: calc(50% - 55px) !important;
+    // width: calc(50% - 55px) !important;
     margin-top: 0 !important;
     margin-left: 5px !important;
   }
@@ -1167,9 +1167,9 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   div.orders-workplace #loadPage #dynamicQnd {
     #dataTable {
       overflow-y: auto;
-      .header, div.record {
+      .header,
+      div.record {
         width: 1025px !important;
-
       }
       .short.cave {
         width: 7% !important;
@@ -1181,7 +1181,7 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     margin-left: 0 !important;
     width: 100% !important;
   }
-  
+
   div.orders-workplace #loadPage #dynamicQnd #filters {
     width: 50%;
     @include breakpoint(max-lg) {
@@ -1256,15 +1256,46 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     width: 18%;
   }
   .orders-workplace div.twoCols div.record #cinwan {
-    width: 52%;
+    width: 50%;
+  }
+  .orders-workplace div.twoCols div.record #sumada {
+    width: 30%;
   }
 }
 // My Orders Responsive End
 
-// Additionals Start
-#middlebar #topIcons div.dropDown {
-  left: auto;
-  right: 25px;
-  min-width: 260px;
+// Additional Start
+.middlebar .top-bar .profile-icon {
+  position: relative;
 }
-// Additionals End
+#middlebar #topIcons div.dropDown,
+.middlebar .top-bar div.drop-down {
+  left: auto;
+  right: 0;
+  top: 49px;
+  min-width: 300px;
+}
+
+.orders-workplace div.twoCols div.dynamicData div.record {
+  height: auto;
+  line-height: 1.4;
+  vertical-align: middle;
+  #cinwan,
+  #sumada {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+@include breakpoint(max-sm) {
+  div.orders-workplace .displayMore {
+    width: 25%;
+  }
+  .w-two,
+  .w-two-half {
+    width: 30% !important;
+  }
+}
+// Additional End

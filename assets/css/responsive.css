@@ -1006,7 +1006,6 @@ select {
 }
 @media (max-width: 1199px) {
   div.orders-workplace input.inputText {
-    width: calc(50% - 55px) !important;
     margin-top: 0 !important;
     margin-left: 5px !important;
   }
@@ -1113,7 +1112,8 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   div.orders-workplace #loadPage #dynamicQnd #dataTable {
     overflow-y: auto;
   }
-  div.orders-workplace #loadPage #dynamicQnd #dataTable .header, div.orders-workplace #loadPage #dynamicQnd #dataTable div.record {
+  div.orders-workplace #loadPage #dynamicQnd #dataTable .header,
+  div.orders-workplace #loadPage #dynamicQnd #dataTable div.record {
     width: 1025px !important;
   }
   div.orders-workplace #loadPage #dynamicQnd #dataTable .short.cave {
@@ -1197,11 +1197,44 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     width: 18%;
   }
   .orders-workplace div.twoCols div.record #cinwan {
-    width: 52%;
+    width: 50%;
+  }
+  .orders-workplace div.twoCols div.record #sumada {
+    width: 30%;
   }
 }
-#middlebar #topIcons div.dropDown {
+.middlebar .top-bar .profile-icon {
+  position: relative;
+}
+
+#middlebar #topIcons div.dropDown,
+.middlebar .top-bar div.drop-down {
   left: auto;
-  right: 25px;
-  min-width: 260px;
+  right: 0;
+  top: 49px;
+  min-width: 300px;
+}
+
+.orders-workplace div.twoCols div.dynamicData div.record {
+  height: auto;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+.orders-workplace div.twoCols div.dynamicData div.record #cinwan,
+.orders-workplace div.twoCols div.dynamicData div.record #sumada {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 575px) {
+  div.orders-workplace .displayMore {
+    width: 25%;
+  }
+  .w-two,
+  .w-two-half {
+    width: 30% !important;
+  }
 }
