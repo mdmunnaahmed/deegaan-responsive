@@ -1,0 +1,1077 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard | My Hotel and Restaurant</title>
+  <link rel="shortcut icon" href="assets/images/system/icon.png" />
+  <link rel="shortcut icon" href="assets/images/company/sostec/favicon.ICO" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="assets/multiselect/dist/multi-select.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/all.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/sumoSelector.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="assets/multiselect/dist/multi-select-min.js"></script>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="orders-workplace">
+      <div class="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div class="logoWrap">
+          <img src="./assets/images/company/logo-white.png" alt="logo" />
+        </div>
+        <ul id="menus">
+          <li class="">
+            <a href="./orders-workplace.php?task=myOrders"><i class="fal fa-hotel"></i><span>My Orders</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=orders"><i class="fal fa-burger-soda"></i><span>New Order</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=reports"><i class="fal fa-file-invoice"></i><span>Reports</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?role=admin&task=mealMgt"><i class="fal fa-cheese"></i><span>New Meal</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=tableMgt"><i class="fal fa-turntable"></i><span>New Table</span></a>
+          </li>
+          <li class="active">
+            <a href="./orders-workplace.php?task=loyalty"><i class="fal fa-gifts"></i><span>Loyalty</span></a>
+          </li>
+          <li class="">
+            <!-- <a href="../dashboard.php"><i class="fal fa-arrow-alt-left"></i><span>Back Home</span></a> -->
+            <a href="./orders-workplace.php?task=customerMgt"><i class="fal fa-users"></i><span>Customers</span></a>
+          </li>
+        </ul>
+
+
+        <!-- <footer>
+      <p>3.0.2</p>
+  </footer> -->
+      </div> <!-- sidebar -->
+
+      <div class="middlebar">
+        <div class="top-bar">
+          <div>
+            <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+            <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          </div>
+          <!-- <h3 class="setting-icon">
+
+                    <a onclick="return chngOrderType();">
+                        off                    </a>
+                </h3> -->
+          <!-- <h3 class="order-design">
+                    <a onclick="return chngOrderDesgn();"> -->
+          <!--  text-and-image -->
+          <!-- Change Design
+                    </a>
+                </h3> -->
+          <h3 class="waiter-amount">
+            <!-- <p>$
+                        </p> -->
+            <a href="../dashboard.php"><i class="fa fa-angle-left"></i> <span>Back to home</span></a>
+
+          </h3>
+          <div>
+            <h3 class="user-name">Hi, ManagersName</h3>
+            <div class="profile-icon">
+              <div class="user icon">
+                <img src="assets/images/users/middle320/default320.png" />
+              </div>
+              <div class="drop-down">
+                <div class="row bar">My Account</div>
+                <div class="row">
+                  <div class="photo">
+                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                    <a href="./orders-workplace.php?role=admin&task=profile">
+                      <div class="overlay">
+                        <span><i class="fal fa-camera-alt"></i></span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="links">
+                    <p class="name">ManagersName</p>
+                    <p class="user">themanager</p>
+                  </div>
+                </div>
+                <div class="row button">
+                  <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
+                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                  </a>
+                  <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+                </div>
+              </div>
+            </div>
+            <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
+          </div>
+        </div>
+
+        <div class="options-bar dash">
+          Menus | New Table </div>
+
+        <div class="dashboard-content">
+
+          <aside class="popUpForm popup-box vlarge less-height vless-down">
+            <input type="checkbox" class="state" id="addNewCustomer">
+            <div class="content">
+              <div class="header">
+                <h3>Add New Customer </h3>
+                <label class="close" for="addNewCustomer">×</label>
+              </div>
+              <div class="popupBody">
+                <form action="/deegaan-restaurant/orders-workplace.php" method="POST" onsubmit="return check_addClient('orders')">
+                  <div class="record one">
+                    <div class="column ">
+                      <div class="leftPrt">Customer</div>
+                      <div class="rghtPrt">
+                        <input type="text" class="inputText jumbo" id="txtName" placeholder="required" maxlength="200" autocomplete="off">
+                        <label class="error margin-left" id="error1">error1</label>
+                      </div>
+                    </div>
+                    <div class="column right">
+                      <div class="leftPrt">Email</div>
+                      <div class="rghtPrt">
+                        <input type="text" class="inputText jumbo" id="txtEmail" maxlength="255" placeholder="optional">
+                        <label class="error margin-left" id="error3">error3</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="record one">
+                    <div class="column ">
+                      <div class="leftPrt">Gender</div>
+                      <div class="rghtPrt">
+                        <select class="jumbo" id="slcGender">
+                          <option value="female">Female</option>
+                          <option value="male" selected="selected">Male</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="column right">
+                      <div class="leftPrt">Address</div>
+                      <div class="rghtPrt">
+                        <input type="text" class="inputText jumbo" id="txtAddress" maxlength="255" placeholder="physical address">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="record one">
+                    <div class="column ">
+                      <div class="leftPrt">Nationality</div>
+                      <div class="rghtPrt">
+                        <select class="jumbo" id="slcNatlity">
+                          <option value="1">Afghanistan</option>
+                          <option value="2">Aland Islands</option>
+                          <option value="3">Albania</option>
+                          <option value="4">Algeria</option>
+                          <option value="5">American Samoa</option>
+                          <option value="6">Andorra</option>
+                          <option value="7">Angola</option>
+                          <option value="8">Anguilla</option>
+                          <option value="9">Antarctica</option>
+                          <option value="10">Antigua and Barbuda</option>
+                          <option value="11">Argentina</option>
+                          <option value="12">Armenia</option>
+                          <option value="13">Aruba</option>
+                          <option value="14">Australia</option>
+                          <option value="15">Austria</option>
+                          <option value="16">Azerbaijan</option>
+                          <option value="17">Bahamas</option>
+                          <option value="18">Bahrain</option>
+                          <option value="19">Bangladesh</option>
+                          <option value="20">Barbados</option>
+                          <option value="21">Belarus</option>
+                          <option value="22">Belgium</option>
+                          <option value="23">Belize</option>
+                          <option value="24">Benin</option>
+                          <option value="25">Bermuda</option>
+                          <option value="26">Bhutan</option>
+                          <option value="27">Bolivia</option>
+                          <option value="28">Bonaire, Sint Eustatius and Saba</option>
+                          <option value="29">Bosnia and Herzegovina</option>
+                          <option value="30">Botswana</option>
+                          <option value="31">Bouvet Island</option>
+                          <option value="32">Brazil</option>
+                          <option value="33">British Indian Ocean Territory</option>
+                          <option value="34">Brunei</option>
+                          <option value="35">Bulgaria</option>
+                          <option value="36">Burkina Faso</option>
+                          <option value="37">Burundi</option>
+                          <option value="38">Cambodia</option>
+                          <option value="39">Cameroon</option>
+                          <option value="40">Canada</option>
+                          <option value="41">Cape Verde</option>
+                          <option value="42">Cayman Islands</option>
+                          <option value="43">Central African Republic</option>
+                          <option value="44">Chad</option>
+                          <option value="45">Chile</option>
+                          <option value="46">China</option>
+                          <option value="47">Christmas Island</option>
+                          <option value="48">Cocos (Keeling) Islands</option>
+                          <option value="49">Colombia</option>
+                          <option value="50">Comoros</option>
+                          <option value="51">Congo</option>
+                          <option value="52">Cook Islands</option>
+                          <option value="53">Costa Rica</option>
+                          <option value="54">Cote d'ivoire (Ivory Coast)</option>
+                          <option value="55">Croatia</option>
+                          <option value="56">Cuba</option>
+                          <option value="57">Curacao</option>
+                          <option value="58">Cyprus</option>
+                          <option value="59">Czech Republic</option>
+                          <option value="60">Democratic Republic of the Congo</option>
+                          <option value="61">Denmark</option>
+                          <option value="62">Djibouti</option>
+                          <option value="63">Dominica</option>
+                          <option value="64">Dominican Republic</option>
+                          <option value="65">Ecuador</option>
+                          <option value="66">Egypt</option>
+                          <option value="67">El Salvador</option>
+                          <option value="68">Equatorial Guinea</option>
+                          <option value="69">Eritrea</option>
+                          <option value="70">Estonia</option>
+                          <option value="71">Ethiopia</option>
+                          <option value="72">Falkland Islands (Malvinas)</option>
+                          <option value="73">Faroe Islands</option>
+                          <option value="74">Fiji</option>
+                          <option value="75">Finland</option>
+                          <option value="76">France</option>
+                          <option value="77">French Guiana</option>
+                          <option value="78">French Polynesia</option>
+                          <option value="80">Gabon</option>
+                          <option value="81">Gambia</option>
+                          <option value="82">Georgia</option>
+                          <option value="83">Germany</option>
+                          <option value="84">Ghana</option>
+                          <option value="85">Gibraltar</option>
+                          <option value="86">Greece</option>
+                          <option value="87">Greenland</option>
+                          <option value="88">Grenada</option>
+                          <option value="89">Guadaloupe</option>
+                          <option value="90">Guam</option>
+                          <option value="91">Guatemala</option>
+                          <option value="92">Guernsey</option>
+                          <option value="93">Guinea</option>
+                          <option value="94">Guinea-Bissau</option>
+                          <option value="95">Guyana</option>
+                          <option value="96">Haiti</option>
+                          <option value="97">Heard Island and McDonald Islands</option>
+                          <option value="98">Honduras</option>
+                          <option value="99">Hong Kong</option>
+                          <option value="100">Hungary</option>
+                          <option value="101">Iceland</option>
+                          <option value="102">India</option>
+                          <option value="103">Indonesia</option>
+                          <option value="104">Iran</option>
+                          <option value="105">Iraq</option>
+                          <option value="106">Ireland</option>
+                          <option value="107">Isle of Man</option>
+                          <option value="108">Israel</option>
+                          <option value="109">Italy</option>
+                          <option value="110">Jamaica</option>
+                          <option value="111">Japan</option>
+                          <option value="112">Jordan</option>
+                          <option value="113">Kazakhstan</option>
+                          <option value="114">Kenya</option>
+                          <option value="115">Kiribati</option>
+                          <option value="117">Korea</option>
+                          <option value="116">Kosovo</option>
+                          <option value="118">Kuwait</option>
+                          <option value="119">Kyrgyzstan</option>
+                          <option value="120">Laos</option>
+                          <option value="121">Latvia</option>
+                          <option value="122">Lebanon</option>
+                          <option value="123">Lesotho</option>
+                          <option value="124">Liberia</option>
+                          <option value="125">Libya</option>
+                          <option value="126">Liechtenstein</option>
+                          <option value="127">Lithuania</option>
+                          <option value="128">Luxembourg</option>
+                          <option value="129">Macao</option>
+                          <option value="130">Macedonia</option>
+                          <option value="131">Madagascar</option>
+                          <option value="132">Malawi</option>
+                          <option value="133">Malaysia</option>
+                          <option value="134">Maldives</option>
+                          <option value="135">Mali</option>
+                          <option value="136">Malta</option>
+                          <option value="137">Marshall Islands</option>
+                          <option value="138">Martinique</option>
+                          <option value="139">Mauritania</option>
+                          <option value="140">Mauritius</option>
+                          <option value="141">Mayotte</option>
+                          <option value="142">Mexico</option>
+                          <option value="143">Micronesia</option>
+                          <option value="144">Moldava</option>
+                          <option value="145">Monaco</option>
+                          <option value="146">Mongolia</option>
+                          <option value="147">Montenegro</option>
+                          <option value="148">Montserrat</option>
+                          <option value="149">Morocco</option>
+                          <option value="150">Mozambique</option>
+                          <option value="151">Myanmar (Burma)</option>
+                          <option value="152">Namibia</option>
+                          <option value="153">Nauru</option>
+                          <option value="154">Nepal</option>
+                          <option value="155">Netherlands</option>
+                          <option value="156">New Caledonia</option>
+                          <option value="157">New Zealand</option>
+                          <option value="158">Nicaragua</option>
+                          <option value="159">Niger</option>
+                          <option value="160">Nigeria</option>
+                          <option value="161">Niue</option>
+                          <option value="162">Norfolk Island</option>
+                          <option value="163">North Korea</option>
+                          <option value="164">Northern Mariana Islands</option>
+                          <option value="165">Norway</option>
+                          <option value="166">Oman</option>
+                          <option value="167">Pakistan</option>
+                          <option value="168">Palau</option>
+                          <option value="169">Palestine</option>
+                          <option value="170">Panama</option>
+                          <option value="171">Papua New Guinea</option>
+                          <option value="172">Paraguay</option>
+                          <option value="173">Peru</option>
+                          <option value="174">Phillipines</option>
+                          <option value="175">Pitcairn</option>
+                          <option value="176">Poland</option>
+                          <option value="177">Portugal</option>
+                          <option value="178">Puerto Rico</option>
+                          <option value="179">Qatar</option>
+                          <option value="180">Reunion</option>
+                          <option value="181">Romania</option>
+                          <option value="182">Russia</option>
+                          <option value="183">Rwanda</option>
+                          <option value="184">Saint Barthelemy</option>
+                          <option value="185">Saint Helena</option>
+                          <option value="186">Saint Kitts and Nevis</option>
+                          <option value="187">Saint Lucia</option>
+                          <option value="188">Saint Martin</option>
+                          <option value="189">Saint Pierre and Miquelon</option>
+                          <option value="190">Saint Vincent and the Grenadines</option>
+                          <option value="191">Samoa</option>
+                          <option value="192">San Marino</option>
+                          <option value="193">Sao Tome and Principe</option>
+                          <option value="194">Saudi Arabia</option>
+                          <option value="195">Senegal</option>
+                          <option value="196">Serbia</option>
+                          <option value="197">Seychelles</option>
+                          <option value="198">Sierra Leone</option>
+                          <option value="199">Singapore</option>
+                          <option value="200">Sint Maarten</option>
+                          <option value="201">Slovakia</option>
+                          <option value="202">Slovenia</option>
+                          <option value="203">Solomon Islands</option>
+                          <option value="204" selected="selected">Somalia</option>
+                          <option value="205">South Africa</option>
+                          <option value="206">South Georgia and the South Sandwich Islands</option>
+                          <option value="207">South Korea</option>
+                          <option value="208">South Sudan</option>
+                          <option value="209">Spain</option>
+                          <option value="210">Sri Lanka</option>
+                          <option value="211">Sudan</option>
+                          <option value="212">Suriname</option>
+                          <option value="213">Svalbard and Jan Mayen</option>
+                          <option value="214">Swaziland</option>
+                          <option value="215">Sweden</option>
+                          <option value="216">Switzerland</option>
+                          <option value="217">Syria</option>
+                          <option value="218">Taiwan</option>
+                          <option value="219">Tajikistan</option>
+                          <option value="220">Tanzania</option>
+                          <option value="221">Thailand</option>
+                          <option value="222">Timor-Leste (East Timor)</option>
+                          <option value="223">Togo</option>
+                          <option value="224">Tokelau</option>
+                          <option value="225">Tonga</option>
+                          <option value="226">Trinidad and Tobago</option>
+                          <option value="227">Tunisia</option>
+                          <option value="228">Turkey</option>
+                          <option value="229">Turkmenistan</option>
+                          <option value="230">Turks and Caicos Islands</option>
+                          <option value="231">Tuvalu</option>
+                          <option value="232">Uganda</option>
+                          <option value="233">Ukraine</option>
+                          <option value="234">United Arab Emirates</option>
+                          <option value="235">United Kingdom</option>
+                          <option value="236">United States</option>
+                          <option value="237">United States Minor Outlying Islands</option>
+                          <option value="238">Uruguay</option>
+                          <option value="239">Uzbekistan</option>
+                          <option value="240">Vanuatu</option>
+                          <option value="241">Vatican City</option>
+                          <option value="242">Venezuela</option>
+                          <option value="243">Vietnam</option>
+                          <option value="244">Virgin Islands, British</option>
+                          <option value="245">Virgin Islands, US</option>
+                          <option value="246">Wallis and Futuna</option>
+                          <option value="247">Western Sahara</option>
+                          <option value="248">Yemen</option>
+                          <option value="249">Zambia</option>
+                          <option value="250">Zimbabwe</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="column right">
+                      <div class="leftPrt">Book Status</div>
+                      <div class="rghtPrt">
+                        <select class="jumbo" id="slcStatus">
+                          <option value="Guest">Guest</option>
+                          <option value="Book">Meal Book</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="record one">
+                    <div class="column ">
+                      <div class="leftPrt required">Phone No</div>
+                      <div class="rghtPrt">
+                        <input type="text" class="inputText jumbo" id="txtPhone" maxlength="35" placeholder="required">
+                      </div>
+                    </div>
+                    <div class="column right">
+                      <div class="leftPrt">Facebook</div>
+                      <div class="rghtPrt">
+                        <input type="text" class="inputText jumbo" id="txtFacebook" maxlength="255" placeholder="url (optional)">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="record one">
+                    <div class="column ">
+                      <div class="leftPrt ">QR Code</div>
+                      <div class="rghtPrt">
+                        <input type="text" class="inputText jumbo" id="txtQrCode" maxlength="255" placeholder="optional" autocomplete="off">
+                      </div>
+                    </div>
+                    <div class="column right">
+                      <div class="leftPrt">Twitter (X)</div>
+                      <div class="rghtPrt">
+                        <input type="text" class="inputText jumbo" id="txtTwitter" maxlength="255" placeholder="url (optional)">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="record last">
+                    <button style="padding: 10px 30px;" type="submit" class="btnSubmit extra4prchse" id="btnSave" name="btnSave">Save</button>
+                    <label class="process"></label>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <label class="backdrop" for="addNewCustomer"></label>
+          </aside>
+          <form action="./includes/general.php?action=saveNew&amp;dest=addWMealOrder&amp;addedBy=themanager&amp;myRole=admin" method="POST" onsubmit="return check_addWMealOrder()">
+            <input type="hidden" name="myWhouse" value="1001">
+            <aside class="popup-box alloc-pupup">
+              <input type="checkbox" class="state" id="hotelRooms">
+              <div class="content">
+                <div class="header">
+                  <label class="close-btn" for="hotelRooms">×</label>
+                </div>
+                <div class="main">
+                  <label class="radio-box">
+                    <input type="radio" name="allocationID" value="5" alt="Ahmed">
+                    <span class="table-box">Hall2</span>
+                  </label>
+                  <label class="radio-box">
+                    <input type="radio" name="allocationID" value="6" alt="UNDP">
+                    <span class="table-box">Hall 3</span>
+                  </label>
+                  <label class="radio-box">
+                    <input type="radio" name="allocationID" value="4" alt="ahmed warfa">
+                    <span class="table-box">Hall 1</span>
+                  </label>
+                  <label class="radio-box">
+                    <input type="radio" name="allocationID" value="1" alt="warfaa">
+                    <span class="table-box">Room101</span>
+                  </label>
+                  <label class="radio-box">
+                    <input type="radio" name="allocationID" value="7" alt="suleymaan saciid">
+                    <span class="table-box">Room 104</span>
+                  </label>
+                  <label class="radio-box">
+                    <input type="radio" name="allocationID" value="3" alt="Caasho Caalin">
+                    <span class="table-box">Room103</span>
+                  </label>
+                </div>
+              </div>
+              <label class="backdrop" for="hotelRooms"></label>
+            </aside>
+
+            <aside class="popup-box tables-pupup">
+              <input type="checkbox" class="state" id="hotelTables">
+              <div class="content">
+                <div class="header">
+                  <label class="close-btn" for="hotelTables">×</label>
+                </div>
+                <div class="main tables-tab"><label class="radio-box" style=" background: #942C2C; color: #333333;">
+                    <input type="radio" name="tableID" value="1" onclick="return emulateTablePanel('1','Table 1')">
+                    <span class="table-box">Table 1</span>
+                  </label><label class="radio-box" style=" background: #15C0FF; color: #040404;">
+                    <input type="radio" name="tableID" value="2" onclick="return emulateTablePanel('2','Table 2')">
+                    <span class="table-box">Table 2</span>
+                  </label><label class="radio-box" style=" background: #B6FFF0; color: #010304;">
+                    <input type="radio" name="tableID" value="3" onclick="return emulateTablePanel('3','Table 3')">
+                    <span class="table-box">Table 3</span>
+                  </label><label class="radio-box" style=" background: #F7FF10; color: #121407;">
+                    <input type="radio" name="tableID" value="4" onclick="return emulateTablePanel('4','Table 4')">
+                    <span class="table-box">Table 4</span>
+                  </label><label class="radio-box" style=" background: #FFF0F0; color: #332B33;">
+                    <input type="radio" name="tableID" value="5" onclick="return emulateTablePanel('5','Table 5')">
+                    <span class="table-box">Table 5</span>
+                  </label><label class="radio-box" style=" background: #14026A; color: #FAFEFD;">
+                    <input type="radio" name="tableID" value="6" onclick="return emulateTablePanel('6','Table 6')">
+                    <span class="table-box">Table 6</span>
+                  </label><label class="radio-box" style=" background: #A29E9E; color: #FFFFFF;">
+                    <input type="radio" name="tableID" value="7" onclick="return emulateTablePanel('7','Table 7')">
+                    <span class="table-box">Table 7</span>
+                  </label><label class="radio-box" style=" background: #FFCDF0; color: #333333;">
+                    <input type="radio" name="tableID" value="8" onclick="return emulateTablePanel('8','Table 8')">
+                    <span class="table-box">Table 8</span>
+                  </label><label class="radio-box" style=" background: #FFA9A9; color: #333333;">
+                    <input type="radio" name="tableID" value="9" onclick="return emulateTablePanel('9','Table 9')">
+                    <span class="table-box">Table 9</span>
+                  </label><label class="radio-box" style=" background: #1A5804; color: #FFFFFF;">
+                    <input type="radio" name="tableID" value="10" onclick="return emulateTablePanel('10','Table 10')">
+                    <span class="table-box">Table 10</span>
+                  </label><label class="radio-box" style=" background: #FFFFFF; color: #333333;">
+                    <input type="radio" name="tableID" value="11" onclick="return emulateTablePanel('11','pool1')">
+                    <span class="table-box">pool1</span>
+                  </label><label class="radio-box" style=" background: #FFFFFF; color: #333333;">
+                    <input type="radio" name="tableID" value="12" onclick="return emulateTablePanel('12','Table11')">
+                    <span class="table-box">Table11</span>
+                  </label></div>
+              </div>
+              <label class="backdrop" for="hotelTables"></label>
+            </aside>
+
+            <aside class="popup-box">
+              <input type="checkbox" class="state" id="bookClients">
+              <div class="content">
+                <div class="header">
+                  <label class="close-btn" for="bookClients">×</label>
+                </div>
+                <div class="main">
+                  <div class="row long">
+                    <div class="lftPart required">Select Customer</div>
+                    <div class="rightPrt">
+                      <input type="hidden" id="clientID" name="clientID">
+                      <div style="display: flex;">
+                        <input type="search" class="inputText w-ten-left" id="srchCustomer" maxlength="200" placeholder="search" autocomplete="off">
+                        <label for="addNewCustomer" style="display: flex; justify-content: center; align-items: center; width: 30px; border: 1px solid #ad722d; border-left: 0px; margin-left: -1px; background: #ad722d; color: #fff; cursor: pointer;"
+                          class="addon"><i class="fal fa-plus"></i></label>
+                      </div>
+                      <div style="margin-top: 0px;" class="suggest w-six"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <label class="backdrop" for="bookClients"></label>
+            </aside>
+
+            <!-- Add notes to item -->
+            <aside class="popup-box addMealItemNotesPopup">
+              <input type="checkbox" class="state" id="addMealItemNotesPopup">
+              <div class="content" style="width: 450px;">
+                <div class="header">
+                  <label class="close-btn" for="addMealItemNotesPopup">×</label>
+                </div>
+                <div class="main">
+                  <div class="row " style="display: flex; justify-content: space-between;">
+                    <div class="rightPrt" style=" flex-basis: 100%; display: flex; flex-wrap: wrap;">
+                      <input type="hidden" id="mealID4Notes" name="mealID4Notes">
+                      <input type="hidden" id="itemNoteNotFound" value="true" name="itemNoteNotFound">
+                      <input type="hidden" id="recordNumber" name="recordNumber">
+                      <input list="mealItemNotes" style="flex-basis:  70% !important;" type="search" class="inputText w-ten-left" id="srchMealItemNotes" maxlength="200" placeholder="search" autocomplete="off">
+                      <datalist id="mealItemNotes">
+
+                      </datalist>
+                      <button class="btnSubmit" id="srchMealItemNotesBtn" type="button" style="flex-basis: 25%; margin-top: 0px; padding: 5px; border-radius: 3px; margin-left: 10px; ">Add Note</button>
+                      <div class="addedItemsNotes" style="margin-top: 10px; flex-basis: 100%; display: flex; flex-wrap: wrap;">
+                        <h4 style="flex-basis: 100%; margin-bottom: 10px;">Notes Added</h4>
+                        <div class="notes-added" style="display: flex; flex-wrap: wrap; flex-basis: 100%;">
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row " style="display: flex; justify-content: flex-end; align-items: center; padding: 0;">
+                    <button type="button" class="btnSubmit" id="addNoteToMealItem">Save Notes</button>
+                  </div>
+                </div>
+              </div>
+              <label class="backdrop" for="addMealItemNotesPopup"></label>
+            </aside>
+
+            <style type="text/css">
+              .note-added {
+                background: #ad722d;
+                color: #fff;
+                padding: 5px 20px;
+                border-radius: 25px;
+                align-items: center;
+                text-align: left;
+                justify-content: space-between;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                display: flex;
+                font-size: .85em
+              }
+
+              .notes-righ-part .note-added {
+                background: #cfd2d4;
+                color: #333;
+              }
+
+              .note-added .note-text {
+                flex-basis: 95%;
+              }
+
+              .rmveNote {
+                margin-left: 15px;
+                cursor: pointer;
+              }
+
+              .btnSubmit {
+                padding: 10px 20px;
+                margin-top: 20px;
+                background: #ad722d;
+                border: 1px solid #ad722d;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+                transition-duration: 400ms;
+                outline: none;
+              }
+
+              .btnSubmit:hover {
+                opacity: .8;
+              }
+            </style>
+            <div class="order-form">
+              <div class="waiters">
+                <label class="radio-box">
+                  <input type="radio" name="waiter" onclick="return emulateWaiterTables('Ali');" value="Ali">
+                  <span class="waiter-box">Ali</span>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="waiter" onclick="return emulateWaiterTables('Halimo');" value="Halimo">
+                  <span class="waiter-box">Halimo</span>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="waiter" onclick="return emulateWaiterTables('Abdullahi');" value="Abdullahi">
+                  <span class="waiter-box">Abdullahi</span>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="waiter" onclick="return emulateWaiterTables('Hassan');" value="Hassan">
+                  <span class="waiter-box">Hassan</span>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="waiter" onclick="return emulateWaiterTables('sacdiyo');" value="sacdiyo">
+                  <span class="waiter-box">sacdiyo</span>
+                </label>
+              </div>
+
+              <div class="client">
+                <section class="client-types">
+                  <label class="radio-box" for="hotelRooms">
+                    <input type="radio" name="clientType" value="hotel">
+                    <div class="client-box">
+                      <i class="fal fa-h-square"></i>
+                      <span>In-hotel</span>
+                    </div>
+                  </label>
+                  <label class="radio-box" for="hotelTables">
+                    <input type="radio" name="clientType" checked="checked" value="tables">
+                    <div class="client-box">
+                      <i class="fal fa-chair"></i>
+                      <span>Restaurant</span>
+                    </div>
+                  </label>
+                  <label class="radio-box">
+                    <input type="radio" name="clientType" value="takeaway">
+                    <div class="client-box">
+                      <i class="fal fa-walking"></i>
+                      <span>Takeaway</span>
+                    </div>
+                  </label>
+                  <label class="radio-box focused" for="bookClients">
+                    <input type="radio" name="clientType" value="book">
+                    <div class="client-box">
+                      <i class="fal fa-book"></i>
+                      <span>Book</span>
+                    </div>
+                  </label>
+                </section>
+
+                <section class="selected selection-type">
+                  <p>Takeaway</p>
+                </section>
+              </div>
+              <div class="packages">
+                <label class="radio-box">
+                  <input type="radio" name="package" checked="checked" value="1">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/pckg80-7821668837066.jpg" alt="package1">
+                    <span class="package-name">Quraac</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="2">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/pckg80-4181668837096.jpg" alt="package2">
+                    <span class="package-name">Qado</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="3">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/pckg80-6481668837123.jpg" alt="package3">
+                    <span class="package-name">Casho</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="4">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/pckg80-9801668837151.jpg" alt="package4">
+                    <span class="package-name">Drinks</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="5">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/pckg80-3821668837181.jpg" alt="package5">
+                    <span class="package-name">Wadani</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="6">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/pckg80-3471668837220.jpg" alt="package6">
+                    <span class="package-name">Tea</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="7">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/pckg80-9441680518444.jpg" alt="package7">
+                    <span class="package-name">Entertainments</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="8">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/default80.png" alt="package8">
+                    <span class="package-name">Portrait</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="9">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/default80.png" alt="package9">
+                    <span class="package-name">Halls</span>
+                  </div>
+                </label>
+                <label class="radio-box">
+                  <input type="radio" name="package" value="10">
+                  <div class="package-box">
+                    <img src="../assets/images/meals/packages/small80/default80.png" alt="package10">
+                    <span class="package-name">Test</span>
+                  </div>
+                </label>
+              </div>
+
+              <!-- items tap -->
+              <div class="meals">
+                <div class="wrap items"><label class="radio-box 1">
+                    <input type="radio" name="itemID" id="itemID" value="1" onclick="return itemClickEvent(this);" alt="1">
+                    <input type="text" name="txtQty" id="txtQty1" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice1" value="2" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName1" value="Boorish" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID1" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$2</span>
+                      <img src="../assets/images/meals/items/small80/item80-9911668837253.jpg" alt="">
+                      <span class="meal-name">Boorish</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 2">
+                    <input type="radio" name="itemID" id="itemID" value="4" onclick="return itemClickEvent(this);" alt="2">
+                    <input type="text" name="txtQty" id="txtQty2" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice2" value="2" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName2" value="Kalankal iyo Canjjero" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID2" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$2</span>
+                      <img src="../assets/images/meals/items/small80/item80-8591668837341.jpg" alt="">
+                      <span class="meal-name">Kalankal iyo Canjjero</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 3">
+                    <input type="radio" name="itemID" id="itemID" value="5" onclick="return itemClickEvent(this);" alt="3">
+                    <input type="text" name="txtQty" id="txtQty3" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice3" value="1" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName3" value="Omelete iyo Canjeero" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID3" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$1</span>
+                      <img src="../assets/images/meals/items/small80/item80-8521668837362.jpg" alt="">
+                      <span class="meal-name">Omelete iyo Canjeero</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 4">
+                    <input type="radio" name="itemID" id="itemID" value="65" onclick="return itemClickEvent(this);" alt="4">
+                    <input type="text" name="txtQty" id="txtQty4" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice4" value="1.5" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName4" value="Rooti iyo Fish" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID4" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$1.5</span>
+                      <img src="../assets/images/meals/items/small80/item80-8041668837605.jpg" alt="">
+                      <span class="meal-name">Rooti iyo Fish</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 5">
+                    <input type="radio" name="itemID" id="itemID" value="3" onclick="return itemClickEvent(this);" alt="5">
+                    <input type="text" name="txtQty" id="txtQty5" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice5" value="2.5" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName5" value="Canjero iyo Suqaar" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID5" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$2.5</span>
+                      <img src="../assets/images/meals/items/small80/item80-7041668837319.jpg" alt="">
+                      <span class="meal-name">Canjero iyo Suqaar</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 6">
+                    <input type="radio" name="itemID" id="itemID" value="66" onclick="return itemClickEvent(this);" alt="6">
+                    <input type="text" name="txtQty" id="txtQty6" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice6" value="1" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName6" value="Ukun" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID6" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$1</span>
+                      <img src="../assets/images/meals/items/small80/item80-5381668837516.jpg" alt="">
+                      <span class="meal-name">Ukun</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 7">
+                    <input type="radio" name="itemID" id="itemID" value="7" onclick="return itemClickEvent(this);" alt="7">
+                    <input type="text" name="txtQty" id="txtQty7" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice7" value="1.5" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName7" value="Shakshuko iyo Canjjero" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID7" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$1.5</span>
+                      <img src="../assets/images/meals/items/small80/item80-4731668837443.jpg" alt="">
+                      <span class="meal-name">Shakshuko iyo Canjjero</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 8">
+                    <input type="radio" name="itemID" id="itemID" value="6" onclick="return itemClickEvent(this);" alt="8">
+                    <input type="text" name="txtQty" id="txtQty8" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice8" value="1" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName8" value="Rooti iyo Full" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID8" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$1</span>
+                      <img src="../assets/images/meals/items/small80/item80-4451668837395.jpg" alt="">
+                      <span class="meal-name">Rooti iyo Full</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 9">
+                    <input type="radio" name="itemID" id="itemID" value="2" onclick="return itemClickEvent(this);" alt="9">
+                    <input type="text" name="txtQty" id="txtQty9" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice9" value="2.5" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName9" value="Canjeero iyo beer" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID9" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$2.5</span>
+                      <img src="../assets/images/meals/items/small80/item80-3801668837288.jpg" alt="">
+                      <span class="meal-name">Canjeero iyo beer</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label><label class="radio-box 10">
+                    <input type="radio" name="itemID" id="itemID" value="64" onclick="return itemClickEvent(this);" alt="10">
+                    <input type="text" name="txtQty" id="txtQty10" value="1" readonly="readonly">
+                    <input type="hidden" name="costPrice" id="costPrice10" value="1.5" readonly="readonly">
+                    <input type="hidden" name="itemName" id="itemName10" value="Late night Fish" readonly="readonly">
+                    <input type="hidden" name="packageID" id="packageID10" value="1" readonly="readonly">
+                    <div class="meal-box">
+                      <span class="meal-price">$1.5</span>
+                      <img src="../assets/images/meals/items/small80/item80-3691668837571.jpg" alt="">
+                      <span class="meal-name">Late night Fish</span>
+                      <div class="triangle-white"></div>
+                      <div class="triangle-color"></div>
+                    </div>
+                  </label></div>
+              </div>
+
+              <!-- check list -->
+              <div class="price-buttons">
+                <div class="prices">
+                  <div class="title-wrap">
+                    <div class="record titles">
+                      <span class="col name">Name</span><span class="col qty">QTY</span>
+                      <span class="col price">Price</span><span class="col delete">Delete</span>
+                    </div>
+                  </div>
+                  <div class="prices-wrap">
+                    <!-- prices wrap -->
+
+                    <div class="record values slctedItem 1"> <input type="hidden" name="recordType[]" value="new"> <input type="hidden" class="mealItemNotes" name="mealItemNotes[]" value=""> <input type="hidden" name="packageID[]" value="1"> <input
+                        type="hidden" id="mealID" name="mealID[]" value="5"> <input type="hidden" name="itemQty[]" id="itemQty" class="itemQty1" value="1" alt="1"> <input type="hidden" name="costPrice[]" id="costPrice" class="costPrice1" value="1">
+                      <span class="col name">Omelete iyo Canjeero</span> <span class="col qty"> <i class="qty-btn qty-down fal fa-minus-circle decreaseQty" onclick="return decreaseQty(1)"></i>
+                        <div class="input quantity-div 1" name="txtQty" contenteditable="true" spellcheck="false">1</div> <i class="qty-btn qty-up fal fa-plus-circle increaseQty" onclick="return increaseQty(1)"></i>
+                      </span> <span class="col price">$<label class="item-price 1">1</label></span> <span class="col delete item" onclick="return removeListItem(1)"><a class="fal fa-trash-alt del-item"></a></span> </div>
+                    <div class="record values slctedItem 2"> <input type="hidden" name="recordType[]" value="new"> <input type="hidden" class="mealItemNotes" name="mealItemNotes[]" value=""> <input type="hidden" name="packageID[]" value="1"> <input
+                        type="hidden" id="mealID" name="mealID[]" value="65"> <input type="hidden" name="itemQty[]" id="itemQty" class="itemQty2" value="1" alt="1.5"> <input type="hidden" name="costPrice[]" id="costPrice" class="costPrice2"
+                        value="1.5"> <span class="col name">Rooti iyo Fish</span> <span class="col qty"> <i class="qty-btn qty-down fal fa-minus-circle decreaseQty" onclick="return decreaseQty(2)"></i>
+                        <div class="input quantity-div 2" name="txtQty" contenteditable="true" spellcheck="false">1</div> <i class="qty-btn qty-up fal fa-plus-circle increaseQty" onclick="return increaseQty(2)"></i>
+                      </span> <span class="col price">$<label class="item-price 2">1.5</label></span> <span class="col delete item" onclick="return removeListItem(2)"><a class="fal fa-trash-alt del-item"></a></span> </div>
+                    <div class="record values slctedItem 3"> <input type="hidden" name="recordType[]" value="new"> <input type="hidden" class="mealItemNotes" name="mealItemNotes[]" value=""> <input type="hidden" name="packageID[]" value="1"> <input
+                        type="hidden" id="mealID" name="mealID[]" value="3"> <input type="hidden" name="itemQty[]" id="itemQty" class="itemQty3" value="1" alt="2.5"> <input type="hidden" name="costPrice[]" id="costPrice" class="costPrice3"
+                        value="2.5"> <span class="col name">Canjero iyo Suqaar</span> <span class="col qty"> <i class="qty-btn qty-down fal fa-minus-circle decreaseQty" onclick="return decreaseQty(3)"></i>
+                        <div class="input quantity-div 3" name="txtQty" contenteditable="true" spellcheck="false">1</div> <i class="qty-btn qty-up fal fa-plus-circle increaseQty" onclick="return increaseQty(3)"></i>
+                      </span> <span class="col price">$<label class="item-price 3">2.5</label></span> <span class="col delete item" onclick="return removeListItem(3)"><a class="fal fa-trash-alt del-item"></a></span> </div>
+                    <div class="record values slctedItem 4"> <input type="hidden" name="recordType[]" value="new"> <input type="hidden" class="mealItemNotes" name="mealItemNotes[]" value=""> <input type="hidden" name="packageID[]" value="1"> <input
+                        type="hidden" id="mealID" name="mealID[]" value="6"> <input type="hidden" name="itemQty[]" id="itemQty" class="itemQty4" value="1" alt="1"> <input type="hidden" name="costPrice[]" id="costPrice" class="costPrice4" value="1">
+                      <span class="col name">Rooti iyo Full</span> <span class="col qty"> <i class="qty-btn qty-down fal fa-minus-circle decreaseQty" onclick="return decreaseQty(4)"></i>
+                        <div class="input quantity-div 4" name="txtQty" contenteditable="true" spellcheck="false">1</div> <i class="qty-btn qty-up fal fa-plus-circle increaseQty" onclick="return increaseQty(4)"></i>
+                      </span> <span class="col price">$<label class="item-price 4">1</label></span> <span class="col delete item" onclick="return removeListItem(4)"><a class="fal fa-trash-alt del-item"></a></span> </div>
+                  </div>
+                  <div class="sub-total">
+                    <span class="label">Sub Total</span><span class="subTotal amount" id="subTotal">$6.00</span>
+                  </div>
+                  <div class="sub-total">
+                    <span class="label">Discount</span><span class="discount amount" id="subTotal">$<span class="theDiscount">0</span>
+
+                    </span>
+                  </div>
+                  <div class="sub-total">
+                    <input type="hidden" name="vatPercents" value="0">
+                    <span class="label">VAT</span><span class="vat amount" id="vat">$0.00</span>
+                  </div>
+                  <div class="totals">
+                    <input type="hidden" name="" id="txtTotalOrderAmount" value="6">
+                    <span class="label">Total</span><span class="total amount" id="totalAmounts">$6.00</span>
+                  </div>
+                </div>
+
+                <div class="buttons-wrap">
+                  <div class="left-part">
+                    <div class="pay-switch">
+                      <div class="switch-wrapper">
+                        <input type="checkbox" name="directRcpt">
+                        <svg class="checked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.67 426.67">
+                          <path
+                            d="M153.504 366.84c-8.657 0-17.323-3.303-23.927-9.912L9.914 237.265c-13.218-13.218-13.218-34.645 0-47.863 13.218-13.218 34.645-13.218 47.863 0l95.727 95.727 215.39-215.387c13.218-13.214 34.65-13.218 47.86 0 13.22 13.218 13.22 34.65 0 47.863L177.435 356.928c-6.61 6.605-15.27 9.91-23.932 9.91z">
+                          </path>
+                        </svg>
+                        <svg class="unchecked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.982 212.982">
+                          <path
+                            d="M131.804 106.49l75.936-75.935c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.49 81.18 30.555 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.99 6.99-6.99 18.323 0 25.312L81.18 106.49 5.24 182.427c-6.99 6.99-6.99 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0L106.49 131.8l75.938 75.937c6.99 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.323 0-25.313l-75.936-75.936z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                      </div>
+                      <span>Payment is made</span>
+                    </div>
+                    <input type="text" class="input-text" name="txt4digits" placeholder="Enter last 4 digits">
+                  </div>
+                  <button type="submit" class="btn-submit pos-relative">
+                    <i class="fal fa-print"></i>
+                    <span>Print Order</span>
+                    <div class="spinner loader"></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <script src="./assets/js/jquery-3.5.1.min.js"></script>
+          <script src="./assets/js/general.js"></script>
+          <script type="text/javascript">
+            let restrictedMealPkgs = 'no';
+            let myRole = 'admin';
+            let myUser = 'themanager';
+            $(document).ready(function () {
+              simplfyOrderContent();
+
+              setTimeout(() => {
+                if (restrictedMealPkgs == 'yes' && myRole == 'cashier') {
+                  $('.waiters [name="waiter"]:checked').trigger('click');
+                }
+              }, 100)
+              simplifyMealItemNotes();
+
+              $('#addMealItemNotesPopup').attr('checked', false)
+              $('#addMealItemNotesPopup').prop('checked', false)
+            });
+
+            var listNum = 1;
+          </script>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+
+  <script src="assets/js/jquery.timeago.js"></script>
+  <script src="assets/js/basicFuncs.js"></script>
+  <script src="assets/js/general.js"></script>
+  <script src="libraries/sweetalert/js/sweetalert.js"></script>
+  <link rel="stylesheet" href="libraries/sweetalert/css/sweetalert.css" />
+  <!-- <script src=".libraries/sweetalert/js/sweetalert.js"></script> -->
+
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/pikaday.js"></script>
+  <script src="assets/js/jquery.form.js"></script>
+  <script type="text/javascript">
+    $(".client-types .radio-box").click(function () {
+      $(".client-types .radio-box").removeClass('focused');
+      $(this).addClass('focused');
+    });
+    simplfyWaiterTopBar();
+    simply_order_content();
+
+
+
+  </script>
+  <style type="text/css">
+    .multiselect__container {
+      width: 75%;
+    }
+  </style>
+</body>
+
+</html>

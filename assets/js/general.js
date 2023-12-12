@@ -2872,25 +2872,7 @@ function check_finishSplitOrder(ev) {
 	return true
 }
 
-
-// Menu Click Event
-// let trigger = $('#sidebarToggler');
-// let dropdown = $(".sidebar");
-// if (trigger || dropdown) {
-//   trigger.each(function () {
-//     $(this).on("click", function (e) {
-//       e.stopPropagation();
-//       dropdown.toggleClass("active");
-//       trigger.toggleClass("active");
-//     });
-//   });
-//   dropdown.each(function () {
-//     $(this).on("click", function (e) {
-//       e.stopPropagation();
-//     });
-//   });
-// }
-
+// mun
 $('#sidebarToggler').on('click', function(e) {
 	$('.sidebar').toggleClass('active')
 	$('.overlay').toggleClass('active')

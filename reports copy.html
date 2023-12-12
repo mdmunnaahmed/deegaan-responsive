@@ -1,0 +1,1186 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard | My Hotel and Restaurant</title>
+  <link rel="shortcut icon" href="assets/images/system/icon.png" />
+  <link rel="shortcut icon" href="assets/images/company/sostec/favicon.ICO" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="assets/multiselect/dist/multi-select.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/all.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/sumoSelector.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="assets/multiselect/dist/multi-select-min.js"></script>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="orders-workplace">
+      <div class="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div class="logoWrap">
+          <img src="./assets/images/company/logo-white.png" alt="logo" />
+        </div>
+        <ul id="menus">
+          <li class="">
+            <a href="./orders-workplace.php?task=myOrders"><i class="fal fa-hotel"></i><span>My Orders</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=orders"><i class="fal fa-burger-soda"></i><span>New Order</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=reports"><i class="fal fa-file-invoice"></i><span>Reports</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?role=admin&task=mealMgt"><i class="fal fa-cheese"></i><span>New Meal</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=tableMgt"><i class="fal fa-turntable"></i><span>New Table</span></a>
+          </li>
+          <li class="active">
+            <a href="./orders-workplace.php?task=loyalty"><i class="fal fa-gifts"></i><span>Loyalty</span></a>
+          </li>
+          <li class="">
+            <!-- <a href="../dashboard.php"><i class="fal fa-arrow-alt-left"></i><span>Back Home</span></a> -->
+            <a href="./orders-workplace.php?task=customerMgt"><i class="fal fa-users"></i><span>Customers</span></a>
+          </li>
+        </ul>
+
+
+        <!-- <footer>
+      <p>3.0.2</p>
+  </footer> -->
+      </div> <!-- sidebar -->
+
+      <div class="middlebar">
+        <div class="top-bar">
+          <div>
+            <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+            <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          </div>
+          <!-- <h3 class="setting-icon">
+
+                    <a onclick="return chngOrderType();">
+                        off                    </a>
+                </h3> -->
+          <!-- <h3 class="order-design">
+                    <a onclick="return chngOrderDesgn();"> -->
+          <!--  text-and-image -->
+          <!-- Change Design
+                    </a>
+                </h3> -->
+          <h3 class="waiter-amount">
+            <!-- <p>$
+                        </p> -->
+            <a href="../dashboard.php"><i class="fa fa-angle-left"></i> <span>Back to home</span></a>
+
+          </h3>
+          <div>
+            <h3 class="user-name">Hi, ManagersName</h3>
+            <div class="profile-icon">
+              <div class="user icon">
+                <img src="assets/images/users/middle320/default320.png" />
+              </div>
+              <div class="drop-down">
+                <div class="row bar">My Account</div>
+                <div class="row">
+                  <div class="photo">
+                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                    <a href="./orders-workplace.php?role=admin&task=profile">
+                      <div class="overlay">
+                        <span><i class="fal fa-camera-alt"></i></span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="links">
+                    <p class="name">ManagersName</p>
+                    <p class="user">themanager</p>
+                  </div>
+                </div>
+                <div class="row button">
+                  <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
+                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                  </a>
+                  <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+                </div>
+              </div>
+            </div>
+            <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
+          </div>
+        </div>
+
+        <div class="options-bar dash">
+          Menus | New Table </div>
+
+        <div class="dashboard-content">
+          <aside class="popUpForm">
+            <input type="checkbox" class="state" id="allPayment">
+            <article class="content">
+              <div class="header">
+                <h3>Orders payment</h3>
+                <label class="close" for="allPayment">×</label>
+              </div>
+              <div class="popupBody">
+                <div class="row">
+                  <div class="lftPart required">Payee Type</div>
+                  <div class="rightPrt">
+                    <select class="xlarge" name="slcPaymentType">
+                      <option value="waiter">Waiter</option>
+                      <option value="customer">Customer Book</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row customers-list" style="display: none;">
+                  <div class="lftPart required">Select Customer</div>
+                  <div class="rightPrt">
+                    <input type="hidden" name="slcCustomer">
+                    <select class="xlarge" id="slcCustomer" style="display: none;">
+                      <option value="">--select</option>
+                      <option value="712">a</option>
+                      <option value="717">a</option>
+                      <option value="718">Abdishakur </option>
+                      <option value="703">Ahmed</option>
+                      <option value="722">Ahmed</option>
+                      <option value="725">Ahmed</option>
+                      <option value="715">Ahmed Mascud</option>
+                      <option value="731">ahmed warfa</option>
+                      <option value="719">ahsan</option>
+                      <option value="727">asasa454345</option>
+                      <option value="744">Caasho Caalin</option>
+                      <option value="701">CashClient</option>
+                      <option value="705">Cumar</option>
+                      <option value="726">Daahir</option>
+                      <option value="728">Farax</option>
+                      <option value="740">Farxiyo Ali Cusmaan</option>
+                      <option value="721">Hawa Lula</option>
+                      <option value="720">Ismail</option>
+                      <option value="706">Jimcaale</option>
+                      <option value="709">Kaamil</option>
+                      <option value="713">kaamil</option>
+                      <option value="741">Kamil</option>
+                      <option value="707">Muxsin</option>
+                      <option value="737">qaaf</option>
+                      <option value="714">qaasim</option>
+                      <option value="724">qaasim</option>
+                      <option value="745">Saalax Afrax</option>
+                      <option value="729">Salmaan Faarax</option>
+                      <option value="732">siraad</option>
+                      <option value="736">subag</option>
+                      <option value="708">Sucaad Ali</option>
+                      <option value="739">Sucaad Ali Hassan</option>
+                      <option value="735">Sugar Saliim w2</option>
+                      <option value="743">suleymaan saciid</option>
+                      <option value="716">Sultaano Ali</option>
+                      <option value="733">suudi gaafane</option>
+                      <option value="702">Suui</option>
+                      <option value="723">Test</option>
+                      <option value="738">tusaale</option>
+                      <option value="704">UNDP</option>
+                      <option value="734">warfaa</option>
+                      <option value="742">warfaa</option>
+                      <option value="730">warfaaa g</option>
+                      <option value="710">warsame</option>
+                      <option value="711">xamdi</option>
+                    </select>
+                    <div id="iconic-TMrTAS3ptuwhyrNBxnDX" class="multiselect__container">
+                      <div class="multiselect__wrapper">
+                        <input class="multiselect__input" placeholder="Select...">
+                      </div>
+                      <span style="display: none;" class="multiselect__clear-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                            fill="currentColor"></path>
+                        </svg>
+                      </span>
+
+                      <div class="multiselect__options">
+                        <ul>
+
+                          <li data-value="">--select</li>
+
+                          <li data-value="712">a</li>
+
+                          <li data-value="717">a</li>
+
+                          <li data-value="718">Abdishakur</li>
+
+                          <li data-value="703">Ahmed</li>
+
+                          <li data-value="722">Ahmed</li>
+
+                          <li data-value="725">Ahmed</li>
+
+                          <li data-value="715">Ahmed Mascud</li>
+
+                          <li data-value="731">ahmed warfa</li>
+
+                          <li data-value="719">ahsan</li>
+
+                          <li data-value="727">asasa454345</li>
+
+                          <li data-value="744">Caasho Caalin</li>
+
+                          <li data-value="701">CashClient</li>
+
+                          <li data-value="705">Cumar</li>
+
+                          <li data-value="726">Daahir</li>
+
+                          <li data-value="728">Farax</li>
+
+                          <li data-value="740">Farxiyo Ali Cusmaan</li>
+
+                          <li data-value="721">Hawa Lula</li>
+
+                          <li data-value="720">Ismail</li>
+
+                          <li data-value="706">Jimcaale</li>
+
+                          <li data-value="709">Kaamil</li>
+
+                          <li data-value="713">kaamil</li>
+
+                          <li data-value="741">Kamil</li>
+
+                          <li data-value="707">Muxsin</li>
+
+                          <li data-value="737">qaaf</li>
+
+                          <li data-value="714">qaasim</li>
+
+                          <li data-value="724">qaasim</li>
+
+                          <li data-value="745">Saalax Afrax</li>
+
+                          <li data-value="729">Salmaan Faarax</li>
+
+                          <li data-value="732">siraad</li>
+
+                          <li data-value="736">subag</li>
+
+                          <li data-value="708">Sucaad Ali</li>
+
+                          <li data-value="739">Sucaad Ali Hassan</li>
+
+                          <li data-value="735">Sugar Saliim w2</li>
+
+                          <li data-value="743">suleymaan saciid</li>
+
+                          <li data-value="716">Sultaano Ali</li>
+
+                          <li data-value="733">suudi gaafane</li>
+
+                          <li data-value="702">Suui</li>
+
+                          <li data-value="723">Test</li>
+
+                          <li data-value="738">tusaale</li>
+
+                          <li data-value="704">UNDP</li>
+
+                          <li data-value="734">warfaa</li>
+
+                          <li data-value="742">warfaa</li>
+
+                          <li data-value="730">warfaaa g</li>
+
+                          <li data-value="710">warsame</li>
+
+                          <li data-value="711">xamdi</li>
+
+
+
+
+                        </ul>
+                      </div>
+                    </div>
+
+                    <label class="error" id="perror2">perror1</label>
+                  </div>
+                </div>
+                <div class="row order-date">
+                  <div class="lftPart required">Order date</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge datepicker" id="startDate" name="paymentDate" value="2023-12-12" readonly="readonly">
+                  </div>
+                </div>
+                <div class="row waiters-list">
+                  <div class="lftPart required">Select waiter</div>
+                  <div class="rightPrt">
+                    <select class="xlarge" name="slcWaiter">
+                      <option value="">--select</option>
+                      <option value="Abdullahi">Abdullahi</option>
+                      <option value="Ali">Ali</option>
+                      <option value="Halimo">Halimo</option>
+                      <option value="Hassan">Hassan</option>
+                      <option value="sacdiyo">sacdiyo</option>
+                    </select>
+                    <label class="error" id="perror1">perror1</label>
+                  </div>
+                </div>
+                <div class="row banks-list">
+                  <div class="lftPart required">Select Bank Account</div>
+                  <div class="rightPrt">
+                    <select class="xlarge" name="slcBanAcc">
+                      <option value="">--select</option>
+                      <option selected="" data-id="3" value="010100">eDahab, 010100</option>
+                      <option selected="" data-id="2" value="010100">Evc, 010100</option>
+                      <option selected="selected" data-id="1" value="*789*010100*$#">Merchant, *789*010100*$#</option>
+                      <option selected="" data-id="4" value="*789*010100*">QrCode, *789*010100*</option>
+                      <option selected="" data-id="5" value="010100">Salaam bank, 010100</option>
+                      <option selected="" data-id="6" value="010100">MyBank, 010100</option>
+                      <option selected="" data-id="7" value="010100">Premier Bank, 010100</option>
+                      <option selected="" data-id="8" value="8299221">AmalBank, 8299221</option>
+                      <option selected="" data-id="9" value="4343534">Somnet, 4343534</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row w-balance" style="display:none;">
+                  <div class="lftPart required">Previous Balance</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge " id="txtTtlBalance" name="txtTtlBalance" readonly="readonly">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Amount <span class="lbl-today">2023-12-12</span></div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge" id="txtRecieved" name="txtRecieved" readonly="readonly">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Due <span class="lbl-today">2023-12-12</span></div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge" id="txtDueAmount" name="txtDueAmount" readonly="readonly">
+                    <label class="error" id="perror3">perror3</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Paid Amount</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge" id="txtNewCash" name="txtNewCash">
+                    <label class="error" id="perror4">perror4</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Balance </div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge" id="txtBalance" name="txtBalance" readonly="readonly">
+                    <label class="error" id="perror5">perror5</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Transaction date</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge datepicker" id="endDate" name="tranDate" value="2023-12-12" readonly="readonly">
+                    <label class="error" id="perror6">perror6</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd payment" id="btnAdd" onclick="return addWPayment();">Recieve</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="allPayment"></label>
+          </aside>
+          <!--  -->
+          <aside class="popUpForm">
+            <input type="checkbox" class="state" id="clientDiscount">
+            <article class="content">
+              <div class="header">
+                <h3>Customer Discount</h3>
+                <label class="close" for="clientDiscount">×</label>
+              </div>
+              <div class="popupBody">
+
+                <div class="row">
+                  <div class="lftPart required">Select Customer</div>
+                  <div class="rightPrt">
+                    <select class="xlarge" name="slcCustomer4Disc">
+                      <option value="">--select</option>
+                      <option value="712">a</option>
+                      <option value="717">a</option>
+                      <option value="718">Abdishakur </option>
+                      <option value="703">Ahmed</option>
+                      <option value="722">Ahmed</option>
+                      <option value="725">Ahmed</option>
+                      <option value="715">Ahmed Mascud</option>
+                      <option value="731">ahmed warfa</option>
+                      <option value="719">ahsan</option>
+                      <option value="727">asasa454345</option>
+                      <option value="744">Caasho Caalin</option>
+                      <option value="701">CashClient</option>
+                      <option value="705">Cumar</option>
+                      <option value="726">Daahir</option>
+                      <option value="728">Farax</option>
+                      <option value="740">Farxiyo Ali Cusmaan</option>
+                      <option value="721">Hawa Lula</option>
+                      <option value="720">Ismail</option>
+                      <option value="706">Jimcaale</option>
+                      <option value="709">Kaamil</option>
+                      <option value="713">kaamil</option>
+                      <option value="741">Kamil</option>
+                      <option value="707">Muxsin</option>
+                      <option value="737">qaaf</option>
+                      <option value="714">qaasim</option>
+                      <option value="724">qaasim</option>
+                      <option value="745">Saalax Afrax</option>
+                      <option value="729">Salmaan Faarax</option>
+                      <option value="732">siraad</option>
+                      <option value="736">subag</option>
+                      <option value="708">Sucaad Ali</option>
+                      <option value="739">Sucaad Ali Hassan</option>
+                      <option value="735">Sugar Saliim w2</option>
+                      <option value="743">suleymaan saciid</option>
+                      <option value="716">Sultaano Ali</option>
+                      <option value="733">suudi gaafane</option>
+                      <option value="702">Suui</option>
+                      <option value="723">Test</option>
+                      <option value="738">tusaale</option>
+                      <option value="704">UNDP</option>
+                      <option value="734">warfaa</option>
+                      <option value="742">warfaa</option>
+                      <option value="730">warfaaa g</option>
+                      <option value="710">warsame</option>
+                      <option value="711">xamdi</option>
+                    </select>
+                    <label class="error" id="perror2">perror1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Amount</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge" id="txtDueAmount4Disc" name="txtDueAmount4Disc" readonly="readonly">
+                    <label class="error" id="perror3">perror3</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="rightPrt info">
+                    <label>Qiima Dhimis waxaa loo sameyn karaa Dalabaadka aan lacag laga qaban</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Discount</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText xlarge" id="txtNewDiscount" value="0" name="txtNewDiscount">
+                    <input type="hidden" class="inputText xlarge" id="txtBalance4Disc" name="txtBalance4Disc" readonly="readonly">
+                    <label class="error" id="perror4">perror4</label>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <button type="submit" class="btnAdd discount" id="btnAdd" onclick="return addCDiscount();">Recieve</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="clientDiscount"></label>
+          </aside>
+
+
+          <aside class="popUpForm slcPaymentAcc">
+            <input type="checkbox" class="state" id="slcPaymentAcc">
+            <article class="content">
+              <div class="header">
+                <h3>Select Bank Account</h3>
+                <label class="close" for="slcPaymentAcc">×</label>
+              </div>
+              <div class="popupBody">
+                <div class="slcRow">
+                  <label class="option">
+                    <input type="radio" data-id="3" data-num="010100" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>eDahab</span>
+                      <span style="font-size: 0.8em;">010100</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="2" data-num="010100" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>Evc</span>
+                      <span style="font-size: 0.8em;">010100</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="1" data-num="*789*010100*$#" class="slcBank" name="bankAcc" checked="">
+                    <p>
+                      <span>Merchant</span>
+                      <span style="font-size: 0.8em;">*789*010100*$#</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="4" data-num="*789*010100*" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>QrCode</span>
+                      <span style="font-size: 0.8em;">*789*010100*</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="5" data-num="010100" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>Salaam bank</span>
+                      <span style="font-size: 0.8em;">010100</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="6" data-num="010100" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>MyBank</span>
+                      <span style="font-size: 0.8em;">010100</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="7" data-num="010100" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>Premier Bank</span>
+                      <span style="font-size: 0.8em;">010100</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="8" data-num="8299221" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>AmalBank</span>
+                      <span style="font-size: 0.8em;">8299221</span>
+                    </p>
+                  </label>
+                  <label class="option">
+                    <input type="radio" data-id="9" data-num="4343534" class="slcBank" name="bankAcc">
+                    <p>
+                      <span>Somnet</span>
+                      <span style="font-size: 0.8em;">4343534</span>
+                    </p>
+                  </label>
+                </div>
+                <div class="slcRow" style="justify-content: space-between; padding: 8px">
+                  <label for="slcPaymentAcc" style="margin: 0; cursor: pointer; padding: 12px; background: #e1e1e1; border: 1px solid #ccc; color: #333; text-shadow: none; " class="btnAdd discount" id="btnAdd">Cancel</label>
+                  <button style="margin: 0; padding: 12px; font-size: 1em; background-color: #714705; color: #fff; border: 1px solid #714705; cursor: pointer;" id="receiptBnt" class="">Receipt $20.2</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="slcPaymentAcc"></label>
+          </aside>
+
+          <script type="text/javascript">
+
+          </script>
+
+          <style type="text/css">
+            .popUpForm.slcPaymentAcc .slcRow {
+              display: flex;
+              flex-wrap: wrap;
+              width: 100%;
+              /*background: red*/
+            }
+
+            .popUpForm.slcPaymentAcc .slcRow label.option {
+              flex-basis: 31%;
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-bottom: 10px;
+            }
+
+            .popUpForm.slcPaymentAcc .slcRow label input {
+              display: none;
+            }
+
+            .popUpForm.slcPaymentAcc .slcRow label p {
+              border: 1px solid #ddd;
+              /*padding: 20px;*/
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-wrap: wrap;
+              padding: 10px;
+              text-align: center;
+              transition-duration: 500ms;
+              cursor: pointer;
+            }
+
+            .popUpForm.slcPaymentAcc .slcRow label p span {
+              flex-basis: 100%;
+            }
+
+            .popUpForm.slcPaymentAcc .slcRow label p:hover {
+              background: #efefef;
+            }
+
+            .popUpForm.slcPaymentAcc .slcRow label input:checked+p {
+              background: #714705;
+              color: #fff;
+            }
+          </style><!-- Meal stations popups -->
+          <aside class="popUpForm myPopup mergePopup">
+            <input type="checkbox" class="state" id="addNewMerge">
+            <article class="content">
+              <div class="header">
+                <h3>Merge Mohamed Ahmed this Order #1002</h3>
+
+                <label class="close" for="addNewMerge">×</label>
+              </div>
+              <div class="popupBody">
+                <form style="flex-basis: 100; display: flex; flex-wrap: wrap;" action="./includes/general.php?action=updateExist&amp;dest=addNewMerge" method="POST" onsubmit="return checkAddMerge(this);">
+                  <div class="row">
+                    <div class="lftPart ">Search Orders </div>
+                    <div class="rightPrt" style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;">
+                      <input type="hidden" id="slctedOrderID" name="slctedOrderID">
+                      <input type="text" id="searchOrders4Merge" placeholder="Search orders by order number" class="inputText search w-ten" name="describedAs" autocomplete="off" style="flex-basis: 78%; ">
+                      <button type="button" class="btnSubmit" id="searchOrders4MergeBtn" style="padding: 5px !important; flex-basis: 20%; margin: 0px; font-size: .85em;">Search</button>
+                    </div>
+                  </div>
+                  <div class="orders-table ">
+                    <h4 style="margin-bottom: 5px; margin-top: 10px;">Merge orders from</h4>
+                    <div class="orders-record titles">
+                      <div class="orders-col">Order ID</div>
+                      <div class="orders-col">Order To</div>
+                      <div class="orders-col">Amount</div>
+                    </div>
+                    <div id="orders-table4Merge" style="flex-basis: 100%; display: flex; flex-wrap: wrap;"></div>
+                  </div>
+                  <div class="row" style="justify-content: flex-end;">
+                    <!-- <p class="totalPara" style="flex-basis: 100%; justify-content: flex-end; margin-top: 15px;  text-align: right;">
+          <span>New Total Amount</span>
+          <input type="hidden" class="totalOrdersAmount" value="0" name="">
+          <span class="amnt" style="font-weight: bold; color: #333">$00</span>
+        </p> -->
+                    <button type="submit" class="btnSubmit" id="btnSave" name="btnSave">Merge Orders</button>
+                  </div>
+                </form>
+              </div>
+            </article>
+            <label class="backdrop" for="addNewMerge"></label>
+          </aside>
+
+
+          <!-- Split Orders -->
+          <aside class="popUpForm myPopup splitPopup">
+            <input type="checkbox" class="state" id="splitOrder">
+            <article class="content" style="width: 400px; ">
+              <div class="header">
+                <h3>Split Order </h3>
+
+                <label class="close" for="splitOrder">×</label>
+              </div>
+              <div class="popupBody">
+                <div style="flex-basis: 100%; display: flex; flex-wrap: wrap;">
+                  <div class="row">
+                    <div class="lftPart" style="">Enter Order Number </div>
+                    <div class="rightPrt" style="display: flex; justify-content: space-around; flex-wrap: wrap; align-items: center;">
+                      <input type="hidden" id="orderID4Split" name="orderID4Split">
+                      <input type="text" id="searchOrders4Split" placeholder="Enter order number" class="inputText search w-ten" autocomplete="off" style="flex-basis: 48%; ">
+                      <button class="btnSubmit" id="searchOrders4SplitBtn" style="padding: 5px !important; flex-basis: 20%; margin: 0px; font-size: .85em;">Search</button>
+                      <p class="amntParag" style="font-size: .9em; flex-basis: 30%; text-align: right;"><span style="font-weight: bold;">Amount</span>: <span class="amnt">$00</span></p>
+                      <label style="flex-basis: 100%;" class="error" id="splitOrderIDError">Select order please.</label>
+                      <div class="suggest split w-six" style=" width: 90% !important; margin-top: 60px; margin-left: -7px;">
+                      </div>
+                    </div>
+                    <div class="col order-details" style="">
+                      <!-- Through js -->
+                    </div>
+                  </div>
+                  <div class="row" style="padding: 2%;">
+                    <div class="lftPart" style="margin-top: 5px;">Split Method </div>
+                    <div class="rightPrt" style="display: flex; padding: 0 7%;">
+                      <input type="hidden" id="slctedOrderID" name="slctedOrderID">
+                      <label class="slcMethod" id="slcMethod">
+                        <input type="radio" checked="" value="byMethod" class="radio splitMethod" id="" name="splitMethod">
+                        <span>By Item</span>
+                      </label>
+                      <!-- <label class="slcMethod" id="slcMethod">
+                 <input type="radio" class="radio splitMethod" id="" value="byAmount" name="splitMethod">
+                 <span>By Amount</span>
+               </label> -->
+                    </div>
+                    <label class="error" id="slcSplitMethodError">Select split method please.</label>
+                    <div class="col"></div>
+                  </div>
+                  <div class="row">
+                    <div class="lftPart" style=""> Split To </div>
+                    <div class="rightPrt" style="display: flex; padding: 0 7%; flex-wrap: wrap; justify-content: flex-start; align-items: center;">
+                      <span class="fal fa-minus splitQty " data-action="decrease" style="cursor: pointer;"></span>
+                      <input type="text" value="2" id="splitNumber" onkeypress="return isDecimalNum(this, event)" class="inputText w-ten">
+                      <span class="fal fa-plus splitQty " data-action="increase" style="cursor: pointer;"></span>
+                      <label style="flex-basis: 100%;" class="error" id="slcSplitNumberError">Enter split to number please.</label>
+                    </div>
+                    <div class="col"></div>
+                  </div>
+
+                  <div class="row" style="justify-content: flex-end;">
+                    <button type="submit" onclick="return check_splitOrders(this);" class="btnSubmit" id="btnSave" name="btnSave">Split Order</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="splitOrder"></label>
+          </aside>
+          <style type="text/css">
+            .myPopup {
+              background: red;
+              border-radius: 5px;
+            }
+
+            .myPopup .content {
+              border-radius: 5px;
+              width: 400px;
+            }
+
+            .popupBody {
+              display: flex;
+              ;
+              flex-wrap: wrap;
+            }
+
+            .popUpForm.myPopup .row {
+              display: flex;
+              ;
+              flex-wrap: wrap;
+              flex-basis: 100%;
+            }
+
+            .popUpForm.myPopup .row .lftPart {
+              flex-basis: 100%;
+              font-size: .9em;
+            }
+
+            .popUpForm.myPopup .row .rightPrt {
+              flex-basis: 100%;
+            }
+
+            .popUpForm.myPopup .row .rightPrt select {
+              flex-basis: 100%;
+              width: 100%;
+            }
+
+            .popUpForm.myPopup .row .rightPrt input {
+              flex-basis: 100%;
+              width: 100% !important;
+            }
+
+            .popUpForm.myPopup .row .rightPrt input.search {
+              background: url(../assets/images/system/bg-search.png) 10px no-repeat;
+              background-position: 98%;
+
+            }
+
+            .orders-table {
+              display: flex;
+              ;
+              flex-wrap: wrap;
+              flex-basis: 100%;
+            }
+
+            .orders-table .orders-record {
+              display: flex;
+              flex-basis: 100%;
+              /*background: red;*/
+              color: #333;
+              align-items: center;
+              font-size: .9em;
+            }
+
+            .orders-table .orders-record:nth-of-type(odd) {
+              background: #dddddd4d;
+            }
+
+            .orders-table .orders-record.titles {
+              background: #ddd;
+              font-weight: 600;
+              font-size: 1em;
+            }
+
+            .orders-table .orders-record .orders-col {
+              padding: 7px;
+            }
+
+            .orders-table .orders-record .orders-col:nth-of-type(1) {
+              flex-basis: 25%;
+            }
+
+            .orders-table .orders-record .orders-col:nth-of-type(2) {
+              flex-basis: 60%;
+            }
+
+            .orders-table .orders-record .orders-col:nth-of-type(3) {}
+
+
+            .orders-table .orders-record .orders-col label.rec-check {
+              display: flex;
+              cursor: pointer;
+            }
+
+            .orders-table .orders-record .orders-col label input {
+              display: none;
+            }
+
+            .orders-table .orders-record .orders-col label .tick:before {
+              position: absolute;
+              font-family: 'Font Awesome 5 Pro';
+              content: "";
+              border: 1px solid #ad722d;
+              width: 15px;
+              height: 15px;
+              text-align: center;
+              line-height: 15px;
+              color: #875a13;
+              cursor: pointer;
+              border-radius: 3px;
+            }
+
+            .orders-table .orders-record .orders-col label input:checked+.tick:before {
+              font-family: 'Font Awesome 5 Pro';
+              content: "\f00c";
+            }
+
+            .orders-table .orders-record .orders-col label span.text {
+              margin-left: 20px;
+            }
+
+            button.btnSubmit {
+              padding: 10px 30px !important;
+              margin-top: 10px;
+              border-radius: 2px;
+              outline: none;
+            }
+
+            #noRecords {
+              width: 100%;
+              text-align: center;
+              margin-top: 15px;
+            }
+
+            .order-details {
+              flex-basis: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              margin-top: 10px;
+              font-size: .8em;
+              padding: 5px;
+              display: none;
+            }
+
+            .order-details .min-row {
+              flex-basis: 100%;
+              display: flex;
+            }
+
+            .order-details .min-row p {
+              border: 1px dotted #ccc;
+              padding: 5px;
+              margin: 0;
+            }
+
+            .order-details .min-row p .big {
+              font-weight: bold;
+            }
+
+            .slcMethod {
+              display: flex;
+              flex-basis: 30%;
+              align-items: center;
+            }
+
+            .slcMethod input.radio {
+              width: 5px !important;
+              flex-basis: 12% !important;
+              outline: none;
+              margin-right: 10px;
+              cursor: pointer;
+              height: 5px;
+            }
+
+            .slcMethod span {
+              cursor: pointer;
+              font-size: .9em;
+            }
+
+            #splitNumber {
+              background: transparent;
+              border: 0px;
+              width: 15%;
+              flex-basis: 15%;
+              margin-left: 00px;
+              margin-right: 00px;
+              text-align: center;
+              border: 1px solid #ddd;
+              padding-right: 10px;
+              border: 0px;
+            }
+
+            .splitQty {
+              border: 2px solid #ad722d;
+              width: 20px;
+              height: 20px;
+              text-align: center;
+              line-height: 15px;
+              border-radius: 50%;
+              color: #ad722d;
+            }
+          </style>
+          <div id="loadPage">
+            <div id="command">
+              <div class="search">
+                <div id="searchBox" class="medium" style="flex-basis: 45%;">
+                  <input type="search" class="srchInput" id="srchWMealOrder" maxlength="200" placeholder="search">
+                  <div class="suggest large"></div>
+                </div>
+                <div class="search-options" style="flex-basis: 20%;">
+                  <!--  <input type="radio" name="srchType" value="byTable" checked="checked"><span>Table</span>
+            <input type="radio" name="srchType" value="byTable" checked="checked"><span>Table</span>
+            <input type="radio" class="second" name="srchType" value="byTell"><span>Tell</span>
+            <input type="radio" class="second" name="srchType" value="byWaiter"><span>Waiter</span>
+            <input type="radio" class="second" name="srchType" value="byCustomer"><span>Customer Phone</span> -->
+                  <select class="large" name="srchType" id="srchType">
+                    <option value="orderID">orderID</option>
+                    <option value="byTable">Table</option>
+                    <option value="byTell">Tell</option>
+                    <option value="byWaiter">Waiter</option>
+                    <option value="byCustomer">Customer Phone</option>
+                  </select>
+                </div>
+                <div class="buttons">
+                  <a class="btnAddNew" title="Search meal order" onclick="return searchMealOrder();">
+                    <i class="fal fa-search"></i>
+                    Search
+                  </a>
+                  <a class="btnAddNew clear" style="background: #e1e1e1; border: 1px solid #e1e1e1; color: #333; text-shadow: none;" title="Clear search" onclick="return clearMyPage();">
+                    <i class="fal fa-redo"></i>
+                    Clear
+                  </a>
+                </div>
+              </div>
+              <div class="buttons ">
+                <label class="btnAddNew payment" style="background: #e4d6b9; border: 1px solid #e4d6b9" title="Split Order" for="splitOrder">
+                  <i class="fal fa-cut"></i>
+                  <span>Split Order</span>
+                </label>
+                <label style="background: #8c503a; border: 1px solid #8c503a" class="btnAddNew payment" title="Make Payment" for="allPayment">
+                  <i class="fal fa-dollar-sign"></i>
+                  <span>Make Payment</span>
+                </label>
+                <label class="btnAddNew discount" style="background: #d9ccc1 ; border: 1px solid #d9ccc1 " title="Add client discount" for="clientDiscount">
+                  <i class="fal fa-tags"></i>
+                  <span>Get Discount</span>
+                </label>
+
+              </div>
+            </div>
+            <input type="hidden" class="inputText medium" id="startDate" name="dateOne" value="2023-12-12" readonly="readonly">
+            <input type="hidden" class="inputText medium second" id="endDate" name="dateTwo" value="2023-12-12" readonly="readonly">
+
+            <div id="dynamicQnd">
+              <div id="foundNum">
+                <label id="count">0</label> record(s) has been found.
+                <span id="refresh"></span>
+              </div>
+              <div id="filters">
+                <div>
+                  <label>Period</label>
+                  <select id="slcPeriod">
+                    <option value="todayUnPaid" selected="selected">Today Unpaid</option>
+                    <option value="todayPaid">Today Paid</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="week">This Week</option>
+                    <option value="all">All</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Per Page</label>
+                  <select id="slcPerPage">
+                    <option value="10" selected="selected">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+              </div>
+              <div id="dataTable">
+                <div class="record header">
+                  <div class="cave button" style="width: 12%;">Action</div>
+                  <div class="cave lshort">Order No.</div>
+                  <div class="cave middle">Order Details</div>
+                  <div class="cave lshort">Served by</div>
+                  <div class="cave lshort">Date</div>
+                  <div class="cave short">Amount</div>
+                  <div class="cave short2">VAT</div>
+                  <div class="cave short2">Total</div>
+                  <div class="cave short">L4 digits</div>
+                  <div class="cave short">Payment</div>
+                </div>
+                <div class="load-data">
+                  <p id="noRecords">no records has been found</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <script src="./assets/js/jquery-3.5.1.min.js"></script>
+          <script src="./assets/js/general.js"></script>
+          <script src="../assets/js/basicFuncs.js"></script>
+          <script src="../assets/js/moment.min.js"></script>
+          <script src="../assets/js/pikaday.js"></script>
+          <script type="text/javascript">
+
+            $("a.print").click(function () {
+              var dateOne = $("#startDate").val();
+              var dateTwo = $("#endDate").val();
+              window.location = "./prints/print.php?report=myActvty&myUser=themanager&dateOne=" + dateOne + "&dateTwo=" + dateTwo;
+            });
+
+
+            var myUser = 'themanager';
+            var myRole = 'admin';
+            var myWhouse = '1001';
+            var period = $("#slcPeriod").val();
+            var perPage = $("#slcPerPage").val();
+            var task = 'lastOrders';
+            var today = "2023-12-12";
+            let data4Merge = '';
+            //
+            loadMealOrder('0', perPage, period, task);
+            $("#slcPerPage, #slcPeriod").change(function () {
+              //$("#dataTable").html('<div class="record header"><div class="cave button">Action</div><div class="cave short">Order No.</div><div class="cave middle">Order Details</div><div class="cave lshort">Served by</div><div class="cave smiddle">Date</div><div class="cave short">Amount</div><div class="cave short">VAT</div><div class="cave short">Total</div><div class="cave short">L4 digits</div><div class="cave short">Payment</div></div>');
+              var perPage = $("#slcPerPage").val();
+              var period = $("#slcPeriod").val();
+              loadMealOrder('0', perPage, period, task);
+            });
+            var picker = new Pikaday({
+              field: document.getElementById("startDate"),
+              firstDay: 6,
+            });
+            var picker = new Pikaday({
+              field: document.getElementById("endDate"),
+              firstDay: 6,
+            });
+            smplyAddMyOrder();
+            check_searchBox();
+            // simpilifyMerge();
+
+            $(document).ready(() => {
+
+
+            })
+
+          </script>
+
+          <style type="text/css">
+            div.orders-workplace #loadPage #command {
+              display: flex;
+              justify-content: space-between;
+              padding: 0px 2%;
+              align-items: center;
+              padding-right: 0px;
+            }
+
+            .search {
+              flex-basis: 60%;
+              /*background: red;*/
+              display: flex;
+            }
+
+            .search-options {
+              width: 10% !important;
+              margin-right: 2%;
+            }
+
+            .search-options select {
+              width: 100% !important;
+            }
+
+            div.orders-workplace #loadPage #command .buttons {
+              float: left !important;
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              flex-basis: 20%;
+            }
+
+            div.orders-workplace #loadPage div.buttons .btnAddNew {
+              padding: 5px 20px;
+              display: flex;
+              align-items: center;
+              flex-basis: 40%;
+              justify-content: space-around;
+              /*margin-left: 10px;*/
+              display: flex;
+              ;
+            }
+
+            div.orders-workplace #loadPage div.buttons .btnAddNew i {
+              margin-right: 15px;
+            }
+
+            div.orders-workplace #loadPage div.buttons label {
+              height: 60px;
+              flex-wrap: wrap;
+              flex-basis: 100%;
+              white-space: nowrap;
+            }
+
+            div.orders-workplace #loadPage div.buttons label i {
+              flex-basis: 100%;
+            }
+
+            div.orders-workplace #loadPage div.buttons label span {
+              flex-basis: 100%;
+            }
+
+            .fal.merge {
+              color: #aa6f2a !important;
+              opacity: 0.8 !important;
+              font-size: 1.3em;
+              font-weight: 600;
+              cursor: pointer;
+            }
+
+            .fal.merge:hover {
+              opacity: 1 !important;
+            }
+          </style>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+
+  <script src="assets/js/jquery.timeago.js"></script>
+  <script src="assets/js/basicFuncs.js"></script>
+  <script src="assets/js/general.js"></script>
+  <script src="libraries/sweetalert/js/sweetalert.js"></script>
+  <link rel="stylesheet" href="libraries/sweetalert/css/sweetalert.css" />
+  <!-- <script src=".libraries/sweetalert/js/sweetalert.js"></script> -->
+
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/pikaday.js"></script>
+  <script src="assets/js/jquery.form.js"></script>
+  <script type="text/javascript">
+    $(".client-types .radio-box").click(function () {
+      $(".client-types .radio-box").removeClass('focused');
+      $(this).addClass('focused');
+    });
+    simplfyWaiterTopBar();
+    simply_order_content();
+
+
+
+  </script>
+  <style type="text/css">
+    .multiselect__container {
+      width: 75%;
+    }
+  </style>
+</body>
+
+</html>

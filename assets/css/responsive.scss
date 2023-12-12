@@ -426,6 +426,7 @@
     order: 3;
     padding: 15px 20px;
     margin-bottom: 8px;
+    margin-top: -20px;
   }
   .middlebar .order-form .client {
     margin: 0;
@@ -443,7 +444,7 @@
     -webkit-box-ordinal-group: 6;
     -ms-flex-order: 5;
     order: 5;
-    margin-top: -336px;
+    margin-top: -475px;
   }
   .middlebar .order-form .price-buttons {
     -ms-flex-preferred-size: 44%;
@@ -731,6 +732,9 @@ div.orders-workplace #loadPage #command #searchBox.large {
 }
 div.orders-workplace p#info {
   width: auto;
+  @include breakpoint(max-sm) {
+    margin-bottom: 8px;
+  }
 }
 select {
   padding-right: 20px;
@@ -968,13 +972,10 @@ select {
   }
   div.orders-workplace div.theForm {
     div.record {
-      &.one {
-        // margin-bottom: 8px;
-        display: flex;
-        gap: 10px 50px;
-        @include breakpoint(max-md) {
-          flex-direction: column;
-        }
+      display: flex;
+      gap: 10px 50px;
+      @include breakpoint(max-md) {
+        flex-direction: column;
       }
       .column {
         width: 100%;
@@ -983,7 +984,8 @@ select {
             display: flex;
           }
         }
-        select {
+        select,
+        input {
           width: 100%;
         }
       }
@@ -991,3 +993,164 @@ select {
   }
 }
 // Loyalty Responsive End
+
+// Customers Responsive Start
+@include breakpoint(max-lg) {
+  .middlebar .theForm section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  div.orders-workplace div.theForm button.btnSubmit {
+    min-width: 80px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  div.orders-workplace .popUpForm div.record.last,
+  div.orders-workplace div.theForm div.record.last,
+  .register-wrap div.theForm div.record.last {
+    padding-top: 1.5%;
+    padding-bottom: 2%;
+  }
+}
+@include breakpoint(max-sm) {
+  .middlebar .theForm fieldset .innerRow {
+    // display: flex;
+    // float: none;
+    .w-eight-half {
+      width: 76% !important;
+    }
+  }
+  .orders-workplace .popUpForm div.lftPart {
+    height: auto;
+    line-height: 1.25;
+  }
+  .orders-workplace .popUpForm {
+    // position: relative;
+    .content {
+      width: 95% !important;
+      input,
+      select,
+      textarea {
+        width: 100% !important;
+      }
+    }
+  }
+}
+// Customers Responsive End
+
+// New Meal Responsive Start
+@include max(900px) {
+  div.orders-workplace input.inputText.second {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+}
+// New Meal Responsive End
+
+// Reports Responsive Start
+@include breakpoint(max-xl) {
+  div.orders-workplace input.inputText {
+    width: calc(50% - 55px) !important;
+    margin-top: 0 !important;
+    margin-left: 5px !important;
+  }
+  div.orders-workplace div.reportArea div#filterWrap div.filter label {
+    width: 100px;
+  }
+  .orders-workplace div.reportArea button {
+    margin-left: 8px;
+    min-width: 100px !important;
+    float: right;
+  }
+  .orders-workplace div.reportArea button#downloadExcel {
+    min-width: 185px !important;
+  }
+
+  div.orders-workplace div.reportArea div.rprtType {
+    label {
+      display: flex;
+      align-items: baseline;
+      span {
+        transform: translateY(-2px);
+      }
+      input,
+      span {
+        float: none !important;
+        height: auto !important;
+      }
+    }
+  }
+}
+@include max(991px) {
+  .orders-workplace .reportArea section {
+    flex-direction: column;
+    gap: 20px;
+    fieldset {
+      width: 100%;
+    }
+  }
+}
+@include breakpoint(max-sm) {
+  div.orders-workplace div.reportArea div.rprtType {
+    width: 100%;
+  }
+}
+// Reports Responsive End
+
+// New Order Responsive Start
+.popup-box .content .main .radio-box {
+  flex-grow: 1;
+  max-width: 150px;
+  text-align: center;
+}
+@include breakpoint(max-xl) {
+  .middlebar .dashboard-content .order-form {
+    align-items: baseline;
+  }
+  .middlebar .order-form .waiters {
+    height: auto;
+    padding-bottom: 0;
+  }
+  .orders-workplace .popUpForm.vlarge .content {
+    max-width: 930px;
+    width: 100%;
+  }
+  div.orders-workplace input.inputText.jumbo {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+@include breakpoint(max-lg) {
+  .middlebar .order-form > * {
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+   }
+   .middlebar .order-form .meals {
+    order: 4;
+  }
+  div.orders-workplace .popup-box.vlarge div.record {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    .column {
+      width: 100%;
+    }
+  }
+}
+@include breakpoint(max-md) {
+  .popup-box {
+    .content {
+      width: 95%;
+      @include breakpoint(max-sm) {
+        .main {
+          margin-inline: 25px;
+        }
+      }
+      .main .row .rightPrt input.inputText {
+        width: 100% !important;
+      }
+    }
+  }
+}
+// New Order Responsive End

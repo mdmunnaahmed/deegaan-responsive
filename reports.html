@@ -1,0 +1,702 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard | My Hotel and Restaurant</title>
+  <link rel="shortcut icon" href="assets/images/system/icon.png" />
+  <link rel="shortcut icon" href="assets/images/company/sostec/favicon.ICO" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="assets/multiselect/dist/multi-select.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/all.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/sumoSelector.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="assets/multiselect/dist/multi-select-min.js"></script>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="orders-workplace">
+      <div class="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div class="logoWrap">
+          <img src="./assets/images/company/logo-white.png" alt="logo" />
+        </div>
+        <ul id="menus">
+          <li class="">
+            <a href="./orders-workplace.php?task=myOrders"><i class="fal fa-hotel"></i><span>My Orders</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=orders"><i class="fal fa-burger-soda"></i><span>New Order</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=reports"><i class="fal fa-file-invoice"></i><span>Reports</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?role=admin&task=mealMgt"><i class="fal fa-cheese"></i><span>New Meal</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=tableMgt"><i class="fal fa-turntable"></i><span>New Table</span></a>
+          </li>
+          <li class="active">
+            <a href="./orders-workplace.php?task=loyalty"><i class="fal fa-gifts"></i><span>Loyalty</span></a>
+          </li>
+          <li class="">
+            <!-- <a href="../dashboard.php"><i class="fal fa-arrow-alt-left"></i><span>Back Home</span></a> -->
+            <a href="./orders-workplace.php?task=customerMgt"><i class="fal fa-users"></i><span>Customers</span></a>
+          </li>
+        </ul>
+
+
+        <!-- <footer>
+      <p>3.0.2</p>
+  </footer> -->
+      </div> <!-- sidebar -->
+
+      <div class="middlebar">
+        <div class="top-bar">
+          <div>
+            <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+            <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          </div>
+          <!-- <h3 class="setting-icon">
+
+                    <a onclick="return chngOrderType();">
+                        off                    </a>
+                </h3> -->
+          <!-- <h3 class="order-design">
+                    <a onclick="return chngOrderDesgn();"> -->
+          <!--  text-and-image -->
+          <!-- Change Design
+                    </a>
+                </h3> -->
+          <h3 class="waiter-amount">
+            <!-- <p>$
+                        </p> -->
+            <a href="../dashboard.php"><i class="fa fa-angle-left"></i> <span>Back to home</span></a>
+
+          </h3>
+          <div>
+            <h3 class="user-name">Hi, ManagersName</h3>
+            <div class="profile-icon">
+              <div class="user icon">
+                <img src="assets/images/users/middle320/default320.png" />
+              </div>
+              <div class="drop-down">
+                <div class="row bar">My Account</div>
+                <div class="row">
+                  <div class="photo">
+                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                    <a href="./orders-workplace.php?role=admin&task=profile">
+                      <div class="overlay">
+                        <span><i class="fal fa-camera-alt"></i></span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="links">
+                    <p class="name">ManagersName</p>
+                    <p class="user">themanager</p>
+                  </div>
+                </div>
+                <div class="row button">
+                  <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
+                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                  </a>
+                  <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+                </div>
+              </div>
+            </div>
+            <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
+          </div>
+        </div>
+
+        <div class="options-bar dash">
+          Menus | New Table </div>
+
+        <div class="dashboard-content">
+          <form action="./orders-workplace.php?role=admin&amp;task=reports&amp;subtask=showInfo" method="POST" onsubmit="return check_report();">
+            <div class="reportArea" style="overflow-y: scroll;">
+              <section>
+                <fieldset class="grey">
+                  <legend>Sales Report</legend>
+                  <div class="innerRow">
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="foodMenu">
+                        <span name="span">Food Menu List</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="todayRestaurant">
+                        <span name="span">Today Restaurant</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="todayRestaurantDetail">
+                        <span name="span">Food Sold Details</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="salesToday" checked="checked">
+                        <span name="span">Sales Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="topMenue">
+                        <span name="span">Foods Sold Summary</span>
+                      </label>
+                    </div>
+                    <div class="rprtType two">
+                      <label>
+                        <input type="radio" name="reportType" value="receiptRpt">
+                        <span name="span">Receipt Report</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="dailyReport">
+                        <span name="span">Daily Report
+                        </span>
+                      </label>
+                    </div>
+
+                    <div class="rprtType two">
+                      <label>
+                        <input type="radio" name="reportType" value="receiptRpt4Book">
+                        <span name="span">Book Receipt Report</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="salesByHalls">
+                        <span name="span">Sales by Halls Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="salesByRooms">
+                        <span name="span">Sales by Rooms Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="salesByTakeaway">
+                        <span name="span">Sales by Take away Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType two">
+                      <label>
+                        <input type="radio" name="reportType" value="receiptRpt4Takeaway">
+                        <span name="span">Takeaway Receipt Report</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="salesByTable">
+                        <span name="span">Sales by Table Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType two">
+                      <label>
+                        <input type="radio" name="reportType" value="receiptRpt4Table">
+                        <span name="span">Table Receipt Report</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="salesMonthly">
+                        <span name="span">Sales Monthly</span>
+                      </label>
+                    </div>
+                    <!--  <div class="rprtType">
+            <label>
+                <input type="radio" name="reportType" value="salesTax"  />
+                <span name='span'>Sales Tax Today</span>
+            </label>
+        </div> -->
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="allSalesTax">
+                        <span name="span">All Sales Tax</span>
+                      </label>
+                    </div>
+
+
+
+                  </div>
+                </fieldset>
+                <fieldset class="grey">
+                  <legend>Activties &amp; Commissions Report</legend>
+                  <div class="innerRow">
+                    <!-- <div class="rprtType">
+            <input type="radio" name="reportType" value="clientActvty"  />
+            <span name='span'>Customer Today</span>
+        </div> -->
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="clientReport">
+                        <span name="span">Customer Activities</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="cashierToday">
+                        <span name="span">Cashier Activity Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="waiterToday">
+                        <span name="span">Waiter Activity Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="waiterCommission">
+                        <span name="span">Waiter Commission Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="allCashierCmsn">
+                        <span name="span">All Casheir Commissions Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="allCommissions">
+                        <span name="span">All Commissions Today</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="recievableToday">
+                        <span name="span">Today's Recievables From Waiters</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="unpaidBills">
+                        <span name="span">Unpaid Bills by the Waiter</span>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+              </section>
+              <section>
+                <fieldset class="xxlarge grey">
+                  <legend> Admin reports</legend>
+                  <div class="innerRow">
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="payments">
+                        <span>Expense</span>
+                      </label>
+                    </div>
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="cshTrnsfr">
+                        <span>Cash Transfer</span>
+                      </label>
+                    </div>
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="supplyListing">
+                        <span>Inventory Listing Report</span>
+                      </label>
+                    </div>
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="vndActvty">
+                        <span>Vendor Activity</span>
+                      </label>
+                    </div>
+
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="supplyUsage">
+                        <span>Stock Report</span>
+                      </label>
+                    </div>
+
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="vendorList">
+                        <span>Vendor List</span>
+                      </label>
+                    </div>
+
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="prchseStock">
+                        <span>Purchase / Stock In Summary</span>
+                      </label>
+                    </div>
+
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="hotelIncomeRpt">
+                        <span>Hotel Income Report</span>
+                      </label>
+                    </div>
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="supplyPrchse">
+                        <span>Purchase / Stock In Details Report</span>
+                      </label>
+                    </div>
+                    <div class="rprtType three">
+                      <label>
+                        <input type="radio" name="reportType" value="userLogs">
+                        <span>User deletion log file</span>
+                      </label>
+                    </div>
+                    <div class="rprtType">
+                      <label>
+                        <input type="radio" name="reportType" value="salesByCustomers">
+                        <span name="span">Sales by Customer Book Today</span>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </section>
+            </div>
+
+            <div class="reportArea second">
+              <div id="filterCmdPrcess">
+                <div id="filterWrap">
+                  <div class="filter byAddedUser" style="display: none;">
+                    <div>
+                      <label>Search Added By</label>
+                      <input type="text" class="inputText w-four-half" id="txtUserAdded" name="txtUserAdded" autocomplete="off" placeholder="search by added username">
+                      <div class="suggest txtUserAdded"></div>
+                    </div>
+                  </div>
+                  <!--  <div class="filter byBankDetail">
+            <div>
+                <label>Bank Details</label>
+                    <input type="text" class="inputText w-four-half"  id="txtBankDetail" name="txtBankDetail" autocomplete="off" placeholder="search by Bank Name" />
+                <div class="suggest txtBankDetail"></div>
+            </div>
+        </div> -->
+                  <div class="filter byWaiter" style="display: none;">
+                    <div>
+                      <label>Search Waiter</label>
+                      <input type="text" class="inputText w-four-half" id="txtWaiter" name="txtWaiter" autocomplete="off" placeholder="search by waiter name">
+                      <div class="suggest waiter"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="display: flex;">
+                      <div class="filter byStation" style="display: none;">
+                        <div>
+                          <label style="width: 22%">Select Storage Area</label>
+                          <select class="w-four " id="slcStorageArea" name="slcStorageArea">
+                            <option value="all" class="allAreasOption" style="display: none;">All Areas</option>
+                            <option value="1001">My Hotel and Restaurant</option>
+                            <option value="1002">Kitchen Store</option>
+                            <option value="1003">Barista Store</option> ?&gt;
+                          </select>
+                        </div>
+                      </div>
+                      <div class="filter byStockAction" style="display: none;">
+                        <div>
+                          <label style="width: 17%">Select Action</label>
+                          <select id="slcStockAction" class="w-four " name="slcStockAction">
+                            <!-- <option value="all">All</option> -->
+                            <option value="consumption" selected="">Stock Consumption</option>
+                            <option value="transfer">Stock Transfer</option>
+                            <option value="adjustment">Stock Adjustment (Coming soon)</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter byReceivedBy" style="display: none;">
+                      <div>
+                        <label>Received By</label>
+                        <select class="w-two " id="slcReceivedBy" name="slcReceivedBy">
+                          <option value="all">Received By</option>
+                          <option value="Warfaa Ahmed">Warfaa Ahmed</option>
+                          <option value="Wardaaaaa">Wardaaaaa</option>
+                          <option value="Jaamac">Jaamac</option>
+                          <option value="Warsan Fareey">Warsan Fareey</option>
+                          <option value="DDDDD">DDDDD</option>
+                          <option value=""></option>
+                          <option value="Daahir">Daahir</option> ?&gt;
+                        </select>
+                      </div>
+                    </div>
+                    <div class="filter byTheWaiter" style="display: none;">
+                      <div>
+                        <label>Select Waiter</label>
+                        <select class="w-four " id="slcWaiter" name="slcWaiter">
+                          <option value="all">Select Waiter</option>
+                          <option value="Ali">Ali</option>
+                          <option value="Halimo">Halimo</option>
+                          <option value="Abdullahi">Abdullahi</option>
+                          <option value="Hassan">Hassan</option>
+                          <option value="sacdiyo">sacdiyo</option> ?&gt;
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="filter byCashier" style="display: none;">
+                      <div>
+                        <label>Search Cashier</label>
+                        <input type="text" class="inputText w-four-half" id="txtCashier" name="txtCashier" autocomplete="off" placeholder="search by cashier name">
+                        <div class="suggest cashier"></div>
+                      </div>
+                    </div>
+                    <div class="filter byMeal" style="display: none;">
+
+                      <div>
+                        <label>Search Meal</label>
+                        <input type="hidden" name="MealID" id="MealID" value="">
+                        <input type="hidden" name="packageID" id="packageID" value="">
+                        <input type="text" class="inputText w-four-half" id="txtMeals" name="txtMeals" autocomplete="off" placeholder="search by meal name">
+                        <label>
+                          <input type="radio" name="srchItemBy" class="srchItemBy" value="category" checked="checked" style="height:12px;transform: scale(1.8,1.8);margin-left: 12px;">
+                          <span style="margin-left: 12px;cursor: pointer;">Category</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="srchItemBy" class="srchItemBy" value="product" style=" height: 12px;transform: scale(1.9,1.9); margin-left: 12px;">
+                          <span style="margin-left: 12px; cursor: pointer;">Product</span>
+                        </label>
+
+                        <!--   <label>
+            <input type="radio" name="srchItemBy" class="srchItemBy" value="allSold"  style=" height: 12px;transform: scale(1.9,1.9); margin-left: 12px;">
+            <span style="margin-left: 12px; cursor: pointer;">All Sold</span>
+        </label> -->
+                        <div class="suggest meal"></div>
+                      </div>
+                    </div>
+                    <!--   <div class="filter byAllSold">
+               <div>
+                <label>All Sold</label>
+                <select class="w-four-half" id="slcAllSold" name="slcAllSold">
+                    <option value="all">All Sold</option>
+                </select>
+            </div>
+            </div> -->
+                    <div class="filter byCustomer" style="display: none;">
+                      <div>
+                        <label>Search Customer</label>
+                        <input type="hidden" name="clientID" id="clientID">
+                        <input type="text" class="inputText w-five" id="txtClients" name="txtClients" autocomplete="off" placeholder="search by customer name">
+                        <div class="suggest customer"></div>
+                      </div>
+                    </div>
+
+                    <div class="filter byExpense" style="display: none;">
+                      <div>
+                        <label>Payment Type</label>
+                        <select class="w-two" id="slcPaymentType" name="slcPaymentType">
+                          <option value="all">All Type</option>
+                          <option value="restaurant-expense">Restaurant Expense</option>
+                          <option value="expense">Expense Accounts</option>
+                          <!-- <option value="commission">Commission</option> -->
+                          <option value="vendor">Account Payable</option>
+                          <option value="payroll">Payroll</option>
+
+                        </select>
+                        <select class="w-two second" id="slcExpAcc" name="slcExpAcc">
+                          <option value="all">All Accounts</option>
+                          <option value="14">Adeega Qudaar</option>
+                          <option value="13">Butagaaz 13kg</option>
+                          <option value="9">Cuntada Maqaayadda</option>
+                          <option value="6">Cunto</option>
+                          <option value="4">Koranto</option>
+                          <option value="15">Malaay</option>
+                          <option value="2">Rent</option>
+                          <option value="12">Staff Meal</option>
+                          <option value="17">Transportation</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="filter byBankDetails" style="display: none;">
+                      <div>
+                        <label>Bank Details</label>
+                        <select class="w-four" id="slcBankDetails" name="slcBankDetails">
+                          <option value="All">Select Bank</option>
+                          <option value="010100">010100</option>
+                          <option value="010100">010100</option>
+                          <option value="*789*010100*$#">*789*010100*$#</option>
+                          <option value="*789*010100*">*789*010100*</option>
+                          <option value="010100">010100</option>
+                          <option value="010100">010100</option>
+                          <option value="010100">010100</option>
+                          <option value="8299221">8299221</option>
+                          <option value="4343534">4343534</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="filter byVndActvty" style="display: none;">
+                      <div>
+                        <label>Vendor</label>
+                        <input type="text" class="w-four inputText" id="txtVendor" autocomplete="off" placeholder="search by name or phone">
+                        <input type="hidden" id="vendorID" name="vendorID" readonly="readonly">
+                        <div class="suggest two"></div>
+                      </div>
+                    </div>
+                    <div class="filter byIncStatment" style="display: none;">
+                      <div>
+                        <label for="monthTick">Month</label>
+                        <input type="month" class="inputText w-two" id="txtIncMonth" name="txtIncMonth" value="2023-12">
+                      </div>
+                    </div>
+                    <div class="filter byReceipt" style="display: none;">
+                      <div>
+                        <label>addedly</label>
+                        <select class="w-two" id="slcaddedly" name="slcaddedly">
+                          <option value="all">All</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="filter byDate" style="display: inline;">
+                      <label>Filter By Date</label>
+                      <!--  <input type="text" class="inputText w-two-half datepicker" id="startDate" name="startDate" value="2023-12-12" placeholder="start Date" readonly="readonly"  />
+            <input type="text" class="inputText w-two-half datepicker second" id="endDate" name="endDate" value="2023-12-12" placeholder="end Date" readonly="readonly" /> -->
+                      <input type="text" class="inputText w-two-half" id="startDate" name="startDate" value="2023-12-12" placeholder="start date" readonly="readonly">
+                      <input type="text" class="inputText w-two-half second" id="endDate" name="endDate" value="2023-12-12" placeholder="end date" readonly="readonly">
+                    </div>
+                    <div class="filter byMonth" style="display: none;">
+                      <label>Filter By Month</label>
+                      <input class="inputText w-two-half" type="month" id="txtMonth" name="txtMonth" value="2023-12">
+                    </div>
+                    <div class="filter byUser4Logs" style="display: none;">
+                      <div>
+                        <label>User</label>
+                        <select class="w-two" id="slcUser4Logs" name="slcUser4Logs">
+                          <option value="">--Select user</option>
+                          <option value="themanager">themanager</option>
+                          <option value="cashier">cashier</option>
+                          <option value="Ali">Ali</option>
+                          <option value="Ahmed">Ahmed</option>
+                          <option value="Halimo">Halimo</option>
+                          <option value="Abdullahi">Abdullahi</option>
+                          <option value="Hassan">Hassan</option>
+                          <option value="AhmedFarax">AhmedFarax</option>
+                          <option value="sacdiyo">sacdiyo</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="filter byLogCategory" style="display: none;">
+                      <div>
+                        <label>Category</label>
+                        <select class="w-two" id="slcCategory" name="slcCategory">
+                          <option value="all">All</option>
+                          <option value="Restaurant">Restaurant</option>
+                          <option value="Hotel">Hotel</option>
+                          <option value="Service">Service</option>
+                          <option value="Inventory">Inventory</option>
+                          <option value="Finance">Finance</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="filter byLogAction" style="display: none;">
+                      <div>
+                        <label>Log Action</label>
+                        <select class="w-two" id="slcAction" name="slcAction">
+                          <option value="all">All</option>
+                          <option value="added">Added</option>
+                          <!-- <option value="confirmed">confirmed</option> -->
+                          <option value="cancelled">Cancelled</option>
+                          <option value="decreased">Decreased</option>
+                          <option value="deleted">Deleted</option>
+                          <option value="removed">Removed</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="filter byTime" style="overflow-y: hidden; display: inline;">
+                      <div>
+                        <label>Filter by Time</label>
+                        <input class="inputText w-two" type="time" value="00:00" name="startTime" id="startTime">
+                        <input class="inputText second w-two" value="23:59" type="time" name="endTime" id="endTime">
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" id="btnDisplay" name="btnDisplay" style="display: block;">Display</button>
+                  <button style="display: inline; width: 15%;" type="button" id="downloadExcel"><a id="excel" class="report" target="_blank">Download by Excel</a></button>
+                  <label id="process"></label>
+                  <label class="error" id="error1">error1</label>
+                </div>
+              </div>
+
+              <script src="./assets/js/jquery-3.5.1.min.js"></script>
+              <script src="../assets/js/moment.min.js"></script>
+              <script src="../assets/js/pikaday.js"></script>
+              <script src="./assets/js/reports.js"></script>
+
+
+              <script type="text/javascript">
+                $(document).ready(function () {
+                  $(".filter.byDate").css("display", "inline");
+                  $(".filter.byTime").css("display", "inline");
+                });
+
+                smplfyReport();
+                var myUser = 'themanager';
+                var myRole = 'admin';
+                var today = '2023, 12, 12';
+                var thisYear = '2023';
+
+                $("#downloadExcel").css("display", "inline");
+                // let time =
+
+              </script>
+            </div>
+          </form>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+
+  <script src="assets/js/jquery.timeago.js"></script>
+  <script src="assets/js/basicFuncs.js"></script>
+  <script src="assets/js/general.js"></script>
+  <script src="libraries/sweetalert/js/sweetalert.js"></script>
+  <link rel="stylesheet" href="libraries/sweetalert/css/sweetalert.css" />
+  <!-- <script src=".libraries/sweetalert/js/sweetalert.js"></script> -->
+
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/pikaday.js"></script>
+  <script src="assets/js/jquery.form.js"></script>
+  <script type="text/javascript">
+    $(".client-types .radio-box").click(function () {
+      $(".client-types .radio-box").removeClass('focused');
+      $(this).addClass('focused');
+    });
+    simplfyWaiterTopBar();
+    simply_order_content();
+
+
+
+  </script>
+  <style type="text/css">
+    .multiselect__container {
+      width: 75%;
+    }
+  </style>
+</body>
+
+</html>

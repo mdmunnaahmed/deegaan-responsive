@@ -331,6 +331,7 @@
     order: 3;
     padding: 15px 20px;
     margin-bottom: 8px;
+    margin-top: -20px;
   }
   .middlebar .order-form .client {
     margin: 0;
@@ -342,7 +343,7 @@
     height: 342px;
     flex-basis: 55%;
     order: 5;
-    margin-top: -336px;
+    margin-top: -475px;
   }
   .middlebar .order-form .price-buttons {
     flex-basis: 44%;
@@ -639,6 +640,11 @@ div.orders-workplace #loadPage #command #searchBox.large {
 div.orders-workplace p#info {
   width: auto;
 }
+@media (max-width: 575px) {
+  div.orders-workplace p#info {
+    margin-bottom: 8px;
+  }
+}
 
 select {
   padding-right: 20px;
@@ -933,13 +939,13 @@ select {
   div.orders-workplace a#btnCancel {
     min-width: 80px;
   }
-  div.orders-workplace div.theForm div.record.one {
+  div.orders-workplace div.theForm div.record {
     display: flex;
     gap: 10px 50px;
   }
 }
 @media (max-width: 900px) and (max-width: 767px) {
-  div.orders-workplace div.theForm div.record.one {
+  div.orders-workplace div.theForm div.record {
     flex-direction: column;
   }
 }
@@ -950,7 +956,148 @@ select {
   div.orders-workplace div.theForm div.record .column.right .rghtPrt {
     display: flex;
   }
-  div.orders-workplace div.theForm div.record .column select {
+  div.orders-workplace div.theForm div.record .column select,
+  div.orders-workplace div.theForm div.record .column input {
     width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .middlebar .theForm section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  div.orders-workplace div.theForm button.btnSubmit {
+    min-width: 80px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  div.orders-workplace .popUpForm div.record.last,
+  div.orders-workplace div.theForm div.record.last,
+  .register-wrap div.theForm div.record.last {
+    padding-top: 1.5%;
+    padding-bottom: 2%;
+  }
+}
+@media (max-width: 575px) {
+  .middlebar .theForm fieldset .innerRow .w-eight-half {
+    width: 76% !important;
+  }
+  .orders-workplace .popUpForm div.lftPart {
+    height: auto;
+    line-height: 1.25;
+  }
+  .orders-workplace .popUpForm .content {
+    width: 95% !important;
+  }
+  .orders-workplace .popUpForm .content input,
+  .orders-workplace .popUpForm .content select,
+  .orders-workplace .popUpForm .content textarea {
+    width: 100% !important;
+  }
+}
+@media (max-width: 900px) {
+  div.orders-workplace input.inputText.second {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+}
+@media (max-width: 1199px) {
+  div.orders-workplace input.inputText {
+    width: calc(50% - 55px) !important;
+    margin-top: 0 !important;
+    margin-left: 5px !important;
+  }
+  div.orders-workplace div.reportArea div#filterWrap div.filter label {
+    width: 100px;
+  }
+  .orders-workplace div.reportArea button {
+    margin-left: 8px;
+    min-width: 100px !important;
+    float: right;
+  }
+  .orders-workplace div.reportArea button#downloadExcel {
+    min-width: 185px !important;
+  }
+  div.orders-workplace div.reportArea div.rprtType label {
+    display: flex;
+    align-items: baseline;
+  }
+  div.orders-workplace div.reportArea div.rprtType label span {
+    transform: translateY(-2px);
+  }
+  div.orders-workplace div.reportArea div.rprtType label input,
+  div.orders-workplace div.reportArea div.rprtType label span {
+    float: none !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 991px) {
+  .orders-workplace .reportArea section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .orders-workplace .reportArea section fieldset {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  div.orders-workplace div.reportArea div.rprtType {
+    width: 100%;
+  }
+}
+.popup-box .content .main .radio-box {
+  flex-grow: 1;
+  max-width: 150px;
+  text-align: center;
+}
+
+@media (max-width: 1199px) {
+  .middlebar .dashboard-content .order-form {
+    align-items: baseline;
+  }
+  .middlebar .order-form .waiters {
+    height: auto;
+    padding-bottom: 0;
+  }
+  .orders-workplace .popUpForm.vlarge .content {
+    max-width: 930px;
+    width: 100%;
+  }
+  div.orders-workplace input.inputText.jumbo {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+@media (max-width: 991px) {
+  .middlebar .order-form > * {
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+  .middlebar .order-form .meals {
+    order: 4;
+  }
+  div.orders-workplace .popup-box.vlarge div.record {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  div.orders-workplace .popup-box.vlarge div.record .column {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .popup-box .content {
+    width: 95%;
+  }
+}
+@media (max-width: 767px) and (max-width: 575px) {
+  .popup-box .content .main {
+    margin-inline: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .popup-box .content .main .row .rightPrt input.inputText {
+    width: 100% !important;
   }
 }/*# sourceMappingURL=responsive.css.map */

@@ -1,0 +1,1173 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard | My Hotel and Restaurant</title>
+  <link rel="shortcut icon" href="assets/images/system/icon.png" />
+  <link rel="shortcut icon" href="assets/images/company/sostec/favicon.ICO" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="assets/multiselect/dist/multi-select.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/all.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/sumoSelector.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="assets/multiselect/dist/multi-select-min.js"></script>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="orders-workplace">
+      <div class="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div class="logoWrap">
+          <img src="./assets/images/company/logo-white.png" alt="logo" />
+        </div>
+        <ul id="menus">
+          <li class="">
+            <a href="./orders-workplace.php?task=myOrders"><i class="fal fa-hotel"></i><span>My Orders</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=orders"><i class="fal fa-burger-soda"></i><span>New Order</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=reports"><i class="fal fa-file-invoice"></i><span>Reports</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?role=admin&task=mealMgt"><i class="fal fa-cheese"></i><span>New Meal</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=tableMgt"><i class="fal fa-turntable"></i><span>New Table</span></a>
+          </li>
+          <li class="active">
+            <a href="./orders-workplace.php?task=loyalty"><i class="fal fa-gifts"></i><span>Loyalty</span></a>
+          </li>
+          <li class="">
+            <!-- <a href="../dashboard.php"><i class="fal fa-arrow-alt-left"></i><span>Back Home</span></a> -->
+            <a href="./orders-workplace.php?task=customerMgt"><i class="fal fa-users"></i><span>Customers</span></a>
+          </li>
+        </ul>
+
+
+        <!-- <footer>
+      <p>3.0.2</p>
+  </footer> -->
+      </div> <!-- sidebar -->
+
+      <div class="middlebar">
+        <div class="top-bar">
+          <div>
+            <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+            <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          </div>
+          <!-- <h3 class="setting-icon">
+
+                    <a onclick="return chngOrderType();">
+                        off                    </a>
+                </h3> -->
+          <!-- <h3 class="order-design">
+                    <a onclick="return chngOrderDesgn();"> -->
+          <!--  text-and-image -->
+          <!-- Change Design
+                    </a>
+                </h3> -->
+          <h3 class="waiter-amount">
+            <!-- <p>$
+                        </p> -->
+            <a href="../dashboard.php"><i class="fa fa-angle-left"></i> <span>Back to home</span></a>
+
+          </h3>
+          <div>
+            <h3 class="user-name">Hi, ManagersName</h3>
+            <div class="profile-icon">
+              <div class="user icon">
+                <img src="assets/images/users/middle320/default320.png" />
+              </div>
+              <div class="drop-down">
+                <div class="row bar">My Account</div>
+                <div class="row">
+                  <div class="photo">
+                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                    <a href="./orders-workplace.php?role=admin&task=profile">
+                      <div class="overlay">
+                        <span><i class="fal fa-camera-alt"></i></span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="links">
+                    <p class="name">ManagersName</p>
+                    <p class="user">themanager</p>
+                  </div>
+                </div>
+                <div class="row button">
+                  <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
+                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                  </a>
+                  <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+                </div>
+              </div>
+            </div>
+            <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
+          </div>
+        </div>
+
+        <div class="options-bar dash">
+          Menus | New Table </div>
+
+        <div class="dashboard-content">
+          <div id="loadPage">
+            <div class="twoCols one">
+              <header>Meal Packages<span>[10 rows]</span>
+                <a id="addnew" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=addMealPackage"></a>
+              </header>
+              <div id="searchBox">
+                <input type="search" id="srchMealPackage" class="srchInput" maxlength="200" placeholder="search by package name">
+                <div class="suggest two"></div>
+              </div>
+              <div class="dynamicData two">
+                <div id="loading" style="display: none;"></div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=10"></a>
+                    <a id="delete" onclick="delMealPckge(10)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=10">Test</a></label>
+                  <label id="sumada"><span id="active">1 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=9"></a>
+                    <a id="delete" onclick="delMealPckge(9)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=9">Halls</a></label>
+                  <label id="sumada"><span id="active">1 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=8"></a>
+                    <a id="delete" onclick="delMealPckge(8)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=8">Portrait</a></label>
+                  <label id="sumada"><span id="active">1 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=7"></a>
+                    <a id="delete" onclick="delMealPckge(7)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=7">Entertainments</a></label>
+                  <label id="sumada"><span id="active">7 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=6"></a>
+                    <a id="delete" onclick="delMealPckge(6)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=6">Tea</a></label>
+                  <label id="sumada"><span id="active">6 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=5"></a>
+                    <a id="delete" onclick="delMealPckge(5)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=5">Wadani</a></label>
+                  <label id="sumada"><span id="active">2 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=4"></a>
+                    <a id="delete" onclick="delMealPckge(4)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=4">Drinks</a></label>
+                  <label id="sumada"><span id="active">19 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=3"></a>
+                    <a id="delete" onclick="delMealPckge(3)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=3">Casho</a></label>
+                  <label id="sumada"><span id="active">17 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=2"></a>
+                    <a id="delete" onclick="delMealPckge(2)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=2">Qado</a></label>
+                  <label id="sumada"><span id="active">18 Meal Item(s)</span></label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updatePckge&amp;recID=1"></a>
+                    <a id="delete" onclick="delMealPckge(1)"></a>
+                  </div>
+                  <label id="cinwan"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showPckage&amp;recID=1">Quraac</a></label>
+                  <label id="sumada"><span id="active">10 Meal Item(s)</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="twoCols two">
+              <header>Meal Items<span>[82 rows]</span>
+                <a id="addnew" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=addMealItem" title="Add New Meal"></a>
+              </header>
+              <div id="searchBox">
+                <input type="search" id="srchMealItem" class="srchInput" maxlength="200" placeholder="search by name">
+                <div class="suggest one"></div>
+              </div>
+              <div class="dynamicData one">
+                <div id="loading" style="display: none;"></div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=82"></a>
+                    <a id="delete" onclick="delMealItem(82)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=82">Test (Test)</a></label>
+                  <label id="sumada" class="small">$1</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=81"></a>
+                    <a id="delete" onclick="delMealItem(81)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=81">dalabaad (Halls)</a></label>
+                  <label id="sumada" class="small">$300</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=80"></a>
+                    <a id="delete" onclick="delMealItem(80)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=80">Sawir Dhalasho (Portrait)</a></label>
+                  <label id="sumada" class="small">$2</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=79"></a>
+                    <a id="delete" onclick="delMealItem(79)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=79">Galid (Entertainments)</a></label>
+                  <label id="sumada" class="small">$1</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=78"></a>
+                    <a id="delete" onclick="delMealItem(78)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=78">Baabuurka (Entertainments)</a></label>
+                  <label id="sumada" class="small">$3</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=77"></a>
+                    <a id="delete" onclick="delMealItem(77)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=77">Buufinta (Entertainments)</a></label>
+                  <label id="sumada" class="small">$1</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=76"></a>
+                    <a id="delete" onclick="delMealItem(76)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=76">Laadhuu (Entertainments)</a></label>
+                  <label id="sumada" class="small">$3</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=75"></a>
+                    <a id="delete" onclick="delMealItem(75)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=75">Football station (Entertainments)</a></label>
+                  <label id="sumada" class="small">$15</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=74"></a>
+                    <a id="delete" onclick="delMealItem(74)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=74">Playstation (Entertainments)</a></label>
+                  <label id="sumada" class="small">$10</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=73"></a>
+                    <a id="delete" onclick="delMealItem(73)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=73">Swimming pool (Entertainments)</a></label>
+                  <label id="sumada" class="small">$10</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=72"></a>
+                    <a id="delete" onclick="delMealItem(72)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=72">Jabati (Qado)</a></label>
+                  <label id="sumada" class="small">$1.5</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=71"></a>
+                    <a id="delete" onclick="delMealItem(71)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=71">Buskeeti &amp; Jabaati (Qado)</a></label>
+                  <label id="sumada" class="small">$11.5</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=70"></a>
+                    <a id="delete" onclick="delMealItem(70)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=70">Buskeeti &amp; Baasto (Qado)</a></label>
+                  <label id="sumada" class="small">$11.5</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=69"></a>
+                    <a id="delete" onclick="delMealItem(69)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=69">Bariis &amp; Buskeeti (Qado)</a></label>
+                  <label id="sumada" class="small">$11.5</label>
+                </div>
+                <div class="record short">
+                  <div id="batono">
+                    <a id="change" href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=updateItem&amp;recID=68"></a>
+                    <a id="delete" onclick="delMealItem(68)"></a>
+                  </div>
+                  <label id="cinwan" class="large"><a href="./orders-workplace.php?role=admin&amp;task=mealMgt&amp;subtask=showItem&amp;recID=68">Finger fish (Qado)</a></label>
+                  <label id="sumada" class="small">$12</label>
+                </div>
+                <div class="load_more_link"><input type="button" class="displayMore" value="Load More" onclick="loadMealItems(15,15);"><span id="loading">&nbsp;</span></div>
+              </div>
+            </div>
+            <div class="twoCols one second">
+              <header>Meal Station and Printer Setup<span>[3 rows]</span>
+                <label for="addMealStation" id="addnew" title="Add New Meal Station"><i class="fa fa-plus" style="float: right; margin-top: 8px; font-size: 1.4em; color: #ad722d; cursor: pointer;"></i></label>
+              </header>
+              <div id="searchBox">
+                <!-- <input type="search" id="srchMealItem" class="srchInput" maxlength="200" placeholder="search by name" /> -->
+                <!-- <div class="suggest one"></div> -->
+              </div>
+              <div class="dynamicData  stations">
+                <div class="record short active">
+                  <div id="batono">
+                    <label id="change" for="editMealStation3"></label>
+                    <a id="delete" onclick="delMealOrderStation(3)"></a>
+                  </div>
+                  <label id="cinwan" title="coffee" class="large">Coffee </label>
+                  <label id="sumada" class="small">192.168.0.3</label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <label id="change" for="editMealStation2"></label>
+                    <a id="delete" onclick="delMealOrderStation(2)"></a>
+                  </div>
+                  <label id="cinwan" title="drinks" class="large">Cabitaan </label>
+                  <label id="sumada" class="small">192.168.0.2</label>
+                </div>
+                <div class="record short active">
+                  <div id="batono">
+                    <label id="change" for="editMealStation1"></label>
+                    <a id="delete" onclick="delMealOrderStation(1)"></a>
+                  </div>
+                  <label id="cinwan" title="kitchen" class="large">jiko </label>
+                  <label id="sumada" class="small">192.168.0.1</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meal stations popups -->
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="addMealStation">
+            <article class="content" style="width: 600px;">
+              <div class="header">
+                <h3>Add Meal stations</h3>
+                <label class="close" for="addMealStation">×</label>
+              </div>
+              <div class="popupBody">
+                <div class="row">
+                  <div class="lftPart required">Meal Category Order to </div>
+                  <div class="rightPrt">
+                    <select class="large " name="mealCtgryOrderTo" id="mealCtgryOrderTo">
+                      <option value=""> -- Select Category</option>
+                      <option value="kitchen">Kitchen</option>
+                      <option value="drinks">Drinks</option>
+                      <option value="coffee">Coffee</option>
+                      <option value="fastfood">Fast Food</option>
+                      <option value="bar">Bar</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Described as</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="describedAs" name="describedAs" autocomplete="off">
+                    <label class="error" id="error2">error2</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">IP Address</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="ipAddress" name="ipAddress" autocomplete="off">
+                    <label class="error" id="error3">error3</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Description</div>
+                  <div class="rightPrt">
+                    <textarea type="text" cols="4" class="inputText w-ten" id="description" name="description" autocomplete="off"></textarea>
+                    <label class="error" id="error4">error4</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return addMealStation();">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="addMealStation"></label>
+          </aside>
+
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editMealStation3">
+            <article class="content" style="width: 600px;">
+              <div class="header">
+                <h3>Add Meal stations</h3>
+                <label class="close" for="editMealStation3">×</label>
+              </div>
+              <div class="popupBody">
+                <div class="row">
+                  <div class="lftPart required">Meal Category Order to </div>
+                  <div class="rightPrt">
+                    <input type="hidden" value="3" name="printOrderToID" id="printOrderToID">
+                    <select class="large " name="mealCtgryOrderTo" id="mealCtgryOrderTo">
+                      <option value=""> -- Select Category</option>
+                      <option value="kitchen">Kitchen</option>
+                      <option value="drinks">Drinks</option>
+                      <option selected="" value="coffee">Coffee</option>
+                      <option value="fastfood">Fast Food</option>
+                      <option value="bar">Bar</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Described as</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" value="Coffee" id="describedAs" name="describedAs" autocomplete="off">
+                    <label class="error" id="error2">error2</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">IP Address</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="ipAddress" value="192.168.0.3" "="" name=" ipAddress" autocomplete="off">
+                    <label class="error" id="error3">error3</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Description</div>
+                  <div class="rightPrt">
+                    <textarea type="text" cols="4" class="inputText w-ten" id="description" name="description" autocomplete="off"></textarea>
+                    <label class="error" id="error4">error4</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart ">Status </div>
+                  <div class="rightPrt">
+                    <select class="large" name="slcStatus" id="slcStatus">
+                      <option value="active" selected="selected">Active</option>
+                      <option value="suspended">Suspended</option>
+                    </select>
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editMealStation(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editMealStation3"></label>
+          </aside>
+
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editMealStation2">
+            <article class="content" style="width: 600px;">
+              <div class="header">
+                <h3>Add Meal stations</h3>
+                <label class="close" for="editMealStation2">×</label>
+              </div>
+              <div class="popupBody">
+                <div class="row">
+                  <div class="lftPart required">Meal Category Order to </div>
+                  <div class="rightPrt">
+                    <input type="hidden" value="2" name="printOrderToID" id="printOrderToID">
+                    <select class="large " name="mealCtgryOrderTo" id="mealCtgryOrderTo">
+                      <option value=""> -- Select Category</option>
+                      <option value="kitchen">Kitchen</option>
+                      <option selected="" value="drinks">Drinks</option>
+                      <option value="coffee">Coffee</option>
+                      <option value="fastfood">Fast Food</option>
+                      <option value="bar">Bar</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Described as</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" value="Cabitaan" id="describedAs" name="describedAs" autocomplete="off">
+                    <label class="error" id="error2">error2</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">IP Address</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="ipAddress" value="192.168.0.2" "="" name=" ipAddress" autocomplete="off">
+                    <label class="error" id="error3">error3</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Description</div>
+                  <div class="rightPrt">
+                    <textarea type="text" cols="4" class="inputText w-ten" id="description" name="description" autocomplete="off"></textarea>
+                    <label class="error" id="error4">error4</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart ">Status </div>
+                  <div class="rightPrt">
+                    <select class="large" name="slcStatus" id="slcStatus">
+                      <option value="active" selected="selected">Active</option>
+                      <option value="suspended">Suspended</option>
+                    </select>
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editMealStation(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editMealStation2"></label>
+          </aside>
+
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editMealStation1">
+            <article class="content" style="width: 600px;">
+              <div class="header">
+                <h3>Add Meal stations</h3>
+                <label class="close" for="editMealStation1">×</label>
+              </div>
+              <div class="popupBody">
+                <div class="row">
+                  <div class="lftPart required">Meal Category Order to </div>
+                  <div class="rightPrt">
+                    <input type="hidden" value="1" name="printOrderToID" id="printOrderToID">
+                    <select class="large " name="mealCtgryOrderTo" id="mealCtgryOrderTo">
+                      <option value=""> -- Select Category</option>
+                      <option selected="" value="kitchen">Kitchen</option>
+                      <option value="drinks">Drinks</option>
+                      <option value="coffee">Coffee</option>
+                      <option value="fastfood">Fast Food</option>
+                      <option value="bar">Bar</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Described as</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" value="jiko" id="describedAs" name="describedAs" autocomplete="off">
+                    <label class="error" id="error2">error2</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">IP Address</div>
+                  <div class="rightPrt">
+                    <input type="text" class="inputText w-ten" id="ipAddress" value="192.168.0.1" "="" name=" ipAddress" autocomplete="off">
+                    <label class="error" id="error3">error3</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Description</div>
+                  <div class="rightPrt">
+                    <textarea type="text" cols="4" class="inputText w-ten" id="description" name="description" autocomplete="off"></textarea>
+                    <label class="error" id="error4">error4</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart ">Status </div>
+                  <div class="rightPrt">
+                    <select class="large" name="slcStatus" id="slcStatus">
+                      <option value="active" selected="selected">Active</option>
+                      <option value="suspended">Suspended</option>
+                    </select>
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editMealStation(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editMealStation1"></label>
+          </aside>
+
+
+          <!-- Add User packages -->
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="addUserPkges">
+            <article class="content">
+              <div class="header">
+                <h3>Add User Packages</h3>
+                <label class="close" for="addUserPkges">×</label>
+              </div>
+              <div class="popupBody" style="min-height: 400px;">
+                <div class="row">
+                  <div class="lftPart required">User </div>
+                  <div class="rightPrt">
+                    <select class="large " name="slcUser" id="slcUser">
+                      <option value=""> -- Select User</option>
+                      <option value="Ali">Ali</option>
+                      <option value="Halimo">Halimo</option>
+                      <option value="Abdullahi">Abdullahi</option>
+                      <option value="Hassan">Hassan</option>
+                      <option value="sacdiyo">sacdiyo</option>
+                    </select>
+                    <label class="error" id="error111">error111</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Packages</div>
+                  <div class="rightPrt">
+                    <div class="SumoSelect" tabindex="1"><select class="xlarge conditionBox SlectBox SelectClass" id="slcUserPkges" name="slcUserPkges[]" multiple="multiple">
+                        <option value="1">Quraac</option>
+                        <option value="2">Qado</option>
+                        <option value="3">Casho</option>
+                        <option value="4">Drinks</option>
+                        <option value="5">Wadani</option>
+                        <option value="6">Tea</option>
+                        <option value="7">Entertainments</option>
+                        <option value="8">Portrait</option>
+                        <option value="9">Halls</option>
+                        <option value="10">Test</option>
+                      </select>
+                      <p class="CaptionCont SelectBox" title="Select Here"><span class="placeholder">Select Here</span><label><i></i></label></p>
+                    </div>
+                    <label class="error" id="error222">error222</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return addUserPkges();">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="addUserPkges"></label>
+          </aside>
+
+          <!-- edit user packages -->
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editUserAllowedPkgssacdiyo">
+            <article class="content">
+              <div class="header">
+                <h3>Add User Packages</h3>
+                <label class="close" for="editUserAllowedPkgssacdiyo">×</label>
+              </div>
+              <div class="popupBody" style="min-height: 400px;">
+                <div class="row">
+                  <div class="lftPart required">User </div>
+                  <div class="rightPrt">
+                    <select class="large " name="slcUser" id="slcUser">
+                      <option value=""> -- Select User</option>
+                      <option value="Ali">Ali</option>
+                      <option value="Halimo">Halimo</option>
+                      <option value="Abdullahi">Abdullahi</option>
+                      <option value="Hassan">Hassan</option>
+                      <option value="sacdiyo" selected="">sacdiyo</option>
+                    </select>
+                    <label class="error" id="error111">error111</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Packages</div>
+                  <div class="rightPrt">
+                    <div class="SumoSelect" tabindex="1"><select class="xlarge conditionBox SlectBox SelectClass" id="slcUserPkges" name="slcUserPkges[]" multiple="multiple">
+                        <option value="1">Quraac</option>
+                        <option value="2">Qado</option>
+                        <option value="3">Casho</option>
+                        <option value="4">Drinks</option>
+                        <option value="5">Wadani</option>
+                        <option value="6">Tea</option>
+                        <option value="7">Entertainments</option>
+                        <option value="8">Portrait</option>
+                        <option value="9">Halls</option>
+                        <option value="10">Test</option>
+                      </select>
+                      <p class="CaptionCont SelectBox" title="Select Here"><span class="placeholder">Select Here</span><label><i></i></label></p>
+                    </div>
+                    <label class="error" id="error222">error222</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editUserAllowedPkgs(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editUserAllowedPkgssacdiyo"></label>
+          </aside>
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editUserAllowedPkgsHassan">
+            <article class="content">
+              <div class="header">
+                <h3>Add User Packages</h3>
+                <label class="close" for="editUserAllowedPkgsHassan">×</label>
+              </div>
+              <div class="popupBody" style="min-height: 400px;">
+                <div class="row">
+                  <div class="lftPart required">User </div>
+                  <div class="rightPrt">
+                    <select class="large " name="slcUser" id="slcUser">
+                      <option value=""> -- Select User</option>
+                      <option value="Ali">Ali</option>
+                      <option value="Halimo">Halimo</option>
+                      <option value="Abdullahi">Abdullahi</option>
+                      <option value="Hassan" selected="">Hassan</option>
+                      <option value="sacdiyo">sacdiyo</option>
+                    </select>
+                    <label class="error" id="error111">error111</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Packages</div>
+                  <div class="rightPrt">
+                    <div class="SumoSelect" tabindex="1"><select class="xlarge conditionBox SlectBox SelectClass" id="slcUserPkges" name="slcUserPkges[]" multiple="multiple">
+                        <option value="1">Quraac</option>
+                        <option value="2">Qado</option>
+                        <option value="3">Casho</option>
+                        <option value="4">Drinks</option>
+                        <option value="5">Wadani</option>
+                        <option value="6">Tea</option>
+                        <option value="7">Entertainments</option>
+                        <option value="8">Portrait</option>
+                        <option value="9">Halls</option>
+                        <option value="10">Test</option>
+                      </select>
+                      <p class="CaptionCont SelectBox" title="Select Here"><span class="placeholder">Select Here</span><label><i></i></label></p>
+                    </div>
+                    <label class="error" id="error222">error222</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editUserAllowedPkgs(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editUserAllowedPkgsHassan"></label>
+          </aside>
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editUserAllowedPkgsAbdullahi">
+            <article class="content">
+              <div class="header">
+                <h3>Add User Packages</h3>
+                <label class="close" for="editUserAllowedPkgsAbdullahi">×</label>
+              </div>
+              <div class="popupBody" style="min-height: 400px;">
+                <div class="row">
+                  <div class="lftPart required">User </div>
+                  <div class="rightPrt">
+                    <select class="large " name="slcUser" id="slcUser">
+                      <option value=""> -- Select User</option>
+                      <option value="Ali">Ali</option>
+                      <option value="Halimo">Halimo</option>
+                      <option value="Abdullahi" selected="">Abdullahi</option>
+                      <option value="Hassan">Hassan</option>
+                      <option value="sacdiyo">sacdiyo</option>
+                    </select>
+                    <label class="error" id="error111">error111</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Packages</div>
+                  <div class="rightPrt">
+                    <div class="SumoSelect" tabindex="1"><select class="xlarge conditionBox SlectBox SelectClass" id="slcUserPkges" name="slcUserPkges[]" multiple="multiple">
+                        <option value="1">Quraac</option>
+                        <option value="2">Qado</option>
+                        <option value="3">Casho</option>
+                        <option value="4">Drinks</option>
+                        <option value="5">Wadani</option>
+                        <option value="6">Tea</option>
+                        <option value="7">Entertainments</option>
+                        <option value="8">Portrait</option>
+                        <option value="9">Halls</option>
+                        <option value="10">Test</option>
+                      </select>
+                      <p class="CaptionCont SelectBox" title="Select Here"><span class="placeholder">Select Here</span><label><i></i></label></p>
+                    </div>
+                    <label class="error" id="error222">error222</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editUserAllowedPkgs(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editUserAllowedPkgsAbdullahi"></label>
+          </aside>
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editUserAllowedPkgsHalimo">
+            <article class="content">
+              <div class="header">
+                <h3>Add User Packages</h3>
+                <label class="close" for="editUserAllowedPkgsHalimo">×</label>
+              </div>
+              <div class="popupBody" style="min-height: 400px;">
+                <div class="row">
+                  <div class="lftPart required">User </div>
+                  <div class="rightPrt">
+                    <select class="large " name="slcUser" id="slcUser">
+                      <option value=""> -- Select User</option>
+                      <option value="Ali">Ali</option>
+                      <option value="Halimo" selected="">Halimo</option>
+                      <option value="Abdullahi">Abdullahi</option>
+                      <option value="Hassan">Hassan</option>
+                      <option value="sacdiyo">sacdiyo</option>
+                    </select>
+                    <label class="error" id="error111">error111</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Packages</div>
+                  <div class="rightPrt">
+                    <div class="SumoSelect" tabindex="1"><select class="xlarge conditionBox SlectBox SelectClass" id="slcUserPkges" name="slcUserPkges[]" multiple="multiple">
+                        <option value="1">Quraac</option>
+                        <option value="2">Qado</option>
+                        <option value="3">Casho</option>
+                        <option value="4">Drinks</option>
+                        <option value="5">Wadani</option>
+                        <option value="6">Tea</option>
+                        <option value="7">Entertainments</option>
+                        <option value="8">Portrait</option>
+                        <option value="9">Halls</option>
+                        <option value="10">Test</option>
+                      </select>
+                      <p class="CaptionCont SelectBox" title="Select Here"><span class="placeholder">Select Here</span><label><i></i></label></p>
+                    </div>
+                    <label class="error" id="error222">error222</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editUserAllowedPkgs(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editUserAllowedPkgsHalimo"></label>
+          </aside>
+
+          <aside class="popUpForm ">
+            <input type="checkbox" class="state" id="editUserAllowedPkgsAli">
+            <article class="content">
+              <div class="header">
+                <h3>Add User Packages</h3>
+                <label class="close" for="editUserAllowedPkgsAli">×</label>
+              </div>
+              <div class="popupBody" style="min-height: 400px;">
+                <div class="row">
+                  <div class="lftPart required">User </div>
+                  <div class="rightPrt">
+                    <select class="large " name="slcUser" id="slcUser">
+                      <option value=""> -- Select User</option>
+                      <option value="Ali" selected="">Ali</option>
+                      <option value="Halimo">Halimo</option>
+                      <option value="Abdullahi">Abdullahi</option>
+                      <option value="Hassan">Hassan</option>
+                      <option value="sacdiyo">sacdiyo</option>
+                    </select>
+                    <label class="error" id="error111">error111</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="lftPart required">Packages</div>
+                  <div class="rightPrt">
+                    <div class="SumoSelect" tabindex="1"><select class="xlarge conditionBox SlectBox SelectClass" id="slcUserPkges" name="slcUserPkges[]" multiple="multiple">
+                        <option value="1">Quraac</option>
+                        <option value="2">Qado</option>
+                        <option value="3">Casho</option>
+                        <option value="4">Drinks</option>
+                        <option value="5">Wadani</option>
+                        <option value="6">Tea</option>
+                        <option value="7">Entertainments</option>
+                        <option value="8">Portrait</option>
+                        <option value="9">Halls</option>
+                        <option value="10">Test</option>
+                      </select>
+                      <p class="CaptionCont SelectBox" title="Select Here"><span class="placeholder">Select Here</span><label><i></i></label></p>
+                    </div>
+                    <label class="error" id="error222">error222</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btnAdd" id="btnAdd" onclick="return editUserAllowedPkgs(this);">Save</button>
+                </div>
+              </div>
+            </article>
+            <label class="backdrop" for="editUserAllowedPkgsAli"></label>
+          </aside>
+
+          <script src="./assets/js/jquery-3.5.1.min.js"></script>
+          <script src="../assets/js/sumoSelector.js"></script>
+          <script src="./assets/js/general.js"></script>
+          <script type="text/javascript">
+            var myUser = 'themanager';
+            var myRole = 'admin';
+
+            check_searchBox();
+            loadMealItems('0');
+            loadMealPckgs('0');
+            loadMealStations('0');
+            loadUserPackages('0');
+
+            $(document).ready(function () {
+              $("div.theForm").css("display", "inline");
+              callSumOSelect()
+              window.asd = $('.SlectBox').SumoSelect({});
+            });
+          </script>
+        </div>
+        <div class="dashboard-content">
+          <a id="btnCancel" href="./orders-workplace.php?role=admin&amp;task=mealMgt">Cancel</a>
+          <p id="info"><span>*</span> red mark identifies required fields and must be filled out.</p>
+
+          <div class="theForm" style="display: inline;">
+            <form action="./includes/general.php?action=saveNew&amp;dest=addMealpckge&amp;addedBy=themanager&amp;myRole=admin" method="POST" enctype="multipart/form-data" onsubmit="return check_addMealpckge()">
+              <div class="record one">
+                <div class="column">
+                  <div class="leftPrt required">Package Name</div>
+                  <div class="rghtPrt">
+                    <input type="text" class="inputText xxlarge" id="pckgName" name="pckgName" placeholder="required" maxlength="100">
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="column right empty">
+                  <div class="leftPrt required">Print Order To</div>
+                  <div class="rghtPrt">
+                    <select class="medium" name="orderTo" id="orderTo">
+                      <option value="kitchen" data-id="1" data-ip="192.168.0.1" selected="selected">jiko</option>
+                      <option value="drinks" data-id="2" data-ip="192.168.0.2">Cabitaan</option>
+                      <option value="coffee" data-id="3" data-ip="192.168.0.3">Coffee</option> <!-- Hidden inputs values set with js bottom of this page -->
+                    </select><input type="hidden" name="printOrderToID" id="printOrderToID" value="1">
+                    <input type="hidden" name="printOrderToIP" id="printOrderToIP" value="192.168.0.1">
+
+                  </div>
+                </div>
+              </div>
+              <div class="record two">
+                <div class="column">
+                  <div class="leftPrt">Photo (optional)</div>
+                  <div class="rghtPrt">
+                    <input type="file" id="imageFile" name="imageFile" class="inputfile inputfile6 xxlarge" accept="image/*">
+                    <label for="imageFile"><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                          <path
+                            d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+                          </path>
+                        </svg> Choose a file…</strong></label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="record last">
+                <button type="submit" class="btnSubmit" id="btnSave" name="btnSave">Save</button>
+                <label class="process"></label>
+              </div>
+            </form>
+          </div>
+
+          <script src="./assets/js/jquery-3.5.1.min.js"></script>
+          <script src="../assets/js/custom-file-input.js"></script>
+          <script src="./assets/js/general.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $("div.theForm").css("display", "inline");
+
+              function setPrintOrderToInputs() {
+                let { id, ip } = $('#orderTo option:selected').data();
+                $('#printOrderToID').val(id)
+                $('#printOrderToIP').val(ip)
+              }
+              $('#orderTo').on('change', () => {
+                setPrintOrderToInputs();
+              })
+              setPrintOrderToInputs();
+            });
+            //smplfyAddMItem();
+          </script>
+        </div>
+        <div class="dashboard-content">
+          <a id="btnCancel" href="./orders-workplace.php?role=admin&amp;task=mealMgt">Cancel</a>
+          <p id="info"><span>*</span> red mark identifies required fields and must be filled out.</p>
+
+          <div class="theForm" style="display: inline;">
+            <form action="./includes/general.php?action=saveNew&amp;dest=addMealItem&amp;addedBy=themanager&amp;myRole=admin" method="POST" enctype="multipart/form-data" onsubmit="return check_addMealItem()">
+              <div class="record one">
+                <div class="column">
+                  <div class="leftPrt required">Item Name</div>
+                  <div class="rghtPrt">
+                    <input type="text" class="inputText xlarge" id="itemName" name="itemName" placeholder="required" maxlength="100">
+                    <label class="error" id="error1">error1</label>
+                  </div>
+                </div>
+                <div class="column right empty">
+                  &nbsp;
+                </div>
+              </div>
+              <div class="record two">
+                <div class="column">
+                  <div class="leftPrt required">Package Name</div>
+                  <div class="rghtPrt">
+                    <input type="hidden" name="printOrderToIP" id="printOrderToIP">
+                    <select class="vmedium" id="slcPckge" name="slcPckge">
+                      <option value="---">select</option>
+                      <option data-orderto="kitchen" data-described="jiko" data-ip="192.168.0.1" value="1">Quraac</option>
+                      <option data-orderto="kitchen" data-described="jiko" data-ip="192.168.0.1" value="2">Qado</option>
+                      <option data-orderto="kitchen" data-described="jiko" data-ip="192.168.0.1" value="3">Casho</option>
+                      <option data-orderto="drinks" data-described="Cabitaan" data-ip="192.168.0.2" value="4">Drinks</option>
+                      <option data-orderto="kitchen" data-described="jiko" data-ip="192.168.0.1" value="5">Wadani</option>
+                      <option data-orderto="coffee" data-described="Coffee" data-ip="192.168.0.3" value="6">Tea</option>
+                      <option data-orderto="coffee" data-described="Coffee" data-ip="192.168.0.3" value="7">Entertainments</option>
+                      <option data-orderto="kitchen" data-described="jiko" data-ip="192.168.0.1" value="8">Portrait</option>
+                      <option data-orderto="kitchen" data-described="jiko" data-ip="192.168.0.1" value="9">Halls</option>
+                      <option data-orderto="kitchen" data-described="jiko" data-ip="192.168.0.1" value="10">Test</option>
+                    </select>
+                    <label class="error" id="error2">error2</label>
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="leftPrt">Photo (optional)</div>
+                  <div class="rghtPrt">
+                    <input type="file" id="imageFile" name="imageFile" class="inputfile inputfile6" accept="image/*">
+                    <label for="imageFile"><span></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                          <path
+                            d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+                          </path>
+                        </svg> Choose a file…</strong></label>
+                  </div>
+                </div>
+              </div>
+              <div class="record three">
+                <div class="column">
+                  <div class="leftPrt required">Item Cost</div>
+                  <div class="rghtPrt">
+                    <input type="text" class="inputText xxsmall" id="costPrice" name="costPrice" placeholder="e.g. 1" maxlength="10" onkeypress="return isDecimalNum(this, event);" autocomplete="off">
+                    <label class="error" id="error3">error3</label>
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="leftPrt">Print Order To</div>
+                  <div class="rghtPrt">
+                    <select class="medium" name="orderTo" id="orderTo">
+                      <option value="kitchen" data-id="1" data-ip="192.168.0.1" selected="selected">jiko</option>
+                      <option value="drinks" data-id="2" data-ip="192.168.0.2">Cabitaan</option>
+                      <option value="coffee" data-id="3" data-ip="192.168.0.3">Coffee</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="record four">
+                <div class="column">
+                  <div class="leftPrt required">Availability </div>
+                  <div class="rghtPrt">
+                    <select class="vmedium" id="slcType" name="slcType">
+                      <option value="">-- select</option>
+                      <option value="morning">Morning</option>
+                      <option value="afternoon">Afternoon</option>
+                      <option value="evening">Evening</option>
+                      <option value="all-times" selected="selected">All times</option>
+                      <option value="all-day">All day</option>
+                      <option value="all-night">All night</option>
+                      <option value="custom">Custom</option>
+                    </select>
+                    <label class="error" id="error4">error4</label>
+                  </div>
+                </div>
+                <div class="column right">
+                  <div class="leftPrt">Time</div>
+                  <input type="time" class="inputText xsmall" id="starTime" name="starTime" value="00:00">
+                  <input type="time" class="inputText xsmall second" id="endTime" name="endTime" value="23:59">
+                </div>
+              </div>
+              <div class="record last">
+                <button type="submit" class="btnSubmit" id="btnSave" name="btnSave">Save</button>
+                <label class="process"></label>
+              </div>
+            </form>
+          </div>
+
+          <script src="./assets/js/jquery-3.5.1.min.js"></script>
+          <script src="./assets/js/general.js"></script>
+          <script src="../assets/js/custom-file-input.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $("div.theForm").css("display", "inline");
+            });
+            smplfyAddMItem();
+          </script>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+
+  <script src="assets/js/jquery.timeago.js"></script>
+  <script src="assets/js/basicFuncs.js"></script>
+  <script src="assets/js/general.js"></script>
+  <script src="libraries/sweetalert/js/sweetalert.js"></script>
+  <link rel="stylesheet" href="libraries/sweetalert/css/sweetalert.css" />
+  <!-- <script src=".libraries/sweetalert/js/sweetalert.js"></script> -->
+
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/pikaday.js"></script>
+  <script src="assets/js/jquery.form.js"></script>
+  <script type="text/javascript">
+    $(".client-types .radio-box").click(function () {
+      $(".client-types .radio-box").removeClass('focused');
+      $(this).addClass('focused');
+    });
+    simplfyWaiterTopBar();
+    simply_order_content();
+
+
+
+  </script>
+  <style type="text/css">
+    .multiselect__container {
+      width: 75%;
+    }
+  </style>
+</body>
+
+</html>
