@@ -1125,8 +1125,8 @@ select {
     flex-basis: 100% !important;
     margin-top: 0 !important;
     margin-bottom: 8px !important;
-   }
-   .middlebar .order-form .meals {
+  }
+  .middlebar .order-form .meals {
     order: 4;
   }
   div.orders-workplace .popup-box.vlarge div.record {
@@ -1154,3 +1154,22 @@ select {
   }
 }
 // New Order Responsive End
+
+// My Orders Responsive Start
+@include breakpoint(max-xl) {
+  div.orders-workplace #loadPage {
+    #command {
+      padding: 0 !important;
+      background-color: transparent !important;
+      border: none !important;
+      flex-direction: column;
+      flex-direction: column-reverse;
+      gap: 10px;
+      .search {
+        flex-basis: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+// My Orders Responsive End

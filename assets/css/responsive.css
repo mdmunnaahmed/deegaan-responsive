@@ -1100,4 +1100,18 @@ select {
   .popup-box .content .main .row .rightPrt input.inputText {
     width: 100% !important;
   }
+}
+@media (max-width: 1199px) {
+  div.orders-workplace #loadPage #command {
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  div.orders-workplace #loadPage #command .search {
+    flex-basis: 100%;
+    width: 100%;
+  }
 }/*# sourceMappingURL=responsive.css.map */
