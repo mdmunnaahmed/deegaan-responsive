@@ -1,0 +1,358 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Workplace | DEEGAAN</title>
+<link rel="shortcut icon" href="./assets/images/system/icon.png" />
+<link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+<link rel="stylesheet" href="./assets/css/responsive.css" type="text/css" />
+<link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css" />
+<link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+<link rel="stylesheet" href="./assets/multiselect/dist/multi-select.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<script src="./assets/js/jquery-3.5.1.min.js"></script>
+<script src="./assets/multiselect/dist/multi-select.js" ></script>
+<script src="./assets/js/basicFuncs.js"></script>
+<script src="./assets/js/moment.min.js"></script>
+<script src="./assets/js/pikaday.js"></script>
+<script src="./libraries/sweetalert/js/sweetalert.js"></script>
+<script src="./assets/js/jquery.form.js"></script><!----> <!-- for changing photo -->
+<script type="text/javascript">
+     const roundDigits = '2';
+</script>
+<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="main-wrap">
+	<div class="workplace">
+    	<div id="sidebar" tabindex="0">
+        	<div class="smartphone-menu-trigger"></div>
+            <div id="logoWrap">
+                <!-- <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
+                <label class="comp_name">My Hotel and Restaurant</label>
+            </div>
+            <ul id="menus">
+	<li ><a href="./dashboard.php">
+    	<i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+    </li>
+        <li class="has-sub" >
+    	<a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
+    	<ul>
+                <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
+		        <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
+               <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
+                <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
+                </ul>
+    </li>
+            <li class="has-sub" >
+    	<a><i class="fa fa-institution"></i><span>Property Management</span></a>
+    	<ul>
+                <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
+                <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
+                <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
+                </ul>
+    </li>
+    
+            <li class="has-sub" >
+            <a><i class="fa fa-user"></i><span>Human resource Mgt</span></a>
+            <ul>
+                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
+                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
+                         <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
+                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
+                        <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
+    		            </ul>
+    </li>
+            <li id="active">
+        <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
+    </li>
+        <!-- <li class="has-sub"> -->
+        <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
+        <ul>
+                <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
+        <li><a href="./workplace.php?role=admin&task=supply&subtask=measures"><span>Measurements</span></a></li> -->
+                <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
+        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
+                 <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
+                </ul>
+    </li>
+              <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
+                    <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
+             <li class="has-sub" >
+    	<a><i class="fa fa-dollar"></i><span>Finance</span></a>
+        <ul>
+                        <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
+                        <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
+                        <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
+                        <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
+                    </ul>
+    </li>
+            <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
+    
+</ul>
+<footer  style="margin-right: 50px; color: #fff; text-align: center;">
+    <p class="version" style="margin-top: 250px; font-size: 0.8em;">V6.0.0.0</p>
+</footer>
+        </div> <!-- sidebar -->
+
+        <div id="middlebar">
+            <div class="topBar">
+                <div id="programName"><!-- <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span> --></div>
+                <div id="topIcons">
+                	<div class="icon profile">
+                    <img src="./assets/images/users/small40/user40-8151609924889.jpg" />
+                    </div>
+                    <div class="dropDown">
+                        <div class="row bar">My Account</div>
+                        <div class="row">
+                        	<div id="photo">
+                            	<img src="./assets/images/users/middle320/user320-8151609924889.jpg" />
+                                <a href="./workplace.php?role=admin&task=profile">
+                                <div class="overlay">
+                                    <span><i class="fa fa-camera"></i>change</span>
+                                </div>
+                                </a>
+                            </div>
+                            <div id="links">
+                            	<p id="name">ManagersName</p>
+                                <p id="user">themanager</p>
+                            </div>
+                        </div>
+                        <div class="row button">
+                        	<a href="./workplace.php?role=admin&task=profile&subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
+                            <a class="logout" href="./includes/logout.php?from=user">Logout</a>
+                        </div>
+                    </div> <!-- dropDown -->
+                </div> <!-- topIcons -->
+            </div>
+                        <div class="positionBar">
+            	<i class="fa fa-tag"></i>
+                <label>menus &raquo; inventory &raquo; purchase</label>
+            </div>
+            <div class="contentBar"><div class="steps-inventory">
+     <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=purchase">
+        <p class="active">
+            <span><i class="fa fa-file-text-o"></i></span>Purchase
+        </p></a>
+   <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=stock">
+    <p class="">
+        <span><i class="fa fa-dashcube"></i></span>Stock
+    </p></a>
+
+    <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=menuBOM">
+        <p class="">
+            <span><i class="fa fa-dollar"></i></span>Menu BOM
+        </p></a>
+    <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=unit">
+        <p class="">
+        <span><i class="fa fa-balance-scale"></i></span>Unit
+    </p></a>
+
+    <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=category">
+        <p class="">
+        <span><i class="fa fa-hourglass-end"></i></span>Category
+    </p></a>
+    <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=product">
+        <p class="">
+            <span><i class="fa fa-exchange"></i></span>Product
+    </p></a>
+
+    <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=vendor">
+        <p class="">
+        <span><i class="fa fa-book"></i></span>Vendor
+    </p></a>
+     <a class="button right change" href="./workplace.php?role=admin&task=inventory&subtask=reports">
+        <p class="">
+        <span><i class="fa fa-line-chart"></i></span>Run Reports
+    </p></a>
+</div>
+
+<style type="text/css">
+    .steps-inventory{
+    position: relative;
+    float: left;
+    width: 96%;
+    min-width: 23%;
+    margin: 1% 2% 0;
+    border-bottom: 1px solid #cccccc;
+    border-right: none;
+    box-sizing: border-box;
+    z-index: 10;
+}
+.steps-inventory p{
+    position: relative;
+    float: left;
+    width: auto;
+    min-width: 50px;
+    padding: 0 27.5px;
+    font-size: 0.85em;
+    color: #444;
+    height: 34px;
+    line-height: 34px;
+    background: #efdfd0; /*#e7d0b9;*/
+    border: 1px solid #ddd;
+    border-bottom: 1px solid transparent;
+    /*border-radius: 4px 4px 0px 0px;*/
+    /*margin-left: 5px;*/
+    /*cursor: pointer;*/
+}
+div.steps-inventory p span {
+    position: relative;
+    float: left;
+    margin-top: 7px;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 0.8em;
+}
+div.steps-inventory p i {
+    position: relative;
+    float: left;
+    margin-top: 7px;
+    margin-right: 5px;
+    width: 100%;
+    height: 7px;
+    line-height: 7px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+div.steps-inventory a {
+    text-decoration: none;
+    width: 100%;
+
+}
+div.steps-inventory p.active , div.steps-inventory p.active a{
+    background: #714705 !important;
+    color: #ffffff !important;
+}
+</style>
+<div id="loadPage">
+	<div id="command">
+    	<div class="buttons">
+        	<a href="./workplace.php?role=admin&task=inventory&subtask=purchase&action=addnew" class="btnAddNew">Add New</a>
+        </div>
+       <!--  <div id="searchBox">
+            <input type="search" class="srchInput" id="srchInventoryPrchse" maxlength="200" placeholder="find Inventory purchase through typing vendor name" />
+            <div class="suggest large"></div>
+        </div> -->
+         <select id="txtVendorName4prchse" class="txtVendorName" autocomplete="off">
+                        <option value="1" >test vendor</option><option value="2" >Albashir Fish</option><option value="3" >wardo</option><option value="4" >Shirkadda Biyaha Caafi</option><option value="5" >Akhyaar</option><option value="6" >tusaale</option><option value="7" >axsan</option><option value="8" >Suudi Jaqaf</option><option value="9" >asad</option><option value="11" >y6</option><option value="12" >j8</option>             </select>
+                        <input type="hidden" id="vendorID" name="vendorID" readonly="readonly" />
+                  <div class="suggest vendor xshort" style="margin-left: 2.2%; width: 90%; margin-top: 38px;">
+                        <label class="error1" id="error1" style="margin-left: 42%;">error1</label>
+                    </div>
+    </div>
+
+    <div id="dynamicQnd">
+    	<!--     	<div id="foundNum">
+            <label id="count">0</label> record(s) has been found.
+            <span id="refresh"></span>
+        </div> -->
+        <div id="filters">
+            <div>
+                <label>Period</label>
+                <select id="slcPeriod">
+                <option value="week">This Week</option>
+                <option value="month" selected="selected">This Month</option>
+                <option value="all">All Records</option>
+                </select>
+            </div>
+            <div>
+                <label>Per Page</label>
+                <select id="slcPerPage">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50" selected="selected">50</option>
+                <option value="100">100</option>
+                </select>
+            </div>
+        </div>
+        <div id="dataTable">
+            <div class="record header">
+                <div class="cave lshort">Action</div>
+                <div class="cave lshort">Purchase No.</div>
+                <div class="cave xlmiddle">Vender Details</div>
+                <div class="cave lshort">Amount</div>
+                <div class="cave lshort">Reference</div>
+                <div class="cave short">Date</div>
+			</div>
+            <div id="loading"></div>
+        </div>
+    </div>
+
+</div>
+<script src="./assets/js/inventory.js"></script>
+<script type="text/javascript">
+var period = $("#slcPeriod").val();
+var perPage = $("#slcPerPage").val();
+
+var myRole = 'admin';
+var myUser = 'themanager';
+var myWhouse = '1001';
+
+simplfyInventoryPage();
+
+loadInventoryPrchse('0', perPage, period);
+$("#slcPeriod, #slcPerPage").change(function(){
+	$("#dataTable").html(`<div class="record header">
+        <div class="cave lshort">Action</div>
+        <div class="cave lshort">Purchase No.</div>
+        <div class="cave xlmiddle">Vender Details</div>
+        <div class="cave lshort">Amount</div>
+        <div class="cave lshort">Reference</div>
+        <div class="cave short">Date</div>
+    </div>`);
+
+	var perPage = $("#slcPerPage").val();
+	var period = $("#slcPeriod").val();
+	loadInventoryPrchse('0', perPage, period);
+});
+
+check_searchBox();
+</script>
+
+<style type="text/css">
+      .multiselect__container {
+        width: 50%;
+       /* height: 100%;
+        line-height: 100%;
+        padding-top: 0px;
+        background: transparent;
+        border: 0px !important;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding-left: 0;*/
+    }
+    /*.multiselect__wrapper {*/
+        /*margin-top: -10px;*/
+   /* }
+   .multiselect__container span {
+        border: 0px !important;
+   }
+   .multiselect__options.visible {
+    /*margin-left: -10px;*/
+   /* } */
+   /*.multiselect__clear-btn {
+        display: none !important;
+   }*/
+</style></div>
+        </div> <!-- middlebar -->
+
+    </div>
+</div>
+   <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+<script src="./assets/js/jquery.timeago.js"></script>
+<script type="text/javascript">
+simplfyTopBar();
+
+</script>
+</body>
+</html>

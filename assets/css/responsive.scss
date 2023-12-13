@@ -555,15 +555,15 @@
   }
 }
 @media (max-width: 991px) {
-  div.orders-workplace #loadPage #dataTable div.cave.short {
-    width: 12%;
-  }
-  div.orders-workplace #loadPage #dataTable div.cave.button {
-    width: 14%;
-  }
-  div.orders-workplace #loadPage #dataTable div.cave.lmiddle {
-    width: 16%;
-  }
+  // div.orders-workplace #loadPage #dataTable div.cave.short {
+  //   width: 12%;
+  // }
+  // div.orders-workplace #loadPage #dataTable div.cave.button {
+  //   width: 14%;
+  // }
+  // div.orders-workplace #loadPage #dataTable div.cave.lmiddle {
+  //   width: 16%;
+  // }
 }
 
 // Main Login Responsive Start
@@ -874,11 +874,11 @@ select {
     }
   }
 }
-@include max(1366px) {
-  .main-wrap {
-    padding-left: 8%;
-  }
-}
+// @include max(1366px) {
+//   .main-wrap {
+//     padding-left: 8%;
+//   }
+// }
 @include breakpoint(max-xl) {
   .main-wrap {
     width: 100%;
@@ -1027,7 +1027,7 @@ select {
     height: auto;
     line-height: 1.25;
   }
-  .orders-workplace .popUpForm {
+  .popUpForm {
     // position: relative;
     .content {
       width: 95% !important;
@@ -1035,6 +1035,17 @@ select {
       select,
       textarea {
         width: 100% !important;
+      }
+      .popupBody {
+        .row {
+          .lftPart {
+            line-height: 1.2 !important;
+            height: auto !important;
+          }
+          input, select {
+            width: 60% !important;
+          }
+        }
       }
     }
   }
@@ -1289,13 +1300,22 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     padding-bottom: 8px;
   }
 }
+div.workplace div.reportArea div.rprtType {
+  label {
+    display: flex;
+    gap: 6px;
+    span {
+      transform: translateY(2px);
+    }
+  }
+}
 @include breakpoint(max-sm) {
   div.orders-workplace .displayMore {
     width: 25%;
   }
-  .w-two,
-  .w-two-half {
-    width: 30% !important;
-  }
+  // .w-two,
+  // .w-two-half {
+  //   width: 30% !important;
+  // }
 }
 // Additional End

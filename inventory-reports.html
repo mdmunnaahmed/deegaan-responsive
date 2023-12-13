@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Workplace | DEEGAAN</title>
+    <link rel="shortcut icon" href="./assets/images/system/icon.png" />
+    <link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css" />
+    <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/multiselect/dist/multi-select.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+    <script src="./assets/multiselect/dist/multi-select.js"></script>
+    <script src="./assets/js/basicFuncs.js"></script>
+    <script src="./assets/js/moment.min.js"></script>
+    <script src="./assets/js/pikaday.js"></script>
+    <script src="./libraries/sweetalert/js/sweetalert.js"></script>
+    <script src="./assets/js/jquery.form.js"></script><!----> <!-- for changing photo -->
+    <script type="text/javascript">
+        const roundDigits = '2';
+    </script>
+    <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrap">
+        <div class="workplace">
+            <div id="sidebar" tabindex="0">
+                <div class="smartphone-menu-trigger"></div>
+                <div id="logoWrap">
+                    <!-- <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
+                    <label class="comp_name">My Hotel and Restaurant</label>
+                </div>
+                <ul id="menus">
+                    <li><a href="./dashboard.php">
+                            <i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="has-sub">
+                        <a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
+                            <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
+                            <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a><i class="fa fa-institution"></i><span>Property Management</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-sub">
+                        <a><i class="fa fa-user"></i><span>Human resource Mgt</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="active">
+                        <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
+                    </li>
+                    <!-- <li class="has-sub"> -->
+                    <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
+                    <ul>
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
+        <li><a href="./workplace.php?role=admin&task=supply&subtask=measures"><span>Measurements</span></a></li> -->
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
+                    </ul>
+                    </li>
+                    <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
+                    <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
+                    <li class="has-sub">
+                        <a><i class="fa fa-dollar"></i><span>Finance</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
+
+                </ul>
+                <footer style="margin-right: 50px; color: #fff; text-align: center;">
+                    <p class="version" style="margin-top: 250px; font-size: 0.8em;">V6.0.0.0</p>
+                </footer>
+            </div> <!-- sidebar -->
+
+            <div id="middlebar">
+                <div class="topBar">
+                    <div id="programName"><!-- <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span> --></div>
+                    <div id="topIcons">
+                        <div class="icon profile">
+                            <img src="./assets/images/users/small40/user40-8151609924889.jpg" />
+                        </div>
+                        <div class="dropDown">
+                            <div class="row bar">My Account</div>
+                            <div class="row">
+                                <div id="photo">
+                                    <img src="./assets/images/users/middle320/user320-8151609924889.jpg" />
+                                    <a href="./workplace.php?role=admin&task=profile">
+                                        <div class="overlay">
+                                            <span><i class="fa fa-camera"></i>change</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div id="links">
+                                    <p id="name">ManagersName</p>
+                                    <p id="user">themanager</p>
+                                </div>
+                            </div>
+                            <div class="row button">
+                                <a href="./workplace.php?role=admin&task=profile&subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
+                                <a class="logout" href="./includes/logout.php?from=user">Logout</a>
+                            </div>
+                        </div> <!-- dropDown -->
+                    </div> <!-- topIcons -->
+                </div>
+                <div class="positionBar">
+                    <i class="fa fa-tag"></i>
+                    <label>menus &raquo; inventory &raquo; purchase</label>
+                </div>
+                <div class="contentBar">
+                    <div class="steps-inventory">
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=purchase">
+                            <p class="">
+                                <span><i class="fa fa-file-text-o"></i></span>Purchase
+                            </p>
+                        </a>
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=stock">
+                            <p class="">
+                                <span><i class="fa fa-dashcube"></i></span>Stock
+                            </p>
+                        </a>
+
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=menuBOM">
+                            <p class="">
+                                <span><i class="fa fa-dollar"></i></span>Menu BOM
+                            </p>
+                        </a>
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=unit">
+                            <p class="">
+                                <span><i class="fa fa-balance-scale"></i></span>Unit
+                            </p>
+                        </a>
+
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=category">
+                            <p class="">
+                                <span><i class="fa fa-hourglass-end"></i></span>Category
+                            </p>
+                        </a>
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=product">
+                            <p class="">
+                                <span><i class="fa fa-exchange"></i></span>Product
+                            </p>
+                        </a>
+
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=vendor">
+                            <p class="">
+                                <span><i class="fa fa-book"></i></span>Vendor
+                            </p>
+                        </a>
+                        <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=reports">
+                            <p class="active">
+                                <span><i class="fa fa-line-chart"></i></span>Run Reports
+                            </p>
+                        </a>
+                    </div>
+
+                    <style type="text/css">
+                        .steps-inventory {
+                            position: relative;
+                            float: left;
+                            width: 96%;
+                            min-width: 23%;
+                            margin: 1% 2% 0;
+                            border-bottom: 1px solid #cccccc;
+                            border-right: none;
+                            box-sizing: border-box;
+                            z-index: 10;
+                        }
+
+                        .steps-inventory p {
+                            position: relative;
+                            float: left;
+                            width: auto;
+                            min-width: 50px;
+                            padding: 0 27.5px;
+                            font-size: 0.85em;
+                            color: #444;
+                            height: 34px;
+                            line-height: 34px;
+                            background: #efdfd0;
+                            /*#e7d0b9;*/
+                            border: 1px solid #ddd;
+                            border-bottom: 1px solid transparent;
+                            /*border-radius: 4px 4px 0px 0px;*/
+                            /*margin-left: 5px;*/
+                            /*cursor: pointer;*/
+                        }
+
+                        div.steps-inventory p span {
+                            position: relative;
+                            float: left;
+                            margin-top: 7px;
+                            margin-right: 10px;
+                            width: 18px;
+                            height: 18px;
+                            line-height: 18px;
+                            text-align: center;
+                            font-size: 0.8em;
+                        }
+
+                        div.steps-inventory p i {
+                            position: relative;
+                            float: left;
+                            margin-top: 7px;
+                            margin-right: 5px;
+                            width: 100%;
+                            height: 7px;
+                            line-height: 7px;
+                            text-align: center;
+                            font-size: 1.2em;
+                            font-weight: normal;
+                        }
+
+                        div.steps-inventory a {
+                            text-decoration: none;
+                            width: 100%;
+
+                        }
+
+                        div.steps-inventory p.active,
+                        div.steps-inventory p.active a {
+                            background: #714705 !important;
+                            color: #ffffff !important;
+                        }
+                    </style>
+                    <form action="./deegaan-restaurant/orders-workplace.php?role=admin&amp;task=reports&amp;subtask=showInfo" method="POST" onsubmit="return check_report();">
+                        <div class="reportArea">
+                            <section>
+                                <div class="rprtType three">
+                                    <label>
+                                        <input type="radio" name="reportType" value="supplyListing" checked="checked">
+                                        <span>Inventory Listing Report</span>
+                                    </label>
+                                </div>
+
+                                <div class="rprtType three">
+                                    <label>
+                                        <input type="radio" name="reportType" value="vndActvty">
+                                        <span>Vendor Activity</span>
+                                    </label>
+                                </div>
+
+                                <div class="rprtType three">
+                                    <label>
+                                        <input type="radio" name="reportType" value="supplyUsage">
+                                        <span>Stock Report</span>
+                                    </label>
+                                </div>
+
+                                <div class="rprtType three">
+                                    <label>
+                                        <input type="radio" name="reportType" value="vendorList">
+                                        <span>Vendor List</span>
+                                    </label>
+                                </div>
+
+                                <div class="rprtType three">
+                                    <label>
+                                        <input type="radio" name="reportType" value="prchseStock">
+                                        <span>Purchase / Stock In Summary</span>
+                                    </label>
+                                </div>
+
+                                <div class="rprtType three">
+                                    <label>
+                                        <input type="radio" name="reportType" value="productListing">
+                                        <span>Product Listing</span>
+                                    </label>
+                                </div>
+
+                                <div class="rprtType three">
+                                    <label>
+                                        <input type="radio" name="reportType" value="supplyPrchse">
+                                        <span>Purchase / Stock In Details</span>
+                                    </label>
+                                </div>
+
+                            </section>
+                        </div>
+
+
+                    </form>
+                </div>
+
+                <div class="reportArea second">
+                    <div id="filterCmdPrcess">
+                        <div id="filterWrap">
+                            <div class="filter byAddedUser" style="display: none;">
+                                <div>
+                                    <label>Search Added By</label>
+                                    <input type="text" class="inputText w-four-half" id="txtUserAdded" name="txtUserAdded" autocomplete="off" placeholder="search by added username">
+                                    <div class="suggest txtUserAdded"></div>
+                                </div>
+                            </div>
+                            <div class="filter byWaiter" style="display: none;">
+                                <div>
+                                    <label>Search Waiter</label>
+                                    <input type="text" class="inputText w-four-half" id="txtWaiter" name="txtWaiter" autocomplete="off" placeholder="search by waiter name">
+                                    <div class="suggest waiter"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex;">
+                                <div class="filter byStation" style="display: inline;">
+                                    <div>
+                                        <label style="width: 30%">Select Storage Area</label>
+                                        <select class="w-two " id="slcStorageArea" name="slcStorageArea" style="width: 55%;">
+                                            <option value="all" class="allAreasOption" style="display: none;">All Areas</option>
+                                            <option value="1001">My Hotel and Restaurant</option>
+                                            <option value="1002">Kitchen Store</option>
+                                            <option value="1003">Barista Store</option> ?&gt;
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="filter byStockAction" style="display: none;">
+                                    <div>
+                                        <label style="width: 24%;">Select Action</label>
+                                        <select id="slcStockAction" class="w-two " name="slcStockAction" style="width: 50%;">
+                                            <!-- <option value="all">All</option> -->
+                                            <option value="consumption" selected="">Stock Consumption</option>
+                                            <option value="transfer">Stock Transfer</option>
+                                            <option value="adjustment">Stock Adjustment (Coming soon)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="filter byReceivedBy" style="display: none;">
+                                <div>
+                                    <label>Received By</label>
+                                    <select class="w-two " id="slcReceivedBy" name="slcReceivedBy">
+                                        <option value="all">Received By</option>
+                                        <option value="Warfaa Ahmed">Warfaa Ahmed</option>
+                                        <option value="Wardaaaaa">Wardaaaaa</option>
+                                        <option value="Jaamac">Jaamac</option>
+                                        <option value="Warsan Fareey">Warsan Fareey</option>
+                                        <option value="DDDDD">DDDDD</option>
+                                        <option value=""></option>
+                                        <option value="Daahir">Daahir</option> ?&gt;
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="filter byCashier" style="display: none;">
+                                <div>
+                                    <label>Search Cashier</label>
+                                    <input type="text" class="inputText w-four-half" id="txtCashier" name="txtCashier" autocomplete="off" placeholder="search by cashier name">
+                                    <div class="suggest cashier"></div>
+                                </div>
+                            </div>
+                            <div class="filter byMeal" style="display: none;">
+
+                                <div>
+                                    <label>Search Meal</label>
+                                    <input type="hidden" name="MealID" id="MealID" value="">
+                                    <input type="hidden" name="packageID" id="packageID" value="">
+                                    <input type="text" class="inputText w-four-half" id="txtMeals" name="txtMeals" autocomplete="off" placeholder="search by meal name">
+                                    <label>
+                                        <input type="radio" name="srchItemBy" class="srchItemBy" value="category" checked="checked" style="height:12px;transform: scale(1.8,1.8);margin-left: 12px;">
+                                        <span style="margin-left: 12px;cursor: pointer;">Category</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="srchItemBy" class="srchItemBy" value="product" style=" height: 12px;transform: scale(1.9,1.9); margin-left: 12px;">
+                                        <span style="margin-left: 12px; cursor: pointer;">Product</span>
+                                    </label>
+
+                                    <!--   <label>
+                                <input type="radio" name="srchItemBy" class="srchItemBy" value="allSold"  style=" height: 12px;transform: scale(1.9,1.9); margin-left: 12px;">
+                                <span style="margin-left: 12px; cursor: pointer;">All Sold</span>
+                            </label> -->
+                                    <div class="suggest meal"></div>
+                                </div>
+                            </div>
+                            <!--   <div class="filter byAllSold">
+                                   <div>
+                                    <label>All Sold</label>
+                                    <select class="w-four-half" id="slcAllSold" name="slcAllSold">
+                                        <option value="all">All Sold</option>
+                                    </select>
+                                </div>
+                                </div> -->
+                            <div class="filter byCustomer" style="display: none;">
+                                <div>
+                                    <label>Search Customer</label>
+                                    <input type="hidden" name="clientID" id="clientID">
+                                    <input type="text" class="inputText w-five" id="txtClients" name="txtClients" autocomplete="off" placeholder="search by customer name">
+                                    <div class="suggest customer"></div>
+                                </div>
+                            </div>
+
+                            <div class="filter byExpense" style="display: none;">
+                                <div>
+                                    <label>Payment Type</label>
+                                    <select class="w-two" id="slcPaymentType" name="slcPaymentType">
+                                        <option value="all">All Type</option>
+                                        <option value="restaurant-expense">Restaurant Expense</option>
+                                        <option value="expense">Expense Accounts</option>
+                                        <!-- <option value="commission">Commission</option> -->
+                                        <option value="vendor">Account Payable</option>
+                                        <option value="payroll">Payroll</option>
+
+                                    </select>
+                                    <select class="w-two second" id="slcExpAcc" name="slcExpAcc">
+                                        <option value="all">All Accounts</option>
+                                        <option value="14">Adeega Qudaar</option>
+                                        <option value="13">Butagaaz 13kg</option>
+                                        <option value="9">Cuntada Maqaayadda</option>
+                                        <option value="6">Cunto</option>
+                                        <option value="4">Koranto</option>
+                                        <option value="15">Malaay</option>
+                                        <option value="2">Rent</option>
+                                        <option value="12">Staff Meal</option>
+                                        <option value="17">Transportation</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter byVndActvty" style="display: none;">
+                                <div>
+                                    <label>Vendor</label>
+                                    <input type="text" class="w-four inputText" id="txtVendor" autocomplete="off" placeholder="search by name or phone">
+                                    <input type="hidden" id="vendorID" name="vendorID" readonly="readonly">
+                                    <div class="suggest two"></div>
+                                </div>
+                            </div>
+                            <div class="filter byIncStatment" style="display: none;">
+                                <div>
+                                    <label for="monthTick">Month</label>
+                                    <input type="month" class="inputText w-two" id="txtIncMonth" name="txtIncMonth" value="2023-12">
+                                </div>
+                            </div>
+                            <div class="filter byReceipt" style="display: none;">
+                                <div>
+                                    <label>addedly</label>
+                                    <select class="w-two" id="slcaddedly" name="slcaddedly">
+                                        <option value="all">All</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter byDate" style="display: none;">
+                                <label>Filter By Date</label>
+                                <!--  <input type="text" class="inputText w-two-half datepicker" id="startDate" name="startDate" value="2023-12-13" placeholder="start Date" readonly="readonly"  />
+                                <input type="text" class="inputText w-two-half datepicker second" id="endDate" name="endDate" value="2023-12-13" placeholder="end Date" readonly="readonly" /> -->
+                                <input type="text" class="inputText w-two-half" id="startDate" name="startDate" value="2023-12-13" placeholder="start date" readonly="readonly">
+                                <input type="text" class="inputText w-two-half second" id="endDate" name="endDate" value="2023-12-13" placeholder="end date" readonly="readonly">
+                            </div>
+                            <div class="filter byMonth" style="display: none;">
+                                <label>Filter By Month</label>
+                                <input class="inputText w-two-half" type="month" id="txtMonth" name="txtMonth" value="2023-12">
+                            </div>
+                            <div class="filter byUser4Logs" style="display: none;">
+                                <div>
+                                    <label>User</label>
+                                    <select class="w-two" id="slcUser4Logs" name="slcUser4Logs">
+                                        <option value="">--Select user</option>
+                                        <option value="themanager">themanager</option>
+                                        <option value="cashier">cashier</option>
+                                        <option value="Ali">Ali</option>
+                                        <option value="Ahmed">Ahmed</option>
+                                        <option value="Halimo">Halimo</option>
+                                        <option value="Abdullahi">Abdullahi</option>
+                                        <option value="Hassan">Hassan</option>
+                                        <option value="AhmedFarax">AhmedFarax</option>
+                                        <option value="sacdiyo">sacdiyo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter byLogCategory" style="display: none;">
+                                <div>
+                                    <label>Category</label>
+                                    <select class="w-two" id="slcCategory" name="slcCategory">
+                                        <option value="all">All</option>
+                                        <option value="Restaurant">Restaurant</option>
+                                        <option value="Hotel">Hotel</option>
+                                        <option value="Service">Service</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="filter byLogAction" style="display: none;">
+                                <div>
+                                    <label>Log Action</label>
+                                    <select class="w-two" id="slcAction" name="slcAction">
+                                        <option value="all">All</option>
+                                        <option value="added">Added</option>
+                                        <!-- <option value="confirmed">confirmed</option> -->
+                                        <option value="cancelled">Cancelled</option>
+                                        <option value="decreased">Decreased</option>
+                                        <option value="deleted">Deleted</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--   <div class="filter byTime" style="overflow-y: hidden;">
+                                <div>
+                                <label>Filter by Time</label>
+                                    <input class="inputText w-two"  type="time" value="00:00" name="startTime" id="startTime">
+                                    <input class="inputText second w-two" value="23:59" type="time" name="endTime" id="endTime">
+                                </div>
+                            </div> -->
+                        </div>
+                        <button type="submit" id="btnDisplay" name="btnDisplay">Display</button>
+                        <button style="display: inline; width: 15%;" type="button" id="downloadExcel"><a id="excel" class="report" target="_blank">Download by Excel</a></button>
+                        <label id="process"></label>
+                        <label class="error" id="error1">error1</label>
+                    </div>
+                </div>
+            </div> <!-- middlebar -->
+
+        </div>
+    </div>
+    <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+    <script src="./assets/js/jquery.timeago.js"></script>
+    <script type="text/javascript">
+        simplfyTopBar();
+
+    </script>
+</body>
+
+</html>

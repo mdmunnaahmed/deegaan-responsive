@@ -1,0 +1,606 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard | My Hotel and Restaurant</title>
+  <link rel="shortcut icon" href="../assets/images/system/icon.png" />
+  <!-- <link rel="shortcut icon" href="./assets/images/company/sostec/favicon.ICO" /> -->
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/scheduler.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/all.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div class="main-wrap">
+    <div class="orders-workplace">
+      <div class="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div class="logoWrap">
+          <a href="./reservation-workplace.php"><img src="./assets/images/company/logo-white.png" alt="logo" /></a>
+        </div>
+        <ul id="menus">
+          <a href="./reservation-workplace.php?task=checkin">
+            <li class="active">
+              <i class="fal fa-calendar-check"></i><span>Check In</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?task=reservation">
+            <li class="">
+              <i class="fal fa-handshake"></i><span>Reservation</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?task=checkout">
+            <li class="">
+              <i class="fal fa-sign-out"></i><span>Check Out</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?role=admin&task=cashier">
+            <li class="">
+              <i class="fal fa-sack-dollar"></i><span>Cashier</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?role=admin&task=quotation">
+            <li class="">
+              <i class="fal fa-file-invoice"></i><span>Invoice & Quotation</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?task=customerMgt">
+            <li class=""><i class="fal fa-users"></i><span>Customers</span></li>
+          </a>
+          <a href="./reservation-workplace.php?task=service">
+            <li class=""><i class="fal fa-cogs"></i><span>Services</span></li>
+          </a>
+          <a href="./reservation-workplace.php?task=reports">
+            <li class=""><i class="fal fa-file-invoice"></i><span>Reports</span></li>
+          </a>
+        </ul>
+        <!-- <footer>
+    <p>3.0.2</p>
+</footer> -->
+      </div> <!-- sidebar -->
+
+      <div class="middlebar">
+        <div class="top-bar">
+          <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          <h3 class="waiter-amount">
+            <a href="../dashboard.php">Back to home</a>
+          </h3>
+          <h3 class="user-name">Hi, ManagersName</h3>
+          <div class="profile-icon">
+            <div class="user icon">
+              <img src="../assets/images/users/small40/user40-8151609924889.jpg" />
+            </div>
+            <div class="drop-down">
+              <div class="row bar">My Account</div>
+              <div class="row">
+                <div class="photo">
+                  <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                  <a href="./reservation-workplace.php?role=admin&task=profile">
+                    <div class="overlay">
+                      <span><i class="fal fa-camera-alt"></i></span>
+                    </div>
+                  </a>
+                </div>
+                <div class="links">
+                  <p class="name">ManagersName</p>
+                  <p class="user">themanager</p>
+                </div>
+              </div>
+              <div class="row button">
+                <a class="forgot" href="./reservation-workplace.php?role=admin&task=profile&subtask=chngPass">
+                  <i class="far fa-lock-alt"></i><span>Change Password</span>
+                </a>
+                <a class="logout" href="../includes/logout.php">Logout</a>
+              </div>
+            </div>
+          </div>
+          <a class="power-icon fa fa-power-off" href="../includes/logout.php"></a>
+        </div>
+
+        <div class="options-bar dash">
+          Menus | new check in </div>
+
+        <div class="dashboard-content">
+          <a id="btnCancel" href="./reservation-workplace.php?role=admin&task=reservation">Cancel</a>
+          <p id="info"><span>*</span> red mark identifies required fields and must be filled out.</p>
+
+          <div class="theForm no-color">
+            <form action="./includes/reception.php?action=saveNew&dest=addReservation&addedBy=themanager&myRole=admin" method="POST" onsubmit="return check_addReservation()" enctype="multipart/form-data">
+              <section>
+                <fieldset class="grey">
+                  <legend class="difference">Guest Information</legend>
+                  <div class="innerRow">
+                    <div class="label required">Customer Name</div>
+                    <div class="innerColumn">
+                      <label class="checkmark">
+                        <input class="checkbox hidden" type="checkbox" name="chkClient" checked="checked" />
+                        <div class="box w-one-half new"></div>
+                      </label>
+                      <input type="hidden" name="clientID" readonly="readonly">
+                      <input type="hidden" name="myWhouse" value="1001" />
+                      <div class="suggest-box">
+                        <input type="text" class="inputText w-six-half second" name="clientName" placeholder="guest name" autocomplete="off">
+                        <div class="suggest w-eight-left customer"></div>
+                      </div>
+                      <label class="error clientName"></label>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Phone No.</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-four" name="clientPhone" placeholder="phone" onkeypress="return isNumberKey(event);">
+                      <input type="text" class="inputText w-four second" name="clientEmail" placeholder="email">
+                      <label class="error clientPhone"></label>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label">Qr Code</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-five" name="qrCode" placeholder="qr code" autocomplete="off">
+                      <input type="text" class="inputText w-three second" name="clientBalance" placeholder="balance" autocomplete="off" readonly="readonly">
+                    </div>
+                </fieldset>
+                <fieldset class="grey">
+                  <legend class="difference">Reservation Detail</legend>
+                  <div class="innerRow builderRows">
+                    <div class="label required">Shift</div>
+                    <div class="innerColumn">
+                      <select class="w-eight" name="slcResType">
+                        <option value="night">Per night</option>
+                        <option value="hour">Per hour</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Date In</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-four-half datepicker" autocomplete="off" name="checkInDate" placeholder="check in date">
+                      <input type="time" class="inputText w-three-left second" autocomplete="off" name="checkInTime" value="">
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Date Out</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-four-half datepicker" autocomplete="off" name="checkOutDate" placeholder="check out date">
+                      <input type="time" class="inputText w-three-left second" autocomplete="off" name="checkOutTime" value="">
+                      <label class="error checkOut"></label>
+                    </div>
+                  </div>
+                </fieldset>
+              </section>
+              <section>
+                <fieldset class="grey top-down">
+                  <!-- <legend class="difference">Billing Detail</legend> -->
+                  <div class="innerRow builderRows">
+                    <div class="label required">Status</div>
+                    <div class="innerColumn">
+                      <select class="w-eight-left" name="slcStatus">
+                        <option value="confirmed">Confirmed</option>
+                        <option value="booked">Booked</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label">No. of guests</div>
+                    <div class="innerColumn">
+                      <input type="number" class="inputText w-four" autocomplete="off" name="txtAdults" placeholder="adults">
+                      <input type="number" class="inputText w-four second" autocomplete="off" name="txtChildren" placeholder="children">
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Payee Type</div>
+                    <div class="innerColumn">
+                      <select class="w-eight-left" name="slcPayeeType">
+                        <option value="self">Self</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Payee Name</div>
+                    <div class="innerColumn">
+                      <label class="checkmark">
+                        <input class="checkbox hidden" type="checkbox" name="chkPayee" checked="checked" />
+                        <div class="box w-one-half new"></div>
+                      </label>
+                      <input type="hidden" name="payeeID" readonly="readonly">
+                      <div class="suggest-box">
+                        <input type="text" class="inputText w-six-half second" name="payeeName" placeholder="name" autocomplete="off">
+                        <div class="suggest w-eight-left payee"></div>
+                      </div>
+                      <label class="error payeeName"></label>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Payee phone</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-four" name="payeePhone" placeholder="payee phone" onkeypress="return isNumberKey(event);">
+                      <input type="text" class="inputText w-four second" name="payeeEmail" placeholder="payee mail">
+                      <label class="error payeePhone"></label>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="grey top-down">
+                  <!-- <legend class="difference">Allocation Detail</legend> -->
+                  <div class="innerRow">
+                    <div class="label required">Room / Hall</div>
+                    <div class="innerColumn">
+                      <input type="hidden" name="allocID" readonly="readonly">
+                      <div class="suggest-box">
+                        <input type="text" class="inputText w-eight" name="allocName" placeholder="search" autocomplete="off">
+                        <div class="suggest w-eight allocation"></div>
+                      </div>
+                      <label class="error allocName"></label>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label">Room / Hall Detail</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-four-left" name="longName" placeholder="long name" readonly="readonly">
+                      <input type="text" class="inputText w-three-half second" name="allocType" placeholder="type" readonly="readonly">
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label">Amenities</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-eight" name="allocAmenities" placeholder="amenities" readonly="readonly">
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Price</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-three-half" name="pricePerDay" placeholder="price per day" readonly="readonly">
+                      <input type="text" value="0" class="inputText w-four-left second" name="allocDays" placeholder="days/hours" readonly="readonly">
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Discount</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText w-three-half" name="txtDiscount" placeholder="discount" autocomplete="off" onkeypress="return isDecimalNum(this,event);">
+                      <input type="text" class="inputText w-four-left second" name="totalPrice" placeholder="total price" readonly="readonly">
+                      <label class="error discount"></label>
+                    </div>
+                  </div>
+                </fieldset>
+              </section>
+              <section>
+                <fieldset class="grey top-down">
+                  <div class="innerRow">
+                    <div class="label">Identity</div>
+                    <div class="innerColumn">
+                      <label class="checkmark">
+                        <input class="checkbox hidden" type="checkbox" name="chkIdentity" checked="checked" />
+                        <div class="box w-one-half new"></div>
+                      </label>
+                      <input type="hidden" name="identityID" readonly="readonly">
+                      <div class="suggest-box">
+                        <input type="text" class="inputText w-three-half second" name="identityName" placeholder="identity type" autocomplete="off">
+                        <input type="text" class="inputText w-two-half second" name="identityNo" placeholder="identity number" autocomplete="off">
+                        <div class="suggest w-five-left identity"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Country</div>
+                    <div class="innerColumn">
+                      <select class="w-eight" name="slcCountry">
+                        <option value="1">Afghanistan</option>
+                        <option value="2">Aland Islands</option>
+                        <option value="3">Albania</option>
+                        <option value="4">Algeria</option>
+                        <option value="5">American Samoa</option>
+                        <option value="6">Andorra</option>
+                        <option value="7">Angola</option>
+                        <option value="8">Anguilla</option>
+                        <option value="9">Antarctica</option>
+                        <option value="10">Antigua and Barbuda</option>
+                        <option value="11">Argentina</option>
+                        <option value="12">Armenia</option>
+                        <option value="13">Aruba</option>
+                        <option value="14">Australia</option>
+                        <option value="15">Austria</option>
+                        <option value="16">Azerbaijan</option>
+                        <option value="17">Bahamas</option>
+                        <option value="18">Bahrain</option>
+                        <option value="19">Bangladesh</option>
+                        <option value="20">Barbados</option>
+                        <option value="21">Belarus</option>
+                        <option value="22">Belgium</option>
+                        <option value="23">Belize</option>
+                        <option value="24">Benin</option>
+                        <option value="25">Bermuda</option>
+                        <option value="26">Bhutan</option>
+                        <option value="27">Bolivia</option>
+                        <option value="28">Bonaire, Sint Eustatius and Saba</option>
+                        <option value="29">Bosnia and Herzegovina</option>
+                        <option value="30">Botswana</option>
+                        <option value="31">Bouvet Island</option>
+                        <option value="32">Brazil</option>
+                        <option value="33">British Indian Ocean Territory</option>
+                        <option value="34">Brunei</option>
+                        <option value="35">Bulgaria</option>
+                        <option value="36">Burkina Faso</option>
+                        <option value="37">Burundi</option>
+                        <option value="38">Cambodia</option>
+                        <option value="39">Cameroon</option>
+                        <option value="40">Canada</option>
+                        <option value="41">Cape Verde</option>
+                        <option value="42">Cayman Islands</option>
+                        <option value="43">Central African Republic</option>
+                        <option value="44">Chad</option>
+                        <option value="45">Chile</option>
+                        <option value="46">China</option>
+                        <option value="47">Christmas Island</option>
+                        <option value="48">Cocos (Keeling) Islands</option>
+                        <option value="49">Colombia</option>
+                        <option value="50">Comoros</option>
+                        <option value="51">Congo</option>
+                        <option value="52">Cook Islands</option>
+                        <option value="53">Costa Rica</option>
+                        <option value="54">Cote d'ivoire (Ivory Coast)</option>
+                        <option value="55">Croatia</option>
+                        <option value="56">Cuba</option>
+                        <option value="57">Curacao</option>
+                        <option value="58">Cyprus</option>
+                        <option value="59">Czech Republic</option>
+                        <option value="60">Democratic Republic of the Congo</option>
+                        <option value="61">Denmark</option>
+                        <option value="62">Djibouti</option>
+                        <option value="63">Dominica</option>
+                        <option value="64">Dominican Republic</option>
+                        <option value="65">Ecuador</option>
+                        <option value="66">Egypt</option>
+                        <option value="67">El Salvador</option>
+                        <option value="68">Equatorial Guinea</option>
+                        <option value="69">Eritrea</option>
+                        <option value="70">Estonia</option>
+                        <option value="71">Ethiopia</option>
+                        <option value="72">Falkland Islands (Malvinas)</option>
+                        <option value="73">Faroe Islands</option>
+                        <option value="74">Fiji</option>
+                        <option value="75">Finland</option>
+                        <option value="76">France</option>
+                        <option value="77">French Guiana</option>
+                        <option value="78">French Polynesia</option>
+                        <option value="80">Gabon</option>
+                        <option value="81">Gambia</option>
+                        <option value="82">Georgia</option>
+                        <option value="83">Germany</option>
+                        <option value="84">Ghana</option>
+                        <option value="85">Gibraltar</option>
+                        <option value="86">Greece</option>
+                        <option value="87">Greenland</option>
+                        <option value="88">Grenada</option>
+                        <option value="89">Guadaloupe</option>
+                        <option value="90">Guam</option>
+                        <option value="91">Guatemala</option>
+                        <option value="92">Guernsey</option>
+                        <option value="93">Guinea</option>
+                        <option value="94">Guinea-Bissau</option>
+                        <option value="95">Guyana</option>
+                        <option value="96">Haiti</option>
+                        <option value="97">Heard Island and McDonald Islands</option>
+                        <option value="98">Honduras</option>
+                        <option value="99">Hong Kong</option>
+                        <option value="100">Hungary</option>
+                        <option value="101">Iceland</option>
+                        <option value="102">India</option>
+                        <option value="103">Indonesia</option>
+                        <option value="104">Iran</option>
+                        <option value="105">Iraq</option>
+                        <option value="106">Ireland</option>
+                        <option value="107">Isle of Man</option>
+                        <option value="108">Israel</option>
+                        <option value="109">Italy</option>
+                        <option value="110">Jamaica</option>
+                        <option value="111">Japan</option>
+                        <option value="112">Jordan</option>
+                        <option value="113">Kazakhstan</option>
+                        <option value="114">Kenya</option>
+                        <option value="115">Kiribati</option>
+                        <option value="117">Korea</option>
+                        <option value="116">Kosovo</option>
+                        <option value="118">Kuwait</option>
+                        <option value="119">Kyrgyzstan</option>
+                        <option value="120">Laos</option>
+                        <option value="121">Latvia</option>
+                        <option value="122">Lebanon</option>
+                        <option value="123">Lesotho</option>
+                        <option value="124">Liberia</option>
+                        <option value="125">Libya</option>
+                        <option value="126">Liechtenstein</option>
+                        <option value="127">Lithuania</option>
+                        <option value="128">Luxembourg</option>
+                        <option value="129">Macao</option>
+                        <option value="130">Macedonia</option>
+                        <option value="131">Madagascar</option>
+                        <option value="132">Malawi</option>
+                        <option value="133">Malaysia</option>
+                        <option value="134">Maldives</option>
+                        <option value="135">Mali</option>
+                        <option value="136">Malta</option>
+                        <option value="137">Marshall Islands</option>
+                        <option value="138">Martinique</option>
+                        <option value="139">Mauritania</option>
+                        <option value="140">Mauritius</option>
+                        <option value="141">Mayotte</option>
+                        <option value="142">Mexico</option>
+                        <option value="143">Micronesia</option>
+                        <option value="144">Moldava</option>
+                        <option value="145">Monaco</option>
+                        <option value="146">Mongolia</option>
+                        <option value="147">Montenegro</option>
+                        <option value="148">Montserrat</option>
+                        <option value="149">Morocco</option>
+                        <option value="150">Mozambique</option>
+                        <option value="151">Myanmar (Burma)</option>
+                        <option value="152">Namibia</option>
+                        <option value="153">Nauru</option>
+                        <option value="154">Nepal</option>
+                        <option value="155">Netherlands</option>
+                        <option value="156">New Caledonia</option>
+                        <option value="157">New Zealand</option>
+                        <option value="158">Nicaragua</option>
+                        <option value="159">Niger</option>
+                        <option value="160">Nigeria</option>
+                        <option value="161">Niue</option>
+                        <option value="162">Norfolk Island</option>
+                        <option value="163">North Korea</option>
+                        <option value="164">Northern Mariana Islands</option>
+                        <option value="165">Norway</option>
+                        <option value="166">Oman</option>
+                        <option value="167">Pakistan</option>
+                        <option value="168">Palau</option>
+                        <option value="169">Palestine</option>
+                        <option value="170">Panama</option>
+                        <option value="171">Papua New Guinea</option>
+                        <option value="172">Paraguay</option>
+                        <option value="173">Peru</option>
+                        <option value="174">Phillipines</option>
+                        <option value="175">Pitcairn</option>
+                        <option value="176">Poland</option>
+                        <option value="177">Portugal</option>
+                        <option value="178">Puerto Rico</option>
+                        <option value="179">Qatar</option>
+                        <option value="180">Reunion</option>
+                        <option value="181">Romania</option>
+                        <option value="182">Russia</option>
+                        <option value="183">Rwanda</option>
+                        <option value="184">Saint Barthelemy</option>
+                        <option value="185">Saint Helena</option>
+                        <option value="186">Saint Kitts and Nevis</option>
+                        <option value="187">Saint Lucia</option>
+                        <option value="188">Saint Martin</option>
+                        <option value="189">Saint Pierre and Miquelon</option>
+                        <option value="190">Saint Vincent and the Grenadines</option>
+                        <option value="191">Samoa</option>
+                        <option value="192">San Marino</option>
+                        <option value="193">Sao Tome and Principe</option>
+                        <option value="194">Saudi Arabia</option>
+                        <option value="195">Senegal</option>
+                        <option value="196">Serbia</option>
+                        <option value="197">Seychelles</option>
+                        <option value="198">Sierra Leone</option>
+                        <option value="199">Singapore</option>
+                        <option value="200">Sint Maarten</option>
+                        <option value="201">Slovakia</option>
+                        <option value="202">Slovenia</option>
+                        <option value="203">Solomon Islands</option>
+                        <option value="204" selected="selected">Somalia</option>
+                        <option value="205">South Africa</option>
+                        <option value="206">South Georgia and the South Sandwich Islands</option>
+                        <option value="207">South Korea</option>
+                        <option value="208">South Sudan</option>
+                        <option value="209">Spain</option>
+                        <option value="210">Sri Lanka</option>
+                        <option value="211">Sudan</option>
+                        <option value="212">Suriname</option>
+                        <option value="213">Svalbard and Jan Mayen</option>
+                        <option value="214">Swaziland</option>
+                        <option value="215">Sweden</option>
+                        <option value="216">Switzerland</option>
+                        <option value="217">Syria</option>
+                        <option value="218">Taiwan</option>
+                        <option value="219">Tajikistan</option>
+                        <option value="220">Tanzania</option>
+                        <option value="221">Thailand</option>
+                        <option value="222">Timor-Leste (East Timor)</option>
+                        <option value="223">Togo</option>
+                        <option value="224">Tokelau</option>
+                        <option value="225">Tonga</option>
+                        <option value="226">Trinidad and Tobago</option>
+                        <option value="227">Tunisia</option>
+                        <option value="228">Turkey</option>
+                        <option value="229">Turkmenistan</option>
+                        <option value="230">Turks and Caicos Islands</option>
+                        <option value="231">Tuvalu</option>
+                        <option value="232">Uganda</option>
+                        <option value="233">Ukraine</option>
+                        <option value="234">United Arab Emirates</option>
+                        <option value="235">United Kingdom</option>
+                        <option value="236">United States</option>
+                        <option value="237">United States Minor Outlying Islands</option>
+                        <option value="238">Uruguay</option>
+                        <option value="239">Uzbekistan</option>
+                        <option value="240">Vanuatu</option>
+                        <option value="241">Vatican City</option>
+                        <option value="242">Venezuela</option>
+                        <option value="243">Vietnam</option>
+                        <option value="244">Virgin Islands, British</option>
+                        <option value="245">Virgin Islands, US</option>
+                        <option value="246">Wallis and Futuna</option>
+                        <option value="247">Western Sahara</option>
+                        <option value="248">Yemen</option>
+                        <option value="249">Zambia</option>
+                        <option value="250">Zimbabwe</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label">Attachment</div>
+                    <div class="innerColumn">
+                      <input type="file" id="fileAttach" name="fileAttach" class="inputfile inputfile6" />
+                      <label class="w-seven" for="fileAttach"><span class="w-seven"></span> <strong><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                            <path
+                              d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" />
+                          </svg> Choose a file</strong></label>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="button  top-down">
+                  <button type="submit" class="btn-submit " id="btnSave">
+                    <span>Save</span>
+                  </button>
+                  <label class="process"></label>
+                </fieldset>
+              </section>
+            </form>
+          </div>
+
+          <script src="./assets/js/reception.js"></script>
+          <script src="../assets/js/custom-file-input.js"></script>
+          <script src="./assets/js/jquery.min.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $("div.theForm").css("display", "inline");
+            });
+            var myUser = 'themanager';
+            var myRole = 'admin';
+            var today = '2025, 12, 13';
+            var thisYear = '2023';
+            var sameDayCheckOut = 'yes';
+            simplfyAddRsrvtn();
+          </script>
+        </div>
+
+
+      </div> <!-- middlebar -->
+    </div>
+  </div>
+  <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+  <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+  <script src="../assets/js/basicFuncs.js"></script>
+  <!-- <script src="../libraries/sweetalert/js/sweetalert.js"></script> -->
+  <link rel="stylesheet" href="../libraries/sweetalert/css/sweetalert.css" />
+  <script src="../libraries/sweetalert/js/sweetalert.js"></script>
+  <script src="../assets/js/moment.min.js"></script>
+  <script src="./assets/js/jquery.timeago.js"></script>
+  <!-- <script src="../assets/js/pikaday.js"></script> -->
+  <script src="../assets/js/jquery.form.js"></script>
+  <script src="./assets/js/pikaday.js"></script>
+  <script src="./assets/js/basicFuncs.js"></script>
+  <script type="text/javascript">
+    simplfyWaiterTopBar();
+  </script>
+</body>
+
+</html>

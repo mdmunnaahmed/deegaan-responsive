@@ -1,0 +1,1051 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Workplace | DEEGAAN</title>
+    <link rel="shortcut icon" href="./assets/images/system/icon.png" />
+    <link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css" />
+    <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/multiselect/dist/multi-select.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+    <script src="./assets/multiselect/dist/multi-select.js"></script>
+    <script src="./assets/js/basicFuncs.js"></script>
+    <script src="./assets/js/moment.min.js"></script>
+    <script src="./assets/js/pikaday.js"></script>
+    <script src="./libraries/sweetalert/js/sweetalert.js"></script>
+    <script src="./assets/js/jquery.form.js"></script><!----> <!-- for changing photo -->
+    <script type="text/javascript">
+        const roundDigits = '2';
+    </script>
+    <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrap">
+        <div class="workplace">
+            <div id="sidebar" tabindex="0">
+                <div class="smartphone-menu-trigger"></div>
+                <div id="logoWrap">
+                    <!-- <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
+                    <label class="comp_name">My Hotel and Restaurant</label>
+                </div>
+                <ul id="menus">
+                    <li><a href="./dashboard.php">
+                            <i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="has-sub">
+                        <a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
+                            <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
+                            <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a><i class="fa fa-institution"></i><span>Property Management</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-sub">
+                        <a><i class="fa fa-user"></i><span>Human resource Mgt</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
+                        </ul>
+                    </li>
+                    <li id="active">
+                        <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
+                    </li>
+                    <!-- <li class="has-sub"> -->
+                    <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
+                    <ul>
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
+        <li><a href="./workplace.php?role=admin&task=supply&subtask=measures"><span>Measurements</span></a></li> -->
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
+                        <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
+                    </ul>
+                    </li>
+                    <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
+                    <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
+                    <li class="has-sub">
+                        <a><i class="fa fa-dollar"></i><span>Finance</span></a>
+                        <ul>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
+                            <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
+
+                </ul>
+                <footer style="margin-right: 50px; color: #fff; text-align: center;">
+                    <p class="version" style="margin-top: 250px; font-size: 0.8em;">V6.0.0.0</p>
+                </footer>
+            </div> <!-- sidebar -->
+
+            <div id="middlebar">
+                <div class="topBar">
+                    <div id="programName"><!-- <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span> --></div>
+                    <div id="topIcons">
+                        <div class="icon profile">
+                            <img src="./assets/images/users/small40/user40-8151609924889.jpg" />
+                        </div>
+                        <div class="dropDown">
+                            <div class="row bar">My Account</div>
+                            <div class="row">
+                                <div id="photo">
+                                    <img src="./assets/images/users/middle320/user320-8151609924889.jpg" />
+                                    <a href="./workplace.php?role=admin&task=profile">
+                                        <div class="overlay">
+                                            <span><i class="fa fa-camera"></i>change</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div id="links">
+                                    <p id="name">ManagersName</p>
+                                    <p id="user">themanager</p>
+                                </div>
+                            </div>
+                            <div class="row button">
+                                <a href="./workplace.php?role=admin&task=profile&subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
+                                <a class="logout" href="./includes/logout.php?from=user">Logout</a>
+                            </div>
+                        </div> <!-- dropDown -->
+                    </div> <!-- topIcons -->
+                </div>
+                <div class="positionBar">
+                    <i class="fa fa-tag"></i>
+                    <label>menus &raquo; inventory &raquo; purchase</label>
+                </div>
+                <div class="contentBar"><div class="steps-inventory">
+                    <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=purchase">
+                       <p class="">
+                           <span><i class="fa fa-file-text-o"></i></span>Purchase
+                       </p></a>
+                  <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=stock">
+                   <p class="">
+                       <span><i class="fa fa-dashcube"></i></span>Stock
+                   </p></a>
+               
+                   <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=menuBOM">
+                       <p class="">
+                           <span><i class="fa fa-dollar"></i></span>Menu BOM
+                       </p></a>
+                   <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=unit">
+                       <p class="active">
+                       <span><i class="fa fa-balance-scale"></i></span>Unit
+                   </p></a>
+               
+                   <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=category">
+                       <p class="">
+                       <span><i class="fa fa-hourglass-end"></i></span>Category
+                   </p></a>
+                   <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=product">
+                       <p class="">
+                           <span><i class="fa fa-exchange"></i></span>Product
+                   </p></a>
+               
+                   <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=vendor">
+                       <p class="">
+                       <span><i class="fa fa-book"></i></span>Vendor
+                   </p></a>
+                    <a class="button right change" href="./workplace.php?role=admin&amp;task=inventory&amp;subtask=reports">
+                       <p class="">
+                       <span><i class="fa fa-line-chart"></i></span>Run Reports
+                   </p></a>
+               </div>
+               
+               <style type="text/css">
+                   .steps-inventory{
+                   position: relative;
+                   float: left;
+                   width: 96%;
+                   min-width: 23%;
+                   margin: 1% 2% 0;
+                   border-bottom: 1px solid #cccccc;
+                   border-right: none;
+                   box-sizing: border-box;
+                   z-index: 10;
+               }
+               .steps-inventory p{
+                   position: relative;
+                   float: left;
+                   width: auto;
+                   min-width: 50px;
+                   padding: 0 27.5px;
+                   font-size: 0.85em;
+                   color: #444;
+                   height: 34px;
+                   line-height: 34px;
+                   background: #efdfd0; /*#e7d0b9;*/
+                   border: 1px solid #ddd;
+                   border-bottom: 1px solid transparent;
+                   /*border-radius: 4px 4px 0px 0px;*/
+                   /*margin-left: 5px;*/
+                   /*cursor: pointer;*/
+               }
+               div.steps-inventory p span {
+                   position: relative;
+                   float: left;
+                   margin-top: 7px;
+                   margin-right: 10px;
+                   width: 18px;
+                   height: 18px;
+                   line-height: 18px;
+                   text-align: center;
+                   font-size: 0.8em;
+               }
+               div.steps-inventory p i {
+                   position: relative;
+                   float: left;
+                   margin-top: 7px;
+                   margin-right: 5px;
+                   width: 100%;
+                   height: 7px;
+                   line-height: 7px;
+                   text-align: center;
+                   font-size: 1.2em;
+                   font-weight: normal;
+               }
+               div.steps-inventory a {
+                   text-decoration: none;
+                   width: 100%;
+               
+               }
+               div.steps-inventory p.active , div.steps-inventory p.active a{
+                   background: #714705 !important;
+                   color: #ffffff !important;
+               }
+               </style><!--  -->
+               <form action="./includes/inventory.php?action=saveNew&amp;dest=addUnitFromPopUp" method="POST" onsubmit="return addUnitFromPopUp();">
+               <aside class="popUpForm">
+                   <input type="checkbox" class="state" id="addUnit">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Add Unit</h3>
+                           <label class="close" for="addUnit" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" placeholder="eg: kilogram" id="popUnitName" autocomplete="off" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" placeholder="eg: 100" id="popUnitCon" autocomplete="off" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                        <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                       </div>
+                           <div class="footer">
+                           <!-- <div class="row"> -->
+                               <button type="submit" class="btnSave" id="btnSave" onclick="return addUnitFromPopUp()">Save</button>
+                           <!-- </div> -->
+                       </div>
+                   </article>
+                       <label class="backdrop" for="addUnit"></label>
+               </aside>
+               </form>
+               
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit3">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit3" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="3">
+                                   <input type="text" class="inputText middle" value="kg22" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="1" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit3"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit5">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit5" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="5">
+                                   <input type="text" class="inputText middle" value="pc" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="1" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit5"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit7">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit7" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="7">
+                                   <input type="text" class="inputText middle" value="ctn 48" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="48" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5" selected="selected">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit7"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit8">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit8" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="8">
+                                   <input type="text" class="inputText middle" value="loor" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="50" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3" selected="selected">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit8"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit9">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit9" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="9">
+                                   <input type="text" class="inputText middle" value="Box" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="1" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit9"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit11">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit11" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="11">
+                                   <input type="text" class="inputText middle" value="Ltr" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="1" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit11"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit12">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit12" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="12">
+                                   <input type="text" class="inputText middle" value="darsan" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="48" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5" selected="selected">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit12"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit13">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit13" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="13">
+                                   <input type="text" class="inputText middle" value="grm" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="1" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit13"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit14">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit14" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="14">
+                                   <input type="text" class="inputText middle" value="kilo" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="1000" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit14"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit15">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit15" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="15">
+                                   <input type="text" class="inputText middle" value="kookk" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="90" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit15"></label>
+                   </aside>
+               <aside class="popUpForm editPopup">
+                   <input type="checkbox" class="state" id="editUnit16">
+                   <article class="content">
+                       <div class="header" style="border: 1px solid #ccc; border-bottom: none; background-color: #f5efef; ">
+                           <h3 style="color: #e7975e;">Edit Unit</h3>
+                           <label class="close" for="editUnit16" style="border-bottom: 1px solid #ccc; background-color: #f5efef; color: #e7975e;">×</label>
+                       </div>
+                       <div class="popupBody" style="border: 1px solid #ccc">
+                           <div class="row">
+                               <div class="lftPart required">Unit Name</div>
+                               <div class="rghPart">
+                                   <input type="hidden" name="msrID" id="msrID" value="16">
+                                   <input type="text" class="inputText middle" value="kjjh" id="popUnitName" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError1" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart required">Unit Conversion</div>
+                               <div class="rghPart">
+                                   <input type="text" class="inputText middle" value="8" id="popUnitCon" style="margin-left: 10px;width: 58%;height: 32px;">
+                                   <label class="error" id="unitError2" style="margin-left: 32%;"></label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Base Measurement Unit</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcMeasure" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="0">Same Unit as Base measurement unit</option>
+                                       <option value="3">kg22</option><option value="5">pc</option><option value="7">ctn 48</option><option value="8">loor</option><option value="9">Box</option><option value="11">Ltr</option><option value="12">darsan</option><option value="13">grm</option><option value="14">kilo</option><option value="15">kookk</option><option value="16">kjjh</option>					</select>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="lftPart">Unit Status</div>
+                               <div class="rghPart">
+                                   <select class="xmiddle" id="slcStatus" style="margin-left: 10px; width: 60%; height: 32px;">
+                                       <option value="active" selected="selected">Active</option>
+                                       <option value="suspended">Suspended</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="footer">
+                           <button type="submit" class="btnSave" id="btnSave" onclick="return editUnitPopup(this)">Edit</button>
+                       </div>
+                   </article>
+                       <label class="backdrop" for="editUnit16"></label>
+                   </aside>
+               <style type="text/css">
+                   .footer{
+                       width: 100%;
+                       background-color: #f5efef;
+                       position: relative;
+                       /*height: 30px;*/
+                       float: left;
+                       /*margin-top: 10px;*/
+                       border: 1px solid #ccc;
+                       border-top: none;
+                       box-sizing: border-box;
+                   }
+                   .btnSave{
+                       border:none;
+                       float: right;
+                       color: #e7975e;
+                       font-family: raspoutine;
+                       cursor: pointer;
+                       line-height: 25px;
+                       margin-right: 0px;
+                       /*text-shadow: 1px 1px 1px #000000;*/
+                       outline: none;
+                       padding: 5px 40px;
+                       /*background: #9d5300;*/
+                       /*color: #fff;*/
+                       background: transparent;
+                   }
+               </style>
+               
+               <div id="loadPage">
+                       <div id="command">
+                           <div id="filters">
+                               <div style="display: flex; flex-direction: column; float: right;">
+                               <label class="addNew" for="addUnit">
+                               </label>
+                                   <i class="fa fa-ellipsis-h" style="float: right; border:1px solid #ccc; width: 24px; padding: 6px; text-align: center; color: #333; border-radius: 2px; margin-top: 5px;"></i>
+                               </div>
+                               <div>
+                                   <input type="text" class="search" id="srchUnit" name="search" placeholder="Search">
+                                   <!-- <label class="search"></label> -->
+                                       <i class="fa fa-times" style="color: #e7975e;  position: absolute; width: 20px; margin-top: 8px; cursor: pointer; float: right;display: none; "></i>
+               
+                                       <a class="" title="srchUnit" onclick="return searchUnit();">
+                                           <i class="fa fa-search" style="color: #ccc; width: 30px; margin-right: 20px; position: absolute; cursor: pointer; font-size: 1.2em; border:1px solid #ccc; border-left: none; padding: 6px 0 7px;"></i>
+                                       </a>
+                                        <div class="suggest large" style="margin:0; width: 50%;"></div>
+               
+                               </div>
+                           </div>
+                       </div>
+                         <div id="dynamicQnd" style="padding-bottom: 30px;">
+               
+                           <!-- 			    	<div id="foundNum">
+                                   <label id="count">11</label> record(s) has been found.
+                                   <span id="refresh"></span>
+                               </div> -->
+               
+                             <div id="dataTable" style="border: none;">
+                                 <div class="record header" style="background-color: none;">
+                                   <div class="cave long">Unit Name</div>
+                                   <div class="cave long" style="border-left: none;">Convertion &amp; Base Measurement Unit</div>
+                                   <div class="cave short" style="border-left: none;">Action</div>
+                               </div>
+                             <div class="record active" style="background-color: none;">
+                                       <div class="cave long">kjjh</div>
+                                       <div class="cave long" style="border-left: none;">8 kjjh</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(16)"></a>
+                                           <a class="delete" onclick="return deleteUnit(16)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">kookk</div>
+                                       <div class="cave long" style="border-left: none;">90 kookk</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(15)"></a>
+                                           <a class="delete" onclick="return deleteUnit(15)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">kilo</div>
+                                       <div class="cave long" style="border-left: none;">1000 kilo</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(14)"></a>
+                                           <a class="delete" onclick="return deleteUnit(14)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">grm</div>
+                                       <div class="cave long" style="border-left: none;">1 grm</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(13)"></a>
+                                           <a class="delete" onclick="return deleteUnit(13)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">darsan</div>
+                                       <div class="cave long" style="border-left: none;">48 pc</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(12)"></a>
+                                           <a class="delete" onclick="return deleteUnit(12)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">Ltr</div>
+                                       <div class="cave long" style="border-left: none;">1 Ltr</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(11)"></a>
+                                           <a class="delete" onclick="return deleteUnit(11)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">Box</div>
+                                       <div class="cave long" style="border-left: none;">1 Box</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(9)"></a>
+                                           <a class="delete" onclick="return deleteUnit(9)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">loor</div>
+                                       <div class="cave long" style="border-left: none;">50 kg22</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(8)"></a>
+                                           <a class="delete" onclick="return deleteUnit(8)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">ctn 48</div>
+                                       <div class="cave long" style="border-left: none;">48 pc</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(7)"></a>
+                                           <a class="delete" onclick="return deleteUnit(7)"></a>
+                                       </div>
+                                   </div><div class="record active" style="background-color: none;">
+                                       <div class="cave long">pc</div>
+                                       <div class="cave long" style="border-left: none;">1 pc</div>
+                                       <div class="cave button short" style="border-left: none;">
+                                           <a class="status fa fa-circle active "></a>
+                                           <a class="update" onclick="return editUnitPopUp(5)"></a>
+                                           <a class="delete" onclick="return deleteUnit(5)"></a>
+                                       </div>
+                                   </div><div class="load_more_link"><input type="button" id="btnDisplayMore" value="Load More" onclick="loadUnits(10, 10);"><span id="loading">&nbsp;</span></div></div>
+                         </div>
+               </div>
+               <script src="./assets/js/inventory.js"></script>
+               <script type="text/javascript">
+               
+               var maanta      = "2023, 12, 13";
+               var sanadkan    = "2023";
+               
+               var myUser		= 'themanager';
+               var myRole		= 'admin';
+               var myWhouse	= '1001';
+               
+               smpfyUnitPage();
+               let rowNum = 2;
+               loadUnits(0);
+               // loadCategories();
+               
+               </script>
+               <style type="text/css">
+                   .search{
+                       padding: 8px;
+                       width: 50%;
+                       border: 1px solid #ccc;
+                       outline: none;
+                       border-right: none;
+                       /*margin-left: 5px;*/
+                       /*border-radius: 4px;*/
+                       /*background: url(assets/images/system/bg-search.png) 95% no-repeat;*/
+               
+                   }
+                   /*label.search{
+                       color: #ccc;
+                       border:none;
+                       position: absolute;
+                       margin-right: 20px;
+                       float: left;
+                       cursor: pointer;
+                   }
+                   label.search:before{
+                       font-family: FontAwesome;
+                       content: "\f002";
+                       font-size: 1.2em;
+                   }*/
+                   label.addNew {
+                   background-color: #e7975e;
+                   color: white;
+                   width: 30px;
+                   text-align: center;
+                   float: right;
+                   padding: 4px;
+                   /*margin-left: 7px;*/
+                   /*width: 16px;*/
+                   cursor: pointer;
+                   /*height: 31px;*/
+                   /*color: #714705;*/
+                   /*line-height: 31px;*/
+               
+                  }
+                   label.addNew:before{
+                       font-family: FontAwesome;
+                       content: "\f067";
+                       font-size: 0.85em
+                   }
+                   /*label.updateUnit:before{
+                       font-family: FontAwesome;
+                       content: "\f067";
+                       font-size: 0.85em;
+                   }*/
+                   /*input[type="search"]:focus{
+                       background: url(assets/images/system/b_close.png) 95% no-repeat;
+               
+                   }*/
+                   .record.suspended {
+                       opacity: .5;
+                   }
+                   .record.suspended:after {
+                       display: none;
+                   }
+                   .record.active a.status {
+                       color: #36b93b !important;
+                       opacity: 1 !important;
+                   }
+               
+                    .load_more_link {
+                       position: absolute;
+                       bottom: -50px;
+                       display: flex;
+                       justify-content: center;
+                       width: 100%;
+                   }
+                   .load_more_link input {
+                        padding: 10px 50px;
+                       border: 1px solid #ddd;
+                       color: #555;
+                       outline: none;
+                       cursor: pointer;
+                    }
+               </style></div>
+            </div> <!-- middlebar -->
+
+        </div>
+    </div>
+    <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+    <script src="./assets/js/jquery.timeago.js"></script>
+    <script type="text/javascript">
+        simplfyTopBar();
+
+    </script>
+</body>
+
+</html>

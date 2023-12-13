@@ -448,17 +448,6 @@
     padding: 6px 10px;
   }
 }
-@media (max-width: 991px) {
-  div.orders-workplace #loadPage #dataTable div.cave.short {
-    width: 12%;
-  }
-  div.orders-workplace #loadPage #dataTable div.cave.button {
-    width: 14%;
-  }
-  div.orders-workplace #loadPage #dataTable div.cave.lmiddle {
-    width: 16%;
-  }
-}
 div.index div.developer .social {
   margin-inline: auto;
   display: flex;
@@ -832,11 +821,6 @@ select {
   margin-top: -3px;
 }
 
-@media (max-width: 1366px) {
-  .main-wrap {
-    padding-left: 8%;
-  }
-}
 @media (max-width: 1199px) {
   .main-wrap {
     width: 100%;
@@ -989,13 +973,20 @@ select {
     height: auto;
     line-height: 1.25;
   }
-  .orders-workplace .popUpForm .content {
+  .popUpForm .content {
     width: 95% !important;
   }
-  .orders-workplace .popUpForm .content input,
-  .orders-workplace .popUpForm .content select,
-  .orders-workplace .popUpForm .content textarea {
+  .popUpForm .content input,
+  .popUpForm .content select,
+  .popUpForm .content textarea {
     width: 100% !important;
+  }
+  .popUpForm .content .popupBody .row .lftPart {
+    line-height: 1.2 !important;
+    height: auto !important;
+  }
+  .popUpForm .content .popupBody .row input, .popUpForm .content .popupBody .row select {
+    width: 60% !important;
   }
 }
 @media (max-width: 900px) {
@@ -1229,12 +1220,16 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   padding-bottom: 8px;
 }
 
+div.workplace div.reportArea div.rprtType label {
+  display: flex;
+  gap: 6px;
+}
+div.workplace div.reportArea div.rprtType label span {
+  transform: translateY(2px);
+}
+
 @media (max-width: 575px) {
   div.orders-workplace .displayMore {
     width: 25%;
   }
-  .w-two,
-  .w-two-half {
-    width: 30% !important;
-  }
-}
+}/*# sourceMappingURL=responsive.css.map */

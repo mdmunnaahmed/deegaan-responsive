@@ -806,16 +806,6 @@ div#forgotPass div#imgWrap2 img:hover {
 	filter: alpha(opacity=80);
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ----------------------------------------------------------- */
 /* ---------------------- dashboard -------------------------- */
 /* ----------------------------------------------------------- */
@@ -2042,10 +2032,22 @@ div.workplace #loadPage #dynamicQnd #filters>div {
 	width: 50%;
 }
 
+@media (max-width: 1199px) {
+	div.workplace #loadPage #dynamicQnd #filters {
+		width: 65%;
+	}
+}
+
+@media (max-width: 991px) {
+	div.workplace #loadPage #dynamicQnd #filters {
+		width: 100%;
+	}
+}
+
 div.workplace #loadPage #dynamicQnd #filters label {
 	float: left;
 	width: 45%;
-	margin-top: 3.5%;
+	margin-top: 5px;
 	text-align: right;
 	font-size: 0.9em;
 	color: #444444;
@@ -2063,6 +2065,23 @@ div.workplace #loadPage #dynamicQnd #filters select {
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 }
+
+@media (max-width: 575px) {
+	div.workplace #loadPage #dynamicQnd #filters>div {
+		width: 100%;
+	}
+
+	div.workplace #loadPage #dynamicQnd #filters label {
+		width: 25%;
+		margin-bottom: 6px;
+	}
+
+	div.workplace #loadPage #dynamicQnd #filters select {
+		width: 70%;
+		margin-bottom: 6px;
+	}
+}
+
 
 div.workplace #loadPage #dynamicQnd #filters select:focus {
 	outline: none;
@@ -3462,6 +3481,11 @@ div.workplace div.theForm div.record .column,
 .register-wrap div.theForm div.record .column {
 	float: left;
 	width: 49%;
+}
+@media (max-width: 991px) {
+	div.workplace div.theForm div.record .column {
+		width: 100%;
+	}
 }
 
 div.workplace div.theForm div.record label.check,
@@ -7211,6 +7235,13 @@ div.workplace div.reportArea div.rprtType {
 	margin: 0 1% 1% 0;
 }
 
+@media (max-width: 575px) {
+	div.workplace div.reportArea div.rprtType {
+		margin: 0 0% 3% 0;
+		width: 100%;
+	}
+}
+
 div.workplace div.reportArea div.clear {
 	float: left;
 	width: 90%;
@@ -7281,8 +7312,7 @@ div.workplace div.reportArea div#filterCmdPrcess {
 
 div.workplace div.reportArea div#filterCmdPrcess #filterWrap {
 	float: left;
-	width: 74%;
-	margin-right: 25%;
+	width: 100%;
 }
 
 div.workplace div.reportArea button {
@@ -7290,6 +7320,21 @@ div.workplace div.reportArea button {
 	width: 10%;
 	margin-left: 11.2%;
 	height: 32px;
+	min-width: 150px;
+}
+
+@media (max-width: 575px) {
+	div.workplace div.reportArea button {
+		margin-left: 6%;
+	}
+
+	div.workplace div.reportArea #slcStorageArea {
+		width: 59% !important;
+	}
+
+	div.workplace div.reportArea .filter.byStation>div>label {
+		width: 35% !important;
+	}
 }
 
 div.workplace div.reportArea label#process {
@@ -9653,8 +9698,13 @@ div.workplace .loadPage .dynamicQnd .Inventory.record.category {
 	font-size: 1.5em;
 	color: #fff;
 }
-
-
 .swal-modal {
 	font-family: leelawadee !important;
 }
+
+/* mun */
+.steps-inventory p {
+	border: 1px solid white !important;
+}
+
+/* mun */
