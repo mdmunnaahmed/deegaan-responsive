@@ -1,0 +1,1374 @@
+@mixin text-wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin breakpoint($point) {
+  @if $point==xs {
+    @media (min-width: 320px) {
+      @content;
+    }
+  } @else if $point==max-xs {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
+  @if $point==sm {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $point==max-sm {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $point==md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point==max-md {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point==lg {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point==max-lg {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $point==xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point==max-xl {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point==xxl {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  } @else if $point==max-xxl {
+    @media (max-width: 1399px) {
+      @content;
+    }
+  }
+}
+@mixin min($value) {
+  @media (min-width: $value) {
+    @content;
+  }
+}
+@mixin max($value) {
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+@media only screen and (min-width: 1680px) {
+  .middlebar .order-form .meals .meal-box img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  // .main-wrap {
+  //   padding-left: 7%;
+  // }
+  .main-wrap .sidebar {
+    width: 8%;
+  }
+  .sidebar .logoWrap {
+    padding-top: 10px;
+    height: 50px;
+  }
+  .sidebar .logoWrap img {
+    width: 42px;
+  }
+  .sidebar ul {
+    margin-top: 26%;
+  }
+  .sidebar > ul > li > a i {
+    margin-bottom: 5px;
+    font-size: 1.4em;
+  }
+  .sidebar > ul > li > a span {
+    font-size: 0.8em;
+  }
+  .sidebar footer {
+    bottom: 40px;
+  }
+  /* --- */
+  .middlebar .top-bar {
+    padding: 0 2% 0 1.5%;
+    height: 50px;
+  }
+  .middlebar .top-bar .restaurant-name {
+    font-size: 1.1em;
+  }
+  .middlebar .top-bar .icon {
+    width: 34px;
+    height: 34px;
+  }
+  .middlebar .top-bar .drop-down {
+    right: 4.5%;
+    width: 26%;
+    top: 54px;
+  }
+  .middlebar .top-bar .drop-down .row {
+    padding: 2% 5%;
+    font-size: 0.85em;
+  }
+  .middlebar .top-bar .drop-down .row.bar {
+    font-size: 0.85em;
+  }
+  .middlebar .top-bar .drop-down .row .photo {
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+  }
+  .middlebar .top-bar .drop-down .row .links {
+    -ms-flex-preferred-size: 68%;
+    flex-basis: 68%;
+  }
+  .middlebar .options-bar {
+    padding: 0 1.5%;
+    height: 32px;
+    line-height: 32px;
+    font-size: 0.8em;
+  }
+  /* --- order-form --- */
+  .middlebar .dashboard-content .order-form {
+    margin: 0.7% 1.5%;
+  }
+  .middlebar .order-form .waiters {
+    padding: 15px 25px;
+  }
+  .middlebar .order-form .packages {
+    -ms-flex-preferred-size: 63%;
+    flex-basis: 63%;
+    margin: 0.7% 0;
+    padding: 15px 25px;
+  }
+  .middlebar .order-form .client {
+    -ms-flex-preferred-size: 36.2%;
+    flex-basis: 36.2%;
+    margin: 0.7% 0;
+    padding: 15px 20px;
+  }
+  .middlebar .order-form .meals {
+    -ms-flex-preferred-size: 63%;
+    flex-basis: 63%;
+    height: 446px;
+    padding: 15px 25px;
+  }
+  .middlebar .order-form .price-buttons {
+    -ms-flex-preferred-size: 36.2%;
+    flex-basis: 36.2%;
+  }
+  /* -- */
+  .middlebar .order-form .waiters .waiter-box {
+    padding: 6px 15px;
+    font-size: 0.9em;
+  }
+  /* -- */
+  .middlebar .order-form .packages .radio-box {
+    margin-right: 1.5%;
+  }
+  .middlebar .order-form .packages .radio-box .package-box {
+    height: 112px;
+  }
+  .middlebar .order-form .packages .radio-box .package-box img {
+    max-width: 100px;
+    width: 100px !important;
+  }
+  .middlebar .order-form .packages .radio-box .package-box span {
+    bottom: 6px;
+    width: 91%;
+  }
+  /* -- */
+  .middlebar .order-form .client .radio-box {
+    -ms-flex-preferred-size: 24%;
+    flex-basis: 24%;
+  }
+  .middlebar .order-form .client .client-box {
+    padding: 13px 10px;
+  }
+  .middlebar .order-form .client .radio-box.focused .client-box {
+    outline: 1px solid #c79457;
+  }
+  .middlebar .order-form .client .client-box i {
+    font-size: 1.7em;
+    margin-bottom: 4px;
+  }
+  .middlebar .order-form .client .client-box span {
+    font-size: 0.9em;
+  }
+  .middlebar .order-form .client .selected p {
+    padding: 6px 0;
+    font-size: 0.95em;
+  }
+  /* -- */
+  .middlebar .order-form .meals .radio-box {
+    padding: 8px 15px;
+    -ms-flex-preferred-size: 18.5%;
+    flex-basis: 18.5%;
+    margin-right: 12px;
+  }
+  .middlebar .order-form .meals .radio-box:nth-child(5n + 5) {
+    margin-right: 0;
+  }
+  .middlebar .order-form .meals .radio-box .triangle-white {
+    border: 9.2px solid #fff;
+  }
+  .middlebar .order-form .meals .radio-box .triangle-color {
+    border-top: 18px solid #ad722d;
+    border-right: 18px solid transparent;
+  }
+  .middlebar .order-form .meals .meal-box .meal-name {
+    height: 20px;
+    font-size: 0.9em;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .prices .prices-wrap {
+    height: 220px;
+  }
+  .middlebar .order-form .price-buttons .prices .record {
+    padding: 10px 20px;
+  }
+  .middlebar .order-form .price-buttons .prices .record.titles {
+    width: 96.5%;
+    padding: 13px 20px;
+    font-size: 1em;
+  }
+  .middlebar .order-form .price-buttons .prices .record.values {
+    font-size: 1em;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.delete {
+    -ms-flex-preferred-size: 13%;
+    flex-basis: 13%;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.qty .qty-btn {
+    font-size: 1.3em;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.qty .input {
+    min-width: 40px;
+    max-width: 60px;
+  }
+  .middlebar .order-form .price-buttons .prices .record .col.delete a {
+    font-weight: 300;
+  }
+  .middlebar .order-form .price-buttons .prices .totals {
+    padding: 11px 40px;
+  }
+  .middlebar .order-form .price-buttons .prices .totals .label {
+    font-size: 1.1em;
+  }
+  .middlebar .order-form .price-buttons .prices .totals .amount {
+    font-size: 1.7em;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .buttons-wrap {
+    margin-top: 1.6%;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch {
+    padding: 8px 20px;
+  }
+  .middlebar .order-form .switch-wrapper .unchecked {
+    width: 15px;
+    right: 18%;
+    -webkit-transform: translateX(0) translateY(-30%) scale(1);
+    -ms-transform: translateX(0) translateY(-30%) scale(1);
+    transform: translateX(0) translateY(-30%) scale(1);
+  }
+  .middlebar .order-form .switch-wrapper svg {
+    top: 38%;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch span {
+    top: -12px;
+    font-size: 0.9em;
+  }
+  /* --- */
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text {
+    width: 86%;
+    margin: 10px 20px;
+    padding: 10px 15px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-webkit-input-placeholder {
+    color: #aaa;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-webkit-input-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-moz-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text:-ms-input-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::-ms-input-placeholder,
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text::placeholder {
+    color: #aaa;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .buttons-wrap .btn-submit i {
+    margin-bottom: 10px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .btn-submit span {
+    font-size: 1.1em;
+  }
+}
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0.3s;
+  &.active {
+    background-color: #00000080;
+    z-index: 1111;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .main-wrap {
+    padding-left: 7%;
+  }
+  .main-wrap .sidebar {
+    width: 95px;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    z-index: 1112;
+    &.active {
+      transform: translateX(0);
+    }
+  }
+  .sidebar .logoWrap {
+    height: 40px;
+  }
+  .sidebar .logoWrap img {
+    width: 40px;
+  }
+  .sidebar ul {
+    margin-top: 45%;
+  }
+  .sidebar ul li {
+    padding: 25% 7%;
+  }
+  .sidebar > ul > li > a i {
+    margin-bottom: 0;
+    font-size: 1.8em;
+  }
+  .sidebar > ul > li > a span {
+    // display: none;
+  }
+  .sidebar footer {
+    bottom: 30px;
+  }
+  /* --- */
+  .middlebar .top-bar {
+    padding: 0 3% 0 2.5%;
+    height: 50px;
+  }
+  .middlebar .top-bar .restaurant-name {
+    font-size: 1em;
+  }
+  .middlebar .top-bar .icon {
+    width: 36px;
+    height: 36px;
+  }
+  .middlebar .top-bar .icon > img {
+    border-width: 0;
+  }
+  .middlebar .top-bar .drop-down {
+    right: 1.5%;
+    width: 35%;
+    top: 56px;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+  .middlebar .top-bar .drop-down .row {
+    padding: 2% 5%;
+    font-size: 0.9em;
+  }
+  .middlebar .top-bar .drop-down .row.button {
+    padding: 3% 5%;
+  }
+  .middlebar .top-bar .drop-down .row.button .logout {
+    padding: 2.2% 0;
+  }
+  .middlebar .top-bar .drop-down .row.button .forgot {
+    font-size: 0.95em;
+  }
+  .middlebar .options-bar {
+    padding: 0 2.5%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 0.8em;
+  }
+  /* --- order-form --- */
+  .middlebar .dashboard-content .order-form {
+    margin: 0.9% 1.5%;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .middlebar .order-form .waiters {
+    height: 150px;
+    padding: 10px 20px 30px;
+    -ms-flex-preferred-size: 55%;
+    flex-basis: 55%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: inline;
+  }
+  .middlebar .order-form .packages {
+    -ms-flex-preferred-size: 55%;
+    flex-basis: 55%;
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+    padding: 15px 20px;
+    margin-bottom: 8px;
+    margin-top: -20px;
+  }
+  .middlebar .order-form .client {
+    margin: 0;
+    padding: 10px 15px;
+    -ms-flex-preferred-size: 44%;
+    flex-basis: 44%;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .middlebar .order-form .meals {
+    height: 342px;
+    -ms-flex-preferred-size: 55%;
+    flex-basis: 55%;
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5;
+  }
+  .middlebar .order-form .price-buttons {
+    -ms-flex-preferred-size: 44%;
+    flex-basis: 44%;
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+    margin-top: 8px;
+  }
+  /* -- */
+  .middlebar .order-form .waiters .waiter-box {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 8px 20px;
+  }
+  .middlebar .order-form .waiters input:checked ~ .waiter-box {
+    outline: 1px solid #d0b78f;
+  }
+  /* -- */
+  .middlebar .order-form .client .radio-box {
+    -ms-flex-preferred-size: 31%;
+    flex-basis: 31%;
+  }
+  .middlebar .order-form .client .client-box {
+    padding: 16px 0;
+  }
+  .middlebar .order-form .client .radio-box.focused .client-box {
+    outline: 1px solid #c79457;
+  }
+  .middlebar .order-form .client .client-box i {
+    font-size: 1.9em;
+    margin-bottom: 8px;
+  }
+  .middlebar .order-form .client .client-box span {
+    font-size: 0.95em;
+  }
+  .middlebar .order-form .client .selected p {
+    padding: 8px 0;
+    font-size: 0.9em;
+  }
+  /* -- */
+  .middlebar .order-form .packages .radio-box {
+    margin-right: 10px;
+  }
+  .middlebar .order-form .packages .radio-box .package-box {
+    height: 110px;
+    padding: 7px;
+  }
+  .middlebar .order-form .packages .radio-box .package-box img {
+    max-width: 90px;
+    width: 90px !important;
+  }
+  .middlebar .order-form .packages .radio-box .package-box span {
+    left: 7px;
+    bottom: 12px;
+    width: 86%;
+  }
+  /* -- */
+  .middlebar .order-form .meals .radio-box {
+    margin-bottom: 15px;
+    padding: 8px 20px;
+    -ms-flex-preferred-size: 31%;
+    flex-basis: 31%;
+    margin-right: 12px;
+  }
+  .middlebar .order-form .meals .radio-box:nth-child(5n + 5) {
+    margin-right: 12px;
+  }
+  .middlebar .order-form .meals .radio-box:nth-child(3n + 3) {
+    margin-right: 0;
+  }
+  .middlebar .order-form .meals .meal-box .meal-price {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .middlebar .order-form .meals .meal-box .meal-name {
+    margin-top: 8px;
+  }
+  /* -- */
+  .middlebar .order-form .price-buttons .prices .prices-wrap {
+    height: 286px;
+  }
+  .middlebar .order-form .price-buttons .prices .record {
+    padding: 13px 18px;
+  }
+  .middlebar .order-form .price-buttons .prices .record.titles {
+    padding: 13px 18px;
+  }
+  .middlebar .order-form .price-buttons .prices .record.values {
+    font-size: 1em;
+  }
+  .middlebar .order-form .price-buttons .prices .totals {
+    padding: 10px 40px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch {
+    padding: 8px 15px;
+  }
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .pay-switch span {
+    position: absolute;
+    top: 18px;
+    left: 105px;
+  }
+  /* --- */
+  .middlebar .order-form .price-buttons .buttons-wrap .left-part .input-text {
+    width: 88%;
+    margin: 10px 15px;
+    padding: 6px 10px;
+  }
+}
+@media (max-width: 991px) {
+  // div.orders-workplace #loadPage #dataTable div.cave.short {
+  //   width: 12%;
+  // }
+  // div.orders-workplace #loadPage #dataTable div.cave.button {
+  //   width: 14%;
+  // }
+  // div.orders-workplace #loadPage #dataTable div.cave.lmiddle {
+  //   width: 16%;
+  // }
+}
+
+// Main Login Responsive Start
+div.index div.developer .social {
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  float: none;
+  width: 100%;
+  gap: 10px 26px;
+  @include breakpoint(max-xl) {
+    gap: 10px 15px;
+    @include breakpoint(max-sm) {
+      margin-top: 0;
+      gap: 10px;
+    }
+  }
+  .box {
+    float: none;
+    width: auto;
+  }
+}
+div.index {
+  @include breakpoint(max-xl) {
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 6%;
+    @include breakpoint(max-sm) {
+      padding-inline: 6%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  main {
+    @include breakpoint(max-xl) {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      float: none;
+      height: auto;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    .developer {
+      @include breakpoint(max-xl) {
+        width: 100%;
+        float: none;
+        padding-top: 0;
+        padding-bottom: 15px;
+        .logoWrap {
+          margin: 0;
+          img {
+            height: 150px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    aside {
+      @include breakpoint(max-xl) {
+        width: 100%;
+        float: none;
+        border: none;
+        padding-inline: 6%;
+        div.record {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// Main Login Responsive End
+
+// Waiter Login Responsive Start
+@include breakpoint(max-xxl) {
+  div.loginWrap.waiter div#system div#logo {
+    background-size: 180px;
+    @include breakpoint(max-sm) {
+      background-size: 150px;
+    }
+  }
+  .loginWrap.waiter {
+    .users {
+      .number-box {
+        // width: 55%;
+        input[type="password"] {
+          flex-basis: 58.5%;
+          width: 72%;
+        }
+      }
+    }
+  }
+}
+@include breakpoint(max-xl) {
+  div.loginWrap.waiter div.users {
+    width: 100%;
+    padding-inline: 2%;
+    padding-bottom: 145px;
+    .user-box {
+      width: 97%;
+      min-height: auto;
+      margin-bottom: 6%;
+      @include breakpoint(max-md) {
+      }
+      .radio-box {
+        height: auto;
+        .profile-box {
+          height: 110px;
+          @include breakpoint(max-sm) {
+            height: 100px;
+          }
+          img {
+            width: 100px !important;
+            @include breakpoint(max-sm) {
+              width: 90px !important;
+            }
+          }
+        }
+      }
+    }
+    .number-box {
+      margin: 0 auto;
+      @include breakpoint(max-lg) {
+        width: 100%;
+        max-width: 450px;
+        @include max(500px) {
+          max-width: 350px;
+        }
+      }
+    }
+  }
+  div.loginWrap.waiter div.sidebar {
+    float: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: fit-content;
+  }
+  div.loginWrap.waiter div#system div#info {
+    margin-top: 0;
+  }
+  div.loginWrap.waiter div#system {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    div#logo {
+      height: 115px;
+    }
+  }
+  div.loginWrap.waiter div#company {
+    height: 0;
+    margin: 0;
+  }
+}
+// Waiter Login Responsive End
+
+// Dashboard Responsive Start
+div.orders-workplace #loadPage #command #searchBox input.srchInput,
+.orders-workplace div.twoCols div#searchBox input.srchInput {
+  padding-left: 35px;
+}
+div.orders-workplace #loadPage #command #searchBox.large {
+  max-width: 450px;
+  width: 100%;
+}
+div.orders-workplace p#info {
+  width: auto;
+  @include breakpoint(max-sm) {
+    margin-bottom: 8px;
+  }
+}
+select {
+  padding-right: 20px;
+}
+
+@include breakpoint(max-md) {
+  div.orders-workplace #loadPage div.buttons.fullpage .btnAddNew {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    @include breakpoint(max-sm) {
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+  }
+}
+#dynamicQnd {
+  .filter-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #filters {
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      * {
+        width: fit-content !important;
+      }
+      select {
+        width: 50px !important;
+      }
+      #slcPerPage {
+        width: 150px !important;
+      }
+    }
+    > div {
+      width: fit-content !important;
+    }
+  }
+}
+@include breakpoint(max-xxl) {
+  #middlebar {
+    div.bars.middle {
+      display: flex;
+      gap: 10px;
+      float: none;
+      div.box {
+        &.projects {
+          flex-basis: 55%;
+        }
+        &.right {
+          flex-basis: 45%;
+        }
+        &.circle {
+          flex-basis: 45%;
+        }
+        &.property {
+          flex-basis: 55%;
+        }
+      }
+    }
+  }
+}
+#middlebar,
+.middlebar {
+  .topBar,
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #sidebarToggler {
+      @include breakpoint(xl) {
+        display: none;
+      }
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @include breakpoint(max-sm) {
+        gap: 10px;
+      }
+    }
+    > div {
+      flex-basis: auto;
+      width: auto !important;
+    }
+    .restaurant-name,
+    .user-name {
+      flex-basis: auto;
+      margin-right: 10px;
+      @include breakpoint(max-sm) {
+        display: none;
+      }
+    }
+    .user-name {
+      flex-shrink: 0;
+    }
+    #programName {
+      gap: 10px;
+      span {
+        left: 0 !important;
+        line-height: 1 !important;
+        top: 2px;
+      }
+    }
+    #topIcons {
+      div.icon {
+        top: 0;
+      }
+    }
+    .waiter-amount {
+      @include breakpoint(max-sm) {
+        flex-basis: 30%;
+      }
+      @include max(400px) {
+        flex-basis: 40%;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        span {
+          @include breakpoint(max-sm) {
+            // display: none;
+          }
+        }
+        &::before {
+          display: none;
+        }
+      }
+      i {
+        font-size: 20px;
+        margin-top: -3px;
+      }
+    }
+  }
+}
+// @include max(1366px) {
+//   .main-wrap {
+//     padding-left: 8%;
+//   }
+// }
+@include breakpoint(max-xl) {
+  .main-wrap {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+@include breakpoint(max-xl) {
+  #sidebar {
+    display: none;
+  }
+  #middlebar {
+    width: 100%;
+    height: auto !important;
+    min-height: fit-content;
+    padding-bottom: 25px;
+    .topBar {
+      display: flex;
+      align-items: center;
+      float: none !important;
+      #sidebarToggler {
+        margin-left: 2%;
+      }
+    }
+    div.bars.middle {
+      display: flex;
+      gap: 10px;
+      float: none;
+      @include breakpoint(max-md) {
+        flex-direction: column;
+      }
+      div.box {
+        margin: 0 !important;
+        @include breakpoint(max-md) {
+          flex-basis: 100% !important;
+          width: 100% !important;
+        }
+        &.projects {
+          flex-basis: 60%;
+        }
+        &.right {
+          flex-basis: 40%;
+        }
+        &.circle {
+          flex-basis: 40%;
+          @include breakpoint(max-lg) {
+            flex-basis: 50%;
+          }
+        }
+        &.property {
+          flex-basis: 60%;
+          @include breakpoint(max-lg) {
+            flex-basis: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint(max-xl) {
+  #dashboard {
+    div.bars-top {
+      display: grid;
+      height: auto;
+      min-height: 125px;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 4px;
+      @include breakpoint(max-md) {
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100px;
+        gap: 4px;
+        > div {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+// Dashboard Responsive End
+
+// Loyalty Responsive Start
+#loadPage {
+  .twoCols {
+    @include max(900px) {
+      width: 100%;
+      &.one {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+@include max(900px) {
+  div.orders-workplace a#btnCancel {
+    min-width: 80px;
+  }
+  div.orders-workplace div.theForm {
+    div.record {
+      display: flex;
+      gap: 10px 50px;
+      @include breakpoint(max-md) {
+        flex-direction: column;
+      }
+      .column {
+        width: 100%;
+        &.right {
+          .rghtPrt {
+            display: flex;
+          }
+        }
+        select,
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// Loyalty Responsive End
+
+// Customers Responsive Start
+@include breakpoint(max-lg) {
+  .middlebar .theForm section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  div.orders-workplace div.theForm button.btnSubmit {
+    min-width: 80px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  div.orders-workplace .popUpForm div.record.last,
+  div.orders-workplace div.theForm div.record.last,
+  .register-wrap div.theForm div.record.last {
+    padding-top: 1.5%;
+    padding-bottom: 2%;
+  }
+}
+@include breakpoint(max-sm) {
+  .middlebar .theForm fieldset .innerRow {
+    // display: flex;
+    // float: none;
+    .w-eight-half {
+      width: 76% !important;
+    }
+  }
+  .orders-workplace .popUpForm div.lftPart {
+    height: auto;
+    line-height: 1.25;
+  }
+  .popUpForm {
+    // position: relative;
+    .content {
+      width: 95% !important;
+      input,
+      select,
+      textarea {
+        width: 100% !important;
+      }
+      .popupBody {
+        .row {
+          .lftPart {
+            line-height: 1.2 !important;
+            height: auto !important;
+          }
+          input,
+          select {
+            width: 60% !important;
+          }
+        }
+      }
+    }
+  }
+}
+// Customers Responsive End
+
+// New Meal Responsive Start
+@include max(900px) {
+  div.orders-workplace input.inputText.second {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+}
+// New Meal Responsive End
+
+// Reports Responsive Start
+@include breakpoint(max-xl) {
+  div.orders-workplace input.inputText {
+    // width: calc(50% - 55px) !important;
+    margin-top: 0 !important;
+    margin-left: 5px !important;
+  }
+  div.orders-workplace div.reportArea div#filterWrap div.filter label {
+    width: 100px;
+  }
+  .orders-workplace div.reportArea button {
+    margin-left: 8px;
+    min-width: 100px !important;
+    float: right;
+  }
+  .orders-workplace div.reportArea button#downloadExcel {
+    min-width: 185px !important;
+  }
+
+  div.orders-workplace div.reportArea div.rprtType {
+    label {
+      display: flex;
+      align-items: baseline;
+      span {
+        transform: translateY(-2px);
+      }
+      input,
+      span {
+        float: none !important;
+        height: auto !important;
+      }
+    }
+  }
+}
+@include max(991px) {
+  .orders-workplace .reportArea section {
+    flex-direction: column;
+    gap: 20px;
+    fieldset {
+      width: 100%;
+    }
+  }
+}
+@include breakpoint(max-sm) {
+  div.orders-workplace div.reportArea div.rprtType {
+    width: 100%;
+  }
+}
+// Reports Responsive End
+
+// New Order Responsive Start
+.popup-box .content .main .radio-box {
+  flex-grow: 1;
+  max-width: 150px;
+  text-align: center;
+}
+@include breakpoint(max-xl) {
+  .middlebar .dashboard-content .order-form {
+    align-items: baseline;
+  }
+  .middlebar .order-form .waiters {
+    height: auto;
+    padding-bottom: 0;
+  }
+  .orders-workplace .popUpForm.vlarge .content {
+    max-width: 930px;
+    width: 100%;
+  }
+  div.orders-workplace input.inputText.jumbo {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+@include breakpoint(max-lg) {
+  .middlebar .order-form > * {
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+  .middlebar .order-form .meals {
+    order: 4;
+  }
+  div.orders-workplace .popup-box.vlarge div.record {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    .column {
+      width: 100%;
+    }
+  }
+}
+@include breakpoint(max-md) {
+  .popup-box {
+    .content {
+      width: 95%;
+      @include breakpoint(max-sm) {
+        .main {
+          margin-inline: 25px;
+        }
+      }
+      .main .row .rightPrt input.inputText {
+        width: 100% !important;
+      }
+    }
+  }
+}
+// New Order Responsive End
+
+// My Orders Responsive Start
+div.orders-workplace #loadPage #dynamicQnd #foundNum {
+  flex-basis: auto !important;
+  width: auto !important;
+}
+@include breakpoint(max-xl) {
+  div.orders-workplace #loadPage #dynamicQnd {
+    #dataTable {
+      overflow-y: auto;
+      .header,
+      div.record {
+        width: 1025px !important;
+      }
+      .short.cave {
+        width: 7% !important;
+      }
+    }
+  }
+  .orders-workplace .popUpForm div.rightPrt input,
+  .orders-workplace .popUpForm div.rightPrt select {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  div.orders-workplace #loadPage #dynamicQnd #filters {
+    width: 50%;
+    @include breakpoint(max-lg) {
+      width: 65%;
+    }
+    @include breakpoint(max-md) {
+      width: 100%;
+    }
+  }
+  div.orders-workplace #loadPage {
+    #command {
+      padding: 0 !important;
+      background-color: transparent !important;
+      border: none !important;
+      flex-direction: column;
+      flex-direction: column-reverse;
+      gap: 10px;
+      .search {
+        flex-basis: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        .buttons {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@include breakpoint(max-md) {
+  div.orders-workplace #loadPage #dynamicQnd #filters label {
+    text-align: left;
+    width: 30%;
+    margin-top: 4px;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #filters select {
+    width: 70%;
+  }
+  div.orders-workplace #loadPage #dynamicQnd #filters > div {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  div.orders-workplace #loadPage {
+    #command {
+      .search {
+        width: 100%;
+        // flex-wrap: wrap;
+        gap: 6px;
+        justify-content: flex-end;
+        #searchBox,
+        .search-options {
+          flex-basis: 45% !important;
+          margin: 0 !important;
+          flex-grow: 1;
+        }
+        > .buttons {
+          width: 100%;
+          text-align: right;
+          justify-content: flex-end;
+          float: none !important;
+        }
+      }
+    }
+  }
+}
+@include breakpoint(max-sm) {
+  .orders-workplace .popUpForm div.lftPart {
+    margin-top: 4px;
+    padding-right: 3px;
+  }
+  .orders-workplace div.twoCols div.record div#batono {
+    width: 18%;
+  }
+  .orders-workplace div.twoCols div.record #cinwan {
+    width: 50%;
+  }
+  .orders-workplace div.twoCols div.record #sumada {
+    width: 30%;
+  }
+}
+// My Orders Responsive End
+
+// Additional Start
+.middlebar .top-bar .profile-icon {
+  position: relative;
+}
+#middlebar #topIcons div.dropDown,
+.middlebar .top-bar div.drop-down {
+  left: auto;
+  right: 0;
+  top: 49px;
+  min-width: 300px;
+}
+
+.orders-workplace div.twoCols div.dynamicData div.record {
+  height: auto;
+  line-height: 1.4;
+  vertical-align: middle;
+  #cinwan,
+  #sumada {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+div.workplace div.reportArea div.rprtType {
+  label {
+    display: flex;
+    gap: 6px;
+    span {
+      transform: translateY(2px);
+    }
+  }
+}
+@include breakpoint(max-sm) {
+  div.orders-workplace .displayMore {
+    width: 25%;
+  }
+  // .w-two,
+  // .w-two-half {
+  //   width: 30% !important;
+  // }
+}
+
+@include breakpoint(max-xl) {
+  .middlebar div.theForm section {
+    overflow-y: hidden;
+    max-width: 100vw;
+    flex-basis: auto;
+    #topCaves, #btnCaves {
+      min-width: 800px;
+    }
+  }
+  .middlebar div.theForm #topCaves div.cave,
+  .middlebar div.theForm #btmCaves div.cave {
+    width: 16% !important;
+  }
+  .middlebar .order-form .top-bars {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .top-bars .boxes {
+    flex-basis: calc(50% - 3px) !important;
+    margin: 0 !important;
+    @include breakpoint(max-sm) {
+      flex-basis: calc(100%) !important;
+    }
+  }
+}
+.middlebar .tabs {
+  p {
+    height: auto;
+    line-height: 1.4;
+    padding: 5px 15px;
+  }
+}
+@include breakpoint(max-lg) {
+  .orders-workplace div.theForm div.list {
+    overflow-y: auto;
+    width: 100% !important;
+    header, .listItem {
+      min-width: 750px;
+    }
+  }
+  .middlebar .tabs {
+    min-width: 800px;
+    p {
+      padding-inline: 10px;
+    }
+  }
+  .middlebar .order-form .meals .tab {
+    overflow-y: auto !important;
+    max-width: 100% !important;
+    flex-basis: auto !important;
+  }
+}
+// Additional End

@@ -1,0 +1,701 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard | My Hotel and Restaurant</title>
+    <link rel="shortcut icon" href="../assets/images/system/icon.png" />
+    <!-- <link rel="shortcut icon" href="./assets/images/company/sostec/favicon.ICO" /> -->
+    <link rel="stylesheet" href="assets/css/style2.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/scheduler.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/responsive2.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/all.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrap">
+        <div class="orders-workplace">
+            <div class="sidebar" tabindex="0">
+                <div class="smartphone-menu-trigger"></div>
+                <div class="logoWrap">
+                    <a href="./reservation-workplace.php"><img src="./assets/images/company/logo-white.png" alt="logo" /></a>
+                </div>
+                <ul id="menus">
+                    <a href="./reservation-workplace.php?task=checkin">
+                        <li class="active">
+                            <i class="fal fa-calendar-check"></i><span>Check In</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=reservation">
+                        <li class="">
+                            <i class="fal fa-handshake"></i><span>Reservation</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=checkout">
+                        <li class="">
+                            <i class="fal fa-sign-out"></i><span>Check Out</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?role=admin&task=cashier">
+                        <li class="">
+                            <i class="fal fa-sack-dollar"></i><span>Cashier</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?role=admin&task=quotation">
+                        <li class="">
+                            <i class="fal fa-file-invoice"></i><span>Invoice & Quotation</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=customerMgt">
+                        <li class=""><i class="fal fa-users"></i><span>Customers</span></li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=service">
+                        <li class=""><i class="fal fa-cogs"></i><span>Services</span></li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=reports">
+                        <li class=""><i class="fal fa-file-invoice"></i><span>Reports</span></li>
+                    </a>
+                </ul>
+                <!-- <footer>
+    <p>3.0.2</p>
+</footer> -->
+            </div> <!-- sidebar -->
+
+            <div class="middlebar">
+                <div class="top-bar">
+                    <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+                    <h3 class="waiter-amount">
+                        <a href="../dashboard.php">Back to home</a>
+                    </h3>
+                    <h3 class="user-name">Hi, ManagersName</h3>
+                    <div class="profile-icon">
+                        <div class="user icon">
+                            <img src="../assets/images/users/small40/user40-8151609924889.jpg" />
+                        </div>
+                        <div class="drop-down">
+                            <div class="row bar">My Account</div>
+                            <div class="row">
+                                <div class="photo">
+                                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                                    <a href="./reservation-workplace.php?role=admin&task=profile">
+                                        <div class="overlay">
+                                            <span><i class="fal fa-camera-alt"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="links">
+                                    <p class="name">ManagersName</p>
+                                    <p class="user">themanager</p>
+                                </div>
+                            </div>
+                            <div class="row button">
+                                <a class="forgot" href="./reservation-workplace.php?role=admin&task=profile&subtask=chngPass">
+                                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                                </a>
+                                <a class="logout" href="../includes/logout.php">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="power-icon fa fa-power-off" href="../includes/logout.php"></a>
+                </div>
+
+                <div class="options-bar dash">
+                    Menus | new check in </div>
+
+                <div class="dashboard-content">
+                    <form action="/deegaan-reservation/reservation-workplace.php" method="POST">
+                        <input type="hidden" name="myWhouse" value="1001">
+                        <!--  -->
+                        <div class="order-form">
+                            <div class="top-bars">
+                                <div class="boxes one">
+                                    <div class="icon fal fa-key-skeleton"></div>
+                                    <div class="box-info">
+                                        <p class="number">006</p>
+                                        <p class="title">Currently Staying</p>
+                                    </div>
+                                </div>
+                                <div class="boxes two">
+                                    <div class="icon fal fa-bell-slash"></div>
+                                    <div class="box-info">
+                                        <p class="number">0</p>
+                                        <p class="title">Departuring Today</p>
+                                    </div>
+                                </div>
+                                <div class="boxes three">
+                                    <div class="icon fal fa-bell"></div>
+                                    <div class="box-info">
+                                        <p class="number">0</p>
+                                        <p class="title">Arriving Today</p>
+                                    </div>
+                                </div>
+                                <div class="boxes four">
+                                    <div class="icon fal fa-info-circle"></div>
+                                    <div class="box-info">
+                                        <p class="number">0</p>
+                                        <p class="title">Bookings Today</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meals" style="flex-basis: 100%; ">
+                                <div class="tabs">
+                                    <p class="access room_status active" id="room_status"><a alt="room_status"><label class="fal fa-home-lg-alt"></label>Room status</a></p>
+                                    <p class="access" id="current_staying"><a alt="current_staying"> <label class="fal fa-key-skeleton"></label>Currently Staying</a></p>
+                                    <p class="access" id="dept_today"><a alt="dept_today"><label class="fal fa-bell-slash"></label> Departuring Today</a></p>
+                                    <p class="access" id="arr_today"><a alt="arr_today"><label class="fal fa-bell"></label> Arriving Today</a></p>
+                                    <p class="access" id="book_today"><a alt="book_today"><label class="fal fa-info-circle"></label> Bookings Today</a></p>
+                                </div>
+                                <div class="meal-content">
+                                    <div class="tab room_status first" id="room_status" style="margin-top: -20px; display: none;">
+                                        <div class="shcheduler-body">
+                                            <div class="shcheduler">
+                                                <div class="row space-bw" style="margin-bottom: 20px; align-items: center;">
+                                                    <div class="flex center-items">
+                                                        <label style="margin-right: 15px;" for="">Show Rooms/Halls: </label>
+                                                        <select id="room_filter">
+                                                            <option value="all">All</option>
+                                                            <option value="1">101</option>
+                                                            <option value="2">102</option>
+                                                            <option value="3">103</option>
+                                                            <option value="4">Hall 1</option>
+                                                            <option value="5">Hall 2</option>
+                                                            <option value="6">Hall 3</option>
+                                                            <option value="7">104</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="currentMonthTop">1 Dec - 31 Dec</div>
+                                                    <div class="navigate">
+                                                        <label for="">Today </label>
+                                                        <input type="hidden" id="dateNow" value="Wed Dec 13 2023 18:42:51 GMT+0600 (Bangladesh Standard Time)">
+                                                        <span class="fa fa-angle-left" onclick="return prevMonth()"></span>
+                                                        <span class="fa fa-angle-right" onclick="return nextMonth()"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="table " style=" width: 100%;;">
+                                                    <div class="row data-row header">
+                                                        <div class="col-lef flex space-bw">
+                                                            <div class="col bl  bt bb flex center-items " style="padding-left:15px">Property</div>
+
+                                                        </div>
+                                                        <div class="col-right  grid no-pd" style="flex-basis: 85%;;">
+                                                            <div class="row bl br bt flex just-center currentMonth" style="padding: 5px;;">December 2023</div>
+                                                            <div class="row bl br  bt bb flex  no-pd" id="days">
+                                                                <div class="col center  weekend bl">1</div>
+                                                                <div class="col center  bl">2</div>
+                                                                <div class="col center  bl">3</div>
+                                                                <div class="col center  bl">4</div>
+                                                                <div class="col center  bl">5</div>
+                                                                <div class="col center  bl">6</div>
+                                                                <div class="col center  weekend bl">7</div>
+                                                                <div class="col center  weekend bl">8</div>
+                                                                <div class="col center  bl">9</div>
+                                                                <div class="col center  bl">10</div>
+                                                                <div class="col center  bl">11</div>
+                                                                <div class="col center  bl">12</div>
+                                                                <div class="col center  bl">13</div>
+                                                                <div class="col center  weekend bl">14</div>
+                                                                <div class="col center  weekend bl">15</div>
+                                                                <div class="col center  bl">16</div>
+                                                                <div class="col center  bl">17</div>
+                                                                <div class="col center  bl">18</div>
+                                                                <div class="col center  bl">19</div>
+                                                                <div class="col center  bl">20</div>
+                                                                <div class="col center  weekend bl">21</div>
+                                                                <div class="col center  weekend bl">22</div>
+                                                                <div class="col center  bl">23</div>
+                                                                <div class="col center  bl">24</div>
+                                                                <div class="col center  bl">25</div>
+                                                                <div class="col center  bl">26</div>
+                                                                <div class="col center  bl">27</div>
+                                                                <div class="col center  weekend bl">28</div>
+                                                                <div class="col center  weekend bl">29</div>
+                                                                <div class="col center  bl">30</div>
+                                                                <div class="col center  bl">31</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="records data-grid-records">
+                                                        <div class="row data-row row-1">
+                                                            <div class="col-lef flex space-bw">
+                                                                <div style="padding-left:15px" class="col bl   bb flex center-items ">101</div>
+                                                            </div>
+                                                            <div class="col-right row grid-30 data-grid bl br  no-pd" style="flex-basis: 85%; padding: 0px;;">
+                                                                <div class="col col-1 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-2 bb center  bl"><span></span></div>
+                                                                <div class="col col-3 bb center  bl"><span></span></div>
+                                                                <div class="col col-4 bb center  bl"><span></span></div>
+                                                                <div class="col col-5 bb center  bl"><span></span></div>
+                                                                <div class="col col-6 bb center  bl"><span></span></div>
+                                                                <div class="col col-7 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-8 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-9 bb center  bl"><span></span></div>
+                                                                <div class="col col-10 bb center  bl"><span></span></div>
+                                                                <div class="col col-11 bb center  bl"><span></span></div>
+                                                                <div class="col col-12 bb center  bl"><span></span></div>
+                                                                <div class="col col-13 bb center  bl"><span></span></div>
+                                                                <div class="col col-14 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-15 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-16 bb center  bl"><span></span></div>
+                                                                <div class="col col-17 bb center  bl"><span></span></div>
+                                                                <div class="col col-18 bb center  bl"><span></span></div>
+                                                                <div class="col col-19 bb center  bl"><span></span></div>
+                                                                <div class="col col-20 bb center  bl"><span></span></div>
+                                                                <div class="col col-21 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-22 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-23 bb center  bl"><span></span></div>
+                                                                <div class="col col-24 bb center  bl"><span></span></div>
+                                                                <div class="col col-25 bb center  bl"><span></span></div>
+                                                                <div class="col col-26 bb center  bl"><span></span></div>
+                                                                <div class="col col-27 bb center  bl"><span></span></div>
+                                                                <div class="col col-28 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-29 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-30 bb center  bl"><span></span></div>
+                                                                <div class="col col-31 bb center  bl"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row data-row row-2">
+                                                            <div class="col-lef flex space-bw">
+                                                                <div style="padding-left:15px" class="col bl   bb flex center-items ">102</div>
+                                                            </div>
+                                                            <div class="col-right row grid-30 data-grid bl br  no-pd" style="flex-basis: 85%; padding: 0px;;">
+                                                                <div class="col col-1 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-2 bb center  bl"><span></span></div>
+                                                                <div class="col col-3 bb center  bl"><span></span></div>
+                                                                <div class="col col-4 bb center  bl"><span></span></div>
+                                                                <div class="col col-5 bb center  bl"><span></span></div>
+                                                                <div class="col col-6 bb center  bl"><span></span></div>
+                                                                <div class="col col-7 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-8 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-9 bb center  bl"><span></span></div>
+                                                                <div class="col col-10 bb center  bl"><span></span></div>
+                                                                <div class="col col-11 bb center  bl"><span></span></div>
+                                                                <div class="col col-12 bb center  bl"><span></span></div>
+                                                                <div class="col col-13 bb center  bl"><span></span></div>
+                                                                <div class="col col-14 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-15 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-16 bb center  bl"><span></span></div>
+                                                                <div class="col col-17 bb center  bl"><span></span></div>
+                                                                <div class="col col-18 bb center  bl"><span></span></div>
+                                                                <div class="col col-19 bb center  bl"><span></span></div>
+                                                                <div class="col col-20 bb center  bl"><span></span></div>
+                                                                <div class="col col-21 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-22 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-23 bb center  bl"><span></span></div>
+                                                                <div class="col col-24 bb center  bl"><span></span></div>
+                                                                <div class="col col-25 bb center  bl"><span></span></div>
+                                                                <div class="col col-26 bb center  bl"><span></span></div>
+                                                                <div class="col col-27 bb center  bl"><span></span></div>
+                                                                <div class="col col-28 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-29 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-30 bb center  bl"><span></span></div>
+                                                                <div class="col col-31 bb center  bl"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row data-row row-3">
+                                                            <div class="col-lef flex space-bw">
+                                                                <div style="padding-left:15px" class="col bl   bb flex center-items ">103</div>
+                                                            </div>
+                                                            <div class="col-right row grid-30 data-grid bl br  no-pd" style="flex-basis: 85%; padding: 0px;;">
+                                                                <div class="col col-1 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-2 bb center  bl"><span></span></div>
+                                                                <div class="col col-3 bb center  bl"><span></span></div>
+                                                                <div class="col col-4 bb center  bl"><span></span></div>
+                                                                <div class="col col-5 bb center  bl"><span></span></div>
+                                                                <div class="col col-6 bb center  bl"><span></span></div>
+                                                                <div class="col col-7 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-8 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-9 bb center  bl"><span></span></div>
+                                                                <div class="col col-10 bb center  bl"><span></span></div>
+                                                                <div class="col col-11 bb center  bl"><span></span></div>
+                                                                <div class="col col-12 bb center  bl"><span></span></div>
+                                                                <div class="col col-13 bb center  bl"><span></span></div>
+                                                                <div class="col col-14 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-15 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-16 bb center  bl"><span></span></div>
+                                                                <div class="col col-17 bb center  bl"><span></span></div>
+                                                                <div class="col col-18 bb center  bl"><span></span></div>
+                                                                <div class="col col-19 bb center  bl"><span></span></div>
+                                                                <div class="col col-20 bb center  bl"><span></span></div>
+                                                                <div class="col col-21 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-22 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-23 bb center  bl"><span></span></div>
+                                                                <div class="col col-24 bb center  bl"><span></span></div>
+                                                                <div class="col col-25 bb center  bl"><span></span></div>
+                                                                <div class="col col-26 bb center  bl"><span></span></div>
+                                                                <div class="col col-27 bb center  bl"><span></span></div>
+                                                                <div class="col col-28 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-29 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-30 bb center  bl"><span></span></div>
+                                                                <div class="col col-31 bb center  bl"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row data-row row-4">
+                                                            <div class="col-lef flex space-bw">
+                                                                <div style="padding-left:15px" class="col bl   bb flex center-items ">Hall 1</div>
+                                                            </div>
+                                                            <div class="col-right row grid-30 data-grid bl br  no-pd" style="flex-basis: 85%; padding: 0px;;">
+                                                                <div class="col col-1 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-2 bb center  bl"><span></span></div>
+                                                                <div class="col col-3 bb center  bl"><span></span></div>
+                                                                <div class="col col-4 bb center  bl"><span></span></div>
+                                                                <div class="col col-5 bb center  bl"><span></span></div>
+                                                                <div class="col col-6 bb center  bl"><span></span></div>
+                                                                <div class="col col-7 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-8 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-9 bb center  bl"><span></span></div>
+                                                                <div class="col col-10 bb center  bl"><span></span></div>
+                                                                <div class="col col-11 bb center  bl"><span></span></div>
+                                                                <div class="col col-12 bb center  bl"><span></span></div>
+                                                                <div class="col col-13 bb center  bl"><span></span></div>
+                                                                <div class="col col-14 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-15 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-16 bb center  bl"><span></span></div>
+                                                                <div class="col col-17 bb center  bl"><span></span></div>
+                                                                <div class="col col-18 bb center  bl"><span></span></div>
+                                                                <div class="col col-19 bb center  bl"><span></span></div>
+                                                                <div class="col col-20 bb center  bl"><span></span></div>
+                                                                <div class="col col-21 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-22 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-23 bb center  bl"><span></span></div>
+                                                                <div class="col col-24 bb center  bl"><span></span></div>
+                                                                <div class="col col-25 bb center  bl"><span></span></div>
+                                                                <div class="col col-26 bb center  bl"><span></span></div>
+                                                                <div class="col col-27 bb center  bl"><span></span></div>
+                                                                <div class="col col-28 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-29 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-30 bb center  bl"><span></span></div>
+                                                                <div class="col col-31 bb center  bl"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row data-row row-5">
+                                                            <div class="col-lef flex space-bw">
+                                                                <div style="padding-left:15px" class="col bl   bb flex center-items ">Hall 2</div>
+                                                            </div>
+                                                            <div class="col-right row grid-30 data-grid bl br  no-pd" style="flex-basis: 85%; padding: 0px;;">
+                                                                <div class="col col-1 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-2 bb center  bl"><span></span></div>
+                                                                <div class="col col-3 bb center  bl"><span></span></div>
+                                                                <div class="col col-4 bb center  bl"><span></span></div>
+                                                                <div class="col col-5 bb center  bl"><span></span></div>
+                                                                <div class="col col-6 bb center  bl"><span></span></div>
+                                                                <div class="col col-7 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-8 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-9 bb center  bl"><span></span></div>
+                                                                <div class="col col-10 bb center  bl"><span></span></div>
+                                                                <div class="col col-11 bb center  bl"><span></span></div>
+                                                                <div class="col col-12 bb center  bl"><span></span></div>
+                                                                <div class="col col-13 bb center  bl"><span></span></div>
+                                                                <div class="col col-14 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-15 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-16 bb center  bl"><span></span></div>
+                                                                <div class="col col-17 bb center  bl"><span></span></div>
+                                                                <div class="col col-18 bb center  bl"><span></span></div>
+                                                                <div class="col col-19 bb center  bl"><span></span></div>
+                                                                <div class="col col-20 bb center  bl"><span></span></div>
+                                                                <div class="col col-21 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-22 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-23 bb center  bl"><span></span></div>
+                                                                <div class="col col-24 bb center  bl"><span></span></div>
+                                                                <div class="col col-25 bb center  bl"><span></span></div>
+                                                                <div class="col col-26 bb center  bl"><span></span></div>
+                                                                <div class="col col-27 bb center  bl"><span></span></div>
+                                                                <div class="col col-28 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-29 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-30 bb center  bl"><span></span></div>
+                                                                <div class="col col-31 bb center  bl"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row data-row row-6">
+                                                            <div class="col-lef flex space-bw">
+                                                                <div style="padding-left:15px" class="col bl   bb flex center-items ">Hall 3</div>
+                                                            </div>
+                                                            <div class="col-right row grid-30 data-grid bl br  no-pd" style="flex-basis: 85%; padding: 0px;;">
+                                                                <div class="col col-1 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-2 bb center  bl"><span></span></div>
+                                                                <div class="col col-3 bb center  bl"><span></span></div>
+                                                                <div class="col col-4 bb center  bl"><span></span></div>
+                                                                <div class="col col-5 bb center  bl"><span></span></div>
+                                                                <div class="col col-6 bb center  bl"><span></span></div>
+                                                                <div class="col col-7 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-8 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-9 bb center  bl"><span></span></div>
+                                                                <div class="col col-10 bb center  bl"><span></span></div>
+                                                                <div class="col col-11 bb center  bl"><span></span></div>
+                                                                <div class="col col-12 bb center  bl"><span></span></div>
+                                                                <div class="col col-13 bb center  bl"><span></span></div>
+                                                                <div class="col col-14 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-15 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-16 bb center  bl"><span></span></div>
+                                                                <div class="col col-17 bb center  bl"><span></span></div>
+                                                                <div class="col col-18 bb center  bl"><span></span></div>
+                                                                <div class="col col-19 bb center  bl"><span></span></div>
+                                                                <div class="col col-20 bb center  bl"><span></span></div>
+                                                                <div class="col col-21 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-22 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-23 bb center  bl"><span></span></div>
+                                                                <div class="col col-24 bb center  bl"><span></span></div>
+                                                                <div class="col col-25 bb center  bl"><span></span></div>
+                                                                <div class="col col-26 bb center  bl"><span></span></div>
+                                                                <div class="col col-27 bb center  bl"><span></span></div>
+                                                                <div class="col col-28 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-29 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-30 bb center  bl"><span></span></div>
+                                                                <div class="col col-31 bb center  bl"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row data-row row-7">
+                                                            <div class="col-lef flex space-bw">
+                                                                <div style="padding-left:15px" class="col bl   bb flex center-items ">104</div>
+                                                            </div>
+                                                            <div class="col-right row grid-30 data-grid bl br  no-pd" style="flex-basis: 85%; padding: 0px;;">
+                                                                <div class="col col-1 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-2 bb center  bl"><span></span></div>
+                                                                <div class="col col-3 bb center  bl"><span></span></div>
+                                                                <div class="col col-4 bb center  bl"><span></span></div>
+                                                                <div class="col col-5 bb center  bl"><span></span></div>
+                                                                <div class="col col-6 bb center  bl"><span></span></div>
+                                                                <div class="col col-7 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-8 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-9 bb center  bl"><span></span></div>
+                                                                <div class="col col-10 bb center  bl"><span></span></div>
+                                                                <div class="col col-11 bb center  bl"><span></span></div>
+                                                                <div class="col col-12 bb center  bl"><span></span></div>
+                                                                <div class="col col-13 bb center  bl"><span></span></div>
+                                                                <div class="col col-14 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-15 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-16 bb center  bl"><span></span></div>
+                                                                <div class="col col-17 bb center  bl"><span></span></div>
+                                                                <div class="col col-18 bb center  bl"><span></span></div>
+                                                                <div class="col col-19 bb center  bl"><span></span></div>
+                                                                <div class="col col-20 bb center  bl"><span></span></div>
+                                                                <div class="col col-21 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-22 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-23 bb center  bl"><span></span></div>
+                                                                <div class="col col-24 bb center  bl"><span></span></div>
+                                                                <div class="col col-25 bb center  bl"><span></span></div>
+                                                                <div class="col col-26 bb center  bl"><span></span></div>
+                                                                <div class="col col-27 bb center  bl"><span></span></div>
+                                                                <div class="col col-28 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-29 bb center  weekend bl"><span></span></div>
+                                                                <div class="col col-30 bb center  bl"><span></span></div>
+                                                                <div class="col col-31 bb center  bl"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="tab current_staying" id="current_staying" style="display: block;">
+                                        <div class="box">
+                                            <article>
+                                                <div class="record header">
+                                                    <div class="cave w-four-half">Client Name</div>
+                                                    <div class="cave w-three">Room/Hall</div>
+                                                    <div class="cave w-two-half">Check in</div>
+                                                    <div class="cave ">Check out</div>
+                                                </div>
+                                                <div class="record">
+                                                    <div class="cave w-four-half"><a href="./reservation-workplace.php?role=admin&amp;task=reservation&amp;subtask=showInfo&amp;recID=2">Ahmed</a></div>
+                                                    <div class="cave w-three">Hall2</div>
+                                                    <div class="cave w-two-half">Nov 20, 2022</div>
+                                                    <div class="cave ">Nov 20, 2022</div>
+                                                </div>
+                                                <div class="record">
+                                                    <div class="cave w-four-half"><a href="./reservation-workplace.php?role=admin&amp;task=reservation&amp;subtask=showInfo&amp;recID=3">UNDP</a></div>
+                                                    <div class="cave w-three">Hall 3</div>
+                                                    <div class="cave w-two-half">Nov 19, 2022</div>
+                                                    <div class="cave ">Nov 20, 2022</div>
+                                                </div>
+                                                <div class="record">
+                                                    <div class="cave w-four-half"><a href="./reservation-workplace.php?role=admin&amp;task=reservation&amp;subtask=showInfo&amp;recID=29">ahmed warfa</a></div>
+                                                    <div class="cave w-three">Hall 1</div>
+                                                    <div class="cave w-two-half">May 15, 2023</div>
+                                                    <div class="cave ">May 15, 2023</div>
+                                                </div>
+                                                <div class="record">
+                                                    <div class="cave w-four-half"><a href="./reservation-workplace.php?role=admin&amp;task=reservation&amp;subtask=showInfo&amp;recID=37">warfaa</a></div>
+                                                    <div class="cave w-three">Room101</div>
+                                                    <div class="cave w-two-half">Nov 28, 2023</div>
+                                                    <div class="cave ">Nov 30, 2023</div>
+                                                </div>
+                                                <div class="record">
+                                                    <div class="cave w-four-half"><a href="./reservation-workplace.php?role=admin&amp;task=reservation&amp;subtask=showInfo&amp;recID=38">suleymaan saciid</a></div>
+                                                    <div class="cave w-three">Room 104</div>
+                                                    <div class="cave w-two-half">Nov 01, 2023</div>
+                                                    <div class="cave ">Nov 30, 2023</div>
+                                                </div>
+                                                <div class="record">
+                                                    <div class="cave w-four-half"><a href="./reservation-workplace.php?role=admin&amp;task=reservation&amp;subtask=showInfo&amp;recID=39">Caasho Caalin</a></div>
+                                                    <div class="cave w-three">Room103</div>
+                                                    <div class="cave w-two-half">Nov 15, 2023</div>
+                                                    <div class="cave ">Nov 22, 2023</div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="tab dept_today" id="dept_today" style="display: none;">
+                                        <div class="box">
+                                            <article>
+                                                <div class="record header">
+                                                    <div class="cave w-four-half">Client Name</div>
+                                                    <div class="cave w-three">Room/Hall</div>
+                                                    <div class="cave w-two-half">Check in</div>
+                                                    <div class="cave ">Check out</div>
+                                                </div>
+                                                <p class="noRecord">No record has been found</p>
+                                            </article>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="tab arr_today" id="arr_today" style="display: none;">
+                                        <div class="box">
+                                            <article>
+                                                <div class="record header">
+                                                    <div class="cave w-four-half">Client Name</div>
+                                                    <div class="cave w-three">Room/Hall</div>
+                                                    <div class="cave w-two-half">Check in</div>
+                                                    <div class="cave ">Check out</div>
+                                                </div>
+                                                <p class="noRecord">No record has been found</p>
+                                            </article>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="tab book_today" id="book_today" style="display: none;">
+                                        <div class="box">
+                                            <article>
+                                                <div class="record header">
+                                                    <div class="cave w-four-half">Client Name</div>
+                                                    <div class="cave w-three">Room/Hall</div>
+                                                    <div class="cave w-two-half">Check in</div>
+                                                    <div class="cave ">Check out</div>
+                                                </div>
+                                                <p class="noRecord">No record has been found</p>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+                    <script src="../assets/js/jquery.knob.min.js"></script>
+                    <script src="../assets/js/dashboard-chart-data.js"> </script>
+                    <script src="./assets/js/scheduler.js"></script>
+                    <script src="../assets/js/chart.min.js"></script>
+                    <script type="text/javascript">
+                        $("div.tabs p.access > a").click(function () {
+                            $("div.tab").css("display", "none");
+                            $("div.tabs p").removeClass("active");
+                            $(this).parent('p').addClass("active");
+                            var tab = $(this).attr("alt");
+                            $("div#" + tab + "").css("display", "block");
+                        });
+
+                        var ttl_confirmed = '6';
+                        var ttl_booked = '6';
+                        var ttl_available = '-5';
+
+                        var myRole = 'admin';
+                        scheduler()
+                        getData4Scheduler();
+                        let records = [];
+                        $(document).ready(() => {
+                            recordsSet()
+                            $('#room_filter').on('change', function () {
+                                getData4Scheduler();
+                                console.log('Hi There')
+                            })
+                        })
+
+        /*$(function () {
+            //-------------
+            //- PIE CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+            var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+            var pieChart = new Chart(pieChartCanvas);
+            var PieData = [
+              {
+                value: ttl_available,
+                color: "#eee",
+                highlight: "#ededed",
+                label: "Available"
+              },
+              {
+                value: ttl_confirmed,
+                color: "#26c323",
+                highlight: "#26c323",
+                label: "Confirmed"
+              },
+              {
+                value: ttl_booked,
+                color: "#f39c12",
+                highlight: "#f39c12",
+                label: "Booked"
+              },
+            ];
+            var pieOptions = {
+              //Boolean - Whether we should show a stroke on each segment
+              segmentShowStroke: true,
+              //String - The colour of each segment stroke
+              segmentStrokeColor: "#fff",
+              //Number - The width of each segment stroke
+              segmentStrokeWidth: 2,
+              //Number - The percentage of the chart that we cut out of the middle
+              percentageInnerCutout: 50, // This is 0 for Pie charts
+              //Number - Amount of animation steps
+              animationSteps: 100,
+              //String - Animation easing effect
+              animationEasing: "easeOutBounce",
+              //Boolean - Whether we animate the rotation of the Doughnut
+              animateRotate: true,
+              //Boolean - Whether we animate scaling the Doughnut from the centre
+              animateScale: false,
+              //Boolean - whether to make the chart responsive to window resizing
+              responsive: true,
+              // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+              maintainAspectRatio: true,
+              //String - A legend template
+              legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+            };
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            pieChart.Doughnut(PieData, pieOptions);
+        })*/;
+                    </script>
+                </div>
+
+            </div> <!-- middlebar -->
+        </div>
+    </div>
+    <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+    <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+    <script src="../assets/js/basicFuncs.js"></script>
+    <!-- <script src="../libraries/sweetalert/js/sweetalert.js"></script> -->
+    <link rel="stylesheet" href="../libraries/sweetalert/css/sweetalert.css" />
+    <script src="../libraries/sweetalert/js/sweetalert.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="./assets/js/jquery.timeago.js"></script>
+    <!-- <script src="../assets/js/pikaday.js"></script> -->
+    <script src="../assets/js/jquery.form.js"></script>
+    <script src="./assets/js/pikaday.js"></script>
+    <script src="./assets/js/basicFuncs.js"></script>
+    <script type="text/javascript">
+        simplfyWaiterTopBar();
+    </script>
+</body>
+
+</html>
