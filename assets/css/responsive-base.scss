@@ -329,14 +329,18 @@
   .main-wrap {
     padding-left: 7%;
   }
-  .main-wrap .sidebar {
+  .sidebar,
+  #sidebar {
     width: 95px;
     transform: translateX(-100%);
-    transition: 0.3s;
-    z-index: 1112;
+    transition: 0.4s;
+    z-index: 1112 !important;
     &.active {
       transform: translateX(0);
     }
+  }
+  #sidebar {
+    width: 280px !important;
   }
   .sidebar .logoWrap {
     height: 40px;
@@ -702,6 +706,7 @@ div.index {
     left: 0;
     width: 100%;
     min-height: fit-content;
+    transform: translateX(0) !important;
   }
   div.loginWrap.waiter div#system div#info {
     margin-top: 0;
@@ -886,9 +891,6 @@ select {
   }
 }
 @include breakpoint(max-xl) {
-  #sidebar {
-    display: none;
-  }
   #middlebar {
     width: 100%;
     height: auto !important;
@@ -899,7 +901,7 @@ select {
       align-items: center;
       float: none !important;
       #sidebarToggler {
-        margin-left: 2%;
+        margin-left: 35%;
       }
     }
     div.bars.middle {

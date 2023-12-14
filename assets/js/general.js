@@ -2872,12 +2872,14 @@ function check_finishSplitOrder(ev) {
 	return true
 }
 
-// mun
+// mun sidebar toggler
 $('#sidebarToggler').on('click', function(e) {
-	$('.sidebar').toggleClass('active')
-	$('.overlay').toggleClass('active')
+	$('.sidebar').addClass('active')
+	$('#sidebar').addClass('active')
+	$('.overlay').addClass('active')
 })
 $('.overlay').on('click', function(e) {
 	$('.sidebar').removeClass('active')
+	$('#sidebar').removeClass('active')
 	$('.overlay').removeClass('active')
 })

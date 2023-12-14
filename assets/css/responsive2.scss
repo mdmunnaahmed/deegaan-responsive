@@ -329,14 +329,18 @@
   .main-wrap {
     padding-left: 7%;
   }
-  .main-wrap .sidebar {
-    width: 95px;
+  .sidebar,
+  #sidebar {
+    width: 95px !important;
     transform: translateX(-100%);
-    transition: 0.3s;
-    z-index: 1112;
+    transition: 0.4s;
+    z-index: 1112 !important;
     &.active {
       transform: translateX(0);
     }
+  }
+  #sidebar {
+    width: 280px !important;
   }
   .sidebar .logoWrap {
     height: 40px;
@@ -885,9 +889,6 @@ select {
   }
 }
 @include breakpoint(max-xl) {
-  #sidebar {
-    display: none;
-  }
   #middlebar {
     width: 100%;
     height: auto !important;
@@ -898,7 +899,7 @@ select {
       align-items: center;
       float: none !important;
       #sidebarToggler {
-        margin-left: 2%;
+        margin-left: 35%;
       }
     }
     div.bars.middle {
@@ -1324,7 +1325,8 @@ div.workplace div.reportArea div.rprtType {
     overflow-y: hidden;
     max-width: 100vw;
     flex-basis: auto;
-    #topCaves, #btnCaves {
+    #topCaves,
+    #btnCaves {
       min-width: 800px;
     }
   }
@@ -1355,7 +1357,8 @@ div.workplace div.reportArea div.rprtType {
   .orders-workplace div.theForm div.list {
     overflow-y: auto;
     width: 100% !important;
-    header, .listItem {
+    header,
+    .listItem {
       min-width: 750px;
     }
   }

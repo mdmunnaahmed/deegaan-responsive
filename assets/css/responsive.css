@@ -244,14 +244,19 @@
   .main-wrap {
     padding-left: 7%;
   }
-  .main-wrap .sidebar {
-    width: 95px;
+  .sidebar,
+  #sidebar {
+    width: 95px !important;
     transform: translateX(-100%);
-    transition: 0.3s;
-    z-index: 1112;
+    transition: 0.4s;
+    z-index: 1112 !important;
   }
-  .main-wrap .sidebar.active {
+  .sidebar.active,
+  #sidebar.active {
     transform: translateX(0);
+  }
+  #sidebar {
+    width: 280px !important;
   }
   .sidebar .logoWrap {
     height: 40px;
@@ -828,9 +833,6 @@ select {
   }
 }
 @media (max-width: 1199px) {
-  #sidebar {
-    display: none;
-  }
   #middlebar {
     width: 100%;
     height: auto !important;
@@ -985,7 +987,8 @@ select {
     line-height: 1.2 !important;
     height: auto !important;
   }
-  .popUpForm .content .popupBody .row input, .popUpForm .content .popupBody .row select {
+  .popUpForm .content .popupBody .row input,
+  .popUpForm .content .popupBody .row select {
     width: 60% !important;
   }
 }
@@ -1232,4 +1235,4 @@ div.workplace div.reportArea div.rprtType label span {
   div.orders-workplace .displayMore {
     width: 25%;
   }
-}/*# sourceMappingURL=responsive.css.map */
+}

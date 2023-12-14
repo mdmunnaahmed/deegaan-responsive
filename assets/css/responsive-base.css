@@ -244,14 +244,19 @@
   .main-wrap {
     padding-left: 7%;
   }
-  .main-wrap .sidebar {
+  .sidebar,
+  #sidebar {
     width: 95px;
     transform: translateX(-100%);
-    transition: 0.3s;
-    z-index: 1112;
+    transition: 0.4s;
+    z-index: 1112 !important;
   }
-  .main-wrap .sidebar.active {
+  .sidebar.active,
+  #sidebar.active {
     transform: translateX(0);
+  }
+  #sidebar {
+    width: 280px !important;
   }
   .sidebar .logoWrap {
     height: 40px;
@@ -599,6 +604,7 @@ div.index div.developer .social .box {
     width: 100%;
     min-height: -moz-fit-content;
     min-height: fit-content;
+    transform: translateX(0) !important;
   }
   div.loginWrap.waiter div#system div#info {
     margin-top: 0;
@@ -828,9 +834,6 @@ select {
   }
 }
 @media (max-width: 1199px) {
-  #sidebar {
-    display: none;
-  }
   #middlebar {
     width: 100%;
     height: auto !important;
@@ -844,7 +847,7 @@ select {
     float: none !important;
   }
   #middlebar .topBar #sidebarToggler {
-    margin-left: 2%;
+    margin-left: 35%;
   }
   #middlebar div.bars.middle {
     display: flex;
