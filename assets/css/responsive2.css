@@ -1301,8 +1301,8 @@ div.workplace div.reportArea div.rprtType label span {
   div.orders-workplace div.showRecord #rightSide {
     width: 100%;
     float: none;
-    order: 2;
     margin-top: 30px;
+    margin-bottom: 30px;
   }
   div.orders-workplace div.showRecord #leftSide,
   div.orders-workplace div.showRecord .details,

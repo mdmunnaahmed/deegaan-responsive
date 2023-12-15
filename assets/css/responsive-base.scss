@@ -1332,7 +1332,7 @@ div.workplace #loadPage #command #searchBox input.srchInput {
 @include breakpoint(max-lg) {
   div.workplace div.showRecord {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     #leftSide {
       width: 100%;
       margin-top: 2%;

@@ -1247,7 +1247,7 @@ div.workplace #loadPage #command #searchBox input.srchInput {
 @media (max-width: 991px) {
   div.workplace div.showRecord {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   div.workplace div.showRecord #leftSide {
     width: 100%;
