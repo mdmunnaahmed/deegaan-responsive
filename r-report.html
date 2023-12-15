@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard | My Hotel and Restaurant</title>
+  <link rel="shortcut icon" href="../assets/images/system/icon.png" />
+  <link rel="shortcut icon" href="./assets/images/company/sostec/favicon.ICO" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/multiselect/dist/multi-select.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/all.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/css/sumoSelector.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="./assets/multiselect/dist/multi-select-min.js"></script>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="orders-workplace">
+      <div class="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div class="logoWrap">
+          <img src="./assets/images/company/logo-white.png" alt="logo" />
+        </div>
+        <ul id="menus">
+          <li class="">
+            <a href="./orders-workplace.php?task=myOrders"><i class="fal fa-hotel"></i><span>My Orders</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=orders"><i class="fal fa-burger-soda"></i><span>New Order</span></a>
+          </li>
+          <li class="active">
+            <a href="./orders-workplace.php?task=reports"><i class="fal fa-file-invoice"></i><span>Reports</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?role=admin&task=mealMgt"><i class="fal fa-cheese"></i><span>New Meal</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=tableMgt"><i class="fal fa-turntable"></i><span>New Table</span></a>
+          </li>
+          <li class="">
+            <a href="./orders-workplace.php?task=loyalty"><i class="fal fa-gifts"></i><span>Loyalty</span></a>
+          </li>
+          <li class="">
+            <!-- <a href="../dashboard.php"><i class="fal fa-arrow-alt-left"></i><span>Back Home</span></a> -->
+            <a href="./orders-workplace.php?task=customerMgt"><i class="fal fa-users"></i><span>Customers</span></a>
+          </li>
+        </ul>
+
+
+        <!-- <footer>
+    <p>3.0.2</p>
+</footer> -->
+      </div> <!-- sidebar -->
+
+      <div class="middlebar">
+        <div class="top-bar">
+          <div>
+            <div id="sidebarToggler" title="Toggle sidebar" class="fa fa-bars"></div>
+            <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          </div>
+          <h3 class="waiter-amount">
+            <a href="../dashboard.php">Back to home</a>
+          </h3>
+          <div>
+            <h3 class="user-name">Hi, ManagersName</h3>
+            <div class="profile-icon">
+              <div class="user icon">
+                <img src="../assets/images/users/small40/user40-8151609924889.jpg" />
+              </div>
+              <div class="drop-down">
+                <div class="row bar">My Account</div>
+                <div class="row">
+                  <div class="photo">
+                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                    <a href="./orders-workplace.php?role=admin&task=profile">
+                      <div class="overlay">
+                        <span><i class="fal fa-camera-alt"></i></span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="links">
+                    <p class="name">ManagersName</p>
+                    <p class="user">themanager</p>
+                  </div>
+                </div>
+                <div class="row button">
+                  <a class="forgot" href="./orders-workplace.php?role=admin&task=profile&subtask=chngPass">
+                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                  </a>
+                  <a class="logout" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant">Logout</a>
+                </div>
+              </div>
+            </div>
+            <a class="power-icon fa fa-power-off" href="../includes/logout.php?from=waiter&group=My+Hotel+and+Restaurant"></a>
+          </div>
+        </div>
+
+        <div class="options-bar dash">
+          Menus | Reports </div>
+
+        <div class="dashboard-content">
+          <div class="loadPage rpt report">
+            <div class="dynamicQnd">
+              <h3 class="title">Restaurant Report</h3>
+              <h5 class="dates"> Dec 15-15, 2023</h5>
+              <div class="foundNumRpt no-color"></div>
+              <div class="buttons">
+                <a id="print" class="report" href="../prints/print.php?report=todayRestaurant&startDate=2023-12-15 00:00:00&endDate=2023-12-15 23:59:59" target="_blank">Print</a>
+                <a class="back" href="./orders-workplace.php?task=reports">Back</a>
+              </div>
+              <div class="dataTable">
+                <div class="restaurant-detail">
+                  <div class="box">
+                    <label class="amount">$2.50</label>
+                    <label class="title">Sales Receivable Today</label>
+                  </div>
+                  <div class="box">
+                    <label class="amount">$0.00</label>
+                    <label class="title">Sales Cash Today</label>
+                  </div>
+                  <div class="box">
+                    <label class="amount">$2.50</label>
+                    <label class="title">Total Sales Today</label>
+                  </div>
+
+                  <div class="box">
+                    <label class="amount">$0.00</label>
+                    <label class="title">AR Received Today</label>
+                  </div>
+
+                  <div class="box">
+                    <label class="amount">$0.00</label>
+                    <label class="title">Expense Today</label>
+                  </div>
+
+                  <div class="box">
+                    <label class="amount">$0.00</label>
+                    <label class="title">Total Cash</label>
+                  </div>
+
+                </div>
+                <div class="info-boxes">
+                  <div class="box-tip">Deynta maqan wixii maanta la gaday</div>
+                  <div class="box-tip">Lacagta la qabtay waxii maanta la gaday</div>
+                  <div class="box-tip">Wixii maqaayada maanta la gaday</div>
+                  <div class="box-tip">Daynti hore waxii ka soo xarooday</div>
+                  <div class="box-tip">Qarashaadki maanta ku baxay maqaayada isugu jiro supply usage iyo cash expense</div>
+                  <div class="box-tip">Waa wadarta isu geynta cash by sales today iyo AR recieved today</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div> <!-- middlebar -->
+    </div>
+  </div>
+  <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+  <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+
+  <script src="./assets/js/jquery.timeago.js"></script>
+  <script src="../assets/js/basicFuncs.js"></script>
+  <script src="./assets/js/general.js"></script>
+  <script src="../libraries/sweetalert/js/sweetalert.js"></script>
+  <link rel="stylesheet" href="../libraries/sweetalert/css/sweetalert.css" />
+  <!-- <script src="../libraries/sweetalert/js/sweetalert.js"></script> -->
+
+  <script src="../assets/js/moment.min.js"></script>
+  <script src="../assets/js/pikaday.js"></script>
+  <script src="../assets/js/jquery.form.js"></script>
+  <script type="text/javascript">
+    $(".client-types .radio-box").click(function () {
+      $(".client-types .radio-box").removeClass('focused');
+      $(this).addClass('focused');
+    });
+    simplfyWaiterTopBar();
+    simply_order_content();
+
+
+
+  </script>
+  <style type="text/css">
+    .multiselect__container {
+      width: 75%;
+    }
+  </style>
+</body>
+
+</html>

@@ -1223,6 +1223,23 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     }
   }
 }
+.orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail {
+  justify-content: center;
+  gap: 30px;
+  .box {
+    margin: 0;
+    position: relative;
+    label.title {
+      margin: 0;
+      line-height: 1.4;
+      position: absolute;
+      top: calc(100% + 13px);
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
 @include breakpoint(max-lg) {
   div.orders-workplace div.showRecord #leftSide {
     width: 100%;
@@ -1245,6 +1262,38 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
       #header,
       .listItems {
         min-width: 900px;
+      }
+    }
+  }
+  .orders-workplace div.loadPage .dynamicQnd .foundNumRpt {
+    width: 50%;
+  }
+  .orders-workplace div.loadPage.rpt .buttons {
+    width: 50%;
+  }
+  .orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-inline: 0;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    @include breakpoint(max-md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .box {
+      margin: 0;
+      position: relative;
+      label.title {
+        margin: 0;
+        line-height: 1.4;
+        position: absolute;
+        top: calc(100% + 13px);
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }

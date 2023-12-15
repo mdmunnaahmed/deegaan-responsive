@@ -1236,9 +1236,6 @@ div.workplace div.reportArea div.rprtType label span {
   div.orders-workplace .displayMore {
     width: 25%;
   }
-  div.workplace #loadPage #dataTable div.cave.long {
-    width: 40% !important;
-  }
   div.workplace #loadPage #dataTable div.cave.short {
     width: 30% !important;
   }
@@ -1305,6 +1302,28 @@ div.workplace #loadPage #command #searchBox input.srchInput {
   div.workplace div.showRecord div.details.long.tooLong .listItems {
     min-width: 900px;
   }
+  div.workplace #loadPage #dynamicQnd .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  div.workplace #loadPage #dynamicQnd .container #filters {
+    width: 100% !important;
+    flex-direction: column;
+    gap: 6px;
+  }
+  div.workplace #loadPage #dynamicQnd .container #filters > div {
+    width: 100% !important;
+  }
+}
+@media (max-width: 991px) and (max-width: 575px) {
+  div.workplace #loadPage #dynamicQnd .container .dropdown {
+    flex-direction: column;
+    gap: 6px;
+  }
+  div.workplace #loadPage #dynamicQnd .container .dropdown select {
+    width: 100% !important;
+    margin: 0 !important;
+  }
 }
 @media (max-width: 575px) {
   div.workplace div.twoCols div.record div#batono {
@@ -1329,5 +1348,33 @@ div.workplace #loadPage #command #searchBox input.srchInput {
   }
   div.workplace div.theForm div.record .column.right {
     margin-top: 6px;
+  }
+}
+.purchase-add-filter .right > div {
+  flex-basis: 32.3% !important;
+}
+
+@media (max-width: 575px) {
+  div.workplace .add-vendor-modal .content .popupBody > div {
+    flex-direction: column !important;
+  }
+  div.workplace .add-vendor-modal .content .popupBody .row .rghPart input {
+    width: 66% !important;
+  }
+  div.workplace .add-vendor-modal .content .popupBody .row .lftPart {
+    margin: 0 !important;
+  }
+  div.workplace .add-vendor-modal .content .popupBody .row .lftPart:nth-child(2) {
+    width: 70% !important;
+  }
+  div.workplace .add-vendor-modal .content .popupBody .row input {
+    margin: 0 !important;
+    width: 95% !important;
+  }
+  div.workplace .add-vendor-modal .content .popupBody .row .popupBody > div {
+    flex-direction: column !important;
+  }
+  div.workplace .add-vendor-modal .content .popupBody .row .popupBody > div .row {
+    width: 100%;
   }
 }/*# sourceMappingURL=responsive-base.css.map */

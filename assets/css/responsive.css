@@ -1150,6 +1150,24 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     width: 100%;
   }
 }
+.orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail {
+  justify-content: center;
+  gap: 30px;
+}
+.orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail .box {
+  margin: 0;
+  position: relative;
+}
+.orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail .box label.title {
+  margin: 0;
+  line-height: 1.4;
+  position: absolute;
+  top: calc(100% + 13px);
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @media (max-width: 991px) {
   div.orders-workplace div.showRecord #leftSide {
     width: 100%;
@@ -1172,6 +1190,42 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
   div.orders-workplace div.showRecord div.details.long.tooLong #header,
   div.orders-workplace div.showRecord div.details.long.tooLong .listItems {
     min-width: 900px;
+  }
+  .orders-workplace div.loadPage .dynamicQnd .foundNumRpt {
+    width: 50%;
+  }
+  .orders-workplace div.loadPage.rpt .buttons {
+    width: 50%;
+  }
+  .orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-inline: 0;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 991px) and (max-width: 767px) {
+  .orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 991px) {
+  .orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail .box {
+    margin: 0;
+    position: relative;
+  }
+  .orders-workplace .loadPage .dynamicQnd .dataTable .restaurant-detail .box label.title {
+    margin: 0;
+    line-height: 1.4;
+    position: absolute;
+    top: calc(100% + 13px);
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media (max-width: 767px) {
