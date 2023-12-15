@@ -1324,3 +1324,69 @@ div.workplace div.reportArea div.rprtType {
   }
 }
 // Additional End
+
+// Finance Responsive Start
+@include breakpoint(max-lg) {
+  div.workplace div.showRecord {
+    display: flex;
+    flex-direction: column-reverse;
+    #leftSide {
+      width: 100%;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+    #rightSide {
+      width: 100%;
+    }
+  }
+}
+// Finance Responsive End
+
+// Finance Responsive Property
+#btnCancel {
+  min-width: 60px !important;
+}
+@include breakpoint(max-lg) {
+  div.workplace div.theForm fieldset.grey {
+    width: 100%;
+    margin-top: 15px;
+  }
+  div.workplace div.showRecord div#rights {
+    div.userRights {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      @include breakpoint(max-sm) {
+        width: 100%;
+      }
+    }
+  }
+  div.workplace div.showRecord div.details.long {
+    overflow-y: auto;
+    #header,
+    .listItems {
+      min-width: 600px;
+    }
+    &.tooLong {
+      #header,
+      .listItems {
+        min-width: 900px;
+      }
+    }
+  }
+}
+@include breakpoint(max-sm) {
+  div.workplace div.twoCols div.record div#batono {
+    width: 15% !important;
+  }
+  div.workplace div.twoCols div.record div#cinwan {
+    width: 55% !important;
+  }
+  .xlarge {
+    width: 66.66% !important;
+  }
+  div.workplace div.showRecord div.details.long {
+    margin-bottom: 2%;
+  }
+}
+// Finance Responsive End

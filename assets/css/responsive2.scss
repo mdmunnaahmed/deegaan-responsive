@@ -335,6 +335,9 @@
     transform: translateX(-100%);
     transition: 0.4s;
     z-index: 1112 !important;
+    height: 100dvh !important;
+    min-height: auto !important;
+    overflow-y: auto;
     &.active {
       transform: translateX(0);
     }
@@ -1375,3 +1378,58 @@ div.workplace div.reportArea div.rprtType {
   }
 }
 // Additional End
+
+// Inner View Pages Start
+@include breakpoint(max-lg) {
+  div.orders-workplace div.showRecord {
+    display: flex;
+    flex-direction: column;
+    #rightSide {
+      width: 100%;
+      float: none;
+      order: 2;
+      margin-top: 30px;
+    }
+    #leftSide,
+    .details,
+    .totals {
+      width: 100%;
+      margin-top: 6px;
+      .self-reservation {
+        width: 100%;
+      }
+    }
+    .details {
+      overflow-y: auto;
+      #header,
+      .listItems {
+        min-width: 600px;
+      }
+
+      &.tooLong {
+       #header, .listItems {
+        min-width: 900px;
+       } 
+      }
+    }
+  }
+}
+@include breakpoint(max-md) {
+  div.orders-workplace div.theForm div.record .rghtPrt {
+    display: flex;
+    input {
+      margin-left: 0 !important;
+    }
+  }
+}
+@include breakpoint(max-xl) {
+  .middlebar .theForm .record .displayInfo .infoWrap {
+    p:nth-of-type(2n + 1) {
+      width: 50% !important;
+    }
+    p:nth-of-type(2n) {
+      width: 50% !important;
+    }
+  }
+}
+// Inner View Pages End

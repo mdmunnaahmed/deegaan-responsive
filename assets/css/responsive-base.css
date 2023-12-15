@@ -1242,4 +1242,65 @@ div.workplace div.reportArea div.rprtType label span {
   div.workplace #loadPage #dataTable div.cave.short {
     width: 30% !important;
   }
+}
+@media (max-width: 991px) {
+  div.workplace div.showRecord {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  div.workplace div.showRecord #leftSide {
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  div.workplace div.showRecord #rightSide {
+    width: 100%;
+  }
+}
+#btnCancel {
+  min-width: 60px !important;
+}
+
+@media (max-width: 991px) {
+  div.workplace div.theForm fieldset.grey {
+    width: 100%;
+    margin-top: 15px;
+  }
+  div.workplace div.showRecord div#rights div.userRights {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 991px) and (max-width: 575px) {
+  div.workplace div.showRecord div#rights div.userRights {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  div.workplace div.showRecord div.details.long {
+    overflow-y: auto;
+  }
+  div.workplace div.showRecord div.details.long #header,
+  div.workplace div.showRecord div.details.long .listItems {
+    min-width: 600px;
+  }
+  div.workplace div.showRecord div.details.long.tooLong #header,
+  div.workplace div.showRecord div.details.long.tooLong .listItems {
+    min-width: 900px;
+  }
+}
+@media (max-width: 575px) {
+  div.workplace div.twoCols div.record div#batono {
+    width: 15% !important;
+  }
+  div.workplace div.twoCols div.record div#cinwan {
+    width: 55% !important;
+  }
+  .xlarge {
+    width: 66.66% !important;
+  }
+  div.workplace div.showRecord div.details.long {
+    margin-bottom: 2%;
+  }
 }/*# sourceMappingURL=responsive-base.css.map */

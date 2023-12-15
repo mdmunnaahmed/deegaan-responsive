@@ -1,0 +1,746 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard | My Hotel and Restaurant</title>
+    <link rel="shortcut icon" href="../assets/images/system/icon.png" />
+    <!-- <link rel="shortcut icon" href="./assets/images/company/sostec/favicon.ICO" /> -->
+    <link rel="stylesheet" href="assets/css/style2.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/scheduler.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/responsive2.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/all.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="main-wrap">
+        <div class="orders-workplace">
+            <div class="sidebar" tabindex="0">
+                <div class="smartphone-menu-trigger"></div>
+                <div class="logoWrap">
+                    <a href="./reservation-workplace.php"><img src="./assets/images/company/logo-white.png" alt="logo" /></a>
+                </div>
+                <ul id="menus">
+                    <a href="./reservation-workplace.php?task=checkin">
+                        <li class="">
+                            <i class="fal fa-calendar-check"></i><span>Check In</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=reservation">
+                        <li class="active">
+                            <i class="fal fa-handshake"></i><span>Reservation</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=checkout">
+                        <li class="">
+                            <i class="fal fa-sign-out"></i><span>Check Out</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?role=admin&task=cashier">
+                        <li class="">
+                            <i class="fal fa-sack-dollar"></i><span>Cashier</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?role=admin&task=quotation">
+                        <li class="">
+                            <i class="fal fa-file-invoice"></i><span>Invoice & Quotation</span>
+                        </li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=customerMgt">
+                        <li class=""><i class="fal fa-users"></i><span>Customers</span></li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=service">
+                        <li class=""><i class="fal fa-cogs"></i><span>Services</span></li>
+                    </a>
+                    <a href="./reservation-workplace.php?task=reports">
+                        <li class=""><i class="fal fa-file-invoice"></i><span>Reports</span></li>
+                    </a>
+                </ul>
+                <!-- <footer>
+    <p>3.0.2</p>
+</footer> -->
+            </div> <!-- sidebar -->
+
+            <div class="middlebar">
+                <div class="top-bar">
+                    <div>
+                        <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+                        <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+                    </div>
+                    <h3 class="waiter-amount">
+                        <a href="../dashboard.php">Back to home</a>
+                    </h3>
+                    <div>
+                        <h3 class="user-name">Hi, ManagersName</h3>
+                        <div class="profile-icon">
+                            <div class="user icon">
+                                <img src="../assets/images/users/small40/user40-8151609924889.jpg" />
+                            </div>
+                            <div class="drop-down">
+                                <div class="row bar">My Account</div>
+                                <div class="row">
+                                    <div class="photo">
+                                        <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                                        <a href="./reservation-workplace.php?role=admin&task=profile">
+                                            <div class="overlay">
+                                                <span><i class="fal fa-camera-alt"></i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="links">
+                                        <p class="name">ManagersName</p>
+                                        <p class="user">themanager</p>
+                                    </div>
+                                </div>
+                                <div class="row button">
+                                    <a class="forgot" href="./reservation-workplace.php?role=admin&task=profile&subtask=chngPass">
+                                        <i class="far fa-lock-alt"></i><span>Change Password</span>
+                                    </a>
+                                    <a class="logout" href="../includes/logout.php">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="power-icon fa fa-power-off" href="../includes/logout.php"></a>
+                    </div>
+                </div>
+
+                <div class="options-bar dash">
+                    Menus | reservation </div>
+
+                <div class="dashboard-content">
+                    <aside class="popup-box">
+                        <input type="checkbox" class="state" id="showGuestInfo38" />
+                        <div class="content">
+                            <div class="header">
+                                <label class="close-btn" for="showGuestInfo38">&times;</label>
+                            </div>
+                            <div class="main">
+                                <div class="self-reservation">
+                                    <div class="line-record">
+                                        <div class="rec-left"><span class="far fa-home-alt"></span> Room / Hall</div>
+                                        <div class="rec-right">Room101</div>
+                                    </div>
+                                    <div class="line-record">
+                                        <div class="rec-left"><span class="far fa-calendar-check"></span> Check In</div>
+                                        <div class="rec-right">Nov 28, 2023</div>
+                                    </div>
+                                    <div class="line-record">
+                                        <div class="rec-left"><span class="far fa-calendar-alt"></span> Check In</div>
+                                        <div class="rec-right">Nov 30, 2023</div>
+                                    </div>
+                                    <div class="line-record">
+                                        <div class="rec-left"><span class="far fa-badge-dollar"></span> Price</div>
+                                        <div class="rec-right">$50</div>
+                                    </div>
+                                    <div class="line-record">
+                                        <div class="rec-left"><span class="far fa-tag"></span> Reservation Discount</div>
+                                        <div class="rec-right">$0</div>
+                                    </div>
+                                    <div class="line-record">
+                                        <div class="rec-left"><span class="far fa-user-clock"></span> Stay in</div>
+                                        <div class="rec-right">2 night(s)</div>
+                                    </div>
+                                    <div class="line-record">
+                                        <div class="rec-left"><span class="far fa-sack-dollar"></span> Total</div>
+                                        <div class="rec-right">$100</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="backdrop" for="showGuestInfo38"></label>
+                    </aside>
+                    <aside class="popUpForm popup-box vlarge less-height vless-down">
+                        <input type="checkbox" class="state" id="addDeposit" />
+                        <div class="content">
+                            <div class="header">
+                                <h3>Add New Deposit </h3>
+                                <label class="close" for="addDeposit">&times;</label>
+                            </div>
+                            <div class="popupBody">
+                                <form action="/deegaan-reservation/reservation-workplace.php" method="POST" onsubmit="return check_addCustomerDeposit();">
+
+                                    <div class="record one">
+
+                                        <div class="column long">
+                                            <div class="leftPrt">Customer</div>
+                                            <div class="rghtPrt">
+                                                <input type="hidden" id="clientID" value="742" readonly="readonly" />
+                                                <input type="hidden" id="checkInID" value="37" readonly="readonly" />
+                                                <input type="text" class="inputText jumbo" id="txtCustName" readonly="readonly" value="warfaa" placeholder="optional" />
+                                                <label class="error" id="popuperror21">popuperror21</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="record two">
+                                        <div class="column">
+                                            <div class="leftPrt required">Amount</div>
+                                            <div class="rghtPrt">
+                                                <input type="text" class="inputText xxlarge" id="txtAmount" autocomplete="off" placeholder="required" onkeypress="return isDecimalNum(this, event);" />
+                                                <label class="error" id="popuperror22">popuperror22</label>
+                                            </div>
+                                        </div>
+                                        <div class="column right">
+                                            <div class="leftPrt">InWords</div>
+                                            <div class="rghtPrt">
+                                                <input type="text" class="inputText jumbo" id="txtInWords" autocomplete="off" placeholder="optional" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="record two">
+                                        <div class="column">
+                                            <div class="leftPrt required">Paid Bank</div>
+                                            <div class="rghtPrt">
+                                                <select class="xxlarge" id="slcBankID">
+                                                    <option value="">--select</option>
+                                                    <option value="8">AmalBank</option>
+                                                    <option value="3">eDahab</option>
+                                                    <option value="2">Evc</option>
+                                                    <option value="1">Merchant</option>
+                                                    <option value="6">MyBank</option>
+                                                    <option value="7">Premier Bank</option>
+                                                    <option value="4">QrCode</option>
+                                                    <option value="5">Salaam bank</option>
+                                                    <option value="9">Somnet</option>
+                                                </select>
+                                                <label class="error" id="popuperror23">popuperror23</label>
+                                            </div>
+                                        </div>
+                                        <div class="column right">
+                                            <div class="leftPrt required">Paid Bank Acc</div>
+                                            <div class="rghtPrt">
+                                                <select class="xxlarge" id="slcBankAcc">
+                                                    <option value="">--select</option>
+                                                </select>
+                                                <label class="error" id="popuperror24">popuperror24</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="record">
+                                        <div class="column">
+                                            <div class="leftPrt">Trans Date</div>
+                                            <div class="rghtPrt">
+                                                <input type="text" class="inputText xxlarge" id="transDate" value="2023-12-15" readonly="readonly" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="record last">
+                                        <button type="submit" class="btnSubmit extra4prchse" id="btnSave" name="btnSave">Save</button>
+                                        <label class="process"></label>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                        <label class="backdrop" for="addDeposit"></label>
+                    </aside>
+                    <!--  -->
+                    <aside class="popUpForm popup-box vlarge less-height vless-down">
+                        <input type="checkbox" class="state" id="refundDeposit" />
+                        <div class="content">
+                            <div class="header">
+                                <h3>Refund Deposit </h3>
+                                <label class="close" for="refundDeposit">&times;</label>
+                            </div>
+                            <div class="popupBody">
+                                <form action="/deegaan-reservation/reservation-workplace.php" method="POST" onsubmit="return check_refundCustomerDeposit();">
+
+                                    <div class="record one">
+                                        <div class="column">
+                                            <div class="leftPrt">Customer</div>
+                                            <div class="rghtPrt">
+                                                <input type="hidden" id="depositBalance" value="0" readonly="readonly" />
+                                                <input type="hidden" id="clientID4deposit" value="742" readonly="readonly" />
+                                                <input type="hidden" id="checkInID4deposit" value="37" readonly="readonly" />
+                                                <input type="text" class="inputText xxlarge" id="txtCustName4deposit" readonly="readonly" value="warfaa" placeholder="optional" />
+                                                <label class="error" id="popuperror31">popuperror31</label>
+                                            </div>
+                                        </div>
+                                        <div class="column right">
+                                            <div class="leftPrt">Deposit Balance</div>
+                                            <div class="rghtPrt">
+                                                <input type="text" class="inputText xxlarge" value="0" readonly="readonly" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="record two">
+                                        <div class="column">
+                                            <div class="leftPrt required">Amount</div>
+                                            <div class="rghtPrt">
+                                                <input type="text" class="inputText xxlarge" id="txtAmount4deposit" autocomplete="off" placeholder="required" onkeypress="return isDecimalNum(this, event);" />
+                                                <label class="error" id="popuperror32">popuperror32</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="column right">
+                                            <div class="leftPrt">Trans Date</div>
+                                            <div class="rghtPrt">
+                                                <input type="text" class="inputText xxlarge" id="transDate4deposit" value="2023-12-15" readonly="readonly" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="record two">
+                                        <div class="column">
+                                            <div class="leftPrt required">Paid Bank</div>
+                                            <div class="rghtPrt">
+                                                <select class="xxlarge" id="slcBankID4deposit">
+                                                    <option value="">--select</option>
+                                                    <option value="8">AmalBank</option>
+                                                    <option value="3">eDahab</option>
+                                                    <option value="2">Evc</option>
+                                                    <option value="1">Merchant</option>
+                                                    <option value="6">MyBank</option>
+                                                    <option value="7">Premier Bank</option>
+                                                    <option value="4">QrCode</option>
+                                                    <option value="5">Salaam bank</option>
+                                                    <option value="9">Somnet</option>
+                                                </select>
+                                                <label class="error" id="popuperror33">popuperror33</label>
+                                            </div>
+                                        </div>
+                                        <div class="column right">
+                                            <div class="leftPrt required">Paid Bank Acc</div>
+                                            <div class="rghtPrt">
+                                                <select class="xxlarge" id="slcBankAcc4deposit">
+                                                    <option value="">--select</option>
+                                                </select>
+                                                <label class="error" id="popuperror34">popuperror34</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="record last">
+                                        <button type="submit" class="btnSubmit" id="btnSave" name="btnSave">Save</button>
+                                        <label class="process"></label>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                        <label class="backdrop" for="refundDeposit"></label>
+                    </aside><!-- <!-- <aside class="popUpForm" style="z-index: 2000;">
+    <input type="checkbox" class="state" id="addIdentity" />
+    <article class="content">
+    <div class="header">
+    	<h3>Add Identity Type</h3>
+    	<label class="close" for="addIdentity">&times;</label>
+    </div>
+    <div class="popupBody">
+        <div class="row">
+            <div class="lftPart required">Identity Type</div>
+            <div class="rightPrt">
+            	<input type="hidden" value="37" name="chkIdentity" id="identityType"> 
+            	     <input type="text" class="inputText large" id="identityType"  autocomplete="off"  style=" width: 69%;" />
+                <label class="error" id="qalad1">qalad1</label>
+            </div>
+        </div>
+     
+        <div class="row">
+            <button type="submit" class="btnAdd patient"  onclick="return addIdentityType(this);">Add</button>
+        </div>
+    </div>
+    </article>
+    <label class="backdrop" for="addIdentity"></label>
+</aside>
+
+
+
+
+<aside class="popUpForm">
+	<input type="checkbox" class="state" id="addIdentity"/>
+	<article class="content">
+		<div class="header">
+			<h3>Add Identity</h3>
+			<label class="close" for="addIdentity" >&times;</label>
+		</div>
+		<div class="popupBody" >
+			<div class="row">
+				<div class="lftPart required">Identity Name</div>
+				<div class="rghPart">
+					<input type="text" class="inputText middle" id="popidentityName" autocomplete="off" style="margin-left: 10px;width: 58%;height: 32px;" />
+					<label class="error" id="Identity" style="margin-left: 32%;"></label>
+				</div>
+			</div>
+		</div>
+			
+			<div class="row">
+				<button type="submit" class="btnSave" onclick="return addIdentityFromPopUp(this)">Save</button>
+			</div>
+	
+	</article>
+	    <label class="backdrop" for="addIdentity"></label>
+</aside>
+
+<style type="text/css">
+
+	.btnSave{
+		border:none;
+		float: right;
+		background-color: #ad722d;
+		color: #fff;
+		font-family: raspoutine;
+		cursor: pointer;
+		line-height: 25px;
+    	margin-right: 0px;
+    	padding: 5px 40px;
+		/*text-shadow: 1px 1px 1px #000000;*/
+		/*background: transparent;*/
+	}
+</style> -->
+                    <aside class="popUpForm">
+                        <input type="checkbox" class="state" id="editIdentity" />
+                        <article class="content">
+                            <div class="header">
+                                <h3>Edit Identity</h3>
+                                <label class="close" for="editIdentity">&times;</label>
+                            </div>
+                            <div class="popupBody">
+                                <div class="row">
+                                    <div class="lftPart required">Identity Type</div>
+                                    <div class="rightPrt">
+                                        <input type="hidden" value="37" name="" id="identityType">
+                                        <input type="text" class="inputText large" id="identityType" value="" autocomplete="off" style="border-right: none; width: 69%;" />
+                                        <label class="fa fa-plus" id="addIdentity" for="addIdentity" title="add new identity"></label>
+                                        <label class="error" id="qalad1">qalad1</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="lftPart required">Identity Number</div>
+                                    <div class="rightPrt">
+                                        <input type="text" class="inputText xlarge" value="" id="identityNumber" autocomplete="off" />
+                                        <label class="error" id="qalad2">qalad2</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="lftPart">Attach New Identity</div>
+                                    <div class="rightPrt">
+                                        <div class="innerColumn">
+                                            <input type="file" id="fileAttach" name="fileAttach" class="inputfile inputfile6" />
+                                            <label class="w-nine" for="fileAttach"><span class="w-seven">default320.png</span> <strong class="long"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                                                        <path
+                                                            d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" />
+                                                    </svg> Choose a file</strong></label>
+                                            <label class="error" id="qalad3">qalad3</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button type="submit" class="btnAdd patient" onclick="return updateIdentity(this);">Update Identity</button>
+                                </div>
+                            </div>
+                        </article>
+                        <label class="backdrop" for="editIdentity"></label>
+                    </aside>
+
+
+
+                    <script src="./assets/js/jquery.min.js"></script>
+                    <script src="./assets/js/reception.js"></script>
+                    <script src="../assets/js/custom-file-input.js"></script>
+
+
+                    <style type="text/css">
+                        label#addIdentity {
+                            /*margin-left: 7px;*/
+                            width: 20px;
+                            cursor: pointer;
+                            height: 30px;
+                            color: #714705;
+                            line-height: 30px;
+                            font-size: 0.85em;
+                            border: 1px solid #ccc;
+                            border-left: none;
+
+                        }
+
+                        .popupBody input.inputText
+                        {
+                        border-radius: 0 !important;
+                        }
+
+                        div.orders-workplace input.inputText {
+                            border-radius: 0;
+                        }
+
+                        /*label.addIdentity:before{
+		font-family: FontAwesome;
+	    content: "\f067";
+	    font-size: 0.85em;
+	}*/
+                    </style>
+                    <div class="showRecord">
+                        <div id="rightSide">
+
+                            <!-- <a id="print" href="../prints/print.php?report=invoiveNreceipt&recID=37&reference=0">Print Invoice</a>
+        <a id="print" href="../prints/print.php?report=extraOrderInside&recID=37">Print</a> -->
+
+                            <div class="print-list">
+                                <label>Print</label>
+                            </div>
+                            <div class="print-drop-down">
+                                <a href="../prints/print.php?report=invoiveNreceipt&recID=37&reference=0" id="printInvoiceSummary" target="_blank">Print Invoice Summary</a>
+                                <a href="../prints/print.php?report=extraOrderInside&recID=37" target="_blank">Print Invoice Detail</a>
+                            </div>
+
+                            <a id="back" href="./reservation-workplace.php?role=admin&task=reservation">Back</a>
+                            <label class="checkbox" style="float: left; margin-top: 10px; display: flex;align-items: center; cursor: pointer; width: 100%;">
+                                <input type="checkbox" checked="checked" value="yes" id="showGuestName" style="width: 17px; height: 17px;">
+                                <span style="  margin-left: 5px;">Show Guest Name</span>
+                            </label>
+                            <h3 id="title">Sensitive Info</h3>
+                            <div class="details">
+                                <div id="record">
+                                    <p>Added By:</p>
+                                    <label>ManagersName (themanager)</label>
+                                    <label><time class="timeago" datetime="2023-11-28 13:38:33" title="2023-11-28 13:38:33"></time></label>
+                                </div>
+                            </div>
+                            <div class="customer-balance">
+                                <!-- <h1>$100.00</h1> -->
+                                <h1>$100</h1>
+
+                                <span>Customer Balance</span>
+                            </div>
+                        </div>
+                        <div id="leftSide">
+                            <header>Bill To Detail
+                                <div class="buttons">
+                                    <a href="./reservation-workplace.php?role=admin&task=checkout&subtask=addnew&showInfo&recID=37"><label class="far fa-sign-out"></label> Check out</a>
+                                    <a href="./reservation-workplace.php?role=admin&task=cashier&subtask=addnew"><label class="far fa-sack-dollar"></label> Receipt</a>
+                                    <a href="./reservation-workplace.php?role=admin&task=checkout&subtask=gatePass"><label class="far fa-door-open"></label> Gate Pass</a>
+                                </div>
+                            </header>
+                            <div class="details">
+                                <div class="record">
+                                    <div class="colLeft">Bill To</div>
+                                    <div class="colRight">
+                                        <a href="./reservation-workplace.php?role=admin&task=customerMgt&subtask=showInfo&recID=742">
+                                            <p><span class="far fa-user-alt"></span> warfaa</p>
+                                            <p><span class="far fa-phone-alt"></span> 3333</p>
+                                            <!--  <p><span class="fa fa-id-card"> </span> Identity
+	                 <label class="fa fa-download" title="Download Identity" style="margin-left: 345px;"></label>
+                 	<label class="link_edit" for="editIdentity" title="Update Identity">Edit</label></p>
+		            </p> -->
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="record">
+                                    <div class="colLeft">No. of guests</div>
+                                    <div class="colRight"></div>
+                                </div>
+                                <div class="record">
+                                    <div class="colLeft">Status</div>
+                                    <div class="colRight"><span class="status active">active</span></div>
+                                </div>
+                                <!-- <div class="record">
+                <div class="colLeft">Bill Type</div>
+                <div class="colRight">Contract</div>
+            </div> -->
+                                <div class="record">
+                                    <div class="colLeft">Commission</div>
+                                    <div class="colRight">
+                                        <p>N/A</p>
+                                        <p>$0</p>
+                                        <p>unpaid</p>
+                                        <label class="link_edit" for="editInvoiceCommission">Edit</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details long">
+                            <div id="header">Reservations Detail
+                            </div>
+                            <div class="self-reservation">
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-home-alt"></span> Room/Hall</div>
+                                    <div class="rec-right">
+                                        <a href="./reservation-workplace.php?role=admin&task=reservation&subtask=roomStatus&allocID=1">
+                                            Room101 </a>
+                                    </div>
+                                    <a class="edit transfer" href="./reservation-workplace.php?role=admin&task=reservation&subtask=transfer&recID=38">Transfer</a>
+                                </div>
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-calendar-check"></span> Check In</div>
+                                    <div class="rec-right"> Nov 28, 2023 00:00:00 <a class="edit left date" title="Edit check in" href="./reservation-workplace.php?role=admin&task=reservation&subtask=changeDate&recID=38"> Edit</a>
+                                    </div>
+                                </div>
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-calendar-alt"></span> Check Out</div>
+                                    <div class="rec-right"> Nov 30, 2023 23:59:59 <a class="edit left date" title="Edit check out" href="./reservation-workplace.php?role=admin&task=reservation&subtask=changeDate&recID=38"> Edit</a>
+                                    </div>
+                                </div>
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-dollar-sign"></span> Price</div>
+                                    <div class="rec-right">$50</div>
+                                </div>
+
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-user-clock"></span> Stay in</div>
+                                    <div class="rec-right">2 night(s)</div>
+                                </div>
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-sack-dollar"></span> Total</div>
+                                    <div class="rec-right"><b>$100</b></div>
+                                </div>
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-tag"></span> Reservation Discount</div>
+                                    <div class="rec-right">$0 <a class="edit left" title="Edit discount" onclick="return editReservationDiscount('742','37','210','249','100')"> Edit</a>
+                                    </div>
+                                </div>
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-sack-dollar"></span> Vat</div>
+                                    <div class="rec-right"><b>0%</b>
+                                        <a class="edit left" title="Edit vat" onclick="return editReservationVat('37');"> Edit</a>
+                                    </div>
+                                </div>
+                                <div class="line-record">
+                                    <div class="rec-left"><span class="far fa-times-octagon"></span> Reservation</div>
+                                    <div class="rec-right">
+                                        <a class="cancel second" onClick="return cancelBooking(38,742,100,'date-difference','Nov 28, 2023 00:00:00','Nov 30, 2023 23:59:59');">Cancel </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  </div>-->
+                        </div>
+                        <!-- meal order-->
+                        <!-- end meal order-->
+
+                        <div class="totals">
+                            <div class="colorise"><label>Reservations</label><span>$100</span></div>
+                            <div class="colorise"><label>Meal Order</label><span>$0</span></div>
+                            <div class="colorise"><label>Service</label><span>$0</span></div>
+                            <div class="colorise"><label><b>Sub Total</b></label><span><b>$100</b></span></div>
+                            <div class="colorise"><label>Discount</label><span>$0</span></div>
+                            <div class="colorise"><label>Vat</label><span>$0</span></div>
+
+
+                            <div><label><b>Grand Total</b></label><span><b>$100</b></span></div>
+                        </div>
+                        <div class="details long">
+                            <div id="header">Deposits
+                                <label class="addnew" for="addDeposit"> Add New Deposit </label>
+                                <a href="../prints/print.php?report=clientDepositTrans&recID=742" target="_blank" style="margin-left:5%;"><i class="fa fa-print" style="margin-right:1%;"></i>Print Transactions</a>
+
+                                <span class="lbl-refund-txt">Deposit Balance <b>$0</b></span>
+                            </div>
+                            <div class="listItems">
+                                <header>
+                                    <div class="box first">No.</div>
+                                    <div class="box lmiddle">Ref No.</div>
+                                    <div class="box lmiddle">Trans.Date</div>
+                                    <div class="box middle">Amount</div>
+                                    <div class="box middle">Type</div>
+                                    <div class="box lmiddle">Bank Details</div>
+                                </header>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <script src="./assets/js/jquery-3.5.1.min.js"></script>
+                <script src="./assets/js/reception.js"></script>
+                <script type="text/javascript">
+                    var myUser = 'themanager';
+                    var myRole = 'admin';
+                    var myWhouse = '1001';
+                    $(document).ready(function () {
+                        $("#addnew").leanModal({ top: 160, overlay: 0.6, closeButton: "span.close" });
+                        var myUser = 'themanager';
+                        var myRole = 'admin';
+                        var myWhouse = '1001';
+                        $("#txtAmount").keyup(function () {
+                            inWords($("#txtAmount").val());
+
+                        });
+                        $("#slcBankID").change(function () {
+                            var bankID = $("#slcBankID").val();
+                            if (bankID == "") {
+                                $("#slcBankAcc").html('');
+                            } else {
+                                $.post("./includes/reception.php?action=searchRec&dest=myBankAccs", { bankID: bankID, myWhouse: myWhouse }, function (data) {
+                                    $("#slcBankAcc").html(data);
+                                });
+                            }
+                        });
+                        //
+                        $("#slcBankID4deposit").change(function () {
+                            var bankID = $("#slcBankID4deposit").val();
+                            if (bankID == "") {
+                                $("#slcBankAcc4deposit").html('');
+                            } else {
+                                $.post("./includes/reception.php?action=searchRec&dest=myBankAccs", { bankID: bankID, myWhouse: myWhouse }, function (data) {
+                                    $("#slcBankAcc4deposit").html(data);
+                                });
+                            }
+                        });
+                        $(".print-list").click(function () {
+                            $(".print-drop-down").fadeToggle(300);
+                            return false;
+                        });
+                        $(document).click(function () {
+                            $(".print-drop-down").hide();
+                        });
+
+                        var thisYear = '2023';
+                        // simplifyReservShow();
+                    });
+
+                    $("#showGuestName").on('change', (e) => {
+                        let showGuestName = $('#showGuestName:checked').val();
+                        if (showGuestName == undefined) showGuestName = "";
+                        let href = $("#printInvoiceSummary").attr("href");
+                        let urlParam = new URLSearchParams(href);
+                        urlParam.delete("showGuestName");
+                        urlParam.set('showGuestName', showGuestName)
+                        urlParam = urlParam.toString().replace('%2F', '/').replace('%3F', '?').replace('%2F', '/')
+
+                        // href += "&showGuestName="+showGuestName;
+                        $("#printInvoiceSummary").attr("href", urlParam);
+                        console.log(showGuestName, urlParam);
+                    })
+                    $("#showGuestName").trigger("change")
+                </script>
+            </div>
+
+
+        </div> <!-- middlebar -->
+    </div>
+    </div>
+    <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+    <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+    <script src="../assets/js/basicFuncs.js"></script>
+    <!-- <script src="../libraries/sweetalert/js/sweetalert.js"></script> -->
+    <link rel="stylesheet" href="../libraries/sweetalert/css/sweetalert.css" />
+    <script src="../libraries/sweetalert/js/sweetalert.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="./assets/js/jquery.timeago.js"></script>
+    <!-- <script src="../assets/js/pikaday.js"></script> -->
+    <script src="../assets/js/jquery.form.js"></script>
+    <script src="./assets/js/pikaday.js"></script>
+    <script src="./assets/js/basicFuncs.js"></script>
+    <script type="text/javascript">
+        simplfyWaiterTopBar();
+    </script>
+
+    <script>
+        $('#sidebarToggler').on('click', function (e) {
+            $('.sidebar').addClass('active')
+            $('#sidebar').addClass('active')
+            $('.overlay').addClass('active')
+        })
+        $('.overlay').on('click', function (e) {
+            $('.sidebar').removeClass('active')
+            $('#sidebar').removeClass('active')
+            $('.overlay').removeClass('active')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Workplace | DEEGAAN</title>
+  <link rel="shortcut icon" href="./assets/images/system/icon.png" />
+  <link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/responsive-base.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css" />
+  <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/multiselect/dist/multi-select.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <script src="./assets/multiselect/dist/multi-select.js"></script>
+  <script src="./assets/js/basicFuncs.js"></script>
+  <script src="./assets/js/moment.min.js"></script>
+  <script src="./assets/js/pikaday.js"></script>
+  <script src="./libraries/sweetalert/js/sweetalert.js"></script>
+  <script src="./assets/js/jquery.form.js"></script><!----> <!-- for changing photo -->
+  <script type="text/javascript">
+    const roundDigits = '2';
+  </script>
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="workplace">
+      <div id="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div id="logoWrap">
+          <!-- <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
+          <label class="comp_name">My Hotel and Restaurant</label>
+        </div>
+        <ul id="menus">
+          <li><a href="./dashboard.php">
+              <i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+          </li>
+          <li class="has-sub">
+            <a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
+              <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
+              <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
+            </ul>
+          </li>
+          <li class="has-sub" id="active">
+            <a><i class="fa fa-institution"></i><span>Property Management</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a><i class="fa fa-user"></i><span>Human resource Mgt</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
+          </li>
+          <!-- <li class="has-sub"> -->
+          <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
+          <ul>
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
+        <li><a href="./workplace.php?role=admin&task=supply&subtask=measures"><span>Measurements</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
+          </ul>
+          </li>
+          <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
+          <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
+          <li class="has-sub">
+            <a><i class="fa fa-dollar"></i><span>Finance</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
+            </ul>
+          </li>
+          <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
+
+        </ul>
+        <footer style="margin-right: 50px; color: #fff; text-align: center;">
+          <p class="version" style="margin-top: 250px; font-size: 0.8em;">V6.0.0.0</p>
+        </footer>
+      </div> <!-- sidebar -->
+
+      <div id="middlebar">
+        <div class="topBar">
+          <div>
+            <div id="sidebarToggler" title="Toggle sidebar" class="fa fa-bars"></div>
+            <div id="programName"><!-- <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span> --></div>
+          </div>
+          <div id="topIcons">
+            <div class="icon profile">
+              <img src="./assets/images/users/small40/user40-8151609924889.jpg" />
+            </div>
+            <div class="dropDown">
+              <div class="row bar">My Account</div>
+              <div class="row">
+                <div id="photo">
+                  <img src="./assets/images/users/middle320/user320-8151609924889.jpg" />
+                  <a href="./workplace.php?role=admin&task=profile">
+                    <div class="overlay">
+                      <span><i class="fa fa-camera"></i>change</span>
+                    </div>
+                  </a>
+                </div>
+                <div id="links">
+                  <p id="name">ManagersName</p>
+                  <p id="user">themanager</p>
+                </div>
+              </div>
+              <div class="row button">
+                <a href="./workplace.php?role=admin&task=profile&subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
+                <a class="logout" href="./includes/logout.php?from=user">Logout</a>
+              </div>
+            </div> <!-- dropDown -->
+          </div> <!-- topIcons -->
+        </div>
+        <div class="positionBar">
+          <i class="fa fa-tag"></i>
+          <label>menus &raquo; property management &raquo; property &raquo; update department</label>
+        </div>
+        <div class="contentBar"><a id="btnCancel" href="./workplace.php?role=admin&task=property&subtask=property">Cancel</a>
+          <p id="info"><span>*</span> red mark identifies required fields and must be filled out.</p>
+
+          <div class="theForm">
+            <form action="/workplace.php" method="POST" onsubmit="return check_editWhouse()">
+              <div class="record one">
+                <fieldset class="grey middle">
+                  <legend>Personal info</legend>
+                  <div class="innerRow">
+                    <div class="label required">Department</div>
+                    <div class="innerColumn">
+                      <input type="hidden" id="whouseID" value="1001" />
+                      <input type="text" class="inputText xlarge" id="whouseName" value="My Hotel and Restaurant" placeholder="required" maxlength="100" autocomplete="off" />
+                      <label class="error margin-left" id="error1">error1</label>
+                    </div>
+                  </div>
+
+                  <div class="innerRow">
+                    <div class="label required">Address</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText large" id="whAddress" value="Somalia" placeholder="physical" maxlength="200" autocomplete="off" />
+                      <label class="error margin-left" id="error3">error3</label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="grey middle right">
+                  <legend>Personal info</legend>
+                  <div class="innerRow">
+                    <div class="label required">Phones</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText large" id="whPhones" value="0618812510" placeholder="required" maxlength="100" autocomplete="off" />
+                      <label class="error margin-left" id="error4">error4</label>
+                    </div>
+                  </div>
+
+                  <div class="innerRow">
+                    <div class="label">Email Address</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText large" id="whEmail" value="sales@sostec.so" placeholder="optional" maxlength="255" autocomplete="off" />
+                      <label class="error margin-left" id="error5">error5</label>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+
+
+              <div class="record four">
+                <div class="column">
+                  <div class="leftPrt">Status</div>
+                  <div class="rghtPrt">
+                    <select class="vmedium" id="slcStatus">
+                      <option value="active" selected="selected">Active</option>
+                      <option value="suspended">Suspended</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="column right empty">
+                  &nbsp;
+                </div>
+              </div>
+              <div class="record last">
+                <button type="submit" class="btnSubmit" id="btnUpdate" name="btnUpdate">Update</button>
+                <label class="process"></label>
+              </div>
+            </form>
+          </div>
+          <script src="./assets/js/prptyMgt.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $("div.theForm").css("display", "inline");
+            });
+            var myUser = 'themanager';
+            var myRole = 'admin';
+          </script>
+        </div>
+      </div> <!-- middlebar -->
+
+    </div>
+  </div>
+  <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+  <script src="./assets/js/jquery.timeago.js"></script>
+  <script>
+    $('#sidebarToggler').on('click', function (e) {
+      $('.sidebar').addClass('active')
+      $('#sidebar').addClass('active')
+      $('.overlay').addClass('active')
+    })
+    $('.overlay').on('click', function (e) {
+      $('.sidebar').removeClass('active')
+      $('#sidebar').removeClass('active')
+      $('.overlay').removeClass('active')
+    })
+  </script>
+  <script type="text/javascript">
+    simplfyTopBar();
+
+  </script>
+</body>
+
+</html>

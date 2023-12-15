@@ -250,9 +250,6 @@
     transform: translateX(-100%);
     transition: 0.4s;
     z-index: 1112 !important;
-    height: 100dvh !important;
-    min-height: auto !important;
-    overflow-y: auto;
   }
   .sidebar.active,
   #sidebar.active {
@@ -1293,52 +1290,3 @@ div.workplace div.reportArea div.rprtType label span {
     flex-basis: auto !important;
   }
 }
-@media (max-width: 991px) {
-  div.orders-workplace div.showRecord {
-    display: flex;
-    flex-direction: column;
-  }
-  div.orders-workplace div.showRecord #rightSide {
-    width: 100%;
-    float: none;
-    order: 2;
-    margin-top: 30px;
-  }
-  div.orders-workplace div.showRecord #leftSide,
-  div.orders-workplace div.showRecord .details,
-  div.orders-workplace div.showRecord .totals {
-    width: 100%;
-    margin-top: 6px;
-  }
-  div.orders-workplace div.showRecord #leftSide .self-reservation,
-  div.orders-workplace div.showRecord .details .self-reservation,
-  div.orders-workplace div.showRecord .totals .self-reservation {
-    width: 100%;
-  }
-  div.orders-workplace div.showRecord .details {
-    overflow-y: auto;
-  }
-  div.orders-workplace div.showRecord .details #header,
-  div.orders-workplace div.showRecord .details .listItems {
-    min-width: 600px;
-  }
-  div.orders-workplace div.showRecord .details.tooLong #header, div.orders-workplace div.showRecord .details.tooLong .listItems {
-    min-width: 900px;
-  }
-}
-@media (max-width: 767px) {
-  div.orders-workplace div.theForm div.record .rghtPrt {
-    display: flex;
-  }
-  div.orders-workplace div.theForm div.record .rghtPrt input {
-    margin-left: 0 !important;
-  }
-}
-@media (max-width: 1199px) {
-  .middlebar .theForm .record .displayInfo .infoWrap p:nth-of-type(2n + 1) {
-    width: 50% !important;
-  }
-  .middlebar .theForm .record .displayInfo .infoWrap p:nth-of-type(2n) {
-    width: 50% !important;
-  }
-}/*# sourceMappingURL=responsive2.css.map */

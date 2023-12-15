@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Workplace | DEEGAAN</title>
+  <link rel="shortcut icon" href="./assets/images/system/icon.png" />
+  <link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/responsive-base.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css" />
+  <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/multiselect/dist/multi-select.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <script src="./assets/multiselect/dist/multi-select.js"></script>
+  <script src="./assets/js/basicFuncs.js"></script>
+  <script src="./assets/js/moment.min.js"></script>
+  <script src="./assets/js/pikaday.js"></script>
+  <script src="./libraries/sweetalert/js/sweetalert.js"></script>
+  <script src="./assets/js/jquery.form.js"></script><!----> <!-- for changing photo -->
+  <script type="text/javascript">
+    const roundDigits = '2';
+  </script>
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="workplace">
+      <div id="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div id="logoWrap">
+          <!-- <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
+          <label class="comp_name">My Hotel and Restaurant</label>
+        </div>
+        <ul id="menus">
+          <li><a href="./dashboard.php">
+              <i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+          </li>
+          <li class="has-sub">
+            <a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
+              <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
+              <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a><i class="fa fa-institution"></i><span>Property Management</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub" id="active">
+            <a><i class="fa fa-user"></i><span>Human resource Mgt</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
+          </li>
+          <!-- <li class="has-sub"> -->
+          <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
+          <ul>
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
+        <li><a href="./workplace.php?role=admin&task=supply&subtask=measures"><span>Measurements</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
+          </ul>
+          </li>
+          <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
+          <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
+          <li class="has-sub">
+            <a><i class="fa fa-dollar"></i><span>Finance</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
+            </ul>
+          </li>
+          <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
+
+        </ul>
+        <footer style="margin-right: 50px; color: #fff; text-align: center;">
+          <p class="version" style="margin-top: 250px; font-size: 0.8em;">V6.0.0.0</p>
+        </footer>
+      </div> <!-- sidebar -->
+
+      <div id="middlebar">
+        <div class="topBar">
+          <div>
+            <div id="sidebarToggler" title="Toggle sidebar" class="fa fa-bars"></div>
+            <div id="programName"><!-- <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span> --></div>
+          </div>
+          <div id="topIcons">
+            <div class="icon profile">
+              <img src="./assets/images/users/small40/user40-8151609924889.jpg" />
+            </div>
+            <div class="dropDown">
+              <div class="row bar">My Account</div>
+              <div class="row">
+                <div id="photo">
+                  <img src="./assets/images/users/middle320/user320-8151609924889.jpg" />
+                  <a href="./workplace.php?role=admin&task=profile">
+                    <div class="overlay">
+                      <span><i class="fa fa-camera"></i>change</span>
+                    </div>
+                  </a>
+                </div>
+                <div id="links">
+                  <p id="name">ManagersName</p>
+                  <p id="user">themanager</p>
+                </div>
+              </div>
+              <div class="row button">
+                <a href="./workplace.php?role=admin&task=profile&subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
+                <a class="logout" href="./includes/logout.php?from=user">Logout</a>
+              </div>
+            </div> <!-- dropDown -->
+          </div> <!-- topIcons -->
+        </div>
+        <div class="positionBar">
+          <i class="fa fa-tag"></i>
+          <label>menus &raquo; human resource management &raquo; users &raquo; view</label>
+        </div>
+        <div class="contentBar">
+          <div class="showRecord user">
+            <div id="rightSide">
+              <div class="imgHolder">
+                <img src="./assets/images/users/middle320/user320-8151609924889.jpg" alt="user320-8151609924889.jpg" />
+              </div>
+              <a id="back" href="./workplace.php?role=admin&task=hrm&subtask=users">Back</a>
+              <h3 id="title">Sensitive Info</h3>
+              <div class="details">
+                <div id="record">
+                  <p>Added By:</p>
+                  <label>N/A (admin)</label>
+                  <label><time class="timeago" datetime="2016-07-15 03:25:00" title="2016-07-15 03:25:00"></time></label>
+                </div>
+              </div>
+            </div>
+
+            <div id="leftSide">
+              <header>User Details</header>
+              <div class="details">
+                <div class="record">
+                  <div class="colLeft">Username</div>
+                  <div class="colRight">themanager</div>
+                </div>
+                <div class="record">
+                  <div class="colLeft">Status</div>
+                  <div class="colRight"><span class="status active">active</span></div>
+                </div>
+              </div>
+              <div id="separate"></div>
+              <div class="details">
+                <div class="record">
+                  <div class="colLeft">Fullname</div>
+                  <div class="colRight">ManagersName</div>
+                </div>
+                <div class="record">
+                  <div class="colLeft">Phone Number</div>
+                  <div class="colRight">612717070</div>
+                </div>
+              </div>
+              <div id="separate"></div>
+
+              <div class="details">
+                <div class="record">
+                  <div class="colLeft">Department</div>
+                  <div class="colRight">My Hotel and Restaurant, Admin</div>
+                </div>
+                <div class="record">
+                  <div class="colLeft">Sales Commission</div>
+                  <div class="colRight"></div>
+                </div>
+                <div class="record">
+                  <div class="colLeft">Last Login</div>
+                  <div class="colRight"><time class="timeago" datetime="2023-12-14 17:17:59" title="2023-12-14 17:17:59"></time></div>
+                  <label class="link_edit" title="Change Password" onclick="return changePassword(1,'themanager');">Reset Password</label>
+                </div>
+                <div class="record">
+                  <div class="colLeft">User can see</div>
+                  <div class="colRight">, </div>
+                </div>
+              </div>
+              <div id="separate responsive"></div>
+
+              <div class="details responsive">
+                <div class="record">
+                  <div class="colLeft">Added By</div>
+                  <div class="colRight">
+                    <p>N/A (admin)</p>
+                    <p><label>
+                        <time class="timeago" datetime="2016-07-15 03:25:00" title="2016-07-15 03:25:00"></time></label></p>
+                  </div>
+                </div>
+              </div>
+              <div class="details">
+                <div class="record">
+                  <div class="colLeft">Updated By</div>
+                  <div class="colRight">
+                    <p>N/A (admin)</p>
+                    <p><label>
+                        <time class="timeago" datetime="2021-12-11 16:46:13" title="2021-12-11 16:46:13"></time></label></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="details long">
+              <div id="header">User Rights are shown below</div>
+              <div id="rights">
+                <div class="userRights one">
+                  <fieldset>
+                    <legend>Pre-Registration</legend>
+                    <div><span class="fa fa-check"></span><label>Bank Accounts</label></div>
+                    <div><span class="fa fa-check"></span><label>Financial Accounts</label></div>
+                    <!-- <div><span class="fa fa-check"></span><label>Measurements</label></div>
+                    <div><span class="fa fa-check"></span><label>Products</label></div> -->
+                    <div><span class="fa fa-check"></span><label>Vendors</label></div>
+                    <div><span class="fa fa-check"></span><label>Settings</label></div>
+                  </fieldset>
+                  <fieldset class="second">
+                    <legend>Property Management</legend>
+                    <div><span class="fa fa-check"></span><label>Properties</label></div>
+                    <div><span class="fa fa-check"></span><label>Amenities</label></div>
+                    <div><span class="fa fa-check"></span><label>Allocations</label></div>
+
+                  </fieldset>
+                  <fieldset class="second">
+                    <legend>Reports</legend>
+                    <div><span class="fa fa-check"></span><label>Hotel Income Report</label></div>
+                    <div><span class="fa fa-check"></span><label>Admin Report</label></div>
+
+                  </fieldset>
+                </div>
+                <div class="userRights two">
+                  <fieldset>
+                    <legend>Hrm</legend>
+                    <div><span class="fa fa-check"></span><label>Employees</label></div>
+                    <div><span class="fa fa-check"></span><label>Generate Payroll</label></div>
+                    <div><span class="fa fa-check"></span><label>Pay Payroll</label></div>
+                    <div><span class="fa fa-check"></span><label>User Management</label></div>
+                  </fieldset>
+                  <fieldset class="second">
+                    <legend>Inventory</legend>
+                    <div><span class="fa fa-check"></span><label>Purchase</label></div>
+                    <div><span class="fa fa-check"></span><label>Stock Management</label></div>
+                    <div><span class="fa fa-check"></span><label>Items</label></div>
+                  </fieldset>
+                </div>
+                <div class="userRights two">
+                  <fieldset>
+                    <legend>Restaurant</legend>
+                    <div><span class="fa fa-check"></span><label>Meal Order</label></div>
+                    <div><span class="fa fa-check"></span><label>My Orders</label></div>
+                    <div><span class="fa fa-check"></span><label>Reports</label></div>
+                    <div><span class="fa fa-check"></span><label>Loyality</label></div>
+                    <div><span class="fa fa-check"></span><label>New Meal</label></div>
+                    <div><span class="fa fa-check"></span><label>New Table</label></div>
+                    <div><span class="fa fa-check"></span><label>Cancel Meal Order</label></div>
+                    <div><span class="fa fa-check"></span><label>Allow Order Payment</label></div>
+                    <div><span class="fa fa-check"></span><label>Allow Order Discount</label></div>
+                    <div><span class="fa fa-check"></span><label>Allow Order Decrease</label></div>
+                    <div><span class="fa fa-check"></span><label>Back to home</label></div>
+                  </fieldset>
+                  <fieldset class="second">
+                    <legend>Finance</legend>
+                    <!-- <div><span class="fa fa-close red"></span><label>Sales Receipts</label></div> -->
+                    <div><span class="fa fa-check"></span><label>Other income</label></div>
+                    <div><span class="fa fa-check"></span><label>Payments Request</label></div>
+                    <div><span class="fa fa-check"></span><label>Payment Approve</label></div>
+                    <div><span class="fa fa-check"></span><label>All Payments</label></div>
+                    <div><span class="fa fa-check"></span><label>Cash Transfer</label></div>
+                    <!-- <div><span class="fa fa-close red"></span><label>Account Receivable</label></div>
+                    <div><span class="fa fa-close red"></span><label>Account Payable</label></div>
+                    <div><span class="fa fa-close red"></span><label>Share Holders</label></div>
+
+                    <div><span class="fa fa-close red"></span><label>Asset Management</label></div>
+                    <div><span class="fa fa-close red"></span><label>Pre-Paid Accounts</label></div>
+                    <div><span class="fa fa-check"></span><label>Revenue Accounts</label></div> -->
+                  </fieldset>
+                </div>
+                <div class="userRights four">
+                  <fieldset>
+                    <legend>Reception</legend>
+                    <div><span class="fa fa-check"></span><label>Reservation</label></div>
+                    <div><span class="fa fa-check"></span><label>Quotation</label></div>
+                    <div><span class="fa fa-check"></span><label>Invoice</label></div>
+                    <div><span class="fa fa-check"></span><label>Generate Bill</label></div>
+                    <div><span class="fa fa-check"></span><label>Gate Pass</label></div>
+                    <div><span class="fa fa-check"></span><label>Cashier</label></div>
+                    <div><span class="fa fa-check"></span><label>Customers</label></div>
+                    <div><span class="fa fa-check"></span><label>Service Register</label></div>
+                    <div><span class="fa fa-check"></span><label>Service Order</label></div>
+                  </fieldset>
+                  <fieldset class="second">
+                    <legend>Reception Reports</legend>
+                    <div><span class="fa fa-check"></span><label>Reservation Report</label></div>
+                    <div><span class="fa fa-check"></span><label>Customer List Report</label></div>
+                    <div><span class="fa fa-check"></span><label>Customer Activity</label></div>
+                    <div><span class="fa fa-check"></span><label>Customer Reservations</label></div>
+                    <div><span class="fa fa-check"></span><label>Customer Receipt</label></div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <script src="./assets/js/prptyMgt.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $("time.timeago").timeago();
+            });
+            var myUser = 'themanager';
+            var myRole = 'admin';
+            //
+          </script>
+        </div>
+      </div> <!-- middlebar -->
+
+    </div>
+  </div>
+  <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+  <script src="./assets/js/jquery.timeago.js"></script>
+  <script>
+    $('#sidebarToggler').on('click', function (e) {
+      $('.sidebar').addClass('active')
+      $('#sidebar').addClass('active')
+      $('.overlay').addClass('active')
+    })
+    $('.overlay').on('click', function (e) {
+      $('.sidebar').removeClass('active')
+      $('#sidebar').removeClass('active')
+      $('.overlay').removeClass('active')
+    })
+  </script>
+  <script type="text/javascript">
+    simplfyTopBar();
+
+  </script>
+</body>
+
+</html>

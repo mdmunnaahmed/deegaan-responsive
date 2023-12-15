@@ -1,0 +1,201 @@
+.shcheduler-body {
+    min-width: 1210px;;
+    font-size: 13px;;
+    font-family: "Segoe UI",Arial;
+    background: #fff;
+    flex-basis: 100%;
+    order: 1;
+    border-radius: 5px;
+}
+.shcheduler {
+    display: flex;
+    /*height: 100px;;*/
+    flex-wrap: wrap;
+    padding: 20px;;
+}
+.shcheduler .row {
+    display: flex;
+    flex-basis: 100%;;
+}
+.shcheduler .row.space-bw {
+    justify-content: space-between;
+}
+.shcheduler select {
+    width: 100px;
+    padding: 5px;;
+}
+.shcheduler .navigate {
+    display: flex;
+    align-items: center;
+}
+.shcheduler .navigate label {
+    margin-right: 15px;;
+}
+.shcheduler .navigate .fa{
+    margin-right: 30px;;
+    font-size: 2em;
+    cursor: pointer;
+}
+.shcheduler .br {
+    border-right: 1px solid #ccc;
+}
+.shcheduler .bl {
+    border-left: 1px solid #ccc;
+}
+.shcheduler .bb {
+    border-bottom: 1px solid #ccc;
+}
+.shcheduler .bt {
+    border-top: 1px solid #ccc;
+}
+.shcheduler .flex {
+    display: flex;;
+}
+.shcheduler .center-items {
+    align-items: center;
+}
+.shcheduler .no-pd {
+    padding: 0px;
+}
+.shcheduler .center {
+    text-align: center;
+}
+.shcheduler .just-center {
+    justify-content: center;
+}
+.shcheduler .table {
+    display: flex;
+    flex-wrap: wrap;
+}
+.shcheduler .table .row {
+    flex-basis: 100%;;
+}
+.shcheduler .row .col-lef {
+    flex-basis: 15%;;
+}
+.shcheduler .row .col-lef .col {
+    flex: 1 1 0;
+    width: 0;;
+}
+.shcheduler #days {
+    display: flex;
+}
+.shcheduler #days .col {
+    padding: 5px 10px;;
+    flex: 1 1 0;
+    width: 0;;
+}
+.shcheduler .records {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.shcheduler .records .col {
+    padding: 2px;;
+    height: 40px;;
+}
+.shcheduler .data-grid {
+    position: relative;
+}
+.shcheduler .data-grid .col {
+    flex: 1 1 0;
+    width: 0;;
+}
+.shcheduler .data-grid .col span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;;
+}
+.shcheduler .data-grid .col.weekend {
+    background-color: #ff98002e;;
+}
+.shcheduler #days col {
+    flex: 1 1 0px;
+}
+.shcheduler #days .col:first-of-type, .data-grid .col:first-of-type {
+    border-left: 0px;;
+}
+.shcheduler .room-status {
+    position: relative;
+}
+.shcheduler .room-status::before {
+    width: 5px;;
+    position: absolute;
+    content: "";
+    height: 100%;
+    left:  0px;;
+    top: 0;;
+    background: #bcbcbc;
+}
+.shcheduler .room-status.clean::before {
+    background-color: #035d0159;;
+}
+.shcheduler .room-status.dirty::before {
+    background-color: #e73700d6;;
+}
+.shcheduler .room-status.booked::before {
+    background-color: #f39c12;;
+}
+.shcheduler .room-status.confirmed::before {
+    background-color: #26c323;;
+}
+.shcheduler .record {
+   position: absolute;
+   /**/
+   height: 100%;
+   /*margin-top: 3px;;*/
+}
+.shcheduler .record.booked {
+	background-color: #f39c12;
+}
+.shcheduler .record.confirmed {
+	background-color: #26c323;
+}
+
+.shcheduler .record.status {
+	display: flex;;
+	justify-content: space-between;
+	white-space: nowrap;
+	/*overflow: hidden;*/
+	padding: 0px 5px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.2;
+	cursor: pointer;
+	transition-duration: 500ms;
+    border-left: 1px solid #fff;
+}
+.shcheduler .record.status:hover {
+	opacity: .8;
+}
+
+.shcheduler .record.status .room-info {
+	position: absolute;
+	width: 300px;
+	background: #fff;
+	height: 50px;
+	top: -38px;
+	border: 1px solid #ddd;
+	color: #333;
+	padding: 0px 5px;
+	transition-duration: 500ms;
+	font-size: 14px;
+    display: none;
+}
+.shcheduler .record.status .room-info p.status::first-letter {
+	text-transform: capitalize;
+}
+.shcheduler .record.status .room-info:after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid;
+	border-color: #fff transparent transparent transparent;
+	top: 11px;
+	left: 100% !important;
+}
+.shcheduler .record.status:hover .room-info {
+	display: block;
+}
