@@ -1150,6 +1150,30 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     width: 100%;
   }
 }
+@media (max-width: 991px) {
+  div.orders-workplace div.showRecord #leftSide {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  div.orders-workplace div.showRecord #rightSide {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .orders-workplace div.showRecord div.totals.right {
+    width: 99%;
+  }
+  div.orders-workplace div.showRecord div.details.long {
+    overflow-y: auto;
+  }
+  div.orders-workplace div.showRecord div.details.long #header,
+  div.orders-workplace div.showRecord div.details.long .listItems {
+    min-width: 600px;
+  }
+  div.orders-workplace div.showRecord div.details.long.tooLong #header,
+  div.orders-workplace div.showRecord div.details.long.tooLong .listItems {
+    min-width: 900px;
+  }
+}
 @media (max-width: 767px) {
   div.orders-workplace #loadPage #dynamicQnd #filters label {
     text-align: left;
@@ -1235,4 +1259,4 @@ div.workplace div.reportArea div.rprtType label span {
   div.orders-workplace .displayMore {
     width: 25%;
   }
-}
+}/*# sourceMappingURL=responsive.css.map */

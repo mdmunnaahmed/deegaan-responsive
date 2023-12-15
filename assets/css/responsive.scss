@@ -1223,6 +1223,32 @@ div.orders-workplace #loadPage #dynamicQnd #foundNum {
     }
   }
 }
+@include breakpoint(max-lg) {
+  div.orders-workplace div.showRecord #leftSide {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  div.orders-workplace div.showRecord #rightSide {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+  .orders-workplace div.showRecord div.totals.right {
+    width: 99%;
+  }
+  div.orders-workplace div.showRecord div.details.long {
+    overflow-y: auto;
+    #header,
+    .listItems {
+      min-width: 600px;
+    }
+    &.tooLong {
+      #header,
+      .listItems {
+        min-width: 900px;
+      }
+    }
+  }
+}
 @include breakpoint(max-md) {
   div.orders-workplace #loadPage #dynamicQnd #filters label {
     text-align: left;
