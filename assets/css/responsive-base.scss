@@ -1317,11 +1317,14 @@ div.workplace div.reportArea div.rprtType {
     width: 25%;
   }
   div.workplace #loadPage #dataTable div.cave.long {
-    width: 60% !important;
+    width: 40% !important;
   }
   div.workplace #loadPage #dataTable div.cave.short {
     width: 30% !important;
   }
+}
+div.workplace #loadPage #command #searchBox input.srchInput {
+  padding-left: 35px !important;
 }
 // Additional End
 
@@ -1361,6 +1364,14 @@ div.workplace div.reportArea div.rprtType {
       }
     }
   }
+  div.workplace div.theForm div#userRights div.rights {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+    @include max(750px) {
+      flex-direction: column;
+    }
+  }
   div.workplace div.showRecord div.details.long {
     overflow-y: auto;
     #header,
@@ -1387,6 +1398,17 @@ div.workplace div.reportArea div.rprtType {
   }
   div.workplace div.showRecord div.details.long {
     margin-bottom: 2%;
+  }
+  div.workplace div.theForm button.btnSubmit {
+    padding: 1.5% 5% !important;
+  }
+  div.workplace div.theForm .innerRow div.label {
+    height: auto !important;
+    line-height: 1.3 !important;
+    margin-top: 5px;
+  }
+  div.workplace div.theForm div.record .column.right {
+    margin-top: 6px;
   }
 }
 // Finance Responsive End

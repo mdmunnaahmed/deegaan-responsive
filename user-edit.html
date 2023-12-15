@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Workplace | DEEGAAN</title>
+  <link rel="shortcut icon" href="./assets/images/system/icon.png" />
+  <link rel="stylesheet" href="assets/css/pms-style.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/responsive-base.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="./libraries/sweetalert/css/sweetalert.css" />
+  <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/multiselect/dist/multi-select.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <script src="./assets/multiselect/dist/multi-select.js"></script>
+  <script src="./assets/js/basicFuncs.js"></script>
+  <script src="./assets/js/moment.min.js"></script>
+  <script src="./assets/js/pikaday.js"></script>
+  <script src="./libraries/sweetalert/js/sweetalert.js"></script>
+  <script src="./assets/js/jquery.form.js"></script><!----> <!-- for changing photo -->
+  <script type="text/javascript">
+    const roundDigits = '2';
+  </script>
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="workplace">
+      <div id="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div id="logoWrap">
+          <!-- <img id="large" src="./assets/images/system/system-logo-vertical.png" /> -->
+          <label class="comp_name">My Hotel and Restaurant</label>
+        </div>
+        <ul id="menus">
+          <li><a href="./dashboard.php">
+              <i class="fa fa-tachometer"></i><span>Dashboard</span></a>
+          </li>
+          <li class="has-sub">
+            <a><i class="fa fa-check-square-o"></i><span>Pre-registration</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=payAccs"><span>Bank Accounts</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=general&subtask=fncAccs"><span>Financial Accounts</span></a></li>
+              <!-- <li><a href="./workplace.php?role=admin&task=general&subtask=vendors"><span>Vendors</span></a></li> -->
+              <li><a href="./workplace.php?role=admin&task=general&subtask=settings"><span>Settings</span></a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a><i class="fa fa-institution"></i><span>Property Management</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=property"><span>Property</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=amenities"><span>Amenities</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=property&subtask=allocations"><span>Allocation</span></a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub" id="active">
+            <a><i class="fa fa-user"></i><span>Human resource Mgt</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=employees"><span>Employees</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=users"><span>System Users</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=Generate_payroll"><span>Generate payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=payroll"><span>Pay Payroll</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=hrm&subtask=dfBanks"><span>Default Bank Accounts</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./workplace.php?role=admin&task=inventory&subtask=purchase"><i class="fa fa-truck"></i><span>Inventory Management</span></a>
+          </li>
+          <!-- <li class="has-sub"> -->
+          <!-- <a><i class="fa fa-paperclip"></i><span>Supply Management</span></a> -->
+          <ul>
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyItems"><span>Supply Items</span></a></li>
+        <li><a href="./workplace.php?role=admin&task=supply&subtask=measures"><span>Measurements</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=vendors"><span>Vendors</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyPrchse"><span>Purchase Supply</span></a></li> -->
+            <!-- <li><a href="./workplace.php?role=admin&task=supply&subtask=supplyUsage"><span>Supply Usage</span></a></li> -->
+          </ul>
+          </li>
+          <li><a href="./deegaan-reservation/reservation-workplace.php"><i class="fa fa-handshake-o"></i><span>Reception Office</span></a></li>
+          <li><a href="./deegaan-restaurant/orders-workplace.php"><i class="fa fa-cutlery"></i><span>Restaurant</span></a></li>
+          <li class="has-sub">
+            <a><i class="fa fa-dollar"></i><span>Finance</span></a>
+            <ul>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentRequest"><span>Payment Request</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=paymentsApprove"><span>Payment Approve</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=payments"><span>ALL Payments</span></a></li>
+              <li><a href="./workplace.php?role=admin&task=finance&subtask=cshTrnsfer"><span>Cash Transfer</span></a></li>
+            </ul>
+          </li>
+          <li><a href="./BackupRestore"><i class="fa fa-cloud-download"></i><span>Backup</span></a></li>
+
+        </ul>
+        <footer style="margin-right: 50px; color: #fff; text-align: center;">
+          <p class="version" style="margin-top: 250px; font-size: 0.8em;">V6.0.0.0</p>
+        </footer>
+      </div> <!-- sidebar -->
+
+      <div id="middlebar">
+        <div class="topBar">
+          <div>
+            <div id="sidebarToggler" title="Toggle sidebar" class="fa fa-bars"></div>
+            <div id="programName"><!-- <i class="fa fa-institution"></i><span>My Hotel and Restaurant</span> --></div>
+          </div>
+          <div id="topIcons">
+            <div class="icon profile">
+              <img src="./assets/images/users/small40/user40-8151609924889.jpg" />
+            </div>
+            <div class="dropDown">
+              <div class="row bar">My Account</div>
+              <div class="row">
+                <div id="photo">
+                  <img src="./assets/images/users/middle320/user320-8151609924889.jpg" />
+                  <a href="./workplace.php?role=admin&task=profile">
+                    <div class="overlay">
+                      <span><i class="fa fa-camera"></i>change</span>
+                    </div>
+                  </a>
+                </div>
+                <div id="links">
+                  <p id="name">ManagersName</p>
+                  <p id="user">themanager</p>
+                </div>
+              </div>
+              <div class="row button">
+                <a href="./workplace.php?role=admin&task=profile&subtask=chngPass"><i class="fa fa-unlock-alt"></i><span>Change Password</span></a>
+                <a class="logout" href="./includes/logout.php?from=user">Logout</a>
+              </div>
+            </div> <!-- dropDown -->
+          </div> <!-- topIcons -->
+        </div>
+        <div class="positionBar">
+          <i class="fa fa-tag"></i>
+          <label>menus &raquo; human resource management &raquo; users &raquo; update</label>
+        </div>
+        <div class="contentBar"><a id="btnCancel" href="./workplace.php?role=admin&task=hrm&subtask=users">Cancel</a>
+          <p id="info"><span>*</span> red mark identifies required fields and must be filled out.</p>
+          <div class="theForm user">
+            <form action="./includes/prptyMgt.php?action=updateExist&dest=editUser&updatedBy=themanager&myRole=admin" method="POST" onsubmit="return check_editUser()">
+              <div class="record one">
+                <fieldset class="grey middle">
+                  <legend>Employee Info</legend>
+                  <div class="innerRow">
+                    <div class="label required">Username</div>
+                    <div class="innerColumn">
+                      <input type="hidden" id="userID" name="userID" value="2" />
+                      <input type="text" class="inputText large" id="txtUser" name="txtUser" value="cashier" readonly="readonly" />
+                      <div class="displayInfo" style="display:inline;">
+                        <input type="hidden" id="empID" name="empID" readonly="readonly" />
+                        <label id="header">Employee Info</label>
+                        <div class="infoWrap">
+                          <p id="left">Full name</p>
+                          <p id="gender">Cashier Name</p>
+                          <p id="left">Gender</p>
+                          <p id="gender">Male</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="grey middle right">
+                  <legend>Account Info</legend>
+                  <div class="innerRow">
+                    <div class="label required">System Role</div>
+                    <div class="innerColumn">
+                      <select class="xlarge" name="theRole">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                        <option value="cashier" selected="selected">Cashier</option>
+                        <option value="waiter">Waiter</option>
+                        <option value="reception">Reception</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="innerRow">
+                    <div class="label required">Commission%</div>
+                    <div class="innerColumn">
+                      <input type="text" class="inputText xlarge" id="txtComm" name="txtComm" value="" maxlength="5" placeholder="e.g. 5" onkeypress="return isDecimalNum(this, event);" />
+                      <label class="error margin-left" id="error1">error1</label>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">User can see</div>
+                    <div class="innerColumn">
+                      <input type="hidden" id="canSeeUsers" name="canSeeUsers">
+                      <select class="xlarge conditionBox SlectBox" id="slcUserCanSee" name="slcUserCanSee[]" multiple="multiple">
+                        <!-- <option value="onlyMe" >-- Select use can see</option> -->
+                        <option value="cashier">cashier</option>
+                        <option value="Ali" selected="selected">Ali</option>
+                        <option value="Halimo" selected="selected">Halimo</option>
+                        <option value="Abdullahi" selected="selected">Abdullahi</option>
+                        <option value="Hassan" selected="selected">Hassan</option>
+                        <option value="AhmedFarax" selected="selected">AhmedFarax</option>
+                        <option value="sacdiyo">sacdiyo</option>
+                      </select>
+                      <label class="error margin-left" id="error555">error555</label>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label ">User letter head</div>
+                    <div class="innerColumn">
+                      <textarea type="text" class="inputText xlarge" style="width: 74%" id="userLetterHead" name="userLetterHead">My Hotel and Restaurant</textarea>
+                      <label class="error margin-left" id="error66">error66</label>
+                    </div>
+                  </div>
+                  <div class="innerRow">
+                    <div class="label required">Status</div>
+                    <div class="innerColumn">
+                      <select class="xlarge" id="slcStatus" name="slcStatus">
+                        <option value="active" selected="selected">active</option>
+                        <option value="suspended">suspended</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </fieldset>
+
+              </div>
+
+              <div class="clear transparent"></div>
+
+              <div class="record four">
+                <div id="header">Grant this user to the following rights</div>
+                <div class="column long">
+                  <input type="checkbox" id="checkAll" />
+                  <span class="checkLbl" id="tickAll">Check All</span>
+                  <label class="error inline" id="error2">error2</label>
+                </div>
+                <div id="userRights">
+                  <div class="rights one">
+                    <fieldset class="jumbo grey">
+                      <legend>Pre-Registration</legend>
+                      <div><input type="checkbox" class="checkOne" name="chkPayAccs" />
+                        <label class="tickOne">Bank Accounts</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkFncAccs" />
+                        <label class="tickOne">Financial Accouns</label>
+                      </div>
+                      <!-- <div><input type="checkbox" class="checkOne" name="chkMeasure"  />
+                     <label class="tickOne">Measurements</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkProducts"  />
+                    <label class="tickOne">Products</label></div>-->
+                      <div><input type="checkbox" class="checkOne" name="chkVendors" />
+                        <label class="tickOne">Vendors</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkSettings" />
+                        <label class="tickOne">Settings</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="jumbo grey second">
+                      <legend>Property Management</legend>
+                      <div><input type="checkbox" class="checkOne" name="chkProperty" />
+                        <label class="tickOne">Properties</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkAmenities" />
+                        <label class="tickOne">Amenities</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkAllocation" />
+                        <label class="tickOne">Allocations</label>
+                      </div>
+
+
+                    </fieldset>
+                    <fieldset class="jumbo grey second">
+                      <legend>Reports</legend>
+                      <div><input type="checkbox" class="checkOne" name="chkHotelIncomeRpt" />
+                        <label class="tickOne">Hotel Income Report</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkAdminRpt" />
+                        <label class="tickOne">Admin Report</label>
+                      </div>
+
+
+                    </fieldset>
+                  </div>
+                  <div class="rights two">
+                    <fieldset class="jumbo grey">
+                      <legend>Hrm</legend>
+                      <div><input type="checkbox" class="checkOne" name="chkEmployee" />
+                        <label class="tickOne">Employees</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkPayrollGenerate" />
+                        <label class="tickOne">Generate Payroll</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkPayroll" />
+                        <label class="tickOne">Pay Payroll</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkUsers" />
+                        <label class="tickOne">User Management</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="jumbo grey second">
+                      <legend>Inventory</legend>
+                      <div><input type="checkbox" class="checkOne supply" name="chkSupplyItem" />
+                        <label class="tickOne offices">Purchase</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne supply" name="chksupplyPrchse" />
+                        <label class="tickOne branches">Stock Management</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne supply" name="chkSupplyUsge" />
+                        <label class="tickOne">Items</label>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                  <div class="rights two">
+                    <fieldset class="jumbo grey">
+                      <legend>Restaurant</legend>
+                      <div><input type="checkbox" class="checkOne" name="chkMealOrder" checked="checked" />
+                        <label class="tickOne">Meal Order</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkMyOrders" checked="checked" />
+                        <label class="tickOne">My Orders</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkReports" />
+                        <label class="tickOne">Reports</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkLoyality" />
+                        <label class="tickOne">Loyality</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkMealMgt" />
+                        <label class="tickOne">New Meal</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkTableMgt" />
+                        <label class="tickOne">New Table</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkCancelMealOrder" checked="checked" />
+                        <label class="tickOne">Cancel Meal Order</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkAllowOrderPayment" checked="checked" />
+                        <label class="tickOne">Allow Order Payment</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkAllowOrderDiscount" checked="checked" />
+                        <label class="tickOne">Allow Order Discount</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkAllowOrderDecrease" checked="checked" />
+                        <label class="tickOne">Allow Order Decrease</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkBack" />
+                        <label class="tickOne">Back to home</label>
+                      </div>
+
+                    </fieldset>
+                    <fieldset class="jumbo grey second">
+                      <legend>Finance</legend>
+                      <!-- <div><input type="checkbox" class="checkOne" name="chkReceipts"  />
+                    <label class="tickOne receipts">Receipts</label></div> -->
+                      <div><input type="checkbox" class="checkOne" name="chkOthrIncme" />
+                        <label class="tickOne shares">Other Income</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkPaymentRequest" />
+                        <label class="tickOne payment">Payment Request</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkPaymentApprove" />
+                        <label class="tickOne payment">Payment Approve</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkPayment" />
+                        <label class="tickOne payment">Payments</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkCshTrnsfr" />
+                        <label class="tickOne transfer">Cash Transfer</label>
+                      </div>
+                      <!-- <div><input type="checkbox" class="checkOne" name="chkAccRecv"  />
+                    <label class="tickOne accRecv">Account Receivable</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkAccPay"  />
+                    <label class="tickOne accPay">Account Payable</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkShares"  />
+                    <label class="tickOne shares">Share Holders</label></div>
+
+                    <div><input type="checkbox" class="checkOne" name="chkAsset"  />
+                    <label class="tickOne asset">Asset Management</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkPaidAcc"  />
+                    <label class="tickOne pre-paid">Pre-Paid Accounts</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkSrvcAcc"  />
+                    <label class="tickOne pre-paid">Revenue Accounts</label></div> -->
+                    </fieldset>
+                    <!-- 	<fieldset class="jumbo grey second">
+                    <legend>Inventory</legend>
+                    <div><input type="checkbox" class="checkOne" name="chkPrchsOrder"  />
+                    <label class="tickOne">Purchase Order</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkPurchase"  />
+                    <label class="tickOne">Purchases</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkPrchsRtrn"  />
+                    <label class="tickOne">Purchase Return</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkDistrPrdcts"  />
+                    <label class="tickOne">Distribute Products</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkTrnsPrdcts"  />
+                    <label class="tickOne">Transfer Products</label></div>
+                    <div><input type="checkbox" class="checkOne" name="chkStrAdjsmnt"  />
+                    <label class="tickOne">Store Adjustment</label></div>
+                </fieldset> -->
+                  </div>
+                  <div class="rights three">
+                    <!-- <fieldset class="jumbo grey">
+                	<legend>House Keeping</legend>
+                    <div><input type="checkbox" class="checkOne" name="chkTasks"  />
+                    <label class="tickOne tasks">Tasks</label></div>
+					 <div><input type="checkbox" class="checkOne" name="chkTaskMgt"  />
+                    <label class="tickOne taskMgt">Task Management</label></div>
+                </fieldset> -->
+
+
+                  </div>
+                  <div class="rights four">
+                    <fieldset class="jumbo grey">
+                      <legend>Reception</legend>
+                      <div><input type="checkbox" class="checkOne" name="chkCheckIn" />
+                        <label class="tickOne">Reservation</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkQuotation" />
+                        <label class="tickOne">Quotation</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkInvoice" />
+                        <label class="tickOne">Invoice</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkGenerateBill" />
+                        <label class="tickOne">Generate Bill</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkGatePass" />
+                        <label class="tickOne">Gate Pass</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkRcept4hotel" />
+                        <label class="tickOne">Cashier</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkPrfleBook" />
+                        <label class="tickOne">Customers</label>
+                      </div>
+                      <!--  <div><input type="checkbox" class="checkOne" name="chkEventsMgt"  />
+                    <label class="tickOne">Event Register</label></div>
+					<div><input type="checkbox" class="checkOne" name="chkEventOrder"  />
+                    <label class="tickOne">Event Order</label></div> -->
+                      <div><input type="checkbox" class="checkOne" name="chkServceRgstr" />
+                        <label class="tickOne">Service Register</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkServceOrdr" />
+                        <label class="tickOne">Service Order</label>
+                      </div>
+                    </fieldset>
+                    <fieldset class="jumbo grey second">
+                      <legend>Reception Reports</legend>
+                      <div><input type="checkbox" class="checkOne" name="chkRsrvRpt" />
+                        <label class="tickOne shares">Reservation Report</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkCustomersRpt" />
+                        <label class="tickOne shares">Customer List Report</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkCustomerAcvty" />
+                        <label class="tickOne shares">Customer Activity</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkCustomerRsrv" />
+                        <label class="tickOne shares">Customer Reservations</label>
+                      </div>
+                      <div><input type="checkbox" class="checkOne" name="chkCustomerRcpt" />
+                        <label class="tickOne shares">Customer Receipt</label>
+                      </div>
+                    </fieldset>
+
+                  </div>
+                </div> <!-- userRights -->
+              </div>
+              <div class="record last">
+                <button type="submit" class="btnSubmit" id="btnUpdate" name="btnUpdate">Update</button>
+                <label class="process"></label>
+              </div>
+
+            </form>
+          </div>
+
+          <script src="./assets/js/prptyMgt.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $("div.theForm").css("display", "inline");
+              smpfyAddUser();
+            });
+            var myUser = 'themanager';
+            var myRole = 'admin';
+
+          </script>
+        </div>
+      </div> <!-- middlebar -->
+
+    </div>
+  </div>
+  <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+  <script src="./assets/js/jquery.timeago.js"></script>
+  <script>
+    $('#sidebarToggler').on('click', function (e) {
+      $('.sidebar').addClass('active')
+      $('#sidebar').addClass('active')
+      $('.overlay').addClass('active')
+    })
+    $('.overlay').on('click', function (e) {
+      $('.sidebar').removeClass('active')
+      $('#sidebar').removeClass('active')
+      $('.overlay').removeClass('active')
+    })
+  </script>
+  <script type="text/javascript">
+    simplfyTopBar();
+
+  </script>
+</body>
+
+</html>
