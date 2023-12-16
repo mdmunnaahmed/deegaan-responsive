@@ -109,481 +109,7 @@
                     Menus | new check in </div>
 
                 <div class="dashboard-content">
-                    <aside class="popUpForm">
-                        <input type="checkbox" class="state" id="addNewService">
-                        <article class="content">
-                            <div class="header">
-                                <h3>New Serivce</h3>
-                                <label class="close" for="addNewService">×</label>
-                            </div>
-                            <div class="popupBody">
-                                <div class="row">
-                                    <div class="lftPart required">Service Name</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText xxlarge" id="txtServiceName" placeholder="required" maxlength="200">
-                                        <label class="error" id="error1">error1</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Cost</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText large" id="txtServiceCost" placeholder="required" maxlength="16" onkeypress="return isDecimalNum(this, event);">
-                                        <label class="error" id="error2">error2</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" class="btnAdd" onclick="return addNewService();">Save</button>
-                                </div>
-                            </div>
-                        </article>
-                        <label class="backdrop" for="addNewService"></label>
-                    </aside>
 
-                    <aside class="popUpForm">
-                        <input type="checkbox" class="state" id="editServices1">
-                        <article class="content">
-                            <div class="header">
-                                <h3>Edit Service For Wedding Service</h3>
-                                <label class="close" for="editServices1">×</label>
-                            </div>
-                            <section class="popupBody">
-                                <div class="row">
-                                    <div class="lftPart required">Service</div>
-                                    <div class="rightPrt">
-                                        <input type="hidden" name="detailID4Pop" value="1">
-                                        <input type="hidden" name="extraID4Pop" value="1">
-                                        <input type="hidden" name="orderID4Pop" value="1">
-                                        <input type="text" class="inputText w-ten-half" name="serviceName" placeholder="required" readonly="readonly" value="Wedding Service">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopQty" id="txtPopQty" autocomplete="off" value="120" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2" selected="selected">person</option>
-                                        </select>
-                                        <label class="error" id="slcMsrID"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtUQty" id="txtUQty" placeholder="required" autocomplete="off" value="1" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtUQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID2">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Cost</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopCost" id="txtPopCost" placeholder="required" autocomplete="off" value="12" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopCost"></label>
-                                    </div>
-                                </div>
-                                <!-- <div class="row">
-            <div class="lftPart required">Sub Total</div>
-            <div class="rightPrt">
-            <input type="text" class="inputText w-ten-half" name="txtPopSubtotal" id="txtPopSubtotal"placeholder="required" autocomplete="off" value="1440" readonly="readonly" />
-            </div>
-        </div> -->
-                                <div class="row">
-                                    <div class="lftPart required">Discount</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopDiscount" id="txtPopDiscount" autocomplete="off" value="240" onkeypress="return isDecimalNum(this,event)">
-                                    </div>
-                                    <label class="error" id="txtDiscount"></label>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Total</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopTotal" id="txtPopTotal" readonly="readonly" value="1200">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" class="btnAdd editServices">Update</button>
-                                </div>
-                            </section>
-                        </article>
-                        <label class="backdrop" for="editServices1"></label>
-                    </aside>
-                    <aside class="popUpForm">
-                        <input type="checkbox" class="state" id="editServices2">
-                        <article class="content">
-                            <div class="header">
-                                <h3>Edit Service For Wedding Cake</h3>
-                                <label class="close" for="editServices2">×</label>
-                            </div>
-                            <section class="popupBody">
-                                <div class="row">
-                                    <div class="lftPart required">Service</div>
-                                    <div class="rightPrt">
-                                        <input type="hidden" name="detailID4Pop" value="2">
-                                        <input type="hidden" name="extraID4Pop" value="2">
-                                        <input type="hidden" name="orderID4Pop" value="2">
-                                        <input type="text" class="inputText w-ten-half" name="serviceName" placeholder="required" readonly="readonly" value="Wedding Cake">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopQty" id="txtPopQty" autocomplete="off" value="1" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1" selected="selected">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                        <label class="error" id="slcMsrID"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtUQty" id="txtUQty" placeholder="required" autocomplete="off" value="1" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtUQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID2">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Cost</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopCost" id="txtPopCost" placeholder="required" autocomplete="off" value="150" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopCost"></label>
-                                    </div>
-                                </div>
-                                <!-- <div class="row">
-            <div class="lftPart required">Sub Total</div>
-            <div class="rightPrt">
-            <input type="text" class="inputText w-ten-half" name="txtPopSubtotal" id="txtPopSubtotal"placeholder="required" autocomplete="off" value="150" readonly="readonly" />
-            </div>
-        </div> -->
-                                <div class="row">
-                                    <div class="lftPart required">Discount</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopDiscount" id="txtPopDiscount" autocomplete="off" value="0" onkeypress="return isDecimalNum(this,event)">
-                                    </div>
-                                    <label class="error" id="txtDiscount"></label>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Total</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopTotal" id="txtPopTotal" readonly="readonly" value="150">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" class="btnAdd editServices">Update</button>
-                                </div>
-                            </section>
-                        </article>
-                        <label class="backdrop" for="editServices2"></label>
-                    </aside>
-                    <aside class="popUpForm">
-                        <input type="checkbox" class="state" id="editServices3">
-                        <article class="content">
-                            <div class="header">
-                                <h3>Edit Service For Wedding Cake</h3>
-                                <label class="close" for="editServices3">×</label>
-                            </div>
-                            <section class="popupBody">
-                                <div class="row">
-                                    <div class="lftPart required">Service</div>
-                                    <div class="rightPrt">
-                                        <input type="hidden" name="detailID4Pop" value="3">
-                                        <input type="hidden" name="extraID4Pop" value="2">
-                                        <input type="hidden" name="orderID4Pop" value="3">
-                                        <input type="text" class="inputText w-ten-half" name="serviceName" placeholder="required" readonly="readonly" value="Wedding Cake">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopQty" id="txtPopQty" autocomplete="off" value="1" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1" selected="selected">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                        <label class="error" id="slcMsrID"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtUQty" id="txtUQty" placeholder="required" autocomplete="off" value="1" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtUQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID2">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Cost</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopCost" id="txtPopCost" placeholder="required" autocomplete="off" value="150" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopCost"></label>
-                                    </div>
-                                </div>
-                                <!-- <div class="row">
-            <div class="lftPart required">Sub Total</div>
-            <div class="rightPrt">
-            <input type="text" class="inputText w-ten-half" name="txtPopSubtotal" id="txtPopSubtotal"placeholder="required" autocomplete="off" value="150" readonly="readonly" />
-            </div>
-        </div> -->
-                                <div class="row">
-                                    <div class="lftPart required">Discount</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopDiscount" id="txtPopDiscount" autocomplete="off" value="0" onkeypress="return isDecimalNum(this,event)">
-                                    </div>
-                                    <label class="error" id="txtDiscount"></label>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Total</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopTotal" id="txtPopTotal" readonly="readonly" value="150">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" class="btnAdd editServices">Update</button>
-                                </div>
-                            </section>
-                        </article>
-                        <label class="backdrop" for="editServices3"></label>
-                    </aside>
-                    <aside class="popUpForm">
-                        <input type="checkbox" class="state" id="editServices4">
-                        <article class="content">
-                            <div class="header">
-                                <h3>Edit Service For Extra Hours</h3>
-                                <label class="close" for="editServices4">×</label>
-                            </div>
-                            <section class="popupBody">
-                                <div class="row">
-                                    <div class="lftPart required">Service</div>
-                                    <div class="rightPrt">
-                                        <input type="hidden" name="detailID4Pop" value="4">
-                                        <input type="hidden" name="extraID4Pop" value="3">
-                                        <input type="hidden" name="orderID4Pop" value="4">
-                                        <input type="text" class="inputText w-ten-half" name="serviceName" placeholder="required" readonly="readonly" value="Extra Hours">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopQty" id="txtPopQty" autocomplete="off" value="3" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4" selected="selected">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                        <label class="error" id="slcMsrID"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtUQty" id="txtUQty" placeholder="required" autocomplete="off" value="1" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtUQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID2">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Cost</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopCost" id="txtPopCost" placeholder="required" autocomplete="off" value="50" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopCost"></label>
-                                    </div>
-                                </div>
-                                <!-- <div class="row">
-            <div class="lftPart required">Sub Total</div>
-            <div class="rightPrt">
-            <input type="text" class="inputText w-ten-half" name="txtPopSubtotal" id="txtPopSubtotal"placeholder="required" autocomplete="off" value="150" readonly="readonly" />
-            </div>
-        </div> -->
-                                <div class="row">
-                                    <div class="lftPart required">Discount</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopDiscount" id="txtPopDiscount" autocomplete="off" value="50" onkeypress="return isDecimalNum(this,event)">
-                                    </div>
-                                    <label class="error" id="txtDiscount"></label>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Total</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopTotal" id="txtPopTotal" readonly="readonly" value="100">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" class="btnAdd editServices">Update</button>
-                                </div>
-                            </section>
-                        </article>
-                        <label class="backdrop" for="editServices4"></label>
-                    </aside>
-                    <aside class="popUpForm">
-                        <input type="checkbox" class="state" id="editServices5">
-                        <article class="content">
-                            <div class="header">
-                                <h3>Edit Service For Wedding Service</h3>
-                                <label class="close" for="editServices5">×</label>
-                            </div>
-                            <section class="popupBody">
-                                <div class="row">
-                                    <div class="lftPart required">Service</div>
-                                    <div class="rightPrt">
-                                        <input type="hidden" name="detailID4Pop" value="5">
-                                        <input type="hidden" name="extraID4Pop" value="1">
-                                        <input type="hidden" name="orderID4Pop" value="5">
-                                        <input type="text" class="inputText w-ten-half" name="serviceName" placeholder="required" readonly="readonly" value="Wedding Service">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopQty" id="txtPopQty" autocomplete="off" value="120" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2" selected="selected">person</option>
-                                        </select>
-                                        <label class="error" id="slcMsrID"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtUQty" id="txtUQty" placeholder="required" autocomplete="off" value="1" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtUQty"></label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Unit Qty Measure</div>
-                                    <div class="rightPrt">
-                                        <select class="w-ten-half" name="slcMsrID2">
-                                            <option value="">--select</option>
-                                            <option value="3">day</option>
-                                            <option value="4">hours</option>
-                                            <option value="1">pc</option>
-                                            <option value="2">person</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Cost</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopCost" id="txtPopCost" placeholder="required" autocomplete="off" value="12" onkeypress="return isDecimalNum(this,event)">
-                                        <label class="error" id="txtPopCost"></label>
-                                    </div>
-                                </div>
-                                <!-- <div class="row">
-            <div class="lftPart required">Sub Total</div>
-            <div class="rightPrt">
-            <input type="text" class="inputText w-ten-half" name="txtPopSubtotal" id="txtPopSubtotal"placeholder="required" autocomplete="off" value="1440" readonly="readonly" />
-            </div>
-        </div> -->
-                                <div class="row">
-                                    <div class="lftPart required">Discount</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopDiscount" id="txtPopDiscount" autocomplete="off" value="200" onkeypress="return isDecimalNum(this,event)">
-                                    </div>
-                                    <label class="error" id="txtDiscount"></label>
-                                </div>
-                                <div class="row">
-                                    <div class="lftPart required">Total</div>
-                                    <div class="rightPrt">
-                                        <input type="text" class="inputText w-ten-half" name="txtPopTotal" id="txtPopTotal" readonly="readonly" value="1240">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <button type="submit" class="btnAdd editServices">Update</button>
-                                </div>
-                            </section>
-                        </article>
-                        <label class="backdrop" for="editServices5"></label>
-                    </aside>
                     <aside class="popUpForm">
                         <input type="checkbox" class="state" id="editServices6">
                         <article class="content">
@@ -2144,14 +1670,15 @@
                             <section>
                                 <fieldset class="grey jumbo top-down middle">
                                     <div class="listCaves">
-                                        <div id="topCaves">
+                                        <!-- <div id="topCaves">
                                             <div class="cave w-three">Select Service</div>
                                             <div class="cave w-one">Qty</div>
                                             <div class="cave w-one-half">Unit Type</div>
                                             <div class="cave w-one">Cost</div>
-                                        </div>
-                                        <div id="btmCaves">
+                                        </div> -->
+                                        <div id="btmCaves" class="m-four-inputs">
                                             <div class="cave w-three">
+                                                <div class="m-input-label">Select Service</div>
                                                 <select class="w-eleven" id="slcExtra" name="slcExtra">
                                                     <option value="---">-- select</option>
                                                     <option value="6">CASUUMAAD</option>
@@ -2166,9 +1693,11 @@
                                                 <label class="addNew" for="addNewService"></label>
                                             </div>
                                             <div class="cave w-one">
+                                                <div class="m-input-label">Qty</div>
                                                 <input type="text" class="inputText w-eleven" id="txtQnty" maxlength="8" onkeypress="return isNumberKey(this);" autocomplete="off">
                                             </div>
                                             <div class="cave w-one-half">
+                                                <div class="m-input-label">Unit Type</div>
                                                 <select class="w-ten" id="slcExtraMsr" name="slcExtraMsr">
                                                     <option value="---">-- select</option>
                                                     <option value="3">day</option>
@@ -2179,21 +1708,24 @@
                                                 <label class="addNew" onclick="return addExtraMeasure('slcExtraMsr');" title="new measure"></label>
                                             </div>
                                             <div class="cave w-one-half">
+                                                <div class="m-input-label">Cost</div>
                                                 <input type="text" class="inputText w-twelve" id="txtCostPrice" onkeypress="return isDecimalNum(this,event)" autocomplete="off">
                                             </div>
                                         </div>
-                                        <div id="topCaves">
+                                        <!-- <div id="topCaves">
                                             <div class="cave w-one">Unit Qty</div>
                                             <div class="cave w-one-half">Unit Qty Measure</div>
                                             <div class="cave w-one">Sub Total</div>
                                             <div class="cave w-one">Discount</div>
                                             <div class="cave w-one">Total</div>
-                                        </div>
-                                        <div id="btmCaves">
+                                        </div> -->
+                                        <div id="btmCaves" class="m-five-inputs">
                                             <div class="cave w-one">
+                                                <div class="m-input-label">Unit Qty</div>
                                                 <input type="text" class="inputText w-eleven" id="txtUnitQnty" maxlength="8" onkeypress="return isNumberKey(this);" placeholder="unit qty">
                                             </div>
                                             <div class="cave w-one-half">
+                                                <div class="m-input-label">Unit Qty</div>
                                                 <select class="w-ten" id="slcExtraMsr2" name="slcExtraMsr2">
                                                     <option value="---">-- select</option>
                                                     <option value="3">day</option>
@@ -2205,15 +1737,19 @@
                                             </div>
 
                                             <div class="cave w-one">
+                                                <div class="m-input-label">Unit Qty</div>
                                                 <input type="text" class="inputText w-twelve" id="subTotal" readonly="readonly">
                                             </div>
                                             <div class="cave w-one">
+                                                <div class="m-input-label">Unit Qty</div>
                                                 <input type="text" class="inputText w-twelve" id="discount" value="0" autocomplete="off">
                                             </div>
                                             <div class="cave w-one">
+                                                <div class="m-input-label">Unit Qty</div>
                                                 <input type="text" class="inputText w-eleven-half" id="total" readonly="readonly">
                                             </div>
                                             <div class="cave w-one">
+                                                <br>
                                                 <a class="addToList" onclick="return add2List4Extra();">Add To List</a>
                                             </div>
                                         </div>

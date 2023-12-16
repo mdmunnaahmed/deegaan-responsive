@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard | My Hotel and Restaurant</title>
+  <link rel="shortcut icon" href="../assets/images/system/icon.png" />
+  <!-- <link rel="shortcut icon" href="./assets/images/company/sostec/favicon.ICO" /> -->
+  <link rel="stylesheet" href="assets/css/style2.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/scheduler.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/responsive2.css" type="text/css" />
+  <link rel="stylesheet" href="./assets/css/all.css" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="main-wrap">
+    <div class="orders-workplace">
+      <div class="sidebar" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <div class="logoWrap">
+          <a href="./reservation-workplace.php"><img src="./assets/images/company/logo-white.png" alt="logo" /></a>
+        </div>
+        <ul id="menus">
+          <a href="./reservation-workplace.php?task=checkin">
+            <li class="">
+              <i class="fal fa-calendar-check"></i><span>Check In</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?task=reservation">
+            <li class="">
+              <i class="fal fa-handshake"></i><span>Reservation</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?task=checkout">
+            <li class="active">
+              <i class="fal fa-sign-out"></i><span>Check Out</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?role=admin&task=cashier">
+            <li class="">
+              <i class="fal fa-sack-dollar"></i><span>Cashier</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?role=admin&task=quotation">
+            <li class="">
+              <i class="fal fa-file-invoice"></i><span>Invoice & Quotation</span>
+            </li>
+          </a>
+          <a href="./reservation-workplace.php?task=customerMgt">
+            <li class=""><i class="fal fa-users"></i><span>Customers</span></li>
+          </a>
+          <a href="./reservation-workplace.php?task=service">
+            <li class=""><i class="fal fa-cogs"></i><span>Services</span></li>
+          </a>
+          <a href="./reservation-workplace.php?task=reports">
+            <li class=""><i class="fal fa-file-invoice"></i><span>Reports</span></li>
+          </a>
+        </ul>
+        <!-- <footer>
+    <p>3.0.2</p>
+</footer> -->
+      </div> <!-- sidebar -->
+
+      <div class="middlebar">
+        <div class="top-bar">
+          <div>
+            <div id="sidebarToggler" title="toggle sidebar"><i class="fa fa-bars"></i></div>
+            <h3 class="restaurant-name">My Hotel and Restaurant</h3>
+          </div>
+          <h3 class="waiter-amount">
+            <a href="../dashboard.php">Back to home</a>
+          </h3>
+          <div>
+            <h3 class="user-name">Hi, ManagersName</h3>
+            <div class="profile-icon">
+              <div class="user icon">
+                <img src="../assets/images/users/small40/user40-8151609924889.jpg" />
+              </div>
+              <div class="drop-down">
+                <div class="row bar">My Account</div>
+                <div class="row">
+                  <div class="photo">
+                    <img src="../assets/images/users/middle320/user320-8151609924889.jpg" />
+                    <a href="./reservation-workplace.php?role=admin&task=profile">
+                      <div class="overlay">
+                        <span><i class="fal fa-camera-alt"></i></span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="links">
+                    <p class="name">ManagersName</p>
+                    <p class="user">themanager</p>
+                  </div>
+                </div>
+                <div class="row button">
+                  <a class="forgot" href="./reservation-workplace.php?role=admin&task=profile&subtask=chngPass">
+                    <i class="far fa-lock-alt"></i><span>Change Password</span>
+                  </a>
+                  <a class="logout" href="../includes/logout.php">Logout</a>
+                </div>
+              </div>
+            </div>
+            <a class="power-icon fa fa-power-off" href="../includes/logout.php"></a>
+          </div>
+        </div>
+
+        <div class="options-bar dash">
+          Menus | check out </div>
+
+        <div class="dashboard-content">
+          <div id="loadPage">
+            <div id="command">
+              <div class="buttons">
+                <a href="./reservation-workplace.php?role=admin&task=checkout&subtask=addnew" class="btnAddNew second">Generate Bill</a>
+                <a href="./reservation-workplace.php?role=admin&task=checkout&subtask=gatePass" class="btnAddNew gate-pass">Gate Pass</a>
+              </div>
+              <div id="searchBox">
+                <input type="search" class="srchInput" id="srchGnrtBill" maxlength="200" placeholder="find via name" />
+                <div class="suggest w-five-half tall"></div>
+              </div>
+            </div>
+            <div id="dynamicQnd">
+              <div id="foundNum">
+                <label id="count">0</label> record(s) has been found.
+                <span id="refresh"></span>
+              </div>
+              <div id="filters">
+                <div>&nbsp;</div>
+                <div>
+                  <label>Per Page</label>
+                  <select id="slcPerPage">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50" selected="selected">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+              </div>
+              <div id="dataTable">
+                <div class="record header">
+                  <div class="cave button">Action</div>
+                  <div class="cave w-one-half">Invoice No.</div>
+                  <div class="cave w-three-half">Bill To</div>
+                  <div class="cave w-three">Property</div>
+                  <div class="cave w-two">Generated Date</div>
+                </div>
+                <div class="table-data">
+                  <div id="loading"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="./assets/js/jquery.min.js"></script>
+          <script src="./assets/js/reception.js"></script>
+          <script type="text/javascript">
+            var perPage = $("#slcPerPage").val();
+            var myRole = 'admin';
+            var myUser = 'themanager';
+            loadGnrteBill('0', perPage);
+            $("#slcPerPage").change(function () {
+              $("#dataTable").html('<div class="record header"> <div class="cave button">Action</div> <div class="cave w-one-half">Invoice No.</div> <div class="cave w-three-half">Bill To</div> <div class="cave w-three">Property</div> <div class="cave w-two">Generated Date</div> </div><div class="table-data"> <div id="loading"></div> </div>');
+              var perPage = $("#slcPerPage").val();
+              loadGnrteBill('0', perPage);
+            });
+            check_searchBox();
+          </script>
+        </div>
+
+
+      </div> <!-- middlebar -->
+    </div>
+  </div>
+  <!-- <style type="text/css"> body a {pointer-events: none;}</style> -->
+  <script src="./assets/js/jquery-3.5.1.min.js"></script>
+  <!-- <script src="../../assets/js/jquery-3.2.1.min.js"></script> -->
+  <script src="../assets/js/basicFuncs.js"></script>
+  <!-- <script src="../libraries/sweetalert/js/sweetalert.js"></script> -->
+  <link rel="stylesheet" href="../libraries/sweetalert/css/sweetalert.css" />
+  <script src="../libraries/sweetalert/js/sweetalert.js"></script>
+  <script src="../assets/js/moment.min.js"></script>
+  <script src="./assets/js/jquery.timeago.js"></script>
+  <!-- <script src="../assets/js/pikaday.js"></script> -->
+  <script src="../assets/js/jquery.form.js"></script>
+  <script src="./assets/js/pikaday.js"></script>
+  <script src="./assets/js/basicFuncs.js"></script>
+  <script type="text/javascript">
+    simplfyWaiterTopBar();
+  </script>
+
+  <script>
+    $('#sidebarToggler').on('click', function (e) {
+      $('.sidebar').addClass('active')
+      $('#sidebar').addClass('active')
+      $('.overlay').addClass('active')
+    })
+    $('.overlay').on('click', function (e) {
+      $('.sidebar').removeClass('active')
+      $('#sidebar').removeClass('active')
+      $('.overlay').removeClass('active')
+    })
+  </script>
+</body>
+
+</html>
