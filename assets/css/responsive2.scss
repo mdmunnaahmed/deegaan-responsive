@@ -1495,6 +1495,14 @@ div.workplace div.reportArea div.rprtType {
   padding: .5% 1%;
   @include breakpoint(max-sm) {
     padding-inline: 3%;
+    br {
+      display: none;
+    }
+  }
+  @include breakpoint(md) {
+    a.addToList {
+      margin-top: 5px;
+    }
   }
 }
 @include breakpoint(max-lg) {

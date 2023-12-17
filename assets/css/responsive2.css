@@ -1433,6 +1433,16 @@ div.workplace div.reportArea div.rprtType label span {
   .middlebar div.theForm #btmCaves {
     padding-inline: 3%;
   }
+  .middlebar div.theForm #topCaves br,
+  .middlebar div.theForm #btmCaves br {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .middlebar div.theForm #topCaves a.addToList,
+  .middlebar div.theForm #btmCaves a.addToList {
+    margin-top: 5px;
+  }
 }
 
 @media (max-width: 991px) {
