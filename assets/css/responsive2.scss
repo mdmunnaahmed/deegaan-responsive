@@ -731,6 +731,14 @@ div.index {
 // Waiter Login Responsive End
 
 // Dashboard Responsive Start
+@include breakpoint(max-sm) {
+  .orders-workplace {
+    overflow: auto;
+  }
+  .main-wrap {
+    padding-bottom: 25px;
+  }
+}
 div.orders-workplace #loadPage #command #searchBox input.srchInput,
 .orders-workplace div.twoCols div#searchBox input.srchInput {
   padding-left: 35px;
@@ -1442,15 +1450,17 @@ div.workplace div.reportArea div.rprtType {
 }
 .m-input-label {
   margin-bottom: 5px;
+  @include breakpoint(max-sm) {
+    font-size: 13px;
+  }
 }
 .middlebar div.theForm .m-five-inputs,
 .middlebar div.theForm .m-four-inputs {
-  width: 97% !important;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px 10px;
   @include breakpoint(max-lg) {
-    gap: 10px;
+    gap: 15px 10px;
   }
   div.cave {
     flex-grow: 1;
@@ -1460,15 +1470,18 @@ div.workplace div.reportArea div.rprtType {
       width: 100% !important;
     }
     select {
-      width: 90% !important;
+      width: 99% !important;
       @include breakpoint(max-sm) {
-        width: 85% !important;
+        width: 99% !important;
       }
+    }
+    .add-new-icon {
+      display: flex;
     }
     @include breakpoint(max-lg) {
       width: 25% !important;
       @include breakpoint(max-md) {
-        width: 40% !important;
+        width: 100% !important;
       }
       input {
         margin: 0 !important;
@@ -1476,16 +1489,18 @@ div.workplace div.reportArea div.rprtType {
     }
   }
 }
+.middlebar div.theForm #topCaves,
+.middlebar div.theForm #btmCaves {
+  margin: 0 !important;
+  padding: .5% 1%;
+  @include breakpoint(max-sm) {
+    padding-inline: 3%;
+  }
+}
 @include breakpoint(max-lg) {
   .middlebar div.theForm .m-five-inputs,
   .middlebar div.theForm .m-four-inputs {
     margin-top: 15px !important;
-  }
-}
-@include breakpoint(max-sm) {
-  .middlebar div.theForm #topCaves,
-  .middlebar div.theForm #btmCaves {
-    width: 99% !important;
   }
 }
 // Inner View Pages End
@@ -1515,11 +1530,13 @@ div.workplace div.reportArea div.rprtType {
                 width: 65% !important;
                 flex-direction: column;
                 gap: 3px;
-                &.hasCheck{
+                &.hasCheck {
                   flex-direction: row;
                 }
               }
-              input, select, textarea {
+              input,
+              select,
+              textarea {
                 margin: 0 !important;
                 // width: calc(50% - 5px) !important;
                 width: 100% !important;
@@ -1549,9 +1566,9 @@ div.workplace div.reportArea div.rprtType {
                 input {
                   width: 100% !important;
                   @include breakpoint(max-sm) {
-                   &:nth-child(2)  {
-                    margin-top: 3px !important;
-                   }
+                    &:nth-child(2) {
+                      margin-top: 3px !important;
+                    }
                   }
                 }
               }

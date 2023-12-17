@@ -627,6 +627,14 @@ div.index div.developer .social .box {
     margin: 0;
   }
 }
+@media (max-width: 575px) {
+  .orders-workplace {
+    overflow: auto;
+  }
+  .main-wrap {
+    padding-bottom: 25px;
+  }
+}
 div.orders-workplace #loadPage #command #searchBox input.srchInput,
 .orders-workplace div.twoCols div#searchBox input.srchInput {
   padding-left: 35px;
@@ -1354,18 +1362,22 @@ div.workplace div.reportArea div.rprtType label span {
 .m-input-label {
   margin-bottom: 5px;
 }
+@media (max-width: 575px) {
+  .m-input-label {
+    font-size: 13px;
+  }
+}
 
 .middlebar div.theForm .m-five-inputs,
 .middlebar div.theForm .m-four-inputs {
-  width: 97% !important;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px 10px;
 }
 @media (max-width: 991px) {
   .middlebar div.theForm .m-five-inputs,
   .middlebar div.theForm .m-four-inputs {
-    gap: 10px;
+    gap: 15px 10px;
   }
 }
 .middlebar div.theForm .m-five-inputs div.cave,
@@ -1380,13 +1392,17 @@ div.workplace div.reportArea div.rprtType label span {
 }
 .middlebar div.theForm .m-five-inputs div.cave select,
 .middlebar div.theForm .m-four-inputs div.cave select {
-  width: 90% !important;
+  width: 99% !important;
 }
 @media (max-width: 575px) {
   .middlebar div.theForm .m-five-inputs div.cave select,
   .middlebar div.theForm .m-four-inputs div.cave select {
-    width: 85% !important;
+    width: 99% !important;
   }
+}
+.middlebar div.theForm .m-five-inputs div.cave .add-new-icon,
+.middlebar div.theForm .m-four-inputs div.cave .add-new-icon {
+  display: flex;
 }
 @media (max-width: 991px) {
   .middlebar div.theForm .m-five-inputs div.cave,
@@ -1397,7 +1413,7 @@ div.workplace div.reportArea div.rprtType label span {
 @media (max-width: 991px) and (max-width: 767px) {
   .middlebar div.theForm .m-five-inputs div.cave,
   .middlebar div.theForm .m-four-inputs div.cave {
-    width: 40% !important;
+    width: 100% !important;
   }
 }
 @media (max-width: 991px) {
@@ -1407,16 +1423,22 @@ div.workplace div.reportArea div.rprtType label span {
   }
 }
 
-@media (max-width: 991px) {
-  .middlebar div.theForm .m-five-inputs,
-  .middlebar div.theForm .m-four-inputs {
-    margin-top: 15px !important;
-  }
+.middlebar div.theForm #topCaves,
+.middlebar div.theForm #btmCaves {
+  margin: 0 !important;
+  padding: 0.5% 1%;
 }
 @media (max-width: 575px) {
   .middlebar div.theForm #topCaves,
   .middlebar div.theForm #btmCaves {
-    width: 99% !important;
+    padding-inline: 3%;
+  }
+}
+
+@media (max-width: 991px) {
+  .middlebar div.theForm .m-five-inputs,
+  .middlebar div.theForm .m-four-inputs {
+    margin-top: 15px !important;
   }
 }
 @media (max-width: 991px) {
@@ -1453,16 +1475,22 @@ div.workplace div.reportArea div.rprtType label span {
   }
 }
 @media (max-width: 991px) {
-  #m-long-form form section fieldset.grey div.innerRow .innerColumn input, #m-long-form form section fieldset.grey div.innerRow .innerColumn select, #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea {
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn input,
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn select,
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea {
     margin: 0 !important;
     width: 100% !important;
   }
-  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea:nth-child(2) {
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2),
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2),
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea:nth-child(2) {
     margin-left: 10px !important;
   }
 }
 @media (max-width: 991px) and (max-width: 575px) {
-  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea:nth-child(2) {
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2),
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2),
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea:nth-child(2) {
     margin-left: 0 !important;
   }
 }
