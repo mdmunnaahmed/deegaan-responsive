@@ -743,6 +743,7 @@ div.orders-workplace p#info {
   width: auto;
   @include breakpoint(max-sm) {
     margin-bottom: 8px;
+    font-size: 12px;
   }
 }
 select {
@@ -1518,11 +1519,11 @@ div.workplace div.reportArea div.rprtType {
                   flex-direction: row;
                 }
               }
-              input, select {
+              input, select, textarea {
                 margin: 0 !important;
-                width: calc(50% - 5px) !important;
+                // width: calc(50% - 5px) !important;
+                width: 100% !important;
                 @include breakpoint(max-sm) {
-                  width: 100% !important;
                 }
                 &:nth-child(2) {
                   margin-left: 10px !important;

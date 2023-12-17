@@ -643,6 +643,7 @@ div.orders-workplace p#info {
 @media (max-width: 575px) {
   div.orders-workplace p#info {
     margin-bottom: 8px;
+    font-size: 12px;
   }
 }
 
@@ -1452,23 +1453,16 @@ div.workplace div.reportArea div.rprtType label span {
   }
 }
 @media (max-width: 991px) {
-  #m-long-form form section fieldset.grey div.innerRow .innerColumn input, #m-long-form form section fieldset.grey div.innerRow .innerColumn select {
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn input, #m-long-form form section fieldset.grey div.innerRow .innerColumn select, #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea {
     margin: 0 !important;
-    width: calc(50% - 5px) !important;
-  }
-}
-@media (max-width: 991px) and (max-width: 575px) {
-  #m-long-form form section fieldset.grey div.innerRow .innerColumn input, #m-long-form form section fieldset.grey div.innerRow .innerColumn select {
     width: 100% !important;
   }
-}
-@media (max-width: 991px) {
-  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2) {
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea:nth-child(2) {
     margin-left: 10px !important;
   }
 }
 @media (max-width: 991px) and (max-width: 575px) {
-  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2) {
+  #m-long-form form section fieldset.grey div.innerRow .innerColumn input:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn select:nth-child(2), #m-long-form form section fieldset.grey div.innerRow .innerColumn textarea:nth-child(2) {
     margin-left: 0 !important;
   }
 }
