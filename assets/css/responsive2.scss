@@ -1482,8 +1482,83 @@ div.workplace div.reportArea div.rprtType {
   }
 }
 @include breakpoint(max-sm) {
-  .middlebar div.theForm #topCaves, .middlebar div.theForm #btmCaves {
-  width: 99% !important;
+  .middlebar div.theForm #topCaves,
+  .middlebar div.theForm #btmCaves {
+    width: 99% !important;
   }
 }
 // Inner View Pages End
+
+// Long form Responsive
+@include breakpoint(max-lg) {
+  #m-long-form {
+    form {
+      section {
+        fieldset.grey {
+          div.innerRow {
+            padding-bottom: 8px;
+            div.label {
+              margin: 0;
+              width: 25% !important;
+              height: auto;
+              line-height: 1;
+              margin-top: 10px;
+              @include breakpoint(max-sm) {
+                width: 35% !important;
+              }
+            }
+            .innerColumn {
+              width: 75% !important;
+              display: flex;
+              @include breakpoint(max-sm) {
+                width: 65% !important;
+                flex-direction: column;
+                gap: 3px;
+                &.hasCheck{
+                  flex-direction: row;
+                }
+              }
+              input, select {
+                margin: 0 !important;
+                width: calc(50% - 5px) !important;
+                @include breakpoint(max-sm) {
+                  width: 100% !important;
+                }
+                &:nth-child(2) {
+                  margin-left: 10px !important;
+                  @include breakpoint(max-sm) {
+                    margin-left: 0 !important;
+                  }
+                }
+              }
+              .checkmark {
+                width: 50px !important;
+                flex-shrink: 0;
+                @include breakpoint(max-sm) {
+                  float: left;
+                }
+                .box {
+                  width: 50px !important;
+                  height: 30px;
+                  margin-right: 5px;
+                }
+              }
+              .suggest-box {
+                width: 100% !important;
+                input {
+                  width: 100% !important;
+                  @include breakpoint(max-sm) {
+                   &:nth-child(2)  {
+                    margin-top: 3px !important;
+                   }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Long form Responsive

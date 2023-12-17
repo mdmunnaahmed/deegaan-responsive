@@ -6,7 +6,7 @@
   <title>Dashboard | My Hotel and Restaurant</title>
   <link rel="shortcut icon" href="../assets/images/system/icon.png" />
   <!-- <link rel="shortcut icon" href="./assets/images/company/sostec/favicon.ICO" /> -->
-  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/style2.css" type="text/css" />
   <link rel="stylesheet" href="assets/css/scheduler.css" type="text/css" />
   <link rel="stylesheet" href="./assets/css/pikaday.css" type="text/css" />
   <link rel="stylesheet" href="assets/css/responsive2.css" type="text/css" />
@@ -112,14 +112,14 @@
           <a id="btnCancel" href="./reservation-workplace.php?role=admin&task=reservation">Cancel</a>
           <p id="info"><span>*</span> red mark identifies required fields and must be filled out.</p>
 
-          <div class="theForm no-color">
+          <div class="theForm no-color" id="m-long-form">
             <form action="./includes/reception.php?action=saveNew&dest=addReservation&addedBy=themanager&myRole=admin" method="POST" onsubmit="return check_addReservation()" enctype="multipart/form-data">
               <section>
                 <fieldset class="grey">
                   <legend class="difference">Guest Information</legend>
                   <div class="innerRow">
                     <div class="label required">Customer Name</div>
-                    <div class="innerColumn">
+                    <div class="innerColumn hasCheck">
                       <label class="checkmark">
                         <input class="checkbox hidden" type="checkbox" name="chkClient" checked="checked" />
                         <div class="box w-one-half new"></div>
@@ -206,7 +206,7 @@
                   </div>
                   <div class="innerRow">
                     <div class="label required">Payee Name</div>
-                    <div class="innerColumn">
+                    <div class="innerColumn hasCheck">
                       <label class="checkmark">
                         <input class="checkbox hidden" type="checkbox" name="chkPayee" checked="checked" />
                         <div class="box w-one-half new"></div>
@@ -275,8 +275,8 @@
                 <fieldset class="grey top-down">
                   <div class="innerRow">
                     <div class="label">Identity</div>
-                    <div class="innerColumn">
-                      <label class="checkmark">
+                    <div class="innerColumn hasCheck">
+                      <label class="checkmark ">
                         <input class="checkbox hidden" type="checkbox" name="chkIdentity" checked="checked" />
                         <div class="box w-one-half new"></div>
                       </label>
