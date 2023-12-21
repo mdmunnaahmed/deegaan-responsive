@@ -5763,7 +5763,38 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	flex-wrap: wrap;
 	padding: 20px 0;
 }
-
+.order-filter-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 50px;
+	padding-inline: 7.5px;
+}
+.order-filter {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+}
+.filter-right-grid {
+	transform: translateY(5px);
+}
+.filter-right-grid span {
+	font-size: 20px;
+	line-height: 1;
+	padding: 4px 10px;
+	cursor: pointer;
+}
+.order-filter li a {
+	color: #999;
+	padding: 8px 20px;
+	border-bottom: 3px solid #ACACAC;
+	text-decoration: none;
+}
+.order-filter li a.active {
+	color: #5B69F2;
+	border-color: #5B69F2;
+}
 .order-card {
 	background-color: #FFC8CC;
 	width: 240px;
@@ -5805,6 +5836,9 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 }
 .order-card__time.color-green {
 	color: #51CC5E;
+}
+.order-card__time.color-blue {
+	color: #5B69F2;
 }
 .order-card__top .expand-icon {
 	color: #FF9830;
@@ -5876,7 +5910,7 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	font-size: 14px;
 
 }
-.order-card-btn:hover {
+.order-card-btn:hover, .order-card-btn .active {
 	color: #fff;
 	background-color: #5B69F2;
 }
@@ -5897,9 +5931,27 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	margin: 7.5px;
 }
 .order-card.style-two {
-	background-color: #D5F2D8;
-	border: 1px solid #2aaa3f12;
+	background-color: #bff5c5;
 }
+
+.order-card.style-two .order-card__time {
+	color: #53CD62;
+}
+.order-card.style-two .order-text-btn{
+	color: #53CD62 !important;
+}
+
+.order-card.style-three {
+	background-color: #d9daff;
+}
+.order-card.style-three .order-card__time {
+	color: #5B69F2;
+}
+.order-card.style-three .order-text-btn{
+	color: #5B69F2 !important;
+}
+
+
 .order-card-btn.cancel-btn {
 	background-color: #FC4D6B;
 	margin-bottom: 40px;
@@ -5956,5 +6008,8 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	}
 	.order-card-left .order-card__body.style-two .order-card__content {
 		min-height: 350px;
+	}
+	.order-filter li a {
+		padding-inline: 6px 15px;
 	}
 }
