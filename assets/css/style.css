@@ -1614,6 +1614,7 @@ div.orders-workplace #loadPage #command .buttons {
 	float: right;
 	width: 9%;
 }
+
 @media (max-width: 575px) {
 	div.orders-workplace #loadPage #command .buttons {
 		width: 20%;
@@ -5763,6 +5764,7 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	flex-wrap: wrap;
 	padding: 20px 0;
 }
+
 .order-filter-wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -5771,30 +5773,39 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	padding-top: 50px;
 	padding-inline: 7.5px;
 }
+
 .order-filter {
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
 }
+
 .filter-right-grid {
 	transform: translateY(5px);
 }
+
 .filter-right-grid span {
 	font-size: 20px;
 	line-height: 1;
 	padding: 4px 10px;
 	cursor: pointer;
 }
+.filter-right-grid span.active {
+	color: #5B69F2;
+}
+
 .order-filter li a {
 	color: #999;
 	padding: 8px 20px;
 	border-bottom: 3px solid #ACACAC;
 	text-decoration: none;
 }
+
 .order-filter li a.active {
 	color: #5B69F2;
 	border-color: #5B69F2;
 }
+
 .order-card {
 	background-color: #FFC8CC;
 	width: 240px;
@@ -5803,11 +5814,42 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	padding: 10px;
 	padding-top: 0px;
 }
+
+.order-card.inline {
+	width: 100% !important;
+}
+
+.order-card-outer.inline {
+	width: 100% !important;
+}
+
+.order-card-outer.fullscreen {
+	background-color: #ffffff !important;
+}
+
+.order-card-outer.fullscreen .order-card {
+	position: fixed;
+	left: 50% !important;
+	top: 50% !important;
+	transform: translate(-50%, -50%) !important;
+	max-width: 500px !important;
+	width: 100%;
+
+}
+
+.order-card-outer.fullscreen .order-card .order-card__content {
+	max-height: 250px;
+	min-height: 150px;
+	height: 100%;
+
+}
+
 .order-card__top {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
 .order-card__top .content-right {
 	padding-top: 5px;
 	display: flex;
@@ -5815,6 +5857,7 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	align-items: center;
 	width: 160px;
 }
+
 .order-card__top .base-num {
 	background-color: #FD9932;
 	padding: 10px 3px;
@@ -5823,29 +5866,35 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	border-bottom-right-radius: 5px;
 	color: #fff;
 }
+
 .order-shoping-bag {
 	color: #555;
 	line-height: 1;
 	font-size: 17px;
 	padding-right: 20px;
 }
+
 .order-card__time {
 	color: #F55B79;
 	font-size: 20px;
 
 }
+
 .order-card__time.color-green {
 	color: #51CC5E;
 }
+
 .order-card__time.color-blue {
 	color: #5B69F2;
 }
+
 .order-card__top .expand-icon {
 	color: #FF9830;
 	font-size: 18px;
 	line-height: 1;
 	cursor: pointer;
 }
+
 .order-card__body {
 	padding: 3px 0px;
 	background-color: #fff;
@@ -5853,13 +5902,16 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	border-radius: 7px;
 	margin-bottom: 10px;
 }
-.order-card-left .order-card__body.style-two .order-card__content{
+
+.order-card-left .order-card__body.style-two .order-card__content {
 	min-height: 438px
 }
+
 .order-footer-btn-wrapper {
 	margin-top: 50px;
 	padding-bottom: 5px;
 }
+
 .order-card__content {
 	padding-inline: 7px;
 	padding-right: 10px;
@@ -5871,24 +5923,25 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 .order-card__content::-webkit-scrollbar {
 	width: 4px;
 	border-radius: 5px;
-  }
-  
-  /* Track */
-  .order-card__content::-webkit-scrollbar-track {
+}
+
+/* Track */
+.order-card__content::-webkit-scrollbar-track {
 	background: #fff;
 	border-radius: 5px;
-  }
-  
-  /* Handle */
-  .order-card__content::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+.order-card__content::-webkit-scrollbar-thumb {
 	background: #FAA045;
 	border-radius: 5px;
-  }
-  
-  /* Handle on hover */
-  .order-card__content::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+.order-card__content::-webkit-scrollbar-thumb:hover {
 	background: #555;
-  }
+}
+
 .order-card__content li {
 	display: flex;
 	flex-wrap: wrap;
@@ -5897,6 +5950,7 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	line-height: 1.8;
 	color: #555;
 }
+
 .order-card-btn {
 	text-decoration: none;
 	background-color: #53CD62;
@@ -5910,26 +5964,31 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	font-size: 14px;
 
 }
-.order-card-btn:hover, .order-card-btn .active {
+
+.order-card-btn:hover,
+.order-card-btn .active {
 	color: #fff;
 	background-color: #5B69F2;
 }
+
 .order-card-left {
 	width: 250px;
 }
+
 .order-card-right {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
+	gap: 15px;
 	width: calc(100% - 250px);
 	padding-left: 7.5px;
 }
+
 .order-card-right .order-card {
 	width: 240px;
 }
-.order-card {
-	margin: 7.5px;
-}
+
+
 .order-card.style-two {
 	background-color: #bff5c5;
 }
@@ -5937,17 +5996,20 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 .order-card.style-two .order-card__time {
 	color: #53CD62;
 }
-.order-card.style-two .order-text-btn{
+
+.order-card.style-two .order-text-btn {
 	color: #53CD62 !important;
 }
 
 .order-card.style-three {
 	background-color: #d9daff;
 }
+
 .order-card.style-three .order-card__time {
 	color: #5B69F2;
 }
-.order-card.style-three .order-text-btn{
+
+.order-card.style-three .order-text-btn {
 	color: #5B69F2 !important;
 }
 
@@ -5961,9 +6023,11 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 .order-card-bg-gray {
 	background-color: #ABABAB !important;
 }
+
 .order-card-color-gray {
 	color: #ABABAB !important;
 }
+
 .expand-color-gray {
 	color: #555 !important;
 }
@@ -5981,35 +6045,56 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 .order-text-btn.late {
 	color: #FC4D6B;
 }
+
 @media (max-width: 575px) {
 	.order-card-left {
 		width: 100%;
 		padding: 0;
 		margin-bottom: 20px;
 	}
+
 	.order-card-right {
 		width: 100%;
 		padding: 0;
 	}
+
+	.order-card-outer {
+		width: 100%;
+	}
+
 	.order-card {
+		max-width: 100% !important;
 		width: 100% !important;
 		margin: 0;
-		
+
 	}
+
 	.order-card-wrapper {
 		padding-inline: 20px;
 	}
+
 	.order-card:not(:last-child) {
 		margin-bottom: 20px;
 	}
+
 	.order-card__top .content-right {
 		width: 100%;
 		max-width: 220px;
 	}
+
 	.order-card-left .order-card__body.style-two .order-card__content {
 		min-height: 350px;
 	}
+
 	.order-filter li a {
 		padding-inline: 6px 15px;
 	}
+}
+
+.order-card-wrapper {
+	display: none;
+}
+
+.d-flex {
+	display: flex !important;
 }
