@@ -5810,7 +5810,7 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 
 .order-card {
 	background-color: #FFC8CC;
-	width: 240px;
+	width: 100%;
 	min-height: 205px;
 	border-radius: 15px;
 	padding: 10px;
@@ -5821,9 +5821,6 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	width: 100% !important;
 }
 
-.order-card-outer.inline {
-	width: 100% !important;
-}
 
 .order-card-outer.fullscreen {
 	background-color: #ffffff !important;
@@ -5980,23 +5977,28 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 
 .order-card-left {
 	width: 250px;
-	padding-right: 8px;
 }
 
 .order-card-right {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
-	gap: 15px;
 	width: calc(100% - 250px);
-	padding-left: 7.5px;
 	height: 680px;
 	overflow-y: auto;
+	padding-left: 7.5px;
 }
 
-.order-card-right .order-card {
-	width: 240px;
+.order-card-right-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	
 }
+
+.order-card-right-wrapper .order-card-outer {
+	width: calc(100% / 3);
+	padding: 8px;
+} 
+.order-card-right-wrapper .order-card-outer.inline {
+	width: calc(100% / 4);
+} 
 
 
 .order-card.style-two {
@@ -6056,21 +6058,30 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	color: #FC4D6B;
 }
 
-@media (max-width: 1030px) {
-	.order-card-left .order-card {
-		width: 100%;
-		max-width: 250px;
-	}	
-	.order-card-right .order-card {
-		width: 100%;
-		max-width: 240px;
+@media (max-width: 1200px) {
+	.order-card-right-wrapper .order-card-outer,
+	.order-card-right-wrapper .order-card-outer.inline {
+		width: calc(100% / 3);
 	}
-	.order-card__top .content-right {
-		padding-left: 26px;
+}
+@media (max-width: 991px) {
+	.order-card-right-wrapper .order-card-outer,
+	.order-card-right-wrapper .order-card-outer.inline {
+		width: calc(100% / 2);
+	}
+}
+@media (max-width: 740px) {
+	.order-card-right-wrapper .order-card-outer,
+	.order-card-right-wrapper .order-card-outer.inline {
+		width: calc(100% / 1);
 	}
 }
 
 @media (max-width: 575px) {
+	.order-card-right-wrapper .order-card-outer,
+	.order-card-right-wrapper .order-card-outer.inline {
+		width: 100%;
+	}
 	.order-card-left {
 		width: 100%;
 		padding: 0;
