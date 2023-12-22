@@ -5781,17 +5781,19 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 }
 
 .filter-right-grid {
-	transform: translateY(5px);
+	transform: translateY(8px);
 }
 
 .filter-right-grid span {
 	font-size: 20px;
 	line-height: 1;
-	padding: 4px 10px;
+	padding: 0px 5px;
 	cursor: pointer;
+	opacity: .3;
+
 }
 .filter-right-grid span.active {
-	color: #5B69F2;
+	opacity: 1;
 }
 
 .order-filter li a {
@@ -5920,25 +5922,29 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 }
 
 /* width */
-.order-card__content::-webkit-scrollbar {
+.order-card__content::-webkit-scrollbar,
+.order-card-right::-webkit-scrollbar {
 	width: 4px;
 	border-radius: 5px;
 }
 
 /* Track */
-.order-card__content::-webkit-scrollbar-track {
+.order-card__content::-webkit-scrollbar-track,
+.order-card-right::-webkit-scrollbar-track {
 	background: #fff;
 	border-radius: 5px;
 }
 
 /* Handle */
-.order-card__content::-webkit-scrollbar-thumb {
+.order-card__content::-webkit-scrollbar-thumb,
+.order-card-right::-webkit-scrollbar-thumb {
 	background: #FAA045;
 	border-radius: 5px;
 }
 
 /* Handle on hover */
-.order-card__content::-webkit-scrollbar-thumb:hover {
+.order-card__content::-webkit-scrollbar-thumb:hover,
+.order-card-right::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
 
@@ -5966,13 +5972,15 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 }
 
 .order-card-btn:hover,
-.order-card-btn .active {
+.order-card-btn .active,
+.order-card-btn.active {
 	color: #fff;
 	background-color: #5B69F2;
 }
 
 .order-card-left {
 	width: 250px;
+	padding-right: 8px;
 }
 
 .order-card-right {
@@ -5982,6 +5990,8 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	gap: 15px;
 	width: calc(100% - 250px);
 	padding-left: 7.5px;
+	height: 680px;
+	overflow-y: auto;
 }
 
 .order-card-right .order-card {
@@ -6046,6 +6056,20 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 	color: #FC4D6B;
 }
 
+@media (max-width: 1030px) {
+	.order-card-left .order-card {
+		width: 100%;
+		max-width: 250px;
+	}	
+	.order-card-right .order-card {
+		width: 100%;
+		max-width: 240px;
+	}
+	.order-card__top .content-right {
+		padding-left: 26px;
+	}
+}
+
 @media (max-width: 575px) {
 	.order-card-left {
 		width: 100%;
@@ -6098,3 +6122,4 @@ div.orders-workplace .loadPage .dynamicQnd .Inventory.record div.cave span {
 .d-flex {
 	display: flex !important;
 }
+
